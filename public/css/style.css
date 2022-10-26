@@ -1,0 +1,7 @@
+:root {
+    --principal: #2ECC71;
+}
+
+.navbar {
+    background-color: var(--principal);
+}
