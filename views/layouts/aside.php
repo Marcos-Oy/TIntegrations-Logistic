@@ -51,6 +51,31 @@
                             <a href="#" class="nav-link">
                                 <i class="fas fa-stream"></i>
                                 <p>
+                                    Administrar
+                                    <i class="right fas fa-angle-left"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a style="cursor: pointer;" class="nav-link"
+                                        onclick="CargarContenido('users/users.php','content-wrapper')">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Usuarios</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a style="cursor: pointer;" class="nav-link"
+                                        onclick="CargarContenido('dashboard/dashboard.php','content-wrapper')">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Nominar</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item menu-closed">
+                            <a href="#" class="nav-link">
+                                <i class="fas fa-stream"></i>
+                                <p>
                                     Ordenes
                                     <i class="right fas fa-angle-left"></i>
                                 </p>
@@ -104,9 +129,39 @@
                         <li class="nav-item">
                             <a style="cursor: pointer;" class="nav-link"
                                 onclick="CargarContenido('users/users.php','content-wrapper')">
-                                <i class="nav-icon fa fa-user"></i>
+                                <i class="far fa-circle nav-icon"></i>
                                 <p>
-                                    Usuarios
+                                    Nueva orden
+                                    <span class="right badge badge-danger">New</span>
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a style="cursor: pointer;" class="nav-link"
+                                onclick="CargarContenido('users/users.php','content-wrapper')">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>
+                                    Cotizador
+                                    <span class="right badge badge-danger">New</span>
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a style="cursor: pointer;" class="nav-link"
+                                onclick="CargarContenido('users/users.php','content-wrapper')">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>
+                                    Mis Datos
+                                    <span class="right badge badge-danger">New</span>
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a style="cursor: pointer;" class="nav-link"
+                                onclick="CargarContenido('users/users.php','content-wrapper')">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>
+                                    Revisar orden
                                     <span class="right badge badge-danger">New</span>
                                 </p>
                             </a>

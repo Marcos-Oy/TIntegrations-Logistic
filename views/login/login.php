@@ -27,7 +27,7 @@
             <div class="card-body">
                 <p class="login-box-msg">Iniciar sesión</p>
 
-                <form action="views/plantilla.php" method="post">
+                <form action="views/panel.php" method="post">
                     <div class="input-group mb-3">
                         <input type="email" class="form-control" placeholder="Email">
                         <div class="input-group-append">
