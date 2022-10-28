@@ -1,5 +1,7 @@
 <?php
-require_once "controllers/TemplateController.php";
+require_once "controllers/LoginController.php";
 
-$template = new TemplateController();
-$template -> template();
+$template = new LoginController();
+$template -> login();
+
+?>
