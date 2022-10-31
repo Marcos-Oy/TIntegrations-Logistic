@@ -128,7 +128,7 @@
                         </li>
                         <li class="nav-item">
                             <a style="cursor: pointer;" class="nav-link"
-                                onclick="CargarContenido('users/users.php','content-wrapper')">
+                                onclick="CargarContenido('ordenes/nueva.php','content-wrapper')">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>
                                     Nueva orden
