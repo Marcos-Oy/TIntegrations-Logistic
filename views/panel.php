@@ -30,15 +30,5 @@
     ?>
     <script src="js/validarRUT.js"></script>
     <script type="text/javascript" src="js/order_new.js"></script>
-    <script>
-    function CargarContenido(pagina_php, contenedor) {
-        $("." + contenedor).load(pagina_php);
-    }
-    $('.nav-link').click(function() {
-        // if already any element in active status remove it
-        $('.nav-link').removeClass('active');
-        // add active status to this one only
-        $(this).addClass('active');
-    })
-    </script>
+    
 </body>
