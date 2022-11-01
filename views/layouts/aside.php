@@ -148,7 +148,7 @@
                         </li>
                         <li class="nav-item">
                             <a style="cursor: pointer;" class="nav-link"
-                                onclick="CargarContenido('users/users.php','content-wrapper')">
+                                href="users/users.php">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>
                                     Mis Datos
