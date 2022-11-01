@@ -1,58 +1,35 @@
 <!DOCTYPE html>
-<!--
-This is a starter template page. Use this page to start your new project from
-scratch. This page gets rid of all links and provides the needed markup only.
--->
-<html lang="en">
+<html lang="es">
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Tu Paquete</title>
-
-    <link rel="shortcut icon" href="../public/dist/img/AdminLTELogo.png" type="image/x-icon">
-
-    <!-- Google Font: Source Sans Pro -->
-    <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
-    <!-- Font Awesome Icons -->
-    <link rel="stylesheet" href="../public/plugins/fontawesome-free/css/all.min.css">
-    <!-- Theme style -->
-    <link rel="stylesheet" href="../public/dist/css/adminlte.min.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel inicial</title>
+    <?php
+    include '../includes/plugins.php';
+    ?>
 </head>
 
-<body class="hold-transition sidebar-mini">
+<body class="hold-transition sidebar-mini layout-fixed">
     <div class="wrapper">
-
         <?php
-            include "layouts/navbar.php";
-            include "layouts/aside.php";
+        include '../includes/header.php';
         ?>
-
-        <!-- Content Wrapper. Contains page content -->
         <div class="content-wrapper">
 
-            <?php include "dashboard/dashboard.php"; ?>
-
         </div>
-        <!-- /.content-wrapper -->
-
-        <?php
-            include "layouts/footer.php";
-        ?>
-
+        <!-- Control Sidebar -->
+        <aside class="control-sidebar control-sidebar-dark">
+            <!-- Control sidebar content goes here -->
+        </aside>
+        <!-- /.control-sidebar -->
     </div>
-    <!-- ./wrapper -->
-
-    <!-- REQUIRED SCRIPTS -->
-
-    <!-- jQuery -->
-    <script src="../public/plugins/jquery/jquery.min.js"></script>
-    <!-- Bootstrap 4 -->
-    <script src="../public/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <!-- AdminLTE App -->
-    <script src="../public/dist/js/adminlte.min.js"></script>
-
+    <?php
+    include '../includes/footer.php';
+    ?>
+    <script src="js/validarRUT.js"></script>
+    <script type="text/javascript" src="js/order_new.js"></script>
     <script>
     function CargarContenido(pagina_php, contenedor) {
         $("." + contenedor).load(pagina_php);
@@ -65,5 +42,3 @@ scratch. This page gets rid of all links and provides the needed markup only.
     })
     </script>
 </body>
-
-</html>
