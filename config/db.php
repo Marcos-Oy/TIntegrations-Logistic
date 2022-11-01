@@ -1,9 +1,9 @@
 <?php
     class db{
-        private $host;
-        private $dbname;
-        private $user;
-        private $password;
+        private $host = "makrohard.sytes.net";
+        private $dbname = "tpqt2023";
+        private $user = "tpqt2023";
+        private $password = "pinturillo";
 
         public function conexion(){
             try{
