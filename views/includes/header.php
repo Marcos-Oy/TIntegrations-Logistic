@@ -186,7 +186,7 @@
                with font-awesome or any other icon font library -->
                 <li class="nav-item">
                     <a style="cursor: pointer;" class="nav-link active"
-                        onclick="CargarContenido('dashboard/dashboard.php','content-wrapper')">
+                        href="../dashboard/dashboard.php">
                         <i class="nav-icon fas fa-tachometer-alt"></i>
                         <p>
                             Dashboard
@@ -204,14 +204,14 @@
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
                             <a style="cursor: pointer;" class="nav-link"
-                                onclick="CargarContenido('users/users.php','content-wrapper')">
+                                href="../users/users.php">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Usuarios</p>
                             </a>
                         </li>
                         <li class="nav-item">
                             <a style="cursor: pointer;" class="nav-link"
-                                onclick="CargarContenido('dashboard/dashboard.php','content-wrapper')">
+                            href="../dashboard/dashboard.php">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Nominar</p>
                             </a>
@@ -236,35 +236,35 @@
                         </li>
                         <li class="nav-item">
                             <a style="cursor: pointer;" class="nav-link"
-                                onclick="CargarContenido('ordenes/recibir.php','content-wrapper')">
+                                href="../ordenes/recibir.php">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Recibir</p>
                             </a>
                         </li>
                         <li class="nav-item">
                             <a style="cursor: pointer;" class="nav-link"
-                                onclick="CargarContenido('ordenes/cargarODTexterna.php','content-wrapper')">
+                                href="../ordenes/cargarODTexterna.php">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Cargar ODT Externa</p>
                             </a>
                         </li>
                         <li class="nav-item">
                             <a style="cursor: pointer;" class="nav-link"
-                                onclick="CargarContenido('ordenes/asignarCodigo.php','content-wrapper')">
+                                href="../ordenes/asignarCodigo.php">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Asignar con código</p>
                             </a>
                         </li>
                         <li class="nav-item">
                             <a style="cursor: pointer;" class="nav-link"
-                                onclick="CargarContenido('ordenes/devolver.php','content-wrapper')">
+                                href="../ordenes/devolver.php">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Devolver</p>
                             </a>
                         </li>
                         <li class="nav-item">
                             <a style="cursor: pointer;" class="nav-link"
-                                onclick="CargarContenido('ordenes/entregar.php','content-wrapper')">
+                                href="../ordenes/entregar.php">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Entregar</p>
                             </a>
@@ -274,7 +274,7 @@
                 </li>
                 <li class="nav-item">
                     <a style="cursor: pointer;" class="nav-link"
-                        onclick="CargarContenido('ordenes/nueva.php','content-wrapper')">
+                        href="../ordenes/nueva.php">
                         <i class="far fa-circle nav-icon"></i>
                         <p>
                             Nueva orden
@@ -284,7 +284,7 @@
                 </li>
                 <li class="nav-item">
                     <a style="cursor: pointer;" class="nav-link"
-                        onclick="CargarContenido('users/users.php','content-wrapper')">
+                        href="../users/users.php">
                         <i class="far fa-circle nav-icon"></i>
                         <p>
                             Cotizador
@@ -303,7 +303,7 @@
                 </li>
                 <li class="nav-item">
                     <a style="cursor: pointer;" class="nav-link"
-                        onclick="CargarContenido('users/users.php','content-wrapper')">
+                        href="../users/users.php">
                         <i class="far fa-circle nav-icon"></i>
                         <p>
                             Revisar orden

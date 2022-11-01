@@ -1,25 +1,34 @@
-<!-- Content Header (Page header) -->
-<div class="content-header">
-    <div class="container-fluid">
-        <div class="row mb-2">
-            <div class="col-sm-6">
-                <h1 class="m-0">Asignar con Código</h1>
-            </div><!-- /.col -->
-            <div class="col-sm-6">
-                <ol class="breadcrumb float-sm-right">
-                    <li class="breadcrumb-item"><a href="#">Inicio</a></li>
-                    <li class="breadcrumb-item active">Tablero Principal</li>
-                </ol>
-            </div><!-- /.col -->
-        </div><!-- /.row -->
-    </div><!-- /.container-fluid -->
-</div>
-<!-- /.content-header -->
+<!DOCTYPE html>
+<html lang="es">
 
-<!-- Main content -->
-<div class="content">
-    <div class="container-fluid">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asignar con código</title>
+    <?php
+    include '../includes/plugins.php';
+    ?>
+</head>
 
-    </div><!-- /.container-fluid -->
-</div>
-<!-- /.content -->
+<body class="hold-transition sidebar-mini layout-fixed">
+    <div class="wrapper">
+        <?php
+        include '../includes/header.php';
+        ?>
+        <div class="content-wrapper">
+
+        </div>
+        <!-- Control Sidebar -->
+        <aside class="control-sidebar control-sidebar-dark">
+            <!-- Control sidebar content goes here -->
+        </aside>
+        <!-- /.control-sidebar -->
+    </div>
+    <?php
+    include '../includes/footer.php';
+    ?>
+    <script src="js/validarRUT.js"></script>
+    <script type="text/javascript" src="js/order_new.js"></script>
+    
+</body>
