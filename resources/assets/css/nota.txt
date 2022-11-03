@@ -1,0 +1,10 @@
+
+ASSETS WEBS
+
+Los assets web son las hojas de estilo CSS, los archivos JavaScript 
+y las imágenes que se utilizan en el frontendde las aplicaciones 
+para que tengan un buen aspecto.
+
+En los assets, se pondrán todos los JavaScript, css e imágenes
+que hayamos implementado con nuestras manos
+recordar que es uso explusivo de front.
