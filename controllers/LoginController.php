@@ -2,6 +2,6 @@
 
 class LoginController{
     public function login(){
-        include "views/login/login.php";
+        include "resources/views/login/login.php";
     }
 }
