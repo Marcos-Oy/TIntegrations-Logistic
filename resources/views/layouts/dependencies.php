@@ -1,5 +1,7 @@
      <!-- JS de aside.php -->
      <script src="../../../resources/assets/js/aside.js"></script>
+     <!-- JS de footer.php -->
+     <script src="../../../resources/assets/js/footer.js"></script>
 
      <!-- Google Font: Source Sans Pro -->
      <link rel="stylesheet"
