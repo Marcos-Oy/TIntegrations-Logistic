@@ -164,7 +164,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <button type="button" class="btn btn-success btn-lg">Guardar</button>
+                                        <button type="button" class="btn btn-warning btn-lg">Guardar</button>
                                     </form>
                                 </div>
                             </div>
