@@ -18,141 +18,119 @@
             include '../layouts/navbar.php';
             include '../layouts/aside.php';
         ?>
-            <div class="content-wrapper">
-                <br>
-                <div class="h1 text-center text-primary">Recepcion de Ordenes</div>
-                <form method="post">
-                    <div class="container text-center " >
-                        <div class="input-group mb-3">
-                            <input type="text" class="form-control" placeholder="Indique el Texto " aria-label="Username" aria-describedby="basic-addon1">                      
-                                &nbsp&nbsp&nbsp
-                            <button type="button" class="btn btn-primary">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
-                                    <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"></path>
-                                </svg>
-                                <font _mstmutation="1">BUSCAR</font>
-                            </button>
-                                &nbsp&nbsp&nbsp
-                            <button type="button" class="btn btn-warning">LIMPIAR</button>
+        <div class="content-wrapper">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-6">
+                        <form method="POST">
+                            <div class="card card-info">
+                                <div class="card-header">
+                                    <h3 class="card-title">Información de destino</h3>
+                                </div>
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <label>Región</label>
+                                            <select id="regiones" class="form-control select2bs4" name="regiones">
+                                                <option value="">Seleccione Región</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label>Comuna</label>
+                                            <select id="comunas" class="form-control" name="comunas">
+                                                <option value="">Seleccione Comuna</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- /.card-body -->
+                            <div class="card card-info">
+                                <div class="card-header">
+                                    <h3 class="card-title">Datos de carga</h3>
+                                </div>
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <label>Alto</label>
+                                            <input type="number" class="form-control" placeholder="Alto cms."
+                                                name="alto" id="alto" min="0">
+                                        </div>
+                                        <div class="col-md-4">
+                                            <label>Ancho</label>
+                                            <input type="number" class="form-control" placeholder="Ancho cms."
+                                                name="ancho" id="ancho" min="0">
+                                        </div>
+                                        <div class="col-md-4">
+                                            <label>Largo</label>
+                                            <input type="number" class="form-control" placeholder="Largo cms."
+                                                name="largo" id="largo" min="0">
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <label>Peso</label>
+                                            <input type="text" class="form-control" placeholder="Peso Kgs." name="peso"
+                                                id="peso" min="0">
+                                        </div>
+                                        <div class="col-md-4">
+                                            <label>Cantidad de bultos</label>
+                                            <input type="number" class="form-control" placeholder="0" name="cantidad"
+                                                id="cantidad" min="0">
+                                        </div>
+                                        <div class="col-md-4">
+                                            <label>Cantidad de sobres</label>
+                                            <input type="number" class="form-control" placeholder="0" name="qsobres"
+                                                id="qsobres" min="0">
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <label>Seleccionar fecha</label>
+                                            <input type="date" class="form-control" placeholder="0" name="fecha"
+                                                id="fecha">
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- /.card-body -->
+                                <div class="row">
+                                    <div class="col">
+                                        <input type="submit" class="btn bg-lightblue form-control" value="Calcular"
+                                            name="calcular">
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="row">
+                            <div class="col-lg-12 col-6">
+                                <!-- small card -->
+                                <div class="small-box bg-info">
+                                    <div class="inner">
+                                        <h3>$ Valor flete</h3>
+                                        <p>Datos de la carga:</p>
+                                        <ul>
+                                            <li>Destino:</li>
+                                            <li>Peso: </li>
+                                            <li>Dimensiones: Mts<sup>3</sup></li>
+                                            <li>Bultos:</li>
+                                            <li>Sobres:</li>
+                                        </ul>
+                                    </div>
+                                    <div class="icon">
+                                        <i class="fas fa-shopping-cart"></i>
+                                    </div>
+                                    <a href="#" class="small-box-footer">
+                                        Continuar <i class="fas fa-arrow-circle-right"></i>
+                                    </a>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </form>
-                <form method="post">
-                    <div class="container text-center " >
-                        <div class="input-group mb-2 ">
-                            <input type="text" class="form-control" placeholder="Indique el Texto " aria-label="Username" aria-describedby="basic-addon1">                      
-                                &nbsp&nbsp&nbsp
-                            <button type="button" class="btn btn-success">RECIBIR ENTREGA</button>
-                        </div>
-                    </div>
-                </form>
-                <form method="POST" action="recibirorden.php">
-                    <!-- <?php if ($_SESSION['cargoid']!=2) {?> -->
-                    <div class="container" >
-                        <div class="input-group mb-2">
-                            <button type="button" class="btn btn-primary col" name="entrega" value="Recibir Entrega">RECIBIR ENTREGA</button>
-                            &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-                            <button type="button" class="btn btn-success col " name="devolucion" value="Recibir Devolución">RECIBIR DEVOLUCION</button>
-                        </div>
-                    </div>
-                    <?php  }   ?>
-                    <div class="container  table-responsive">
-                        <table class="table table-success  text-center">
-                            <thead>
-                                <tr>
-                                    <!-- <?php if ($_SESSION['cargoid']!=2) { ?> -->
-                                    <th></th>
-                                    <?php } ?>
-                                    <th>ODT</th>
-                                    <th>Fecha</tH>
-                                    <th>Región</th>
-                                    <th>Comuna</th>
-                                    <th>Bultos</th>
-                                    <th>Dimensiones</th>
-                                    <th>Peso</th>
-                                    <th>Cant. Sobres</th>
-                                    <th>Tipo de pago</th>
-                                    <!-- <?php if ($_SESSION['cargoid']!=2) { ?> -->
-                                    <th>Valor declarado</th>
-                                    <th>Total</th>
-                                    <?php } ?>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <!-- <?php while ($orden = mysqli_fetch_array($result)) 
-                                {
-                                    $idorden = $orden[0];
-                                    $fecha = $orden[1];
-                                    $region = $orden[2];
-                                    $comuna = $orden[3];
-                                    $cantidad = $orden[4];
-                                    $qsobres = $orden[5];
-                                    $metros = round($orden[6]/1000000, 2);
-                                    $peso = number_format($orden[7], 2, '.', '.');
-                                    $valor = $orden[8];
-                                    $documento = $orden[9];
-                                    $valordeclarado = $orden[10];
-                                    $tipopago = $orden[11];
-                                    $idact = $orden[12]; ?>
-                                    <tr>
-                                        <?php if ($_SESSION['cargoid']!=2) { ?>
-                                        <td>
-                                            <div class="form-check"> 
-                                                <input class="form-check-input" onChange="marcar(this)" name="orden[]" type="checkbox"
-                                                    value="<?php echo $idorden; ?>"
-                                                    id="<?php echo $idorden; ?>">
-                                                <input type="hidden"
-                                                    value="<?php echo $valor; ?>"
-                                                    id="valor<?php echo $idorden; ?>"
-                                                    name="valor<?php echo $idorden; ?>">
-                                                <input type='hidden' readonly class='form-control-plaintext text-center'
-                                                    value='<?php echo $metros; ?>'
-                                                    id='metros<?php echo $idorden; ?>'
-                                                    name='metros<?php echo $idorden; ?>'>
-                                                <input type='hidden' readonly class='form-control-plaintext text-center'
-                                                    value='<?php echo $peso; ?>'
-                                                    id='peso<?php echo $idorden; ?>'
-                                                    name='peso<?php echo $idorden; ?>'>
-                                                <input type='hidden' readonly class='form-control-plaintext text-center'
-                                                    value='<?php echo $idact; ?>'
-                                                    id='actividad' name='actividad'>
-                                            </div>
-                                        </td> -->
-                                        <?php } ?>
-                                        <?php if ($_SESSION['cargoid']!=2) 
-                                            {   echo "
-                                                <td>".$idorden."</td>
-                                                <td>".$fecha."</td>
-                                                <td>".$region."</td>
-                                                <td>".$comuna."</td>
-                                                <td>".$cantidad."</td>
-                                                <td>".$metros."</td>
-                                                <td>".$peso."</td>
-                                                <td>".$qsobres."</td>
-                                                <td>".$tipopago."</td>
-                                                <td>$".number_format((int)$valordeclarado, 0, ',', '.')."</td>
-                                                <td>$".number_format((int)$valor, 0, ',', '.')."</td>
-                                    </tr> ";
-                                        } else {
-                                        echo"
-                                        <td>".$idorden."</td>
-                                        <td>".$fecha."</td>
-                                        <td>".$region."</td>
-                                        <td>".$provincia."</td>
-                                        <td>".$comuna."</td>
-                                        <td>".$cantidad."</td>
-                                        <td>".$metros."</td>
-                                        <td>".$peso."</td>
-                                        <td>".$qsobres."</td>
-                                        <td>".$tipopago."</td>
-                                    </tr>  ";
-                                    }
-                                } ?>
-                            </tbody>
-                        </table>
-                    </div>
-                </form>
+                </div>
             </div>
+        </div>
         <!-- Control Sidebar -->
         <aside class="control-sidebar control-sidebar-dark">
             <!-- Control sidebar content goes here -->
