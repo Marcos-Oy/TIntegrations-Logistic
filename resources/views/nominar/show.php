@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nominar</title>
+    <title>Editar Usuarios</title>
     <?php
         include ('../layouts/dependencies.php');
         include '../nominar/dependencies.php';
@@ -20,452 +20,262 @@
             include '../layouts/aside.php';
         ?>
         <div class="content-wrapper">
-            <div class="card">
-                <div class="card-header">
-                    <h3 class="card-title">DataTable with default features</h3>
+
+
+
+            <section class="content">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-9">
+                            <div class="card card-primary">
+                                <div class="card-header">
+                                    <h2>
+                                        Nominar órdenes
+                                        <a href="#" class="justify-content-md-end">
+                                            <button type="button" class="btn btn-secondary">
+                                                Filtrar
+                                            </button>
+                                        </a>
+                                        <a href="#" class="justify-content-md-end">
+                                            <button type="button" class="btn btn-success">
+                                                Excel
+                                            </button>
+                                        </a>
+                                    </h2>
+                                </div>
+                                <!-- /.card-header -->
+                                <div class="card-body">
+                                    <form>
+                                        <div class="row">
+
+                                            <!-- COLUMNA 1 -->
+
+                                            <div class="col-sm-4">
+                                                <!-- text input -->
+                                                <div class="form-group">
+                                                    <label>Nombre</label>
+                                                    <input type="text" class="form-control"
+                                                        placeholder="Ingrese nombre aquí...">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label>Apellido Paterno</label>
+                                                    <input type="text" class="form-control"
+                                                        placeholder="Ingrese apellido paterno aquí...">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label>Apellido Materno</label>
+                                                    <input type="text" class="form-control"
+                                                        placeholder="Ingrese apellido materno aquí...">
+                                                </div>
+
+                                            </div>
+
+                                            <!-- COLUMNA 2 -->
+
+                                            <div class="col-sm-4">
+
+                                                <div class="form-group">
+                                                    <label>Teléfono 1</label>
+                                                    <div class="input-group">
+                                                        <div class="input-group-prepend">
+                                                            <span class="input-group-text"><i class="fas">+56</i></span>
+                                                        </div>
+                                                        <input type="number" class="form-control"
+                                                            placeholder="Ingrese número aquí...">
+                                                    </div>
+                                                </div>
+
+                                                <div class="form-group">
+                                                    <label>Teléfono 2</label>
+                                                    <div class="input-group">
+                                                        <div class="input-group-prepend">
+                                                            <span class="input-group-text"><i class="fas">+56</i></span>
+                                                        </div>
+                                                        <input type="number" class="form-control"
+                                                            placeholder="Ingrese número aquí...">
+                                                    </div>
+                                                </div>
+
+                                                <div class="form-group">
+                                                    <label>Correo</label>
+                                                    <div class="input-group">
+                                                        <div class="input-group-prepend">
+                                                            <span class="input-group-text"><i
+                                                                    class="fas fa-envelope"></i></span>
+                                                        </div>
+                                                        <input type="email" class="form-control"
+                                                            placeholder="Ingrese email aquí...">
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <!-- COLUMNA 3 -->
+
+                                            <div class="col-sm-4">
+                                                <div class="form-group">
+                                                    <label>Seleccionar Oficina</label>
+                                                    <select class="form-control">
+                                                        <option>option 1</option>
+                                                        <option>option 2</option>
+                                                        <option>option 3</option>
+                                                        <option>option 4</option>
+                                                        <option>option 5</option>
+                                                    </select>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label>Seleccionar Cargo</label>
+                                                    <select class="form-control">
+                                                        <option>option 1</option>
+                                                        <option>option 2</option>
+                                                        <option>option 3</option>
+                                                        <option>option 4</option>
+                                                        <option>option 5</option>
+                                                    </select>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label>Seleccionar fecha</label>
+                                                    <input type="date" class="form-control">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                            <!-- /.card-body -->
+                        </div>
+                    </div>
                 </div>
-                <!-- /.card-header -->
-                <div class="card-body">
-                    <table id="example1" class="table table-bordered table-striped">
-                        <thead>
-                            <tr>
-                                <th>Rendering engine</th>
-                                <th>Browser</th>
-                                <th>Platform(s)</th>
-                                <th>Engine version</th>
-                                <th>CSS grade</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>Trident</td>
-                                <td>Internet
-                                    Explorer 4.0
-                                </td>
-                                <td>Win 95+</td>
-                                <td> 4</td>
-                                <td>X</td>
-                            </tr>
-                            <tr>
-                                <td>Trident</td>
-                                <td>Internet
-                                    Explorer 5.0
-                                </td>
-                                <td>Win 95+</td>
-                                <td>5</td>
-                                <td>C</td>
-                            </tr>
-                            <tr>
-                                <td>Trident</td>
-                                <td>Internet
-                                    Explorer 5.5
-                                </td>
-                                <td>Win 95+</td>
-                                <td>5.5</td>
-                                <td>A</td>
-                            </tr>
-                            <tr>
-                                <td>Trident</td>
-                                <td>Internet
-                                    Explorer 6
-                                </td>
-                                <td>Win 98+</td>
-                                <td>6</td>
-                                <td>A</td>
-                            </tr>
-                            <tr>
-                                <td>Trident</td>
-                                <td>Internet Explorer 7</td>
-                                <td>Win XP SP2+</td>
-                                <td>7</td>
-                                <td>A</td>
-                            </tr>
-                            <tr>
-                                <td>Trident</td>
-                                <td>AOL browser (AOL desktop)</td>
-                                <td>Win XP</td>
-                                <td>6</td>
-                                <td>A</td>
-                            </tr>
-                            <tr>
-                                <td>Gecko</td>
-                                <td>Firefox 1.0</td>
-                                <td>Win 98+ / OSX.2+</td>
-                                <td>1.7</td>
-                                <td>A</td>
-                            </tr>
-                            <tr>
-                                <td>Gecko</td>
-                                <td>Firefox 1.5</td>
-                                <td>Win 98+ / OSX.2+</td>
-                                <td>1.8</td>
-                                <td>A</td>
-                            </tr>
-                            <tr>
-                                <td>Gecko</td>
-                                <td>Firefox 2.0</td>
-                                <td>Win 98+ / OSX.2+</td>
-                                <td>1.8</td>
-                                <td>A</td>
-                            </tr>
-                            <tr>
-                                <td>Gecko</td>
-                                <td>Firefox 3.0</td>
-                                <td>Win 2k+ / OSX.3+</td>
-                                <td>1.9</td>
-                                <td>A</td>
-                            </tr>
-                            <tr>
-                                <td>Gecko</td>
-                                <td>Camino 1.0</td>
-                                <td>OSX.2+</td>
-                                <td>1.8</td>
-                                <td>A</td>
-                            </tr>
-                            <tr>
-                                <td>Gecko</td>
-                                <td>Camino 1.5</td>
-                                <td>OSX.3+</td>
-                                <td>1.8</td>
-                                <td>A</td>
-                            </tr>
-                            <tr>
-                                <td>Gecko</td>
-                                <td>Netscape 7.2</td>
-                                <td>Win 95+ / Mac OS 8.6-9.2</td>
-                                <td>1.7</td>
-                                <td>A</td>
-                            </tr>
-                            <tr>
-                                <td>Gecko</td>
-                                <td>Netscape Browser 8</td>
-                                <td>Win 98SE+</td>
-                                <td>1.7</td>
-                                <td>A</td>
-                            </tr>
-                            <tr>
-                                <td>Gecko</td>
-                                <td>Netscape Navigator 9</td>
-                                <td>Win 98+ / OSX.2+</td>
-                                <td>1.8</td>
-                                <td>A</td>
-                            </tr>
-                            <tr>
-                                <td>Gecko</td>
-                                <td>Mozilla 1.0</td>
-                                <td>Win 95+ / OSX.1+</td>
-                                <td>1</td>
-                                <td>A</td>
-                            </tr>
-                            <tr>
-                                <td>Gecko</td>
-                                <td>Mozilla 1.1</td>
-                                <td>Win 95+ / OSX.1+</td>
-                                <td>1.1</td>
-                                <td>A</td>
-                            </tr>
-                            <tr>
-                                <td>Gecko</td>
-                                <td>Mozilla 1.2</td>
-                                <td>Win 95+ / OSX.1+</td>
-                                <td>1.2</td>
-                                <td>A</td>
-                            </tr>
-                            <tr>
-                                <td>Gecko</td>
-                                <td>Mozilla 1.3</td>
-                                <td>Win 95+ / OSX.1+</td>
-                                <td>1.3</td>
-                                <td>A</td>
-                            </tr>
-                            <tr>
-                                <td>Gecko</td>
-                                <td>Mozilla 1.4</td>
-                                <td>Win 95+ / OSX.1+</td>
-                                <td>1.4</td>
-                                <td>A</td>
-                            </tr>
-                            <tr>
-                                <td>Gecko</td>
-                                <td>Mozilla 1.5</td>
-                                <td>Win 95+ / OSX.1+</td>
-                                <td>1.5</td>
-                                <td>A</td>
-                            </tr>
-                            <tr>
-                                <td>Gecko</td>
-                                <td>Mozilla 1.6</td>
-                                <td>Win 95+ / OSX.1+</td>
-                                <td>1.6</td>
-                                <td>A</td>
-                            </tr>
-                            <tr>
-                                <td>Gecko</td>
-                                <td>Mozilla 1.7</td>
-                                <td>Win 98+ / OSX.1+</td>
-                                <td>1.7</td>
-                                <td>A</td>
-                            </tr>
-                            <tr>
-                                <td>Gecko</td>
-                                <td>Mozilla 1.8</td>
-                                <td>Win 98+ / OSX.1+</td>
-                                <td>1.8</td>
-                                <td>A</td>
-                            </tr>
-                            <tr>
-                                <td>Gecko</td>
-                                <td>Seamonkey 1.1</td>
-                                <td>Win 98+ / OSX.2+</td>
-                                <td>1.8</td>
-                                <td>A</td>
-                            </tr>
-                            <tr>
-                                <td>Gecko</td>
-                                <td>Epiphany 2.20</td>
-                                <td>Gnome</td>
-                                <td>1.8</td>
-                                <td>A</td>
-                            </tr>
-                            <tr>
-                                <td>Webkit</td>
-                                <td>Safari 1.2</td>
-                                <td>OSX.3</td>
-                                <td>125.5</td>
-                                <td>A</td>
-                            </tr>
-                            <tr>
-                                <td>Webkit</td>
-                                <td>Safari 1.3</td>
-                                <td>OSX.3</td>
-                                <td>312.8</td>
-                                <td>A</td>
-                            </tr>
-                            <tr>
-                                <td>Webkit</td>
-                                <td>Safari 2.0</td>
-                                <td>OSX.4+</td>
-                                <td>419.3</td>
-                                <td>A</td>
-                            </tr>
-                            <tr>
-                                <td>Webkit</td>
-                                <td>Safari 3.0</td>
-                                <td>OSX.4+</td>
-                                <td>522.1</td>
-                                <td>A</td>
-                            </tr>
-                            <tr>
-                                <td>Webkit</td>
-                                <td>OmniWeb 5.5</td>
-                                <td>OSX.4+</td>
-                                <td>420</td>
-                                <td>A</td>
-                            </tr>
-                            <tr>
-                                <td>Webkit</td>
-                                <td>iPod Touch / iPhone</td>
-                                <td>iPod</td>
-                                <td>420.1</td>
-                                <td>A</td>
-                            </tr>
-                            <tr>
-                                <td>Webkit</td>
-                                <td>S60</td>
-                                <td>S60</td>
-                                <td>413</td>
-                                <td>A</td>
-                            </tr>
-                            <tr>
-                                <td>Presto</td>
-                                <td>Opera 7.0</td>
-                                <td>Win 95+ / OSX.1+</td>
-                                <td>-</td>
-                                <td>A</td>
-                            </tr>
-                            <tr>
-                                <td>Presto</td>
-                                <td>Opera 7.5</td>
-                                <td>Win 95+ / OSX.2+</td>
-                                <td>-</td>
-                                <td>A</td>
-                            </tr>
-                            <tr>
-                                <td>Presto</td>
-                                <td>Opera 8.0</td>
-                                <td>Win 95+ / OSX.2+</td>
-                                <td>-</td>
-                                <td>A</td>
-                            </tr>
-                            <tr>
-                                <td>Presto</td>
-                                <td>Opera 8.5</td>
-                                <td>Win 95+ / OSX.2+</td>
-                                <td>-</td>
-                                <td>A</td>
-                            </tr>
-                            <tr>
-                                <td>Presto</td>
-                                <td>Opera 9.0</td>
-                                <td>Win 95+ / OSX.3+</td>
-                                <td>-</td>
-                                <td>A</td>
-                            </tr>
-                            <tr>
-                                <td>Presto</td>
-                                <td>Opera 9.2</td>
-                                <td>Win 88+ / OSX.3+</td>
-                                <td>-</td>
-                                <td>A</td>
-                            </tr>
-                            <tr>
-                                <td>Presto</td>
-                                <td>Opera 9.5</td>
-                                <td>Win 88+ / OSX.3+</td>
-                                <td>-</td>
-                                <td>A</td>
-                            </tr>
-                            <tr>
-                                <td>Presto</td>
-                                <td>Opera for Wii</td>
-                                <td>Wii</td>
-                                <td>-</td>
-                                <td>A</td>
-                            </tr>
-                            <tr>
-                                <td>Presto</td>
-                                <td>Nokia N800</td>
-                                <td>N800</td>
-                                <td>-</td>
-                                <td>A</td>
-                            </tr>
-                            <tr>
-                                <td>Presto</td>
-                                <td>Nintendo DS browser</td>
-                                <td>Nintendo DS</td>
-                                <td>8.5</td>
-                                <td>C/A<sup>1</sup></td>
-                            </tr>
-                            <tr>
-                                <td>KHTML</td>
-                                <td>Konqureror 3.1</td>
-                                <td>KDE 3.1</td>
-                                <td>3.1</td>
-                                <td>C</td>
-                            </tr>
-                            <tr>
-                                <td>KHTML</td>
-                                <td>Konqureror 3.3</td>
-                                <td>KDE 3.3</td>
-                                <td>3.3</td>
-                                <td>A</td>
-                            </tr>
-                            <tr>
-                                <td>KHTML</td>
-                                <td>Konqureror 3.5</td>
-                                <td>KDE 3.5</td>
-                                <td>3.5</td>
-                                <td>A</td>
-                            </tr>
-                            <tr>
-                                <td>Tasman</td>
-                                <td>Internet Explorer 4.5</td>
-                                <td>Mac OS 8-9</td>
-                                <td>-</td>
-                                <td>X</td>
-                            </tr>
-                            <tr>
-                                <td>Tasman</td>
-                                <td>Internet Explorer 5.1</td>
-                                <td>Mac OS 7.6-9</td>
-                                <td>1</td>
-                                <td>C</td>
-                            </tr>
-                            <tr>
-                                <td>Tasman</td>
-                                <td>Internet Explorer 5.2</td>
-                                <td>Mac OS 8-X</td>
-                                <td>1</td>
-                                <td>C</td>
-                            </tr>
-                            <tr>
-                                <td>Misc</td>
-                                <td>NetFront 3.1</td>
-                                <td>Embedded devices</td>
-                                <td>-</td>
-                                <td>C</td>
-                            </tr>
-                            <tr>
-                                <td>Misc</td>
-                                <td>NetFront 3.4</td>
-                                <td>Embedded devices</td>
-                                <td>-</td>
-                                <td>A</td>
-                            </tr>
-                            <tr>
-                                <td>Misc</td>
-                                <td>Dillo 0.8</td>
-                                <td>Embedded devices</td>
-                                <td>-</td>
-                                <td>X</td>
-                            </tr>
-                            <tr>
-                                <td>Misc</td>
-                                <td>Links</td>
-                                <td>Text only</td>
-                                <td>-</td>
-                                <td>X</td>
-                            </tr>
-                            <tr>
-                                <td>Misc</td>
-                                <td>Lynx</td>
-                                <td>Text only</td>
-                                <td>-</td>
-                                <td>X</td>
-                            </tr>
-                            <tr>
-                                <td>Misc</td>
-                                <td>IE Mobile</td>
-                                <td>Windows Mobile 6</td>
-                                <td>-</td>
-                                <td>C</td>
-                            </tr>
-                            <tr>
-                                <td>Misc</td>
-                                <td>PSP browser</td>
-                                <td>PSP</td>
-                                <td>-</td>
-                                <td>C</td>
-                            </tr>
-                            <tr>
-                                <td>Other browsers</td>
-                                <td>All others</td>
-                                <td>-</td>
-                                <td>-</td>
-                                <td>U</td>
-                            </tr>
-                        </tbody>
-                        <tfoot>
-                            <tr>
-                                <th>Rendering engine</th>
-                                <th>Browser</th>
-                                <th>Platform(s)</th>
-                                <th>Engine version</th>
-                                <th>CSS grade</th>
-                            </tr>
-                        </tfoot>
-                    </table>
+            </section>
+
+            <section class="content">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-4">
+                            <div class="card card-primary">
+                                <div class="card-header">
+                                    <h2 class="card-title">Nominar órdenes</h2>
+                                </div>
+                                <!-- /.card-header -->
+                                <div class="card-body">
+                                    <form>
+                                        <div class="row">
+                                            <div class="col-sm-6">
+                                                <div class="form-group">
+                                                    <label>Seleccionar fecha</label>
+                                                    <input type="date" class="form-control">
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <div class="form-group">
+                                                    <label>Seleccionar fecha</label>
+                                                    <input type="date" class="form-control">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <!-- /.card-body -->
-            </div>
+            </section>
+
+
+
+
+            <!-- Main content -->
+            <section class="content">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="card card-primary">
+                                <div class="card-header">
+                                    <h2>Usuarios
+                                        <a href="../users/create.php" class="justify-content-md-end">
+                                            <button type="button" class="btn btn-success">
+                                                Nuevo
+                                            </button>
+                                        </a>
+                                    </h2>
+                                </div>
+                                <!-- /.card-header -->
+                                <div class="card-body">
+                                    <table id="example1" class="table table-bordered table-striped">
+                                        <thead>
+                                            <tr>
+                                                <th>#</th>
+                                                <th>Nombre</th>
+                                                <th>Cargo</th>
+                                                <th>E-Mail</th>
+                                                <th>Teléfono</th>
+                                                <th>Teléfono 2</th>
+                                                <th>Fecha de nac</th>
+                                                <th>Acciones</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>1</td>
+                                                <td>Carlos Gaete</td>
+                                                <td>Administrador</td>
+                                                <td>carlos.gaete@tpqt.cl</td>
+                                                <td>963403223</td>
+                                                <td>963403223</td>
+                                                <td>1983-12-14</td>
+                                                <td>
+                                                    <a href="../users/edit.php"">
+                                                        <button type=" button" class="btn btn-warning">
+                                                        Editar
+                                                        </button>
+                                                    </a>
+                                                    <button type="button" class="btn btn-danger">Eliminar</button>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>2</td>
+                                                <td>Marcos Oyarzo</td>
+                                                <td>Repartidor</td>
+                                                <td>marcos.oyarzo@tpqt.cl</td>
+                                                <td>933279376</td>
+                                                <td>933279376</td>
+                                                <td>1997-01-30</td>
+                                                <td>
+                                                    <a href="../users/edit.php"">
+                                                        <button type=" button" class="btn btn-warning">
+                                                        Editar
+                                                        </button>
+                                                    </a>
+                                                    <button type="button" class="btn btn-danger">Eliminar</button>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                        <tfoot>
+                                            <tr>
+                                                <th>#</th>
+                                                <th>Nombre</th>
+                                                <th>Cargo</th>
+                                                <th>E-Mail</th>
+                                                <th>Teléfono</th>
+                                                <th>Teléfono 2</th>
+                                                <th>Fecha de nac</th>
+                                                <th>Acciones</th>
+                                            </tr>
+                                        </tfoot>
+                                    </table>
+                                </div>
+                                <!-- /.card-body -->
+                            </div>
+                            <!-- /.card -->
+                        </div>
+                        <!-- /.col -->
+                    </div>
+                    <!-- /.row -->
+                </div>
+                <!-- /.container-fluid -->
+            </section>
+            <!-- /.content -->
         </div>
-        <!-- Control Sidebar -->
-        <aside class="control-sidebar control-sidebar-dark">
-            <!-- Control sidebar content goes here -->
-        </aside>
-        <!-- /.control-sidebar -->
-    </div>
-    <?php
-        include '../layouts/footer.php';
-    ?>
+        <?php
+            include '../layouts/footer.php';
+        ?>
 </body>

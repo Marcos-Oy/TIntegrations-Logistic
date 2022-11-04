@@ -1,4 +1,4 @@
-    <!-- JS de asers.php -->
+    <!-- JS de tables -->
     <script src="../../../resources/assets/js/tables.js"></script>
 
     <!-- DataTables -->
