@@ -21,12 +21,10 @@
         ?>
         <div class="content-wrapper">
 
-
-
             <section class="content">
                 <div class="container-fluid">
                     <div class="row">
-                        <div class="col-9">
+                        <div class="col-12">
                             <div class="card card-primary">
                                 <div class="card-header">
                                     <h2>
@@ -47,71 +45,7 @@
                                 <div class="card-body">
                                     <form>
                                         <div class="row">
-
-                                            <!-- COLUMNA 1 -->
-
-                                            <div class="col-sm-4">
-                                                <!-- text input -->
-                                                <div class="form-group">
-                                                    <label>Nombre</label>
-                                                    <input type="text" class="form-control"
-                                                        placeholder="Ingrese nombre aquí...">
-                                                </div>
-                                                <div class="form-group">
-                                                    <label>Apellido Paterno</label>
-                                                    <input type="text" class="form-control"
-                                                        placeholder="Ingrese apellido paterno aquí...">
-                                                </div>
-                                                <div class="form-group">
-                                                    <label>Apellido Materno</label>
-                                                    <input type="text" class="form-control"
-                                                        placeholder="Ingrese apellido materno aquí...">
-                                                </div>
-
-                                            </div>
-
-                                            <!-- COLUMNA 2 -->
-
-                                            <div class="col-sm-4">
-
-                                                <div class="form-group">
-                                                    <label>Teléfono 1</label>
-                                                    <div class="input-group">
-                                                        <div class="input-group-prepend">
-                                                            <span class="input-group-text"><i class="fas">+56</i></span>
-                                                        </div>
-                                                        <input type="number" class="form-control"
-                                                            placeholder="Ingrese número aquí...">
-                                                    </div>
-                                                </div>
-
-                                                <div class="form-group">
-                                                    <label>Teléfono 2</label>
-                                                    <div class="input-group">
-                                                        <div class="input-group-prepend">
-                                                            <span class="input-group-text"><i class="fas">+56</i></span>
-                                                        </div>
-                                                        <input type="number" class="form-control"
-                                                            placeholder="Ingrese número aquí...">
-                                                    </div>
-                                                </div>
-
-                                                <div class="form-group">
-                                                    <label>Correo</label>
-                                                    <div class="input-group">
-                                                        <div class="input-group-prepend">
-                                                            <span class="input-group-text"><i
-                                                                    class="fas fa-envelope"></i></span>
-                                                        </div>
-                                                        <input type="email" class="form-control"
-                                                            placeholder="Ingrese email aquí...">
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            <!-- COLUMNA 3 -->
-
-                                            <div class="col-sm-4">
+                                            <div class="col-sm-3">
                                                 <div class="form-group">
                                                     <label>Seleccionar Oficina</label>
                                                     <select class="form-control">
@@ -122,8 +56,10 @@
                                                         <option>option 5</option>
                                                     </select>
                                                 </div>
+                                            </div>
+                                            <div class="col-sm-3">
                                                 <div class="form-group">
-                                                    <label>Seleccionar Cargo</label>
+                                                    <label>Seleccionar Estado de la Orden</label>
                                                     <select class="form-control">
                                                         <option>option 1</option>
                                                         <option>option 2</option>
@@ -132,9 +68,29 @@
                                                         <option>option 5</option>
                                                     </select>
                                                 </div>
+                                            </div>
+                                            <div class="col-sm-3">
                                                 <div class="form-group">
-                                                    <label>Seleccionar fecha</label>
-                                                    <input type="date" class="form-control">
+                                                    <label>Seleccionar Región</label>
+                                                    <select class="form-control">
+                                                        <option>option 1</option>
+                                                        <option>option 2</option>
+                                                        <option>option 3</option>
+                                                        <option>option 4</option>
+                                                        <option>option 5</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-3">
+                                                <div class="form-group">
+                                                    <label>Seleccionar</label>
+                                                    <select class="form-control">
+                                                        <option>option 1</option>
+                                                        <option>option 2</option>
+                                                        <option>option 3</option>
+                                                        <option>option 4</option>
+                                                        <option>option 5</option>
+                                                    </select>
                                                 </div>
                                             </div>
                                         </div>
@@ -150,10 +106,11 @@
             <section class="content">
                 <div class="container-fluid">
                     <div class="row">
+
                         <div class="col-4">
-                            <div class="card card-primary">
+                            <div class="card card-dark">
                                 <div class="card-header">
-                                    <h2 class="card-title">Nominar órdenes</h2>
+                                    <h2 class="card-title">Fecha creación de orden</h2>
                                 </div>
                                 <!-- /.card-header -->
                                 <div class="card-body">
@@ -161,13 +118,13 @@
                                         <div class="row">
                                             <div class="col-sm-6">
                                                 <div class="form-group">
-                                                    <label>Seleccionar fecha</label>
+                                                    <label>Desde</label>
                                                     <input type="date" class="form-control">
                                                 </div>
                                             </div>
                                             <div class="col-sm-6">
                                                 <div class="form-group">
-                                                    <label>Seleccionar fecha</label>
+                                                    <label>Hasta</label>
                                                     <input type="date" class="form-control">
                                                 </div>
                                             </div>
@@ -176,89 +133,138 @@
                                 </div>
                             </div>
                         </div>
+
+                        <div class="col-4">
+                            <div class="card card-dark">
+                                <div class="card-header">
+                                    <h2 class="card-title">Nominar creación de actividad</h2>
+                                </div>
+                                <!-- /.card-header -->
+                                <div class="card-body">
+                                    <form>
+                                        <div class="row">
+                                            <div class="col-sm-6">
+                                                <div class="form-group">
+                                                    <label>Desde</label>
+                                                    <input type="date" class="form-control">
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <div class="form-group">
+                                                    <label>Hasta</label>
+                                                    <input type="date" class="form-control">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-4">
+                            <div class="card card-dark">
+                                <div class="card-header">
+                                    <h2 class="card-title">Repartidor</h2>
+                                </div>
+                                <!-- /.card-header -->
+                                <div class="card-body">
+                                    <form>
+                                        <div class="row">
+                                            <div class="col-sm-12">
+                                                <div class="form-group">
+                                                    <label>Seleccionar</label>
+                                                    <select class="form-control">
+                                                        <option>option 1</option>
+                                                        <option>option 2</option>
+                                                        <option>option 3</option>
+                                                        <option>option 4</option>
+                                                        <option>option 5</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
+
             </section>
-
-
-
 
             <!-- Main content -->
             <section class="content">
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-12">
-                            <div class="card card-primary">
+                            <div class="card">
                                 <div class="card-header">
-                                    <h2>Usuarios
-                                        <a href="../users/create.php" class="justify-content-md-end">
-                                            <button type="button" class="btn btn-success">
-                                                Nuevo
-                                            </button>
-                                        </a>
-                                    </h2>
+                                    <h2 class="card-title">Listado de nóminas</h2>
                                 </div>
                                 <!-- /.card-header -->
                                 <div class="card-body">
                                     <table id="example1" class="table table-bordered table-striped">
                                         <thead>
                                             <tr>
-                                                <th>#</th>
-                                                <th>Nombre</th>
-                                                <th>Cargo</th>
-                                                <th>E-Mail</th>
-                                                <th>Teléfono</th>
-                                                <th>Teléfono 2</th>
-                                                <th>Fecha de nac</th>
-                                                <th>Acciones</th>
+                                                <th>ODT</th>
+                                                <th>FECHA</th>
+                                                <th>OFICINA</th>
+                                                <th>REGIÓN</th>
+                                                <th>COMUNA</th>
+                                                <th>ESTADO ORDEN</th>
+                                                <th>ACTIVIDAD</th>
+                                                <th>USUARIO CREADOR</th>
+                                                <th>UBICACIÓN</th>
+                                                <th>REPARTIDOR</th>
+                                                <th>VALOR FLETE</th>
+                                                <th>TIPO PAGO</th>
                                             </tr>
                                         </thead>
                                         <tbody>
                                             <tr>
-                                                <td>1</td>
-                                                <td>Carlos Gaete</td>
-                                                <td>Administrador</td>
-                                                <td>carlos.gaete@tpqt.cl</td>
-                                                <td>963403223</td>
-                                                <td>963403223</td>
-                                                <td>1983-12-14</td>
-                                                <td>
-                                                    <a href="../users/edit.php"">
-                                                        <button type=" button" class="btn btn-warning">
-                                                        Editar
-                                                        </button>
-                                                    </a>
-                                                    <button type="button" class="btn btn-danger">Eliminar</button>
-                                                </td>
+                                                <td>ODT</td>
+                                                <td>FECHA</td>
+                                                <td>OFICINA</td>
+                                                <td>REGIÓN</td>
+                                                <td>COMUNA</td>
+                                                <td>ESTADO ORDEN</td>
+                                                <td>ACTIVIDAD</td>
+                                                <td>USUARIO CREADOR</td>
+                                                <td>UBICACIÓN</td>
+                                                <td>REPARTIDOR</td>
+                                                <td>VALOR FLETE</td>
+                                                <td>TIPO PAGO</td>
                                             </tr>
                                             <tr>
-                                                <td>2</td>
-                                                <td>Marcos Oyarzo</td>
-                                                <td>Repartidor</td>
-                                                <td>marcos.oyarzo@tpqt.cl</td>
-                                                <td>933279376</td>
-                                                <td>933279376</td>
-                                                <td>1997-01-30</td>
-                                                <td>
-                                                    <a href="../users/edit.php"">
-                                                        <button type=" button" class="btn btn-warning">
-                                                        Editar
-                                                        </button>
-                                                    </a>
-                                                    <button type="button" class="btn btn-danger">Eliminar</button>
-                                                </td>
+                                                <td>ODT</td>
+                                                <td>FECHA</td>
+                                                <td>OFICINA</td>
+                                                <td>REGIÓN</td>
+                                                <td>COMUNA</td>
+                                                <td>ESTADO ORDEN</td>
+                                                <td>ACTIVIDAD</td>
+                                                <td>USUARIO CREADOR</td>
+                                                <td>UBICACIÓN</td>
+                                                <td>REPARTIDOR</td>
+                                                <td>VALOR FLETE</td>
+                                                <td>TIPO PAGO</td>
                                             </tr>
                                         </tbody>
                                         <tfoot>
                                             <tr>
-                                                <th>#</th>
-                                                <th>Nombre</th>
-                                                <th>Cargo</th>
-                                                <th>E-Mail</th>
-                                                <th>Teléfono</th>
-                                                <th>Teléfono 2</th>
-                                                <th>Fecha de nac</th>
-                                                <th>Acciones</th>
+                                                <th>ODT</th>
+                                                <th>FECHA</th>
+                                                <th>OFICINA</th>
+                                                <th>REGIÓN</th>
+                                                <th>COMUNA</th>
+                                                <th>ESTADO ORDEN</th>
+                                                <th>ACTIVIDAD</th>
+                                                <th>USUARIO CREADOR</th>
+                                                <th>UBICACIÓN</th>
+                                                <th>REPARTIDOR</th>
+                                                <th>VALOR FLETE</th>
+                                                <th>TIPO PAGO</th>
                                             </tr>
                                         </tfoot>
                                     </table>
