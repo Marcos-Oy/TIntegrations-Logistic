@@ -26,6 +26,7 @@
                     <div class="input-group mb-3">
                         <input type="text" class="form-control" placeholder="Indique el Texto " aria-label="Username"
                             aria-describedby="basic-addon1">
+                        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
                         <button type="button" class="btn btn-primary">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                                 class="bi bi-search" viewBox="0 0 16 16">
@@ -33,8 +34,9 @@
                                     d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z">
                                 </path>
                             </svg>
-                            <font _mstmutation="1">BUSCAR</font>
+                            <font _mstmutation="1">BUSCAR</font> 
                         </button>
+                        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
                         <button type="button" class="btn btn-warning">LIMPIAR</button>
                     </div>
                 </div>
@@ -43,17 +45,17 @@
                 <div class="container text-center ">
                     <div class="input-group mb-2 ">
                         <input type="text" class="form-control" placeholder="Indique el Texto " aria-label="Username"
-                            aria-describedby="basic-addon1">
+                            aria-describedby="basic-addon1">&nbsp; &nbsp; 
                         <button type="button" class="btn btn-success">RECIBIR ENTREGA</button>
                     </div>
                 </div>
             </form>
             <form method="POST" action="recibirorden.php">
                 <div class="container">
-                    <div class="input-group mb-2">
+                    <div class="input-group mb-3">
                         <button type="button" class="btn btn-primary col" name="entrega" value="Recibir Entrega">
                             RECIBIR ENTREGA
-                        </button>
+                        </button>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
                         <button type="button" class="btn btn-success col " name="devolucion" value="Recibir Devolución">
                             RECIBIR DEVOLUCION
                         </button>
@@ -71,7 +73,7 @@
                                     </div>
                                     <!-- /.card-header -->
                                     <div class="card-body">
-                                        <table id="example1" class="table table-bordered table-striped">
+                                        <table  class="table table-striped table-bordered table-condensed table-hover">
                                             <thead>
                                                 <tr>
                                                     <th>ODT</th>
@@ -131,6 +133,8 @@
                 </section>
                 <!-- /.content -->
             </form>
+            <!-- Main content -->
+    
         </div>
         <!-- Control Sidebar -->
         <aside class="control-sidebar control-sidebar-dark">
