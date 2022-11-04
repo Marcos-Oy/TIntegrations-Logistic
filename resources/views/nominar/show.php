@@ -137,7 +137,7 @@
                         <div class="col-4">
                             <div class="card card-dark">
                                 <div class="card-header">
-                                    <h2 class="card-title">Nominar creación de actividad</h2>
+                                    <h2 class="card-title">Fecha creación de actividad</h2>
                                 </div>
                                 <!-- /.card-header -->
                                 <div class="card-body">
@@ -281,7 +281,8 @@
             </section>
             <!-- /.content -->
         </div>
-        <?php
-            include '../layouts/footer.php';
-        ?>
+    </div>
+    <?php
+        include '../layouts/footer.php';
+    ?>
 </body>
