@@ -62,76 +62,28 @@
                     </div>
                 </div>
                 <!-- Main content -->
-                <section class="content">
-                    <div class="container-fluid">
-                        <div class="row">
-                            <div class="col-12">
-
-                                <div class="card">
-                                    <div class="card-header">
-                                        <h3 class="card-title">Lista de recepciones</h3>
-                                    </div>
-                                    <!-- /.card-header -->
-                                    <div class="card-body">
-                                        <table  class="table table-striped table-bordered table-condensed table-hover">
-                                            <thead>
-                                                <tr>
-                                                    <th>ODT</th>
-                                                    <th>FECHA</th>
-                                                    <th>REGIÓN</th>
-                                                    <th>COMUNA</th>
-                                                    <th>BULTOS</th>
-                                                    <th>DIMENSIONES</th>
-                                                    <th>PESO</th>
-                                                    <th>CANT. SOBRES</th>
-                                                    <th>TIPO DE PAGO</th>
-                                                    <th>VALOR DECLARADO</th>
-                                                    <th>TOTAL</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                <tr>
-                                                    <td>dato1</td>
-                                                    <td>dato2</td>
-                                                    <td>dato3</td>
-                                                    <td>dato4</td>
-                                                    <td>dato5</td>
-                                                    <td>dato6</td>
-                                                    <td>dato7</td>
-                                                    <td>dato8</td>
-                                                    <td>dato9</td>
-                                                    <td>dato10</td>
-                                                    <td>dato11</td>
-                                                </tr>
-                                            </tbody>
-                                            <tfoot>
-                                                <tr>
-                                                    <td>dato1</td>
-                                                    <td>dato2</td>
-                                                    <td>dato3</td>
-                                                    <td>dato4</td>
-                                                    <td>dato5</td>
-                                                    <td>dato6</td>
-                                                    <td>dato7</td>
-                                                    <td>dato8</td>
-                                                    <td>dato9</td>
-                                                    <td>dato10</td>
-                                                    <td>dato11</td>
-                                                </tr>
-                                            </tfoot>
-                                        </table>
-                                    </div>
-                                    <!-- /.card-body -->
-                                </div>
-                                <!-- /.card -->
-                            </div>
-                            <!-- /.col -->
-                        </div>
-                        <!-- /.row -->
+                <div class="container  table-responsive">
+                        <table class="table table-success  text-center">
+                            <thead>
+                                <tr>
+                                    <th></th>
+                                    <th>ODT</th>
+                                    <th>Fecha</tH>
+                                    <th>Región</th>
+                                    <th>Comuna</th>
+                                    <th>Bultos</th>
+                                    <th>Dimensiones</th>
+                                    <th>Peso</th>
+                                    <th>Cant. Sobres</th>
+                                    <th>Tipo de pago</th>
+                                    <th>Valor declarado</th>
+                                    <th>Total</th>
+                                </tr>
+                            </thead>
+                          
+                        </table>
                     </div>
-                    <!-- /.container-fluid -->
-                </section>
-                <!-- /.content -->
+                
             </form>
             <!-- Main content -->
     
