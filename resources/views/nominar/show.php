@@ -24,7 +24,7 @@
             <section class="content">
                 <div class="container-fluid">
                     <div class="row">
-                        <div class="col-12">
+                        <div class="col-sm-12">
                             <div class="card card-primary">
                                 <div class="card-header">
                                     <h2>
@@ -45,6 +45,7 @@
                                 <div class="card-body">
                                     <form>
                                         <div class="row">
+
                                             <div class="col-sm-3">
                                                 <div class="form-group">
                                                     <label>Seleccionar Oficina</label>
@@ -57,6 +58,8 @@
                                                     </select>
                                                 </div>
                                             </div>
+
+
                                             <div class="col-sm-3">
                                                 <div class="form-group">
                                                     <label>Seleccionar Estado de la Orden</label>
@@ -107,7 +110,7 @@
                 <div class="container-fluid">
                     <div class="row">
 
-                        <div class="col-4">
+                        <div class="col-sm-4">
                             <div class="card card-dark">
                                 <div class="card-header">
                                     <h2 class="card-title">Fecha creación de orden</h2>
@@ -134,7 +137,7 @@
                             </div>
                         </div>
 
-                        <div class="col-4">
+                        <div class="col-sm-4">
                             <div class="card card-dark">
                                 <div class="card-header">
                                     <h2 class="card-title">Fecha creación de actividad</h2>
@@ -161,7 +164,7 @@
                             </div>
                         </div>
 
-                        <div class="col-4">
+                        <div class="col-sm-4">
                             <div class="card card-dark">
                                 <div class="card-header">
                                     <h2 class="card-title">Repartidor</h2>
@@ -197,7 +200,7 @@
             <section class="content">
                 <div class="container-fluid">
                     <div class="row">
-                        <div class="col-12">
+                        <div class="col-sm-12">
                             <div class="card">
                                 <div class="card-header">
                                     <h2 class="card-title">Listado de nóminas</h2>

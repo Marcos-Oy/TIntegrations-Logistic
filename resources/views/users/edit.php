@@ -24,7 +24,7 @@
             <section class="content">
                 <div class="container-fluid">
                     <div class="row">
-                        <div class="col-9">
+                        <div class="col-sm-9">
                             <div class="card card-primary">
                                 <div class="card-header">
                                     <h2>
@@ -138,7 +138,7 @@
                             <!-- /.card-body -->
 
                         </div>
-                        <div class="col-3">
+                        <div class="col-sm-3">
                             <div class="card card-primary">
                                 <div class="card-header">
                                     <h2>
