@@ -1,14 +1,16 @@
+//buttons: ["copy", "csv", "excel", "pdf", "print", "colvis"], //Respaldo
+
 $(function () {
   $("#NominarTable")
     .DataTable({
       responsive: true,
       searching: false,
-      lengthChange: false,
+      lengthChange: true,
       autoWidth: false,
       ordering: true,
       info: false,
       paging: true,
-      buttons: ["copy", "csv", "excel", "pdf", "print", "colvis"],
+      //buttons: ["copy", "csv", "excel", "pdf", "print", "colvis"],
     })
     .buttons()
     .container()
@@ -18,12 +20,12 @@ $(function () {
     .DataTable({
       responsive: true,
       searching: true,
-      lengthChange: false,
+      lengthChange: true,
       autoWidth: false,
       ordering: true,
       info: false,
       paging: true,
-      buttons: ["copy", "csv", "excel", "pdf", "print", "colvis"],
+      //buttons: ["copy", "csv", "excel", "pdf", "print", "colvis"],
     })
     .buttons()
     .container()
