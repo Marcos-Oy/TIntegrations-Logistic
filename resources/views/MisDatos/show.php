@@ -8,7 +8,9 @@
     <title>Mis Datos</title>
     <?php
         include ('../layouts/dependencies.php');
+        include ('../MisDatos/dependencies.php')
     ?>
+
 </head>
 
 <body class="hold-transition sidebar-mini layout-fixed">
@@ -26,52 +28,48 @@
                             <div class="card card-dark">
                                 <div class="card-header">
                                     <h2 class="card-title">Mis Datos</h2>
-                                </div>
-                                <div class="card-body">
-                                    <div class="form-group">
-                                        <label>Nombre</label>
-                                        <input type="text" class="form-control" value="Carlos Gaete" disabled>
-                                    </div>
-                                    <div class="form-group">
-                                        <label>Teléfono</label>
-                                        <input type="text" class="form-control" value="963403223" disabled>
-                                    </div>
-                                    <div class="form-group">
-                                        <label>Teléfono 2</label>
-                                        <input type="text" class="form-control" value="963403223" disabled>
-                                    </div>
-                                    <div class="form-group">
-                                        <label>E-Mail</label>
-                                        <input type="text" class="form-control" value="carlos.gaete@tpqt.cl" disabled>
-                                    </div>
-                                    <div class="form-group">
-                                        <label>Oficina actual</label>
-                                        <input type="text" class="form-control" value="Bustamante" disabled>
+                                    <div
+                                        class="custom-control custom-switch d-grid gap-2 d-md-flex justify-content-md-end">
+                                        <h2 class="card-title">Habilitar edición</h2>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <input type="checkbox" class="custom-control-input" id="Hedit"
+                                            onclick="SwitchCheckBox()">
+                                        <label class="custom-control-label" for="Hedit"></label>
                                     </div>
                                 </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-4">
-                            <div class="card card-dark">
-                                <div class="card-header">
-                                    <h2 class="card-title">Cambiar de oficina</h2>
-                                </div>
-                                <!-- /.card-header -->
                                 <div class="card-body">
                                     <form>
                                         <div class="row">
                                             <div class="col-sm-12">
                                                 <div class="form-group">
-                                                    <label>Seleccionar nueva oficina</label>
-                                                    <select class="form-control">
-                                                        <option>option 1</option>
-                                                        <option>option 2</option>
+                                                    <label>Nombre</label>
+                                                    <input id="nombre" type="text" class="form-control"
+                                                        value="Carlos Gaete">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label>Teléfono</label>
+                                                    <input id="tel1" type="text" class="form-control" value="963403223">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label>Teléfono 2</label>
+                                                    <input id="tel2" type="text" class="form-control" value="963403223">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label>E-Mail</label>
+                                                    <input id="mail" type="text" class="form-control"
+                                                        value="carlos.gaete@tpqt.cl">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label>Oficina</label>
+                                                    <select id="ofi" class="form-control">
+                                                        <option>Bustamante</option>
+                                                        <option>Oficina 2</option>
                                                         <option>option 3</option>
                                                         <option>option 4</option>
                                                         <option>option 5</option>
                                                     </select>
                                                 </div>
-                                                <button type="button" class="btn btn-warning">Guardar</button>
+                                                <button id="btn1" type="button" class="btn btn-warning">Guardar</button>
                                             </div>
                                         </div>
                                     </form>
@@ -83,7 +81,6 @@
                                 <div class="card-header">
                                     <h2 class="card-title">Cambiar contraseña</h2>
                                 </div>
-                                <!-- /.card-header -->
                                 <div class="card-body">
                                     <form>
                                         <div class="row">
@@ -104,25 +101,19 @@
                                                     <input type="password" class="form-control"
                                                         placeholder="Confirme contraseña...">
                                                 </div>
-                                                <button type="button" class="btn btn-warning">Guardar</button>
+                                                <button id="btn2" type="button" class="btn btn-warning">Guardar</button>
                                             </div>
-
                                         </div>
+                                    </form>
                                 </div>
-                                </form>
                             </div>
                         </div>
                     </div>
                 </div>
             </section>
         </div>
-
-
-    </div>
-
     </div>
     <?php
         include '../layouts/footer.php';
     ?>
-
 </body>
