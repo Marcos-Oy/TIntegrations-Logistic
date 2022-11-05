@@ -84,13 +84,6 @@
                                                 id="qsobres" min="0">
                                         </div>
                                     </div>
-                                    <div class="row">
-                                        <div class="col-md-4">
-                                            <label>Seleccionar fecha</label>
-                                            <input type="date" class="form-control" placeholder="0" name="fecha"
-                                                id="fecha">
-                                        </div>
-                                    </div>
                                 </div>
                                 <!-- /.card-body -->
                                 <div class="row">
