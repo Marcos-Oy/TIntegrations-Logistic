@@ -1,0 +1,7 @@
+
+El directorio App contiene los archivos de código que se ejecuta al iniciar la aplicación, 
+para realizar todas las configuraciones necesarias.
+
+App es usado para ofrecer un hogar por defecto a todo el código personal de tu proyecto. 
+Eso incluye clases que puedan ofrecer funcionalidad a la aplicación, archivos de configuración y más. 
+Es considerado el directorio más importante de nuestro proyecto ya que es en el que más trabajaremos.
