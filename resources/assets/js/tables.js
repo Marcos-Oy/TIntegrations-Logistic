@@ -1,19 +1,31 @@
-$(function() {
-    $("#example1").DataTable({
-        "responsive": true,
-        "lengthChange": false,
-        "autoWidth": false,
-        "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
-    }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
-    $('#example2').DataTable({
-        "paging": true,
-        "lengthChange": false,
-        "searching": false,
-        "ordering": true,
-        "info": true,
-        "autoWidth": false,
-        "responsive": true,
-    });
-});
+$(function () {
+  $("#NominarTable")
+    .DataTable({
+      responsive: true,
+      searching: false,
+      lengthChange: false,
+      autoWidth: false,
+      ordering: true,
+      info: false,
+      paging: true,
+      buttons: ["copy", "csv", "excel", "pdf", "print", "colvis"],
+    })
+    .buttons()
+    .container()
+    .appendTo("#NominarTable_wrapper .col-md-6:eq(0)");
 
-//"buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"] //respaldo de código
+  $("#UsersTable")
+    .DataTable({
+      responsive: true,
+      searching: true,
+      lengthChange: false,
+      autoWidth: false,
+      ordering: true,
+      info: false,
+      paging: true,
+      buttons: ["copy", "csv", "excel", "pdf", "print", "colvis"],
+    })
+    .buttons()
+    .container()
+    .appendTo("#UsersTable_wrapper .col-md-6:eq(0)");
+});
