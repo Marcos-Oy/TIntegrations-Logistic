@@ -94,6 +94,136 @@
                                 </div>
                             </div>
                         </form>
+                        <form method="POST">
+                            <div class="row">
+                                <div class="col-lg-6 col6">
+                                    <div class="card card-info">
+                                        <div class="card-header">
+                                            Tipo de pago
+                                        </div>
+                                        <div class="card-body">
+                                            <div class="form-group">
+                                                <div class="custom-control custom-radio">
+                                                    <input class="custom-control-input" type="radio" id="customRadio2"
+                                                        name="customRadio">
+                                                    <label for="customRadio2"
+                                                        class="custom-control-label">Contado</label>
+                                                </div>
+                                                <div class="custom-control custom-radio">
+                                                    <input class="custom-control-input" type="radio" id="customRadio3"
+                                                        name="customRadio">
+                                                    <label for="customRadio3"
+                                                        class="custom-control-label">Transferencia</label>
+                                                </div>
+                                                <div class="custom-control custom-radio">
+                                                    <input class="custom-control-input" type="radio" id="customRadio4"
+                                                        name="customRadio">
+                                                    <label for="customRadio4" class="custom-control-label">Por
+                                                        pagar</label>
+                                                </div>
+                                                <label>Valor declarado</label>
+                                                <input type="text" class="form-control" placeholder="Valor declarado">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 col6">
+                                    <div class="card card-info">
+                                        <div class="card-header">
+                                            Tipo de documento
+                                        </div>
+                                        <div class="card-body">
+                                            <div class="form-group">
+                                                <div class="custom-control custom-radio">
+                                                    <input class="custom-control-input" type="radio" id="customRadio1"
+                                                        name="customRadio">
+                                                    <label for="customRadio1"
+                                                        class="custom-control-label">Boleta</label>
+                                                </div>
+                                                <div class="custom-control custom-radio">
+                                                    <input class="custom-control-input" type="radio" id="customRadio2"
+                                                        name="customRadio">
+                                                    <label for="customRadio2"
+                                                        class="custom-control-label">Factura</label>
+                                                </div>
+                                                <div class="custom-control custom-radio">
+                                                    <input class="custom-control-input" type="radio" id="customRadio3"
+                                                        name="customRadio">
+                                                    <label for="customRadio3" class="custom-control-label">Guía de
+                                                        despacho</label>
+                                                </div>
+                                                <div class="custom-control custom-radio">
+                                                    <input class="custom-control-input" type="radio" id="customRadio4"
+                                                        name="customRadio">
+                                                    <label for="customRadio4" class="custom-control-label">Sin
+                                                        documento</label>
+                                                </div>
+
+                                                <label>Número de documento</label>
+                                                <input type="text" class="form-control" placeholder="N° de documento">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card card-info">
+                                <div class="card-header">
+                                    <h3 class="card-title">Datos remitente</h3>
+                                </div>
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <label>RUT</label>
+                                            <input type="text" class="form-control" placeholder="12345678-9"
+                                                name="rmttrut" id="rmttrut" required>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <label>Nombre</label>
+                                            <input type="text" class="form-control"
+                                                placeholder="Nombre y apellido de remitente" name="rmttnombre"
+                                                id="rmttnombre">
+                                        </div>
+                                        <div class="col-md-4">
+                                            <label>Apellido</label>
+                                            <input type="text" class="form-control" placeholder="Apellidos"
+                                                name="rmttapell" id="rmttapell">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card card-info">
+                                    <div class="card-header">
+                                        <h3 class="card-title">Datos destinatario</h3>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="row">
+                                            <div class="col-md-4">
+                                                <label>RUT</label>
+                                                <input type="text" class="form-control" placeholder="12345678-9"
+                                                    name="dtnorut" id="dtnorut" required>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <label>Nombre</label>
+                                                <input type="text" class="form-control"
+                                                    placeholder="Nombre y apellido de destinatario" name="dtnonombre"
+                                                    id="dtnonombre">
+                                            </div>
+                                            <div class="col-md-4">
+                                                <label>Apellido</label>
+                                                <input type="text" class="form-control" placeholder="Apellidos"
+                                                    name="dtnoapell" id="dtnoapell">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- /.card-body -->
+                                <div class="row">
+                                    <div class="col">
+                                        <input type="submit" class="btn bg-lightblue form-control" value="Enviar"
+                                            name="enviar">
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
                     </div>
                     <div class="col-md-6">
                         <div class="row">
@@ -110,6 +240,17 @@
                                             <li>Bultos:</li>
                                             <li>Sobres:</li>
                                         </ul>
+                                        <p>Datos del remitente:</p>
+                                        <ul>
+                                            <li>Rut:</li>
+                                            <li>Nombre: </li>
+                                        </ul>
+                                        <p>Datos del remitente:</p>
+                                        <ul>
+                                            <li>Rut:</li>
+                                            <li>Nombre: </li>
+                                            <li>Dirección: </li>
+                                        </ul>
                                     </div>
                                     <div class="icon">
                                         <i class="fas fa-shopping-cart"></i>
@@ -124,11 +265,6 @@
                 </div>
             </div>
         </div>
-        <!-- Control Sidebar -->
-        <aside class="control-sidebar control-sidebar-dark">
-            <!-- Control sidebar content goes here -->
-        </aside>
-        <!-- /.control-sidebar -->
     </div>
     <?php
         include '../layouts/footer.php';
