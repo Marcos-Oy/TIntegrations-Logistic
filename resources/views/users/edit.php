@@ -131,7 +131,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <button type="button" class="btn btn-success btn-lg">Guardar</button>
+                                        <button type="button" class="btn btn-success">Guardar</button>
                                     </form>
                                 </div>
                             </div>
