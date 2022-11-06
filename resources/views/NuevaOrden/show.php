@@ -269,5 +269,6 @@
     <?php
         include '../layouts/footer.php';
     ?>
-
+    <script type="text/javascript" src="../../assets/js/validarRUT.js"></script>
+    <script type="text/javascript" src="../../assets/js/order_new.js"></script>
 </body>
