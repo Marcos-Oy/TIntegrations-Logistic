@@ -26,24 +26,6 @@
                     <form class="form">
                         <div class="row">
                             <div class="form-group col-lg-3">
-                                <label for="orden">Nº de Orden:</label>
-                                <input type="number" class="form-control" id="orden" placeholder="0">
-                            </div>
-                            <div class="form-group col-lg-3">
-                                <label for="bultos">Total de bultos:</label>
-                                <input type="number" class="form-control" id="bultos" placeholder="0">
-                            </div>
-                            <div class="form-group col-lg-3">
-                                <label for="peso">Peso Total:</label>
-                                <input type="number" class="form-control" id="peso" placeholder="0">
-                            </div>
-                            <div class="form-group col-lg-3">
-                                <label for="peso">Peso Total:</label>
-                                <input type="number" class="form-control" id="peso" placeholder="0">
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="form-group col-lg-3">
                                 <select class="form-control" id="empresa" place>
                                     <option value="">Seleccione repartidor</option>
                                     <option value="AESCDE">Alejandro Escobar Deuma</option>
