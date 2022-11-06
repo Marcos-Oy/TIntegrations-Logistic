@@ -46,7 +46,7 @@
                                     <table id="UsersTable" class="table table-bordered table-striped">
                                         <thead>
                                             <tr>
-                                                <th>#</th>
+                                                <th>Usuario</th>
                                                 <th>Nombre</th>
                                                 <th>Cargo</th>
                                                 <th>E-Mail</th>
@@ -61,12 +61,12 @@
                                             <?php foreach($rows as $row): ?>
                                             <tr>
                                                 <td><?= $row[0] ?></td>
-                                                <td><?= $row[1] ?></td>
-                                                <td><?= $row[2] ?></td>
-                                                <td><?= $row[3] ?></td>
+                                                <td><?= $row[1]." ".$row[2]." ".$row[3] ?></td>
+                                                <td>null</td>
                                                 <td><?= $row[4] ?></td>
                                                 <td><?= $row[5] ?></td>
-                                                <td><?= $row[6] ?></td>
+                                                <td><?= $row[5] ?></td>
+                                                <td>null</td>
                                                 <td>
                                                     <a href="edit.php?id=<?= $row[0]?>"
                                                         class="btn btn-warning">Editar</a>
@@ -110,7 +110,7 @@
                                         </tbody>
                                         <tfoot>
                                             <tr>
-                                                <th>#</th>
+                                                <th>Usuario</th>
                                                 <th>Nombre</th>
                                                 <th>Cargo</th>
                                                 <th>E-Mail</th>
