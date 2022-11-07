@@ -1,5 +1,5 @@
 <?php
-    class UsersModel{
+    class usuariosModel{
         private $PDO;
         public function __construct()
         {

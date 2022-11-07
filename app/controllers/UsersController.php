@@ -4,7 +4,7 @@
         public function __construct()
         {
             require_once("../../../models/UsersModel.php");
-            $this->model = new UsersModel();
+            $this->model = new usuariosModel();
         }
         
         public function show(){
