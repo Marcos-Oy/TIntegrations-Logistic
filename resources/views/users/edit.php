@@ -24,7 +24,7 @@
             <section class="content">
                 <div class="container-fluid">
                     <div class="row">
-                        <div class="col-9">
+                        <div class="col-sm-9">
                             <div class="card card-primary">
                                 <div class="card-header">
                                     <h2>
@@ -131,40 +131,23 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <button type="button" class="btn btn-success btn-lg">Guardar</button>
+                                        <button type="button" class="btn btn-success">Guardar</button>
                                     </form>
                                 </div>
                             </div>
                             <!-- /.card-body -->
 
                         </div>
-                        <div class="col-3">
+                        <div class="col-sm-3">
                             <div class="card card-primary">
                                 <div class="card-header">
-                                    <h2>
-                                        Editar Contraseña
+                                    <h2>Contraseña
                                     </h2>
                                 </div>
                                 <!-- /.card-header -->
                                 <div class="card-body">
                                     <form>
-                                        <div class="row">
-
-                                            <div class="col-sm-12">
-                                                <!-- text input -->
-                                                <div class="form-group">
-                                                    <label>Nueva contraseña</label>
-                                                    <input type="password" class="form-control"
-                                                        placeholder="Ingrese contrseña...">
-                                                </div>
-                                                <div class="form-group">
-                                                    <label>Confirmar Contraseña</label>
-                                                    <input type="password" class="form-control"
-                                                        placeholder="Confirme contraseña...">
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <button type="button" class="btn btn-warning btn-lg">Guardar</button>
+                                        <button type="button" class="btn btn-warning col-sm-12">⚠ Restablecer ⚠</button>
                                     </form>
                                 </div>
                             </div>

@@ -18,10 +18,59 @@
             include '../layouts/aside.php';
         ?>
         <div class="content-wrapper">
-
+            <div class="container-fluid">
+                <div class="row">
+                    <!-- left column -->
+                    <div class="col-md-6">
+                        <!-- general form elements -->
+                        <div class="card card-info">
+                            <div class="card-header">
+                                <h3 class="card-title">Devolver orden</h3>
+                            </div>
+                            <!-- /.card-header -->
+                            <!-- form start -->
+                            <form>
+                                <div class="card-body">
+                                    <div class="form-group">
+                                        <label for="exampleSelectBorderWidth2">Seleccionr ODT</label>
+                                        <select class="custom-select form-control-border border-width-2"
+                                            id="exampleSelectBorderWidth2">
+                                            <option>ODT 1</option>
+                                            <option>ODT 2</option>
+                                            <option>ODT 3</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleInputFile">Imagen de entrega</label>
+                                        <div class="input-group">
+                                            <div class="custom-file">
+                                                <input type="file" class="custom-file-input" id="exampleInputFile">
+                                                <label class="custom-file-label" for="exampleInputFile">Subir
+                                                    imagen</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Rut receptor</label>
+                                        <input type="text" class="form-control" placeholder="12.345.678-9">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Nombre receptor</label>
+                                        <input type="text" class="form-control" placeholder="Nombre y apellido ...">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Observaciones</label>
+                                        <textarea class="form-control" rows="3"
+                                            placeholder="Observaciones ..."></textarea>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-    </div>
-    <?php
+        <?php
         include '../layouts/footer.php';
     ?>
 

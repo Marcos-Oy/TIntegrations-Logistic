@@ -1,12 +1,12 @@
     <!-- JS de tables -->
     <script src="../../../resources/assets/js/tables.js"></script>
-
-    <!-- DataTables -->
+    <!-- css de helpers.css -->
+    <link rel="stylesheet" href="../../../resources/assets/css/helpers.css">
+    <!-- css bootstrap -->
     <link rel="stylesheet" href="../../../public/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
     <link rel="stylesheet" href="../../../public/plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
     <link rel="stylesheet" href="../../../public/plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
-
-    <!-- DataTables  & Plugins -->
+    <!-- JS de bootstrap -->
     <script src="../../../public/plugins/datatables/jquery.dataTables.min.js"></script>
     <script src="../../../public/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
     <script src="../../../public/plugins/datatables-responsive/js/dataTables.responsive.min.js"></script>

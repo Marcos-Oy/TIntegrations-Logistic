@@ -1,0 +1,11 @@
+
+Un middleware es un software que proporciona un enlace entre aplicaciones, sistemas o proyectos independientes. 
+En otras palabras es un elemento que usamos como la vía para conectar dos aplicaciones o dos partes, su función 
+es pasar datos entre ellas o de un lado a otro.
+
+El middleware es el software que brinda servicios y funciones comunes a las aplicaciones, 
+además de lo que ofrece el sistema operativo. Generalmente, se encarga de la gestión de los datos, 
+los servicios de aplicaciones, la mensajería, la autenticación control de tokens y la gestión de las API.
+
+Video explicativo de middleware
+https://www.youtube.com/watch?v=l-xLft4er_c

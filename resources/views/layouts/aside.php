@@ -125,15 +125,6 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a id="cotizador" style="cursor: pointer;" class="nav-link" href="../Cotizador/show.php">
-                        <i class="far fa-circle nav-icon"></i>
-                        <p>
-                            Cotizador
-                            <span class="right badge badge-danger">New</span>
-                        </p>
-                    </a>
-                </li>
-                <li class="nav-item">
                     <a id="MisDatos" style="cursor: pointer;" class="nav-link" href="../MisDatos/show.php">
                         <i class="far fa-circle nav-icon"></i>
                         <p>
