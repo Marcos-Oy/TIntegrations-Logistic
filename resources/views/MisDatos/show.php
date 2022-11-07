@@ -48,16 +48,34 @@
                                                 </div>
                                                 <div class="form-group">
                                                     <label>Teléfono</label>
-                                                    <input id="tel1" type="text" class="form-control" value="963403223">
+                                                    <div class="input-group">
+                                                        <div class="input-group-prepend">
+                                                            <span class="input-group-text"><i class="fas">+56</i></span>
+                                                        </div>
+                                                        <input id="tel1" type="number" class="form-control"
+                                                            value="963403223">
+                                                    </div>
                                                 </div>
                                                 <div class="form-group">
                                                     <label>Teléfono 2</label>
-                                                    <input id="tel2" type="text" class="form-control" value="963403223">
+                                                    <div class="input-group">
+                                                        <div class="input-group-prepend">
+                                                            <span class="input-group-text"><i class="fas">+56</i></span>
+                                                        </div>
+                                                        <input id="tel2" type="number" class="form-control"
+                                                            value="963403223">
+                                                    </div>
                                                 </div>
                                                 <div class="form-group">
                                                     <label>E-Mail</label>
-                                                    <input id="mail" type="text" class="form-control"
-                                                        value="carlos.gaete@tpqt.cl">
+                                                    <div class="input-group">
+                                                        <div class="input-group-prepend">
+                                                            <span class="input-group-text"><i
+                                                                    class="fas fa-envelope"></i></span>
+                                                        </div>
+                                                        <input id="mail" type="email" class="form-control"
+                                                            value="carlos.gaete@tpqt.cl">
+                                                    </div>
                                                 </div>
                                                 <div class="form-group">
                                                     <label>Oficina</label>
