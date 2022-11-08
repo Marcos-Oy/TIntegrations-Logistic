@@ -1,13 +1,5 @@
 <?php
-// echo $_POST['nombre']."<br>";
-// echo $_POST['paterno']."<br>";
-// echo $_POST['materno']."<br>";
-// echo $_POST['email']."<br>";
-// echo $_POST['tel1']."<br>";
-// echo $_POST['tel2']."<br>";
-// echo $_POST['ofi']."<br>";
-// echo $_POST['cargo']."<br>";
-// echo $_POST['fechanac']."<br>";
+
 require_once "../../../app/controllers/UsersController.php";
 require_once "../../../app/controllers/OficinasController.php";
 require_once "../../../app/controllers/CargosController.php";
@@ -17,11 +9,6 @@ $rowsOficinas = $oficina->show();
 
 $cargos = new CargosController();
 $rowsCargos = $cargos->show();
-
-
-
-
-
 
 // if(isset($_POST['nombre'])){
    
@@ -80,7 +67,7 @@ $rowsCargos = $cargos->show();
                                 </div>
                                 <!-- /.card-header -->
                                 <div class="card-body">
-                                    <form action="../../../app/controllers/UsersController.php" method="POST">
+                                    <form method="POST">
                                         <div class="row">
 
                                             <!-- COLUMNA 1 -->
