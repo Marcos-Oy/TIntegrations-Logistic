@@ -1,14 +1,5 @@
 <?php
-// echo $_POST['nombre']."<br>";
-// echo $_POST['paterno']."<br>";
-// echo $_POST['materno']."<br>";
-// echo $_POST['email']."<br>";
-// echo $_POST['tel1']."<br>";
-// echo $_POST['tel2']."<br>";
-// echo $_POST['ofi']."<br>";
-// echo $_POST['cargo']."<br>";
-// echo $_POST['fechanac']."<br>";
-require_once "../../../app/controllers/UsersController.php";
+ 
 require_once "../../../app/controllers/OficinasController.php";
 require_once "../../../app/controllers/CargosController.php";
 
@@ -18,26 +9,19 @@ $rowsOficinas = $oficina->show();
 $cargos = new CargosController();
 $rowsCargos = $cargos->show();
 
-
-
-
-
-
-// if(isset($_POST['nombre'])){
-   
-    
-
-//     $usuario = new UsersController();
-//     $usuario->guardar($_POST['nombre'],
-//     $_POST['paterno'],
-//     $_POST['materno'],
-//     $_POST['email'],
-//     $_POST['tel1'],
-//     $_POST['tel2'],
-//     $_POST['ofi'],
-//     $_POST['cargo'],
-//     $_POST['fechanac']);
-// }
+ if(isset($_POST['nombre'])){
+    require_once "../../../app/controllers/UsersController.php";
+    $usuario = new UsersController();
+    $usuario->guardar(ucwords(strtolower($_POST['nombre'])),
+    ucwords(strtolower($_POST['paterno'])),
+    ucwords(strtolower($_POST['materno'])),
+    $_POST['email'],
+    $_POST['tel1'],
+    $_POST['tel2'],
+    $_POST['ofi'],
+    $_POST['cargo'],
+    $_POST['fechanac']);
+ }
 ?>
 
 <!DOCTYPE html>
@@ -80,7 +64,7 @@ $rowsCargos = $cargos->show();
                                 </div>
                                 <!-- /.card-header -->
                                 <div class="card-body">
-                                    <form action="../../../app/controllers/UsersController.php" method="POST">
+                                    <form method="POST">
                                         <div class="row">
 
                                             <!-- COLUMNA 1 -->
