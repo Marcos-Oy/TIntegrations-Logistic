@@ -1,6 +1,5 @@
 <?php
-
-require_once "../../../app/controllers/UsersController.php";
+ 
 require_once "../../../app/controllers/OficinasController.php";
 require_once "../../../app/controllers/CargosController.php";
 
@@ -10,21 +9,19 @@ $rowsOficinas = $oficina->show();
 $cargos = new CargosController();
 $rowsCargos = $cargos->show();
 
-if(isset($_POST['nombre'])){
-   
-    
-
+ if(isset($_POST['nombre'])){
+    require_once "../../../app/controllers/UsersController.php";
     $usuario = new UsersController();
-    $usuario->guardar($_POST['nombre'],
-    $_POST['paterno'],
-    $_POST['materno'],
+    $usuario->guardar(ucwords(strtolower($_POST['nombre'])),
+    ucwords(strtolower($_POST['paterno'])),
+    ucwords(strtolower($_POST['materno'])),
     $_POST['email'],
     $_POST['tel1'],
     $_POST['tel2'],
     $_POST['ofi'],
     $_POST['cargo'],
     $_POST['fechanac']);
-}
+ }
 ?>
 
 <!DOCTYPE html>
