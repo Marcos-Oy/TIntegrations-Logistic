@@ -1,3 +1,45 @@
+<?php
+// echo $_POST['nombre']."<br>";
+// echo $_POST['paterno']."<br>";
+// echo $_POST['materno']."<br>";
+// echo $_POST['email']."<br>";
+// echo $_POST['tel1']."<br>";
+// echo $_POST['tel2']."<br>";
+// echo $_POST['ofi']."<br>";
+// echo $_POST['cargo']."<br>";
+// echo $_POST['fechanac']."<br>";
+require_once "../../../app/controllers/UsersController.php";
+require_once "../../../app/controllers/OficinasController.php";
+require_once "../../../app/controllers/CargosController.php";
+
+$oficina = new OficinasController();
+$rowsOficinas = $oficina->show();
+
+$cargos = new CargosController();
+$rowsCargos = $cargos->show();
+
+
+
+
+
+
+// if(isset($_POST['nombre'])){
+   
+    
+
+//     $usuario = new UsersController();
+//     $usuario->guardar($_POST['nombre'],
+//     $_POST['paterno'],
+//     $_POST['materno'],
+//     $_POST['email'],
+//     $_POST['tel1'],
+//     $_POST['tel2'],
+//     $_POST['ofi'],
+//     $_POST['cargo'],
+//     $_POST['fechanac']);
+// }
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 
@@ -38,7 +80,7 @@
                                 </div>
                                 <!-- /.card-header -->
                                 <div class="card-body">
-                                    <form>
+                                    <form action="../../../app/controllers/UsersController.php" method="POST">
                                         <div class="row">
 
                                             <!-- COLUMNA 1 -->
@@ -47,17 +89,17 @@
                                                 <!-- text input -->
                                                 <div class="form-group">
                                                     <label>Nombre</label>
-                                                    <input type="text" class="form-control"
+                                                    <input id="nombre" type="text" name="nombre" class="form-control"
                                                         placeholder="Ingrese nombre aquí...">
                                                 </div>
                                                 <div class="form-group">
                                                     <label>Apellido Paterno</label>
-                                                    <input type="text" class="form-control"
+                                                    <input id="paterno" name="paterno" type="text" class="form-control"
                                                         placeholder="Ingrese apellido paterno aquí...">
                                                 </div>
                                                 <div class="form-group">
                                                     <label>Apellido Materno</label>
-                                                    <input type="text" class="form-control"
+                                                    <input id="materno" name="materno" type="text" class="form-control"
                                                         placeholder="Ingrese apellido materno aquí...">
                                                 </div>
 
@@ -73,7 +115,7 @@
                                                         <div class="input-group-prepend">
                                                             <span class="input-group-text"><i class="fas">+56</i></span>
                                                         </div>
-                                                        <input type="number" class="form-control"
+                                                        <input id="tel1" name="tel1" type="number" class="form-control"
                                                             placeholder="Ingrese número aquí...">
                                                     </div>
                                                 </div>
@@ -84,7 +126,7 @@
                                                         <div class="input-group-prepend">
                                                             <span class="input-group-text"><i class="fas">+56</i></span>
                                                         </div>
-                                                        <input type="number" class="form-control"
+                                                        <input id="tel2" name="tel2" type="number" class="form-control"
                                                             placeholder="Ingrese número aquí...">
                                                     </div>
                                                 </div>
@@ -96,7 +138,7 @@
                                                             <span class="input-group-text"><i
                                                                     class="fas fa-envelope"></i></span>
                                                         </div>
-                                                        <input type="email" class="form-control"
+                                                        <input id="email" name="email" type="email" class="form-control"
                                                             placeholder="Ingrese email aquí...">
                                                     </div>
                                                 </div>
@@ -104,49 +146,44 @@
 
                                             <!-- COLUMNA 3 -->
 
-                                            <div class="col-sm-3">
-                                                <div class="form-group">
-                                                    <label>Seleccionar Oficina</label>
-                                                    <select class="form-control">
-                                                        <option>option 1</option>
-                                                        <option>option 2</option>
-                                                        <option>option 3</option>
-                                                        <option>option 4</option>
-                                                        <option>option 5</option>
-                                                    </select>
-                                                </div>
-                                                <div class="form-group">
-                                                    <label>Seleccionar Cargo</label>
-                                                    <select class="form-control">
-                                                        <option>option 1</option>
-                                                        <option>option 2</option>
-                                                        <option>option 3</option>
-                                                        <option>option 4</option>
-                                                        <option>option 5</option>
-                                                    </select>
-                                                </div>
-                                                <div class="form-group">
-                                                    <label>Seleccionar fecha</label>
-                                                    <input type="date" class="form-control">
-                                                </div>
-                                            </div>
 
                                             <div class="col-sm-3">
-                                                <!-- text input -->
+
+
                                                 <div class="form-group">
-                                                    <label>Contraseña</label>
-                                                    <input type="password" class="form-control"
-                                                        placeholder="Ingrese contrseña...">
+                                                    <label>Seleccionar Oficina</label>
+                                                    <select id="ofi" name="ofi" class="form-control">
+                                                        <option selected>Seleccionar oficinas</option>
+
+                                                        <?php foreach($rowsOficinas as $rowOficina): ?>
+                                                        <option value="<?= $rowOficina[0] ?>"><?= $rowOficina[1] ?>
+                                                        </option>
+                                                        <?php endforeach; ?>
+
+                                                    </select>
+                                                </div>
+
+                                                <div class="form-group">
+                                                    <label>Seleccionar Cargo</label>
+                                                    <select id="cargo" name="cargo" class="form-control">
+
+                                                        <option selected>Seleccionar Cargos</option>
+
+                                                        <?php foreach($rowsCargos as $rowCargo): ?>
+                                                        <option value="<?= $rowCargo[0] ?>"><?= $rowCargo[1] ?></option>
+                                                        <?php endforeach; ?>
+                                                    </select>
                                                 </div>
                                                 <div class="form-group">
-                                                    <label>Confirmar Contraseña</label>
-                                                    <input type="password" class="form-control"
-                                                        placeholder="Confirme contraseña...">
+                                                    <label>Seleccionar fecha de nacimiento</label>
+                                                    <input id="fechanac" name="fechanac" type="date"
+                                                        class="form-control">
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                                            <button type="button" class="btn btn-success btn-lg">Guardar</button>
+                                            <input type="submit" name="guardar" class="btn btn-success btn-lg"
+                                                value="Guardar">
                                         </div>
 
                                     </form>
