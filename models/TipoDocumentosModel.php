@@ -1,5 +1,5 @@
 <?php
-    class regionesModel{
+    class TipoDocumentossModel{
         private $PDO;
         public function __construct()
         {
@@ -9,12 +9,7 @@
         }
 
         public function show(){
-            $stament = $this->PDO->prepare("Call listarRegiones();");
-            return ($stament->execute()) ? $stament->fetchAll() : false;
-        }
-
-        public function showOne($id){
-            $stament = $this->PDO->prepare("Call listarRegion($id);");
+            $stament = $this->PDO->prepare("Call listarTipodedocumentos();");
             return ($stament->execute()) ? $stament->fetchAll() : false;
         }
     }

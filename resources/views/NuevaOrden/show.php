@@ -1,3 +1,29 @@
+<?php
+require_once "../../../app/controllers/RegionesController.php";
+
+$region = new RegionesController();
+$rowsRegiones = $region->show();
+if(isset($_POST['calcular'])){
+    require_once "../../../app/controllers/ComunasController.php";
+    $comunas = new comunasController;
+    $reg = $_POST['regiones'];
+    $com = $_POST['comunas'];
+    $alto = $_POST['alto'];
+    $largo = $_POST['largo'];
+    $ancho = $_POST['ancho'];
+    $peso = $_POST['peso'];
+    $cantidad = $_POST['cantidad'];
+    $qsobres = $_POST['qsobres'];
+    $rowsRegion = $region->showOne($reg);
+    foreach($rowsRegion as $rowRegion):
+    $descRegion = $rowRegion[1];
+    endforeach;
+    $rowsCom = $comunas->showOne($com);
+    foreach($rowsCom as $rowCom):
+    $descComuna = $rowCom[1];
+    endforeach;
+}
+?>
 <!DOCTYPE html>
 <html lang="es">
 
@@ -33,12 +59,20 @@
                                             <label>Región</label>
                                             <select id="regiones" class="form-control select2bs4" name="regiones">
                                                 <option value="">Seleccione Región</option>
+                                                <?php foreach($rowsRegiones as $rowsRegion): ?>
+                                                <option value="<?= $rowsRegion[0] ?>"><?= $rowsRegion[1] ?>
+                                                </option>
+                                                <?php endforeach; ?>
                                             </select>
                                         </div>
                                         <div class="col-md-6">
                                             <label>Comuna</label>
                                             <select id="comunas" class="form-control" name="comunas">
                                                 <option value="">Seleccione Comuna</option>
+                                                <?php foreach($rowsComunas as $rwoscomunas): ?>
+                                                <option value="<?= $rwoscomunas[0] ?>"><?= $rwoscomunas[1] ?>
+                                                </option>
+                                                <?php endforeach; ?>
                                             </select>
                                         </div>
                                     </div>
@@ -53,34 +87,34 @@
                                     <div class="row">
                                         <div class="col-md-4">
                                             <label>Alto</label>
-                                            <input type="number" class="form-control" placeholder="Alto cms."
+                                            <input <?php if($alto){echo "value='".$alto."'";} ?> type="number" class="form-control" placeholder="Alto cms."
                                                 name="alto" id="alto" min="0">
                                         </div>
                                         <div class="col-md-4">
                                             <label>Ancho</label>
-                                            <input type="number" class="form-control" placeholder="Ancho cms."
+                                            <input <?php if($ancho){echo "value='".$ancho."'";} ?> type="number" class="form-control" placeholder="Ancho cms."
                                                 name="ancho" id="ancho" min="0">
                                         </div>
                                         <div class="col-md-4">
                                             <label>Largo</label>
-                                            <input type="number" class="form-control" placeholder="Largo cms."
+                                            <input <?php if($largo){echo "value='".$largo."'";} ?> type="number" class="form-control" placeholder="Largo cms."
                                                 name="largo" id="largo" min="0">
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="col-md-4">
                                             <label>Peso</label>
-                                            <input type="text" class="form-control" placeholder="Peso Kgs." name="peso"
+                                            <input <?php if($peso){echo "value='".$peso."'";} ?> type="text" class="form-control" placeholder="Peso Kgs." name="peso"
                                                 id="peso" min="0">
                                         </div>
                                         <div class="col-md-4">
                                             <label>Cantidad de bultos</label>
-                                            <input type="number" class="form-control" placeholder="0" name="cantidad"
+                                            <input <?php if($cantidad){echo "value='".$cantidad."'";} ?> type="number" class="form-control" placeholder="0" name="cantidad"
                                                 id="cantidad" min="0">
                                         </div>
                                         <div class="col-md-4">
                                             <label>Cantidad de sobres</label>
-                                            <input type="number" class="form-control" placeholder="0" name="qsobres"
+                                            <input <?php if($qsobres){echo "value='".$qsobres."'";} ?> type="number" class="form-control" placeholder="0" name="qsobres"
                                                 id="qsobres" min="0">
                                         </div>
                                     </div>
@@ -94,7 +128,20 @@
                                 </div>
                             </div>
                         </form>
+                        <?php 
+                        
+                        
+                        ?>
+
                         <form method="POST">
+                            <input type="hidden" name="region" value="<?php echo $reg;?>">
+                            <input type="hidden" name="comuna" value="<?php echo $com;?>">
+                            <input type="hidden" name="alto" value="<?php echo $alto;?>">
+                            <input type="hidden" name="largo" value="<?php echo $largo;?>">
+                            <input type="hidden" name="ancho" value="<?php echo $ancho;?>">
+                            <input type="hidden" name="peso" value="<?php echo $peso;?>">
+                            <input type="hidden" name="cantidad" value="<?php echo $cantidad;?>">
+                            <input type="hidden" name="qsobres" value="<?php echo $qsobres;?>">
                             <div class="row">
                                 <div class="col-lg-6 col6">
                                     <div class="card card-info">
@@ -234,20 +281,23 @@
                                         <h3>$ Valor flete</h3>
                                         <p>Datos de la carga:</p>
                                         <ul>
-                                            <li>Destino:</li>
-                                            <li>Peso: </li>
-                                            <li>Dimensiones: Mts<sup>3</sup></li>
-                                            <li>Bultos:</li>
-                                            <li>Sobres:</li>
+                                            <li>Destino: <?php echo $descRegion; ?> <i
+                                                    class="fas fa-arrow-circle-right"></i> <?php echo $descComuna; ?>
+                                            </li>
+                                            <li>Peso: <?php echo $peso; ?></li>
+                                            <li>Dimensiones: <?php echo $alto * $ancho * $largo / 1000000; ?>
+                                                Mts<sup>3</sup></li>
+                                            <li>Bultos: <?php echo $cantidad; ?></li>
+                                            <li>Sobres: <?php echo $qsobres; ?></li>
                                         </ul>
-                                        <p>Datos del remitente:</p>
+                                        <p>Datos del remitente: </p>
                                         <ul>
-                                            <li>Rut:</li>
+                                            <li>Rut: </li>
                                             <li>Nombre: </li>
                                         </ul>
-                                        <p>Datos del remitente:</p>
+                                        <p>Datos del remitente: </p>
                                         <ul>
-                                            <li>Rut:</li>
+                                            <li>Rut: </li>
                                             <li>Nombre: </li>
                                             <li>Dirección: </li>
                                         </ul>
