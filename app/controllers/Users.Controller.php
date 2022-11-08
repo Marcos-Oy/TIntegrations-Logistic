@@ -33,21 +33,14 @@
 
         public function guardar(){
             if(isset($_POST['nombre']))
-            {
-                $usuario = new UsersController();
-                $usuario->guardar(ucwords(strtolower($_POST['nombre'])),
-                ucwords(strtolower($_POST['paterno'])),
-                ucwords(strtolower($_POST['materno'])),
-                $_POST['email'],
+            {           
+                $id = $this->model->insertar(ucwords(strtolower($_POST['nombre'])), ucwords(strtolower($_POST['paterno'])),
+                ucwords(strtolower($_POST['materno'])), $_POST['email'],
                 $_POST['tel1'],
                 $_POST['tel2'],
                 $_POST['ofi'],
                 $_POST['cargo'],
                 $_POST['fechanac']);
-             
-                $id = $this->model->insertar(ucfirst($nombre), ucfirst($paterno), ucfirst($materno),$email, $tel1, $tel2, $ofi, $cargo, $fechanac);
-                return ($id!=false) ? header("Location:show.php?id=".$id) : 
-				header("location:");
 				echo "<script>alert('Ingreso Exitoso');
 				window.location= '?control=Users&action=Portal'</script>";
             }

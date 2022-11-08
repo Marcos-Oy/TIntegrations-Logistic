@@ -10,7 +10,7 @@
 
         public function show()
         {
-            $stament = $this->PDO->prepare("call mostrarUsuariosActivos()");
+            $stament = $this->PDO->prepare("call mostrarUsusariosActivos()");
             return ($stament->execute()) ? $stament->fetchAll() : false;
         }
 
