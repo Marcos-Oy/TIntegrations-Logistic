@@ -84,11 +84,6 @@
                             </select>
                         </div>
                         <div class="col">
-                            <select id="cargo" class="form-control" name="vehiculo" required>
-                                <option selected>Seleccione vehiculo</option>
-                            </select>
-                        </div>
-                        <div class="col">
                             <div class="form-check">
                                 <input class="form-check-input" type="radio" value="En tránsito" name="accion"
                                     id="accion1">
@@ -96,6 +91,8 @@
                                     En tránsito
                                 </label>
                             </div>
+                        </div>
+                        <div class="col">
                             <div class="form-check">
                                 <input class="form-check-input" type="radio" value="En reparto" name="accion"
                                     id="accion2">
@@ -107,6 +104,7 @@
 
                     </div>
                     <button name="agregar" hidden type="submit">Agregar campo</button>
+                    <br>
                     <div class="col">
                         <div class="input-group mb-2">
                             <button type="button" class="btn btn-success">ASIGNAR</button>
