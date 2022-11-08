@@ -1,29 +1,3 @@
-<?php
- 
-require_once "../../../app/controllers/OficinasController.php";
-require_once "../../../app/controllers/CargosController.php";
-
-$oficina = new OficinasController();
-$rowsOficinas = $oficina->show();
-
-$cargos = new CargosController();
-$rowsCargos = $cargos->show();
-
- if(isset($_POST['nombre'])){
-    require_once "../../../app/controllers/UsersController.php";
-    $usuario = new UsersController();
-    $usuario->guardar(ucwords(strtolower($_POST['nombre'])),
-    ucwords(strtolower($_POST['paterno'])),
-    ucwords(strtolower($_POST['materno'])),
-    $_POST['email'],
-    $_POST['tel1'],
-    $_POST['tel2'],
-    $_POST['ofi'],
-    $_POST['cargo'],
-    $_POST['fechanac']);
- }
-?>
-
 <!DOCTYPE html>
 <html lang="es">
 
@@ -33,8 +7,8 @@ $rowsCargos = $cargos->show();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Crear Usuarios</title>
     <?php
-        include ('../layouts/dependencies.php');
-        include '../users/dependencies.php';
+        include ('resources/views/layouts/dependencies.php');
+        include 'resources/views/users/dependencies.php';
     ?>
 
 </head>
@@ -42,8 +16,8 @@ $rowsCargos = $cargos->show();
 <body class="hold-transition sidebar-mini layout-fixed">
     <div class="wrapper">
         <?php
-            include '../layouts/navbar.php';
-            include '../layouts/aside.php';
+            include 'resources/views/layouts/navbar.php';
+            include 'resources/views/layouts/aside.php';
         ?>
         <div class="content-wrapper">
 
@@ -64,7 +38,7 @@ $rowsCargos = $cargos->show();
                                 </div>
                                 <!-- /.card-header -->
                                 <div class="card-body">
-                                    <form method="POST">
+                                    <form method="POST" action="?control=Users&action=guardar">
                                         <div class="row">
 
                                             <!-- COLUMNA 1 -->
@@ -182,6 +156,6 @@ $rowsCargos = $cargos->show();
             </section>
         </div>
         <?php
-        include '../layouts/footer.php';
+        include 'resources/views/layouts/footer.php';
     ?>
 </body>

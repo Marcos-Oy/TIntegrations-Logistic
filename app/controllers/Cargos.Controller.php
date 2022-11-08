@@ -1,10 +1,10 @@
 <?php
-    class OficinasController{
+    class CargosController{
         private $model;
         public function __construct()
         {
-            require_once("../../../models/oficinasModel.php");
-            $this->model = new oficinasModel();
+            require_once("models/cargo_usuariosModel.php");
+            $this->model = new cargo_usuariosModel();
         }
         
         public function show(){
