@@ -1,7 +1,7 @@
 <?php
     require_once "../../../app/controllers/UsersController.php";
     $obj = new UsersController();
-    $rows = $obj->index();
+    $rows = $obj->show();
 ?>
 
 <!DOCTYPE html>
