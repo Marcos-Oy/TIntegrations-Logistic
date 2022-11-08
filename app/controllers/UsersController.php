@@ -1,23 +1,9 @@
 <?php
     class UsersController{
         private $model;
-
-
-
         public function __construct()
         {
             require_once("../../../models/usuariosModel.php");
-            include "resources/views/users/show.php";
-            guardar($_POST['nombre'],
-            $_POST['paterno'],
-            $_POST['materno'],
-            $_POST['email'],
-            $_POST['tel1'],
-            $_POST['tel2'],
-            $_POST['ofi'],
-            $_POST['cargo'],
-            $_POST['fechanac']);
-            include "resources/views/users/show.php";
             $this->model = new usuariosModel();
         }
         
