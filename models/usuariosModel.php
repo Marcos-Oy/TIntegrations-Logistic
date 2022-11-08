@@ -12,6 +12,12 @@
             $stament = $this->PDO->prepare("call mostrarUsusariosActivos()");
             return ($stament->execute()) ? $stament->fetchAll() : false;
         }
+
+        public function insertar($nombre, $paterno, $materno, $email, $tel1, $tel2, $ofi, $cargo, $fechanac){
+            $stament = $this->PDO->prepare("select create_user($nombre, $paterno, $materno, $email, $tel1, $tel2, $ofi, $cargo, $fechanac);");
+            $stament->bindParam(":nombre",$nombre);
+            return ($stament->execute()) ? $this->PDO->lastInsertId() : false ;
+        }
     }
 
 ?>
