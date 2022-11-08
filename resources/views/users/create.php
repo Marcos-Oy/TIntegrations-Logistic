@@ -10,21 +10,21 @@ $rowsOficinas = $oficina->show();
 $cargos = new CargosController();
 $rowsCargos = $cargos->show();
 
-// if(isset($_POST['nombre'])){
+if(isset($_POST['nombre'])){
    
     
 
-//     $usuario = new UsersController();
-//     $usuario->guardar($_POST['nombre'],
-//     $_POST['paterno'],
-//     $_POST['materno'],
-//     $_POST['email'],
-//     $_POST['tel1'],
-//     $_POST['tel2'],
-//     $_POST['ofi'],
-//     $_POST['cargo'],
-//     $_POST['fechanac']);
-// }
+    $usuario = new UsersController();
+    $usuario->guardar($_POST['nombre'],
+    $_POST['paterno'],
+    $_POST['materno'],
+    $_POST['email'],
+    $_POST['tel1'],
+    $_POST['tel2'],
+    $_POST['ofi'],
+    $_POST['cargo'],
+    $_POST['fechanac']);
+}
 ?>
 
 <!DOCTYPE html>
