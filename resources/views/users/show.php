@@ -1,9 +1,3 @@
-<?php
-    require_once "../../../app/controllers/UsersController.php";
-    $obj = new UsersController();
-    $rows = $obj->show();
-?>
-
 <!DOCTYPE html>
 <html lang="es">
 
@@ -13,8 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Usuarios</title>
     <?php
-        include ('../layouts/dependencies.php');
-        include '../users/dependencies.php';
+        include ('resources/views/layouts/dependencies.php');
+        include 'resources/views/users/dependencies.php';
     ?>
 
 </head>
@@ -22,8 +16,8 @@
 <body class="hold-transition sidebar-mini layout-fixed">
     <div class="wrapper">
         <?php
-            include '../layouts/navbar.php';
-            include '../layouts/aside.php';
+            include 'resources/views/layouts/navbar.php';
+            include 'resources/views/layouts/aside.php';
         ?>
         <div class="content-wrapper">
             <!-- Main content -->
@@ -34,7 +28,7 @@
                             <div class="card card-primary">
                                 <div class="card-header">
                                     <h2>Usuarios
-                                        <a href="../users/create.php" class="justify-content-md-end">
+                                        <a href="?control=Users&action=Crear" class="justify-content-md-end">
                                             <button type="button" class="btn btn-success">
                                                 Nuevo
                                             </button>
@@ -135,6 +129,6 @@
             <!-- /.content -->
         </div>
         <?php
-            include '../layouts/footer.php';
+            include 'resources/views/layouts/footer.php';
         ?>
 </body>
