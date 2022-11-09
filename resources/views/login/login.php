@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="es">
 
@@ -27,7 +28,8 @@
             <div class="card-body">
                 <p class="login-box-msg">Iniciar sesión</p>
 
-                <form action="resources/views/dashboard/dashboard.php" method="post">
+                <form action="?control=Login&action=Dash" method="post">
+                
                     <div class="input-group mb-3">
                         <input type="text" class="form-control" placeholder="Usuario">
                         <div class="input-group-append">

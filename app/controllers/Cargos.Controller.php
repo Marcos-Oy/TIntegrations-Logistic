@@ -3,7 +3,7 @@
         private $model;
         public function __construct()
         {
-            require_once("../../../models/cargo_usuariosModel.php");
+            require_once("models/cargo_usuariosModel.php");
             $this->model = new cargo_usuariosModel();
         }
         

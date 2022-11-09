@@ -1,9 +1,9 @@
 <?php
-    class OficinasController{
+    class OrdenesController{
         private $model;
         public function __construct()
         {
-            require_once("../../../models/oficinasModel.php");
+            require_once("models/oficinasModel.php");
             $this->model = new oficinasModel();
         }
         
