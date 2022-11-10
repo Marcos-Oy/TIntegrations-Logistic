@@ -37,7 +37,7 @@
                 <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
                 <li class="nav-item">
-                    <a id="dashboard" style="cursor: pointer;" class="nav-link" href="../dashboard/dashboard.php">
+                    <a id="dashboard" style="cursor: pointer;" class="nav-link" href="?control=Login&action=Dash">
                         <i class="nav-icon fas fa-tachometer-alt"></i>
                         <p>
                             Dashboard
@@ -60,7 +60,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a id="Nominar" style="cursor: pointer;" class="nav-link" href="../nominar/show.php">
+                            <a id="Nominar" style="cursor: pointer;" class="nav-link" href="?control=Ordenes&action=NominarOrden">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Nominar</p>
                             </a>
@@ -77,7 +77,7 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a id="asignar" style="cursor: pointer;" class="nav-link" href="../asignar/show.php">
+                            <a id="asignar" style="cursor: pointer;" class="nav-link" href="?control=Ordenes&action=AsignarOrden">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Asignar</p>
                             </a>
@@ -95,7 +95,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a id="codigo" style="cursor: pointer;" class="nav-link" href="../AsignarCodigo/show.php">
+                            <a id="codigo" style="cursor: pointer;" class="nav-link" href="?control=Ordenes&action=AsignarConCodigo">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Asignar con código</p>
                             </a>

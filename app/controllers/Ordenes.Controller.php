@@ -18,6 +18,18 @@
 		{
             require_once("resources/views/RevisarOrden/show.php");
 		}
+        public function NominarOrden()
+		{
+            require_once("resources/views/nominar/show.php");
+		}
+        public function AsignarOrden()
+		{
+            require_once("resources/views/asignar/show.php");
+		}
+        public function AsignarConCodigo()
+		{
+            require_once("resources/views/AsignarCodigo/show.php");
+		}
     }
 
 ?>
