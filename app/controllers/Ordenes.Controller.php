@@ -10,6 +10,14 @@
         public function show(){
             return ($this->model->show()) ? $this->model->show() : false;
         }
+        public function NuevaOrden()
+		{
+            require_once("resources/views/NuevaOrden/show.php");
+		}
+        public function RevisarOrden()
+		{
+            require_once("resources/views/RevisarOrden/show.php");
+		}
     }
 
 ?>

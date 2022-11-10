@@ -116,7 +116,7 @@
 
                 </li>
                 <li class="nav-item">
-                    <a id="NuevaOrden" style="cursor: pointer;" class="nav-link" href="">
+                    <a id="NuevaOrden" style="cursor: pointer;" class="nav-link" href="?control=Ordenes&action=NuevaOrden">
                         <i class="far fa-circle nav-icon"></i>
                         <p>
                             Nueva orden
@@ -134,7 +134,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a id="RevisarOrden" style="cursor: pointer;" class="nav-link" href="../RevisarOrden/show.php">
+                    <a id="RevisarOrden" style="cursor: pointer;" class="nav-link" href="?control=Ordenes&action=RevisarOrden">
                         <i class=" far fa-circle nav-icon"></i>
                         <p>
                             Revisar orden

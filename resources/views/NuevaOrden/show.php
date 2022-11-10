@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nueva Orden</title>
     <?php
-        include ('../layouts/dependencies.php');
+        include ('resources/views/layouts/dependencies.php');
     ?>
 
 </head>
@@ -15,8 +15,8 @@
 <body class="hold-transition sidebar-mini layout-fixed">
     <div class="wrapper">
         <?php
-            include '../layouts/navbar.php';
-            include '../layouts/aside.php';
+            include 'resources/views/layouts/navbar.php';
+            include 'resources/views/layouts/aside.php';
         ?>
         <div class="content-wrapper">
             <div class="container-fluid">
@@ -267,8 +267,8 @@
         </div>
     </div>
     <?php
-        include '../layouts/footer.php';
+        include 'resources/views/layouts/footer.php';
     ?>
-    <script type="text/javascript" src="../../assets/js/validarRUT.js"></script>
-    <script type="text/javascript" src="../../assets/js/order_new.js"></script>
+    <script type="text/javascript" src="assets/js/validarRUT.js"></script>
+    <script type="text/javascript" src="assets/js/order_new.js"></script>
 </body>
