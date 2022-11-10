@@ -16,7 +16,7 @@
 
 	//array con los controladores y sus respectivas acciones
 	$controllers= array(
-						'Users'=>['guardar','Portal','Crear','Eliminarusuario','p5','p6','p7'],
+						'Users'=>['guardar','Portal','Crear','Eliminarusuario','Crearusuario','p6','p7'],
                         'Login'=>['login','Dash','p3','p4','p5','p6','p7'],
 						);
 	//verifica que el controlador enviado desde index.php esté dentro del arreglo controllers

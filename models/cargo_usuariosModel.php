@@ -4,14 +4,23 @@
         public function __construct()
         {
             require_once "config/db.php";
-            $con = new db();
-            $this->PDO = $con->conexion();
+           // $con = new Conexion();
+            //$this->PDO = $con->conexion();
+            $this->basededatos=Conexion::conectar();
         }
 
-        public function show(){
-            $stament = $this->PDO->prepare("call listarCargos();");
-            return ($stament->execute()) ? $stament->fetchAll() : false;
-        }
+       //
+       public function show()
+       {
+           $consulta="call listarCargos()";
+           $resultado=$this->basededatos->query($consulta);
+           while($fila=$resultado->fetch_assoc()){
+               $this->Solicitud[]=$fila;
+           }
+           return $this->Solicitud;
+       }
+
+        
     }
 
 ?>

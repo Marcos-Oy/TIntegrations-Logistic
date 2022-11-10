@@ -37,7 +37,7 @@
                                 </div>
                                 <!-- /.card-header -->
                                 <div class="card-body">
-                                    <form method="POST" action="?control=Users&action=guardar">
+                                    <form method="POST" action="?control=Users&action=Crearusuario">
                                         <div class="row">
 
                                             <!-- COLUMNA 1 -->
@@ -113,7 +113,7 @@
                                                         <option selected>Seleccionar oficinas</option>
 
                                                         <?php foreach($rowsOficinas as $rowOficina): ?>
-                                                        <option value="<?= $rowOficina[0] ?>"><?= $rowOficina[1] ?>
+                                                        <option value="<?= $rowOficina['id'] ?>"><?= $rowOficina['desc_office'] ?>
                                                         </option>
                                                         <?php endforeach; ?>
 
@@ -127,7 +127,7 @@
                                                         <option selected>Seleccionar Cargos</option>
 
                                                         <?php foreach($rowsCargos as $rowCargo): ?>
-                                                        <option value="<?= $rowCargo[0] ?>"><?= $rowCargo[1] ?></option>
+                                                        <option value="<?= $rowCargo['id'] ?>"><?= $rowCargo['desc_cargo'] ?></option>
                                                         <?php endforeach; ?>
                                                     </select>
                                                 </div>

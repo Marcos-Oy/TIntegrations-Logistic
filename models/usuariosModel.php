@@ -45,6 +45,70 @@
 		{
 			return $this->nombre;
 		}
+		public function setpaterno($paterno)
+		{
+			$this->paterno=$paterno;
+		}
+		public function getpaterno()
+		{
+			return $this->$Materno;
+		}
+		public function setmaterno($Materno)
+		{
+			$this->Materno=$Materno;
+		}
+		public function getmaterno()
+		{
+			return $this->$Materno;
+		}
+		public function setemail($email)
+		{
+			$this->email=$email;
+		}
+		public function getemail()
+		{
+			return $this->$email;
+		}
+		public function settel1($tel1)
+		{
+			$this->tel1=$tel1;
+		}
+		public function gettel1()
+		{
+			return $this->$tel1;
+		}
+		public function settel2($tel2)
+		{
+			$this->tel2=$tel2;
+		}
+		public function gettel2()
+		{
+			return $this->$tel2;
+		}
+		public function setofi($ofi)
+		{
+			$this->ofi=$ofi;
+		}
+		public function getofi()
+		{
+			return $this->$ofi;
+		}
+		public function setcargo($cargo)
+		{
+			$this->cargo=$cargo;
+		}
+		public function getcargo()
+		{
+			return $this->$cargo;
+		}
+		public function setfechanac($fechanac)
+		{
+			$this->fechanac=$fechanac;
+		}
+		public function getfechanac()
+		{
+			return $this->$fechanac;
+		}
 
         public function show()
         {
@@ -72,6 +136,20 @@
 		{
 			$consulta="UPDATE usuarios SET estduser_id = 2 WHERE username = '".$this->username. "'";
             $resultado=$this->basededatos->query($consulta);
+			if($resultado==true)
+			{
+			return true;
+			}
+			else
+			{
+				return false;
+			}
+		}
+		public function InsertarUsuario()
+		{
+			$consulta="select create_user('".$this->nombre."', '".$this->paterno."', '".$this->materno."', '".$this->email."', 
+            '".$this->tel1."', '".$this->tel2."', ".$this->ofi.", ".$this->cargo.", '".$this->fechanac."')";
+			$resultado=$this->basededatos->query($consulta);
 			if($resultado==true)
 			{
 			return true;

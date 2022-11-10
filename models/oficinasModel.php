@@ -1,17 +1,29 @@
 <?php
     class oficinasModel{
         private $PDO;
+        private $Solicitud;
         public function __construct()
         {
             require_once "config/db.php";
-            $con = new db();
-            $this->PDO = $con->conexion();
+           // $con = new Conexion();
+            //$this->PDO = $con->conexion();
+            $this->basededatos=Conexion::conectar();
+            $this->Solicitud=array();
         }
 
-        public function show(){
-            $stament = $this->PDO->prepare("Call listarOficina();");
-            return ($stament->execute()) ? $stament->fetchAll() : false;
-        }
+       //
+       public function show()
+       {
+           $consulta="call listaroficina()";
+           $resultado=$this->basededatos->query($consulta);
+           while($fila=$resultado->fetch_assoc()){
+               $this->Solicitud[]=$fila;
+           }
+           return $this->Solicitud;
+       }
+
+
+       
     }
 
 ?>
