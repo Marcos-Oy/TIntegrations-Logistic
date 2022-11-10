@@ -10,7 +10,6 @@
         include ('resources/views/layouts/dependencies.php');
         include 'resources/views/users/dependencies.php';
     ?>
-
 </head>
 
 <body class="hold-transition sidebar-mini layout-fixed">

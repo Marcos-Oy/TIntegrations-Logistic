@@ -25,11 +25,11 @@
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-12">
-                            <div class="card card-primary">
+                            <div class="card card-info">
                                 <div class="card-header">
                                     <h2>Usuarios
                                         <a href="?control=Users&action=Crear" class="justify-content-md-end">
-                                            <button type="button" class="btn btn-success">
+                                            <button type="button" class="btn btn-primary">
                                                 Nuevo
                                             </button>
                                         </a>
@@ -42,10 +42,11 @@
                                             <tr>
                                                 <th>Usuario</th>
                                                 <th>Nombre</th>
-                                                <th>Cargo</th>
                                                 <th>E-Mail</th>
                                                 <th>Teléfono</th>
                                                 <th>Teléfono 2</th>
+                                                <th>Oficina</th>
+                                                <th>Cargo</th>
                                                 <th>Fecha de nac</th>
                                                 <th>Acciones</th>
                                             </tr>
@@ -54,22 +55,28 @@
                                             <?php if($rows): ?>
                                             <?php foreach($rows as $row): ?>
                                             <tr>
-                                                <td><?= $row[0] ?></td>
-                                                <td><?= $row[1]." ".$row[2]." ".$row[3] ?></td>
-                                                <td>null</td>
-                                                <td><?= $row[4] ?></td>
-                                                <td><?= $row[5] ?></td>
-                                                <td><?= $row[5] ?></td>
-                                                <td>null</td>
+                                                <td><?= $row['username'] ?></td>
+                                                <td><?= $row['nombre'] ?></td>
+                                                <td><?= $row['email'] ?></td>
+                                                <td><?= $row['fono1'] ?></td>
+                                                <td><?= $row['fono2'] ?></td>
+                                                <td><?= $row['desc_office'] ?></td>
+                                                <td><?= $row['desc_cargo'] ?></td>
+                                                <td><?= $row['fecha_nac'] ?></td>
                                                 <td>
-                                                    <a href="edit.php?id=<?= $row[0]?>"
+                                                    <a href="edit.php?id=<?= $row['username']?>"
                                                         class="btn btn-warning">Editar</a>
                                                     <!-- Button trigger modal -->
-                                                    <a class="btn btn-danger" data-bs-toggle="modal"
-                                                        data-bs-target="#id<?=$row[0]?>">Eliminar</a>
-
+                                                    <!--<a class="btn btn-danger" data-bs-toggle="modal"
+                                                        data-bs-target="#id">Eliminar
+                                                    </a>--></td>
+                                                    <td><form method='POST' action='?control=Users&action=Eliminarusuario'>
+			                                        <button type='submit' name='username' value=<?=$row['username']?>>bye
+                                                    </button>
+                                                    </form></td>
+                                                    
                                                     <!-- Modal -->
-                                                    <div class="modal fade" id="id<?=$row[0]?>" tabindex="-1"
+                                                    <div class="modal fade" id="id<?=$row['username']?>" tabindex="-1"
                                                         aria-labelledby="exampleModalLabel" aria-hidden="true">
                                                         <div class="modal-dialog">
                                                             <div class="modal-content">
@@ -86,7 +93,7 @@
                                                                 <div class="modal-footer">
                                                                     <button type="button" class="btn btn-success"
                                                                         data-bs-dismiss="modal">Cerrar</button>
-                                                                    <a href="delete.php?id=<?= $row[0]?>"
+                                                                        <a href="delete.php?id=<?= $row['username']?>"
                                                                         class="btn btn-danger">Eliminar</a>
                                                                     <!-- <button type="button" >Eliminar</button> -->
                                                                 </div>
