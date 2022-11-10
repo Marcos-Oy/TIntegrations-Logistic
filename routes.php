@@ -8,7 +8,6 @@
 		switch($control){
 			case 'Users':$control= new UsersController();break; 
             case 'Login':$control= new LoginController();break;
-			case 'Ordenes':$control= new OrdenesController();break;
 
 		}
 		//llama a la acción del controlador
@@ -19,7 +18,6 @@
 	$controllers= array(
 						'Users'=>['guardar','Portal','Crear','Eliminarusuario','Crearusuario','p6','p7'],
                         'Login'=>['login','Dash','p3','p4','p5','p6','p7'],
-						'Ordenes'=>['CrearOrden','Dash','p3','p4','p5','p6','p7'],
 						);
 	//verifica que el controlador enviado desde index.php esté dentro del arreglo controllers
 	if (array_key_exists($control, $controllers)) {
