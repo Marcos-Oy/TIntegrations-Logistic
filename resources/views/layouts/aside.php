@@ -116,7 +116,7 @@
 
                 </li>
                 <li class="nav-item">
-                    <a id="NuevaOrden" style="cursor: pointer;" class="nav-link" href="../NuevaOrden/show.php">
+                    <a id="NuevaOrden" style="cursor: pointer;" class="nav-link" href="?control=Ordenes&action=CrearOrden">
                         <i class="far fa-circle nav-icon"></i>
                         <p>
                             Nueva orden
