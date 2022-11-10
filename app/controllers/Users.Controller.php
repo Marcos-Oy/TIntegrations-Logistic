@@ -66,11 +66,13 @@
             $id = $apt->InsertarUsuario();
             if($id==true)
 			{
-				echo "<script>alert('Ingreso Exitoso');</script>";
+				echo "<script>alert('Ingreso Exitoso');
+				window.location= '?control=Users&action=Portal'</script>";
 			}
 			else
 			{
-				echo "<script>alert('No Exitoso');</script>";
+				echo "<script>alert('No Exitoso');
+				window.location= '?control=Users&action=Portal'</script>";
 			}
 				
 		}
