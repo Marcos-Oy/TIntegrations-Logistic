@@ -1,0 +1,8 @@
+[17-May-2022 22:03:51 Europe/Madrid] PHP Warning:  mysqli_connect(): (HY000/1130): Host 'ns5062.webempresa.eu' is not allowed to connect to this MariaDB server in /home/tupaquet/public_html/tpqt/includes/db.php on line 31
+[17-May-2022 22:03:51 Europe/Madrid] PHP Notice:  Trying to get property 'connect_errno' of non-object in /home/tupaquet/public_html/tpqt/includes/db.php on line 33
+[17-May-2022 22:03:51 Europe/Madrid] PHP Fatal error:  Uncaught Error: Call to a member function set_charset() on bool in /home/tupaquet/public_html/tpqt/includes/db.php:36
+Stack trace:
+#0 /home/tupaquet/public_html/tpqt/combos/listar_comunas.php(6): getConn()
+#1 /home/tupaquet/public_html/tpqt/combos/listar_comunas.php(25): getListaCom()
+#2 {main}
+  thrown in /home/tupaquet/public_html/tpqt/includes/db.php on line 36

@@ -1,5 +1,5 @@
 <?php
-    class tarifaModel{
+    class TipoDocumentossModel{
         private $PDO;
         public function __construct()
         {
@@ -8,11 +8,10 @@
             $this->PDO = $con->conexion();
         }
 
-        public function show($peso,$sobre,$comuna){
-            $stament = $this->PDO->prepare("Select calcularFlete($peso,$sobre,$comuna)");
+        public function show(){
+            $stament = $this->PDO->prepare("Call listarTipodedocumentos();");
             return ($stament->execute()) ? $stament->fetchAll() : false;
         }
-
     }
 
 ?>
