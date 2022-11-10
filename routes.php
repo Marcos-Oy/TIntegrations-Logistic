@@ -18,7 +18,8 @@
 	$controllers= array(
 						'Users'=>['guardar','Portal','Crear','Eliminarusuario','Crearusuario','MisDatos','p7'],
                         'Login'=>['login','Dash'],
-						'Ordenes'=>['NuevaOrden','RevisarOrden','NominarOrden','AsignarOrden','AsignarConCodigo'],
+						'Ordenes'=>['NuevaOrden','RevisarOrden','NominarOrden','AsignarOrden','AsignarConCodigo',
+						'RecibirOrden','EntregarOrden','DevolverOrden','RecibirOdtExterna']
 						);
 	//verifica que el controlador enviado desde index.php esté dentro del arreglo controllers
 	if (array_key_exists($control, $controllers)) {

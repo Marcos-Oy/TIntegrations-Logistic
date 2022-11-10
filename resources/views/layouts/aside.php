@@ -83,13 +83,13 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a id="recibir" style="cursor: pointer;" class="nav-link" href="../recibir/show.php">
+                            <a id="recibir" style="cursor: pointer;" class="nav-link" href="?control=Ordenes&action=RecibirOrden">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Recibir</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a id="ODT" style="cursor: pointer;" class="nav-link" href="../CargarODTexterna/show.php">
+                            <a id="ODT" style="cursor: pointer;" class="nav-link" href="?control=Ordenes&action=RecibirOdtExterna">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Cargar ODT Externa</p>
                             </a>
@@ -101,13 +101,13 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a id="devolver" style="cursor: pointer;" class="nav-link" href="../devolver/show.php">
+                            <a id="devolver" style="cursor: pointer;" class="nav-link" href="?control=Ordenes&action=DevolverOrden">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Devolver</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a id="entregar" style="cursor: pointer;" class="nav-link" href="../entregar/show.php">
+                            <a id="entregar" style="cursor: pointer;" class="nav-link" href="?control=Ordenes&action=EntregarOrden">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Entregar</p>
                             </a>

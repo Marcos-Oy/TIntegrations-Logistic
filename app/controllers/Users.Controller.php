@@ -1,13 +1,8 @@
 <?php
     class UsersController{
         
-        private $model;
-        
-        public function __construct()
-        {
-            
-        }
-        
+        public function __construct(){}
+        //***************************** */ LLAMADA A LAS VISTAS*********************************/
         public function Portal()
 		{
             include("models/usuariosModel.php");
@@ -30,7 +25,7 @@
             $rowsCargos = $cargos->show();
             require_once("resources/views/users/create.php");
 		}
-        
+        /*************************CRUD USUARIO**********************/
         public function Eliminarusuario(){
             
             include("models/usuariosModel.php");
