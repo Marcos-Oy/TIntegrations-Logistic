@@ -16,6 +16,10 @@
             $rows = $apt->get_Solicitud();
             require_once("resources/views/users/show.php");
 		}
+		public function MisDatos()
+		{
+            require_once("resources/views/MisDatos/show.php");
+		}
         public function Crear()
 		{
 			include("models/oficinasModel.php");
