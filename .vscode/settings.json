@@ -1,0 +1,5 @@
+{
+    "phpGetterSetter.redirect": false,
+    "phpGetterSetter.short": true,
+    "php.validate.executablePath": ""
+}

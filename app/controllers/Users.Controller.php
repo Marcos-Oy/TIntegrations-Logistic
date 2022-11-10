@@ -5,8 +5,8 @@
         
         public function __construct()
         {
-            require_once("models/usuariosModel.php");
-            $this->model = new usuariosModel();
+            //require_once("models/usuariosModel.php");
+            //$this->model = new usuariosModel();
         }
         
         public function show(){
@@ -14,8 +14,10 @@
         }
         public function Portal()
 		{
+            include("models/usuariosModel.php");
             $obj = new UsersController();
-            $rows = $obj->show();
+            $apt= new usuariosModel();
+            $rows = $apt->get_Solicitud();
             require_once("resources/views/users/show.php");
 		}
         public function Crear()
@@ -42,10 +44,62 @@
                 $_POST['ofi'],
                 $_POST['cargo'],
                 $_POST['fechanac']);
-				echo "<script>alert('Ingreso Exitoso');
-				window.location= '?control=Users&action=Portal'</script>";
+                if($id==true)
+				{
+					echo "<script>alert('Ingreso Exitoso');
+				    window.location= '?control=Users&action=Portal'</script>";
+				}
+				else
+				{
+					echo "<script>alert('No Exitoso');
+				    window.location= '?control=Users&action=Portal'</script>";
+				}
             }
         }
+        public function Eliminarusuario(){
+            
+            include("models/usuariosModel.php");
+            $obj = new UsersController();
+            $apt= new usuariosModel();
+           
+			if ((isset($_POST['username'])) && ($_POST['username'] != ''))
+			{
+				$apt->setusername($_POST['username']);
+				$id=$apt->EliminarUsuario();
+				if($id==true)
+				{
+					echo "<script>alert('Ingreso Exitoso');
+				    window.location= '?control=Users&action=Portal'</script>";
+				}
+				else
+				{
+					echo "<script>alert('No Exitoso');
+				    window.location= '?control=Users&action=Portal'</script>";
+				}
+			}	
+		}
+        public function Crearusuario(){
+            
+            include("models/usuariosModel.php");
+            $obj = new UsersController();
+            $apt= new usuariosModel();
+           
+			if ((isset($_POST['username'])) && ($_POST['username'] != ''))
+			{
+				$apt->setusername($_POST['username']);
+				$id=$apt->EliminarUsuario();
+				if($id==true)
+				{
+					echo "<script>alert('Ingreso Exitoso');
+				    window.location= '?control=Users&action=Portal'</script>";
+				}
+				else
+				{
+					echo "<script>alert('No Exitoso');
+				    window.location= '?control=Users&action=Portal'</script>";
+				}
+			}	
+		}
     }
 
 ?>
