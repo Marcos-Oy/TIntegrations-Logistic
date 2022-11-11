@@ -8,7 +8,9 @@
 		switch($control){
 			case 'Users':$control= new UsersController();break; 
             case 'Login':$control= new LoginController();break;
+			case 'DashBoard':$control= new DashBoardController();break;
 			case 'Ordenes':$control= new OrdenesController();break;
+			case 'MisDatos':$control= new MisDatosController();break;
 		}
 		//llama a la acción del controlador
 		$control->{$action }();
@@ -16,8 +18,10 @@
 
 	//array con los controladores y sus respectivas acciones
 	$controllers= array(
-						'Users'=>['guardar','Portal','Crear','Eliminarusuario','Crearusuario','MisDatos','p7'],
+						'Users'=>['Portal','Crear','Eliminarusuario','Crearusuario'],
                         'Login'=>['login','Dash'],
+						'DashBoard'=>['Dash'],
+						'MisDatos'=>['MisDatos'],
 						'Ordenes'=>['NuevaOrden','RevisarOrden','NominarOrden','AsignarOrden','AsignarConCodigo',
 						'RecibirOrden','EntregarOrden','DevolverOrden','RecibirOdtExterna', 'calcularFlete']
 						);

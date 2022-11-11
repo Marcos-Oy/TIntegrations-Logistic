@@ -37,7 +37,7 @@
                 <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
                 <li class="nav-item">
-                    <a id="dashboard" style="cursor: pointer;" class="nav-link" href="?control=Login&action=Dash">
+                    <a id="dashboard" style="cursor: pointer;" class="nav-link" href="?control=DashBoard&action=Dash">
                         <i class="nav-icon fas fa-tachometer-alt"></i>
                         <p>
                             Dashboard
@@ -125,7 +125,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a id="MisDatos" style="cursor: pointer;" class="nav-link" href="?control=Users&action=MisDatos">
+                    <a id="MisDatos" style="cursor: pointer;" class="nav-link" href="?control=MisDatos&action=MisDatos">
                         <i class="far fa-circle nav-icon"></i>
                         <p>
                             Mis Datos
