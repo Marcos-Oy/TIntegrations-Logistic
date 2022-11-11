@@ -51,7 +51,7 @@
 		}
 		public function getpaterno()
 		{
-			return $this->$Materno;
+			return $this->Materno;
 		}
 		public function setmaterno($Materno)
 		{
@@ -59,7 +59,7 @@
 		}
 		public function getmaterno()
 		{
-			return $this->$Materno;
+			return $this->Materno;
 		}
 		public function setemail($email)
 		{
@@ -67,7 +67,7 @@
 		}
 		public function getemail()
 		{
-			return $this->$email;
+			return $this->email;
 		}
 		public function settel1($tel1)
 		{
@@ -75,7 +75,7 @@
 		}
 		public function gettel1()
 		{
-			return $this->$tel1;
+			return $this->tel1;
 		}
 		public function settel2($tel2)
 		{
@@ -83,7 +83,7 @@
 		}
 		public function gettel2()
 		{
-			return $this->$tel2;
+			return $this->tel2;
 		}
 		public function setofi($ofi)
 		{
@@ -91,7 +91,7 @@
 		}
 		public function getofi()
 		{
-			return $this->$ofi;
+			return $this->ofi;
 		}
 		public function setcargo($cargo)
 		{
@@ -99,7 +99,7 @@
 		}
 		public function getcargo()
 		{
-			return $this->$cargo;
+			return $this->cargo;
 		}
 		public function setfechanac($fechanac)
 		{
@@ -107,7 +107,7 @@
 		}
 		public function getfechanac()
 		{
-			return $this->$fechanac;
+			return $this->fechanac;
 		}
 
         public function show()

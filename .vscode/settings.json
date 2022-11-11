@@ -1,5 +1,6 @@
 {
     "phpGetterSetter.redirect": false,
-    "phpGetterSetter.short": true,
-    "php.validate.executablePath": ""
+    "phpGetterSetter.short": false,
+    "php.validate.executablePath": "",
+    "intelephense.completion.fullyQualifyGlobalConstantsAndFunctions": true
 }
