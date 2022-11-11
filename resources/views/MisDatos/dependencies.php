@@ -1,1 +1,1 @@
-<script src="../../../resources/assets/js/MisDatos.js"></script>
+<script src="resources/assets/js/MisDatos.js"></script>

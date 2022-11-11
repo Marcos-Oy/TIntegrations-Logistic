@@ -7,16 +7,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Recibir</title>
     <?php
-        include ('../layouts/dependencies.php');
-        include ('../recibir/dependencies.php');
+        include ('resources/views/layouts/dependencies.php');
+        include ('resources/views/recibir/dependencies.php');
     ?>
 </head>
 
 <body class="hold-transition sidebar-mini layout-fixed">
     <div class="wrapper">
         <?php
-        include '../layouts/navbar.php';
-        include '../layouts/aside.php';
+        include 'resources/views/layouts/navbar.php';
+        include 'resources/views/layouts/aside.php';
         ?>
         <div class="content-wrapper">
             <br>
@@ -95,6 +95,6 @@
         <!-- /.control-sidebar -->
     </div>
     <?php
-        include '../layouts/footer.php';
+        include 'resources/views/layouts/footer.php';
     ?>
 </body>

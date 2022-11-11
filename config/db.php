@@ -1,17 +1,21 @@
 <?php
-    class db{
-        private $host= "makrohard.sytes.net";
-        private $dbname="tpqt2023";
-        private $user="tpqt2023";
-        private $password="pinturillo";
-        public function conexion(){
-            try{
-                $PDO = new PDO("mysql:host=".$this->host.";dbname=".$this->dbname,$this->user,$this->password);
-                return $PDO;
-            }catch(PDOException $e){
-                return $e->getMessage();
-            }
-        }
-    }
+	class Conexion{
+		private $servidor;
+		private $usuario;
+		private $clave;
+		private $base;
 
+		public static function conectar(){
+			$servidor="makrohard.sytes.net";
+			$usuario="tpqt2023";
+			$clave="pinturillo";
+			$base="tpqt2023";
+
+
+			$con=new mysqli($servidor,$usuario,$clave,$base);
+			$con->query("SET NAMES 'utf8'");
+			return $con;
+		}
+	}
+	
 ?>
