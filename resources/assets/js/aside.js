@@ -18,20 +18,27 @@ function MenuActive() {
   var [Url, protocolo, servidor, path] = URLanalizada; // El análisis de la url la integramos en un array
 
   //Verificamos en consola que se hayan extraído correctamente
-  console.log("Url: " + Url);
-  console.log("Protocolo: " + protocolo);
-  console.log("Servidor: " + servidor);
-  console.log("Path: " + path);
+  // console.log("Url actual: " + URLactual);
+  // console.log("-----------");
+  // console.log("Url: " + Url);
+  // console.log("Protocolo: " + protocolo);
+  // console.log("Servidor: " + servidor);
+  // console.log("Path: " + path);
 
   $(".nav-link").removeClass("active"); //Formatear opciones activas
   $(".nav-item").removeClass("menu-closed"); //Formatear despliegues de menú
 
   if (
     URLactual ==
-    protocolo +
-      "://" +
-      servidor +
-      "/TIntegrations-Logistic/resources/views/dashboard/dashboard.php"
+      protocolo +
+        "://" +
+        servidor +
+        "/TIntegrations-Logistic/?control=DashBoard&action=Dash" ||
+    URLactual ==
+      protocolo +
+        "://" +
+        servidor +
+        "/TIntegrations-Logistic/?control=Login&action=Dash"
   ) {
     document.getElementById("dashboard").className = "nav-link active"; //Activamos la opción
   }
