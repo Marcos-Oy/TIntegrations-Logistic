@@ -66,7 +66,8 @@
                                                 <td>
                                                     <form method='POST' action='?control=Users&action=Edit'>
 
-                                                        <button type='submit' name='username'>editar
+                                                        <button type='submit' name='username'
+                                                            value=<?=$row['username']?>>editar
                                                         </button>
 
                                                     </form>

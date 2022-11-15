@@ -14,7 +14,7 @@
        //
        public function show()
        {
-           $consulta="call listaroficina()";
+           $consulta="select * from oficinas";
            $resultado=$this->basededatos->query($consulta);
            while($fila=$resultado->fetch_assoc()){
                $this->Solicitud[]=$fila;

@@ -41,26 +41,26 @@
                                     <form>
                                         <div class="row">
                                             <?php while($rows = $resultado->fetch_assoc()) { ?>
+
                                             <!-- COLUMNA 1 -->
 
                                             <div class="col-sm-4">
                                                 <!-- text input -->
                                                 <div class="form-group">
                                                     <label>Nombre</label>
-                                                    <input type="text" class="form-control" value="1">
-                                                    <?php echo $rows['username'];?>
-                                                    <?php echo $rows[1];?>
-                                                    <?php } ?>
+                                                    <input type="text" class="form-control"
+                                                        value="<?php echo $rows['nombre'];?>">
+
                                                 </div>
                                                 <div class="form-group">
                                                     <label>Apellido Paterno</label>
                                                     <input type="text" class="form-control"
-                                                        placeholder="Ingrese apellido paterno aquí...">
+                                                        value="<?php echo $rows['paterno'];?>">
                                                 </div>
                                                 <div class="form-group">
                                                     <label>Apellido Materno</label>
                                                     <input type="text" class="form-control"
-                                                        placeholder="Ingrese apellido materno aquí...">
+                                                        value="<?php echo $rows['materno'];?>">
                                                 </div>
 
                                             </div>
@@ -76,7 +76,7 @@
                                                             <span class="input-group-text"><i class="fas">+56</i></span>
                                                         </div>
                                                         <input type="number" class="form-control"
-                                                            placeholder="Ingrese número aquí...">
+                                                            value="<?php echo $rows['fono1'];?>">
                                                     </div>
                                                 </div>
 
@@ -87,7 +87,7 @@
                                                             <span class="input-group-text"><i class="fas">+56</i></span>
                                                         </div>
                                                         <input type="number" class="form-control"
-                                                            placeholder="Ingrese número aquí...">
+                                                            value="<?php echo $rows['fono2'];?>">
                                                     </div>
                                                 </div>
 
@@ -99,7 +99,7 @@
                                                                     class="fas fa-envelope"></i></span>
                                                         </div>
                                                         <input type="email" class="form-control"
-                                                            placeholder="Ingrese email aquí...">
+                                                            value="<?php echo $rows['email'];?>">
                                                     </div>
                                                 </div>
                                             </div>
@@ -110,28 +110,36 @@
                                                 <div class="form-group">
                                                     <label>Seleccionar Oficina</label>
                                                     <select class="form-control">
-                                                        <option>option 1</option>
-                                                        <option>option 2</option>
-                                                        <option>option 3</option>
-                                                        <option>option 4</option>
-                                                        <option>option 5</option>
+
+                                                        <?php foreach($rowsOficinas as $rowOficina): ?>
+                                                        <option value="<?= $rowOficina['idoficina'] ?>"
+                                                            <?php if($rowOficina['nombre']==$rows['desc_office']){echo " selected ";} ?>>
+                                                            <?= $rowOficina['nombre'] ?>
+                                                        </option>
+                                                        <?php endforeach; ?>
+
                                                     </select>
                                                 </div>
                                                 <div class="form-group">
                                                     <label>Seleccionar Cargo</label>
                                                     <select class="form-control">
-                                                        <option>option 1</option>
-                                                        <option>option 2</option>
-                                                        <option>option 3</option>
-                                                        <option>option 4</option>
-                                                        <option>option 5</option>
+
+                                                        <?php foreach($rowsCargos as $rowCargo): ?>
+                                                        <option value="<?= $rowCargo['idcargo'] ?>"
+                                                            <?php if($rowCargo['nombre']==$rows['desc_cargo']){echo " selected ";} ?>>
+                                                            <?= $rowCargo['nombre'] ?>
+                                                        </option>
+                                                        <?php endforeach; ?>
+
                                                     </select>
                                                 </div>
                                                 <div class="form-group">
                                                     <label>Seleccionar fecha</label>
-                                                    <input type="date" class="form-control">
+                                                    <input type="date" class="form-control"
+                                                        value="<?php echo $rows['fecha_nac'];?>">
                                                 </div>
                                             </div>
+                                            <?php } ?>
                                         </div>
                                         <button type="button" class="btn btn-success">Guardar</button>
                                     </form>

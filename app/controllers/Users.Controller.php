@@ -28,7 +28,12 @@
 			include("models/usuariosModel.php");
             $obj = new UsersController();
             $apt= new usuariosModel();
-			
+			include("models/oficinasModel.php");
+            $ofi = new oficinasModel();
+            $rowsOficinas = $ofi->show();
+			include("models/cargo_usuariosModel.php");
+            $cargos = new cargo_usuariosModel();
+            $rowsCargos = $cargos->show();
 			$apt->setusername($_POST['username']);
 			$resultado=$apt->ShowById();
 			require_once("resources/views/users/edit.php");
