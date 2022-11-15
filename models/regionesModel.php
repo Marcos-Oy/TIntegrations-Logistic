@@ -9,7 +9,7 @@ class regionesModel{
     }
 
     public function showById(){
-        $query = "call listarRegionesById($this->regid)";
+        $query = "call regiones_obtener($this->regid)";
         $resultado = $this->basededatos->query($query);
         foreach ($resultado as $row) {
             $region = $row[0];
@@ -18,7 +18,7 @@ class regionesModel{
     }
 
     public function show(){
-        $query = "call listarRegiones";
+        $query = "call regiones_obtener(null)";
         $resultado = $this->basededatos->query($query);
         while ($fila = $resultado->fetch_assoc()) {
             $this->regiones[] = $fila;

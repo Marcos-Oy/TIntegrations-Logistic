@@ -22,7 +22,7 @@
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-md-6">
-                        <form method="POST" action="?control=Ordenes&action=calcularFlete">
+                        <form method="POST" action="?control=NuevaOrden&action=calcularFlete">
                             <div class="card card-info">
                                 <div class="card-header">
                                     <h3 class="card-title">Información de destino</h3>
@@ -34,7 +34,11 @@
                                             <select id="regiones" class="form-control select2bs4" name="regiones">
                                                 <option value="">Seleccione Región</option>
                                                 <?php
-                                                if(isset($com))
+                                                if($listaRegiones):
+                                                    foreach ($listaRegiones as $region):
+                                                        echo "<option value $region[idregion]>$region[nombre]</option>";
+                                                    endforeach;
+                                                endif;
                                                 ?>
                                             </select>
                                         </div>
