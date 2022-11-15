@@ -112,9 +112,9 @@
                                                     <select class="form-control">
 
                                                         <?php foreach($rowsOficinas as $rowOficina): ?>
-                                                        <option value="<?= $rowOficina['idoficina'] ?>"
-                                                            <?php if($rowOficina['nombre']==$rows['desc_office']){echo " selected ";} ?>>
-                                                            <?= $rowOficina['nombre'] ?>
+                                                        <option value="<?= $rowOficina['id'] ?>"
+                                                            <?php if($rowOficina['desc_office']==$rows['desc_office']){echo " selected ";} ?>>
+                                                            <?= $rowOficina['desc_office'] ?>
                                                         </option>
                                                         <?php endforeach; ?>
 
