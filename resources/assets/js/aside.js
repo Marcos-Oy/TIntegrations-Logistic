@@ -140,7 +140,7 @@ function MenuActive() {
     protocolo +
       "://" +
       servidor +
-      "/TIntegrations-Logistic/resources/views/entregar/show.php"
+      "/TIntegrations-Logistic/?control=Ordenes&action=EntregarOrden"
   ) {
     document.getElementById("MenuOrdenes").className = "nav-item menu-open"; //Se despliega el menú
     document.getElementById("ordenes").className = "nav-link active"; //Activamos el menú
@@ -152,7 +152,7 @@ function MenuActive() {
     protocolo +
       "://" +
       servidor +
-      "/TIntegrations-Logistic/resources/views/NuevaOrden/show.php"
+      "/TIntegrations-Logistic/?control=Ordenes&action=NuevaOrden"
   ) {
     document.getElementById("NuevaOrden").className = "nav-link active"; //Activamos la opción
   }
@@ -162,7 +162,7 @@ function MenuActive() {
     protocolo +
       "://" +
       servidor +
-      "/TIntegrations-Logistic/resources/views/MisDatos/show.php"
+      "/TIntegrations-Logistic/?control=MisDatos&action=MisDatos"
   ) {
     document.getElementById("MisDatos").className = "nav-link active"; //Activamos la opción
   }
@@ -172,7 +172,7 @@ function MenuActive() {
     protocolo +
       "://" +
       servidor +
-      "/TIntegrations-Logistic/resources/views/RevisarOrden/show.php"
+      "/TIntegrations-Logistic/?control=Ordenes&action=RevisarOrden"
   ) {
     document.getElementById("RevisarOrden").className = "nav-link active"; //Activamos la opción
   }
