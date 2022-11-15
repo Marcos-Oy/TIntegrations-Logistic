@@ -7,8 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Editar Usuarios</title>
     <?php
-        include ('../layouts/dependencies.php');
-        include '../users/dependencies.php';
+        include ('resources/views/layouts/dependencies.php');
+        include 'resources/views/users/dependencies.php';
     ?>
 
 </head>
@@ -16,8 +16,8 @@
 <body class="hold-transition sidebar-mini layout-fixed">
     <div class="wrapper">
         <?php
-            include '../layouts/navbar.php';
-            include '../layouts/aside.php';
+            include 'resources/views/layouts/navbar.php';
+            include 'resources/views/layouts/aside.php';
         ?>
         <div class="content-wrapper">
 
@@ -29,7 +29,7 @@
                                 <div class="card-header">
                                     <h2>
                                         Editar usuario
-                                        <a href="../users/show.php" class="justify-content-md-end">
+                                        <a href="?control=Users&action=Portal" class="justify-content-md-end">
                                             <button type="button" class="btn btn-secondary">
                                                 Volver
                                             </button>
@@ -40,15 +40,17 @@
                                 <div class="card-body">
                                     <form>
                                         <div class="row">
-
+                                            <?php while($rows = $resultado->fetch_assoc()) { ?>
                                             <!-- COLUMNA 1 -->
 
                                             <div class="col-sm-4">
                                                 <!-- text input -->
                                                 <div class="form-group">
                                                     <label>Nombre</label>
-                                                    <input type="text" class="form-control"
-                                                        placeholder="Ingrese nombre aquí...">
+                                                    <input type="text" class="form-control" value="1">
+                                                    <?php echo $rows['username'];?>
+                                                    <?php echo $rows[1];?>
+                                                    <?php } ?>
                                                 </div>
                                                 <div class="form-group">
                                                     <label>Apellido Paterno</label>
@@ -158,6 +160,6 @@
             </section>
         </div>
         <?php
-            include '../layouts/footer.php';
+            include 'resources/views/layouts/footer.php';
         ?>
 </body>

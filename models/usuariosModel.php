@@ -160,7 +160,12 @@
 			}
 		}
 
-
+		public function ShowById()
+		{
+			$consulta="call usuarios_obtener('".$this->username."',null,null)";
+			$resultado=$this->basededatos->query($consulta);
+            return $resultado;
+		}
 
 
 

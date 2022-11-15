@@ -22,6 +22,19 @@
             $rowsCargos = $cargos->show();
             require_once("resources/views/users/create.php");
 		}
+
+		public function Edit()
+		{
+			include("models/usuariosModel.php");
+            $obj = new UsersController();
+            $apt= new usuariosModel();
+			
+			$apt->setusername($_POST['username']);
+			$resultado=$apt->ShowById();
+			require_once("resources/views/users/edit.php");
+		}
+
+		
         /*************************CRUD USUARIO**********************/
         public function Eliminarusuario(){
             
@@ -69,6 +82,39 @@
 			{
 				echo "<script>alert('No Exitoso');
 				window.location= '?control=Users&action=Portal'</script>";
+			}
+				
+		}
+		
+		public function ShowEditar(){
+			include("models/usuariosModel.php");
+
+		}
+
+		public function Editarusuario(){
+            
+            include("models/usuariosModel.php");
+            $obj = new UsersController();
+            $apt= new usuariosModel();
+			$apt->setnombre(ucwords(strtolower($_POST['nombre'])));
+			$apt->setpaterno(ucwords(strtolower($_POST['paterno'])));
+			$apt->setmaterno(ucwords(strtolower($_POST['materno'])));
+			$apt->setemail($_POST['email']);
+			$apt->settel1($_POST['tel1']);
+			$apt->settel2($_POST['tel2']);
+			$apt->setofi($_POST['ofi']);
+			$apt->setcargo($_POST['cargo']);
+			$apt->setfechanac($_POST['fechanac']);
+            $id = $apt->InsertarUsuario();
+            if($id==true)
+			{
+				echo "<script>alert('Ingreso Exitoso');
+				window.location= '?control=Users&action=Edit'</script>";
+			}
+			else
+			{
+				echo "<script>alert('No Exitoso');
+				window.location= '?control=Users&action=Edit'</script>";
 			}
 				
 		}

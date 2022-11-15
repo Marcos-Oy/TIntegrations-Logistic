@@ -64,15 +64,19 @@
                                                 <td><?= $row['desc_cargo'] ?></td>
                                                 <td><?= $row['fecha_nac'] ?></td>
                                                 <td>
-                                                    <a href="edit.php?id=<?= $row['username']?>"
-                                                        class="btn btn-warning">Editar</a>
-                                                   
-                                                    <form method='POST' action='?control=Users&action=Eliminarusuario'>
-			                                        <button type='submit' name='username' value=<?=$row['username']?>>bye
-                                                    </button>
+                                                    <form method='POST' action='?control=Users&action=Edit'>
+
+                                                        <button type='submit' name='username'>editar
+                                                        </button>
+
                                                     </form>
-                                                </td>
-                                                    
+
+                                                    <form method='POST' action='?control=Users&action=Eliminarusuario'>
+                                                        <button type='submit' name='username'
+                                                            value=<?=$row['username']?>>bye
+                                                        </button>
+                                                    </form>
+
                                                     <!-- Modal -->
                                                     <div class="modal fade" id="id<?=$row['username']?>" tabindex="-1"
                                                         aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -91,7 +95,7 @@
                                                                 <div class="modal-footer">
                                                                     <button type="button" class="btn btn-success"
                                                                         data-bs-dismiss="modal">Cerrar</button>
-                                                                        <a href="delete.php?id=<?= $row['username']?>"
+                                                                    <a href="delete.php?id=<?= $row['username']?>"
                                                                         class="btn btn-danger">Eliminar</a>
                                                                     <!-- <button type="button" >Eliminar</button> -->
                                                                 </div>
@@ -111,10 +115,11 @@
                                             <tr>
                                                 <th>Usuario</th>
                                                 <th>Nombre</th>
-                                                <th>Cargo</th>
                                                 <th>E-Mail</th>
                                                 <th>Teléfono</th>
                                                 <th>Teléfono 2</th>
+                                                <th>Oficina</th>
+                                                <th>Cargo</th>
                                                 <th>Fecha de nac</th>
                                                 <th>Acciones</th>
                                             </tr>

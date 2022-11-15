@@ -19,7 +19,7 @@
 
 	//array con los controladores y sus respectivas acciones
 	$controllers= array(
-						'Users'=>['Portal','Crear','Eliminarusuario','Crearusuario'],
+						'Users'=>['Portal','Crear','Edit','Editarusuario','Eliminarusuario','Crearusuario'],
                         'Login'=>['login','Dash'],
 						'DashBoard'=>['Dash'],
 						'MisDatos'=>['MisDatos'],
