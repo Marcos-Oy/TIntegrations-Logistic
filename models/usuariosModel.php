@@ -124,7 +124,7 @@
         //metodo que devuelve todo la tabla usuario
 		public function get_Solicitud()
 		{
-			$consulta="call mostrarUsuariosActivos()";
+			$consulta="call usuarios_obtener(null,1,null)";
 			$resultado=$this->basededatos->query($consulta);
 			while($fila=$resultado->fetch_assoc()){
 				$this->Solicitud[]=$fila;

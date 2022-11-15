@@ -18,12 +18,10 @@ function MenuActive() {
   var [Url, protocolo, servidor, path] = URLanalizada; // El análisis de la url la integramos en un array
 
   //Verificamos en consola que se hayan extraído correctamente
-  // console.log("Url actual: " + URLactual);
-  // console.log("-----------");
-  // console.log("Url: " + Url);
-  // console.log("Protocolo: " + protocolo);
-  // console.log("Servidor: " + servidor);
-  // console.log("Path: " + path);
+  console.log("Url: " + Url);
+  console.log("Protocolo: " + protocolo);
+  console.log("Servidor: " + servidor);
+  console.log("Path: " + path);
 
   $(".nav-link").removeClass("active"); //Formatear opciones activas
   $(".nav-item").removeClass("menu-closed"); //Formatear despliegues de menú
@@ -48,7 +46,7 @@ function MenuActive() {
       protocolo +
         "://" +
         servidor +
-        "/TIntegrations-Logistic/resources/views/users/show.php" ||
+        "/TIntegrations-Logistic/?control=Users&action=Portal" ||
     URLactual ==
       protocolo +
         "://" +
@@ -58,7 +56,7 @@ function MenuActive() {
       protocolo +
         "://" +
         servidor +
-        "/TIntegrations-Logistic/resources/views/users/create.php"
+        "/TIntegrations-Logistic/?control=Users&action=Crear"
   ) {
     document.getElementById("MenuAdministrar").className = "nav-item menu-open"; //Se despliega el menú
     document.getElementById("administrar").className = "nav-link active"; //Activamos el menú
@@ -70,7 +68,7 @@ function MenuActive() {
     protocolo +
       "://" +
       servidor +
-      "/TIntegrations-Logistic/resources/views/nominar/show.php"
+      "/TIntegrations-Logistic/?control=Ordenes&action=NominarOrden"
   ) {
     document.getElementById("MenuAdministrar").className = "nav-item menu-open"; //Se despliega el menú
     document.getElementById("administrar").className = "nav-link active"; //Activamos el menú
@@ -82,7 +80,7 @@ function MenuActive() {
     protocolo +
       "://" +
       servidor +
-      "/TIntegrations-Logistic/resources/views/asignar/show.php"
+      "/TIntegrations-Logistic/?control=Ordenes&action=AsignarOrden"
   ) {
     document.getElementById("MenuOrdenes").className = "nav-item menu-open"; //Se despliega el menú
     document.getElementById("ordenes").className = "nav-link active"; //Activamos el menú
@@ -94,7 +92,7 @@ function MenuActive() {
     protocolo +
       "://" +
       servidor +
-      "/TIntegrations-Logistic/resources/views/recibir/show.php"
+      "/TIntegrations-Logistic/?control=Ordenes&action=RecibirOrden"
   ) {
     document.getElementById("MenuOrdenes").className = "nav-item menu-open"; //Se despliega el menú
     document.getElementById("ordenes").className = "nav-link active"; //Activamos el menú
@@ -106,7 +104,7 @@ function MenuActive() {
     protocolo +
       "://" +
       servidor +
-      "/TIntegrations-Logistic/resources/views/CargarODTexterna/show.php"
+      "/TIntegrations-Logistic/?control=Ordenes&action=RecibirOdtExterna"
   ) {
     document.getElementById("MenuOrdenes").className = "nav-item menu-open"; //Se despliega el menú
     document.getElementById("ordenes").className = "nav-link active"; //Activamos el menú
@@ -118,7 +116,7 @@ function MenuActive() {
     protocolo +
       "://" +
       servidor +
-      "/TIntegrations-Logistic/resources/views/AsignarCodigo/show.php"
+      "/TIntegrations-Logistic/?control=Ordenes&action=AsignarConCodigo"
   ) {
     document.getElementById("MenuOrdenes").className = "nav-item menu-open"; //Se despliega el menú
     document.getElementById("ordenes").className = "nav-link active"; //Activamos el menú
@@ -130,7 +128,7 @@ function MenuActive() {
     protocolo +
       "://" +
       servidor +
-      "/TIntegrations-Logistic/resources/views/devolver/show.php"
+      "/TIntegrations-Logistic/?control=Ordenes&action=DevolverOrden"
   ) {
     document.getElementById("MenuOrdenes").className = "nav-item menu-open"; //Se despliega el menú
     document.getElementById("ordenes").className = "nav-link active"; //Activamos el menú
