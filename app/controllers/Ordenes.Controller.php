@@ -10,9 +10,7 @@
         public function AsignarConCodigo()	{ require_once("resources/views/AsignarCodigo/show.php");	}
         public function RecibirOrden()
         {  
-            include("models/OrdenesModel.php");
-            $odtr = new OrdenesModel();
-            $result = $odtr->get_Solicitud();
+            
             require_once("resources/views/recibir/show.php");	
         }
         public function RecibirOdtExterna(){  require_once("resources/views/CargarODTexterna/show.php");	}

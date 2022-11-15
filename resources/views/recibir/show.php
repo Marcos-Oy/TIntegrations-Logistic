@@ -81,75 +81,8 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <?php
-                                while ($orden = mysqli_fetch_array($result)) {
-                                $idorden = $orden[0];
-                                $fecha = $orden[1];
-                                $region = $orden[2];
-                                $comuna = $orden[3];
-                                $cantidad = $orden[4];
-                                $qsobres = $orden[5];
-                                $metros = round($orden[6]/1000000, 2);
-                                $peso = number_format($orden[7], 2, '.', '.');
-                                $valor = $orden[8];
-                                $documento = $orden[9];
-                                $valordeclarado = $orden[10];
-                                $tipopago = $orden[11];
-                                $idact = $orden[12]; 
-                            ?>
-                            <tr>
-                                <?php if ($_SESSION['cargoid']!=2) { ?>
-                                <td>
-                                    <div class="form-check">
-                                        <input class="form-check-input" onChange="marcar(this)" name="orden[]"
-                                            type="checkbox" value="<?php echo $idorden; ?>"
-                                            id="<?php echo $idorden; ?>">
-                                        <input type="hidden" value="<?php echo $valor; ?>"
-                                            id="valor<?php echo $idorden; ?>" name="valor<?php echo $idorden; ?>">
-                                        <input type='hidden' readonly class='form-control-plaintext text-center'
-                                            value='<?php echo $metros; ?>' id='metros<?php echo $idorden; ?>'
-                                            name='metros<?php echo $idorden; ?>'>
-                                        <input type='hidden' readonly class='form-control-plaintext text-center'
-                                            value='<?php echo $peso; ?>' id='peso<?php echo $idorden; ?>'
-                                            name='peso<?php echo $idorden; ?>'>
-                                        <input type='hidden' readonly class='form-control-plaintext text-center'
-                                            value='<?php echo $idact; ?>' id='actividad' name='actividad'>
-                                    </div>
-                                </td>
-                                <?php } 
-                                    if ($_SESSION['cargoid']!=2) 
-                                    {
-                                        echo "<tr>
-                                        <td>".$idorden."</td>
-                                        <td>".$fecha."</td>
-                                        <td>".$region."</td>
-                                        <td>".$comuna."</td>
-                                        <td>".$cantidad."</td>
-                                        <td>".$metros."</td>
-                                        <td>".$peso."</td>
-                                        <td>".$qsobres."</td>
-                                        <td>".$tipopago."</td>
-                                        <td>$".number_format((int)$valordeclarado, 0, ',', '.')."</td>
-                                        <td>$".number_format((int)$valor, 0, ',', '.')."</td>
-                                        </tr>";
-                                    } 
-                                    else 
-                                    {
-                                        echo" <tr>
-                                        <td>".$idorden."</td>
-                                        <td>".$fecha."</td>
-                                        <td>".$region."</td>
-                                        <td>".$provincia."</td>
-                                        <td>".$comuna."</td>
-                                        <td>".$cantidad."</td>
-                                        <td>".$metros."</td>
-                                        <td>".$peso."</td>
-                                        <td>".$qsobres."</td>
-                                        <td>".$tipopago."</td>
-                                        </tr>";
-                                    }
-                                }
-                                ?>
+                          
+                                
                             
                             </tbody>
                         </table>
