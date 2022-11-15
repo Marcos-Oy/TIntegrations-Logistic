@@ -110,17 +110,7 @@
 			return $this->$fechanac;
 		}
 
-        public function show()
-        {
-            $stament = $this->PDO->prepare("call mostrarUsuariosActivos()");
-            return ($stament->execute()) ? $stament->fetchAll() : false;
-        }
-
-        public function insertar($nombre, $paterno, $materno, $email, $tel1, $tel2, $ofi, $cargo, $fechanac){
-            $stament = $this->PDO->prepare("select create_user('$nombre', '$paterno', '$materno', '$email', 
-            '$tel1', '$tel2', '$ofi', '$cargo', '$fechanac');");
-            return ($stament->execute()) ? $stament->fetchAll() : false ;
-        }
+       
         //metodo que devuelve todo la tabla usuario
 		public function get_Solicitud()
 		{
