@@ -12,7 +12,7 @@
        //
        public function show()
        {
-           $consulta="call listarCargos()";
+           $consulta="call cargos_obtener(null)";
            $resultado=$this->basededatos->query($consulta);
            while($fila=$resultado->fetch_assoc()){
                $this->Solicitud[]=$fila;

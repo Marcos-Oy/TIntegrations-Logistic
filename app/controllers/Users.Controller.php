@@ -60,9 +60,9 @@
 			$apt->setcargo($_POST['cargo']);
 			$apt->setfechanac($_POST['fechanac']);
             $id = $apt->InsertarUsuario();
-            if($id==true)
+            if(isset($id) && !empty($id))
 			{
-				echo "<script>alert('Ingreso Exitoso');
+				echo "<script>alert('Ingreso correcto');
 				window.location= '?control=Users&action=Portal'</script>";
 			}
 			else

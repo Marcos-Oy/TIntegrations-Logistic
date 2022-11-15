@@ -127,7 +127,7 @@
                                                         <option selected>Seleccionar Cargos</option>
 
                                                         <?php foreach($rowsCargos as $rowCargo): ?>
-                                                        <option value="<?= $rowCargo['id'] ?>"><?= $rowCargo['desc_cargo'] ?></option>
+                                                        <option value="<?= $rowCargo['idcargo'] ?>"><?= $rowCargo['nombre'] ?></option>
                                                         <?php endforeach; ?>
                                                     </select>
                                                 </div>
