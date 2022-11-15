@@ -1,3 +1,4 @@
+<?php echo $rows[1]; ?>
 <!DOCTYPE html>
 <html lang="es">
 
@@ -56,7 +57,7 @@
                                             <?php foreach($rows as $row): ?>
                                             <tr>
                                                 <td><?= $row['username'] ?></td>
-                                                <td><?= $row['nombre'] ?></td>
+                                                <td><?= $row[1] ?></td>
                                                 <td><?= $row['email'] ?></td>
                                                 <td><?= $row['fono1'] ?></td>
                                                 <td><?= $row['fono2'] ?></td>

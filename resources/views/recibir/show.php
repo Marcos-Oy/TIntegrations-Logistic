@@ -63,10 +63,10 @@
                 </div>
                 <!-- Main content -->
                 <div class="container  table-responsive">
-                    <table class="table table-success  text-center">
+                    <table id="UsersTable" class="table table-bordered table-striped">
                         <thead>
                             <tr>
-                                <th></th>
+                                <th>&nbsp;&nbsp;</th>
                                 <th>ODT</th>
                                 <th>Fecha</tH>
                                 <th>Región</th>
@@ -81,16 +81,41 @@
                             </tr>
                         </thead>
                         <tbody>
-                          
-                                
-                            
-                            </tbody>
-                        </table>
-                    </div>
-                
+                            <?php if($resultado): ?>
+                            <?php foreach($resultado as $row): ?>
+                            <tr>
+                                <td>
+                                    <div class="form-check center">
+                                        <input type="checkbox" class="form-check-input" id="exampleCheck1"
+                                        value="<?= $row['ODT'] ?>">
+                                    </div>
+                                </td>
+                                <td><?= $row['ODT'] ?></td>
+                                <td><?= $row['fecha'] ?></td>
+                                <td><?= $row['regi'] ?></td>
+                                <td><?= $row['comun'] ?></td>
+                                <td><?= $row['bultos'] ?></td>
+                                <td><?= $row['dimensiones'] ?></td>
+                                <td><?= $row['peso'] ?></td>
+                                <td><?= $row['sobres'] ?></td>
+                                <td><?= $row['nombre'] ?></td>
+                                <td><?= $row['valor_declarado'] ?></td>
+                                <td><?= $row['valor_flete'] ?></td>
+
+                            </tr>
+                            <?php endforeach; ?>
+                            <?php else: ?>
+                            <tr>
+                                <td colspan="3" class="text-center">No hay registros actualmente</td>
+                            </tr>
+                            <?php endif; ?>
+                        </tbody>
+                    </table>
+                </div>
+
             </form>
             <!-- Main content -->
-    
+
         </div>
         <!-- Control Sidebar -->
         <aside class="control-sidebar control-sidebar-dark">
