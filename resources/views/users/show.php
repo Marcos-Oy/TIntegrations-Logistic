@@ -66,14 +66,12 @@
                                                 <td>
                                                     <a href="edit.php?id=<?= $row['username']?>"
                                                         class="btn btn-warning">Editar</a>
-                                                    <!-- Button trigger modal -->
-                                                    <!--<a class="btn btn-danger" data-bs-toggle="modal"
-                                                        data-bs-target="#id">Eliminar
-                                                    </a>--></td>
-                                                    <td><form method='POST' action='?control=Users&action=Eliminarusuario'>
+                                                   
+                                                    <form method='POST' action='?control=Users&action=Eliminarusuario'>
 			                                        <button type='submit' name='username' value=<?=$row['username']?>>bye
                                                     </button>
-                                                    </form></td>
+                                                    </form>
+                                                </td>
                                                     
                                                     <!-- Modal -->
                                                     <div class="modal fade" id="id<?=$row['username']?>" tabindex="-1"
