@@ -9,7 +9,7 @@
 			$servidor="makrohard.sytes.net";
 			$usuario="tpqt2023";
 			$clave="pinturillo";
-			$base="tpqt2023";
+			$base="tpqtpint";
 
 
 			$con=new mysqli($servidor,$usuario,$clave,$base);

@@ -1,7 +1,12 @@
 <?php
     class CargosController{
-        public function __construct(){}
+
+        private $model;
+        public function __construct()
+        {
+           
+        }
         
     }
 
-?>
+    ?>
