@@ -1,4 +1,5 @@
 //buttons: ["copy", "csv", "excel", "pdf", "print", "colvis"],
+
 $(function () {
   //Nominar
   $("#NominarTable")
