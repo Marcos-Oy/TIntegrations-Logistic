@@ -2,6 +2,7 @@
     class OrdenesModel
     {
         private $search ="";
+        private $ODT;
 
         public function __construct()
         {
@@ -18,6 +19,12 @@
 			return $resultado;
 		}
 		/********************************* */
+        public function Recibir_Orden()
+		{
+			$consulta="call Orden_Recibir()";
+			$resultado=$this->basededatos->query($consulta);
+			return $resultado;
+		}
         
     }
 
