@@ -6,12 +6,8 @@
         private $nombre;
         private $paterno; 
 		private $materno;
-
-
+		
 		private $email, $tel1, $tel2, $ofi, $cargo, $fechanac;
-
-	
-
 
         public function __construct()
         {
@@ -159,6 +155,23 @@
 		}
 
 
+		public function EditarUsuario()
+		{
+			$consulta="call usuarios_modificar('".$this->nombre."', '".$this->paterno."', '".$this->materno."', '".$this->email."',
+										   '".$this->tel1."','".$this->tel2."', '".$this->fechanac."', ".$this->estduser_id.", ".$this->ofi.", 
+										   '".$this->username."', ".$this->cargo.")";
+			$resultado=$this->basededatos->query($consulta);
+			echo $resultado;
+			if($resultado==true)
+			{
+			return true;
+			}
+			else
+			{
+				return false;
+			}
+			
+		}
 
     }
 

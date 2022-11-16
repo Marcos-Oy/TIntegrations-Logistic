@@ -113,16 +113,18 @@
 			$apt->setofi($_POST['ofi']);
 			$apt->setcargo($_POST['cargo']);
 			$apt->setfechanac($_POST['fechanac']);
-            $id = $apt->InsertarUsuario();
+			$apt->setusername($_POST['username']);
+			$apt->setestduser_id($_POST['activo']);
+            $id = $apt->EditarUsuario();
             if($id==true)
 			{
 				echo "<script>alert('Ingreso Exitoso');
-				window.location= '?control=Users&action=Edit'</script>";
+				window.location= '?control=Users&action=Portal'</script>";
 			}
 			else
 			{
 				echo "<script>alert('No Exitoso');
-				window.location= '?control=Users&action=Edit'</script>";
+				window.location= '?control=Users&action=Portal'</script>";
 			}
 				
 		}
