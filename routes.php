@@ -12,6 +12,8 @@
 			case 'Ordenes':$control= new OrdenesController();break;
 			case 'MisDatos':$control= new MisDatosController();break;
 			case 'NuevaOrden':$control= new NuevaOrdenController();break;
+			case 'Recibir':$control= new RecibirController();break;
+
 		}
 		//llama a la acción del controlador
 		$control->{$action }();
@@ -24,6 +26,7 @@
 						'DashBoard'=>['Dash'],
 						'MisDatos'=>['MisDatos'],
 						'NuevaOrden'=>['calcularFlete'],
+						'Recibir'=>['Principal'],
 						'Ordenes'=>['NuevaOrden','RevisarOrden','NominarOrden','AsignarOrden','AsignarConCodigo',
 						'RecibirOrden','EntregarOrden','DevolverOrden','RecibirOdtExterna', 'calcularFlete']
 						);

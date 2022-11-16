@@ -83,7 +83,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a id="recibir" style="cursor: pointer;" class="nav-link" href="?control=Ordenes&action=RecibirOrden">
+                            <a id="recibir" style="cursor: pointer;" class="nav-link" href="?control=Recibir&action=Principal">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Recibir</p>
                             </a>
