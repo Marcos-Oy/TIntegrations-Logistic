@@ -92,7 +92,7 @@ function MenuActive() {
     protocolo +
       "://" +
       servidor +
-      "/TIntegrations-Logistic/?control=Ordenes&action=RecibirOrden"
+      "/TIntegrations-Logistic/?control=Recibir&action=Principal"
   ) {
     document.getElementById("MenuOrdenes").className = "nav-item menu-open"; //Se despliega el menú
     document.getElementById("ordenes").className = "nav-link active"; //Activamos el menú

@@ -20,6 +20,11 @@
 
         <div class="content-wrapper">
 
+            <div class="text-center">
+                <img src="resources/assets/img/image(2).png">
+            </div>
+
+
         </div>
 
     </div>
