@@ -2,6 +2,7 @@
 class comunasModel
 {
     private $comid;
+    private $regid;
 
 
     public function __construct()
@@ -12,17 +13,27 @@ class comunasModel
 
     public function showById()
     {
-        $query = "call listarComuna($this->comid)";
+        $query = "call comunas_obtener($this->comid,null)";
         $com = $this->basededatos->query($query);
         foreach ($com as $row) {
-            $comuna = $row[0];
+            $this->Comunas[] = $row;
         }
-        return $comuna;
+        return $this->Comunas;
+    }
+
+    public function showByReg()
+    {
+        $query = "call comunas_obtener(null,$this->regid)";
+        $com = $this->basededatos->query($query);
+        foreach ($com as $row) {
+            $this->Comunas[] = $row;
+        }
+        return $this->Comunas;
     }
 
     public function show()
     {
-        $query = "call listarComunas();";
+        $query = "call comunas_obtener(null,null);";
         $resultado = $this->basededatos->query($query);
         while ($fila = $resultado->fetch_assoc()) {
             $this->Comunas[] = $fila;
@@ -46,6 +57,26 @@ class comunasModel
     public function setComid($comid)
     {
         $this->comid = $comid;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of regid
+     */ 
+    public function getRegid()
+    {
+        return $this->regid;
+    }
+
+    /**
+     * Set the value of regid
+     *
+     * @return  self
+     */ 
+    public function setRegid($regid)
+    {
+        $this->regid = $regid;
 
         return $this;
     }

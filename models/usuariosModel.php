@@ -51,15 +51,15 @@
 		}
 		public function getpaterno()
 		{
-			return $this->Materno;
+			return $this->paterno;
 		}
-		public function setmaterno($Materno)
+		public function setmaterno($materno)
 		{
-			$this->Materno=$Materno;
+			$this->materno=$materno;
 		}
 		public function getmaterno()
 		{
-			return $this->Materno;
+			return $this->materno;
 		}
 		public function setemail($email)
 		{
@@ -123,7 +123,7 @@
 
         public function EliminarUsuario()
 		{
-			$consulta="UPDATE usuarios SET estduser_id = 2 WHERE username = '".$this->username. "'";
+			$consulta="UPDATE usuarios SET estduser_id = 0 WHERE username = '".$this->username. "'";
             $resultado=$this->basededatos->query($consulta);
 			if($resultado==true)
 			{
@@ -136,8 +136,9 @@
 		}
 		public function InsertarUsuario()
 		{
-			$consulta="select create_user('".$this->nombre."', '".$this->paterno."', '".$this->materno."', '".$this->email."', 
-            '".$this->tel1."', '".$this->tel2."', ".$this->ofi.", ".$this->cargo.", '".$this->fechanac."')";
+			$consulta="call usuarios_crear('".$this->nombre."', '".$this->paterno."', '".$this->materno."', '".$this->email."',
+										   '".$this->tel1."','".$this->tel2."', ".$this->ofi.", ".$this->cargo.", 
+										   '".$this->fechanac."', @_user_name)";
 			$resultado=$this->basededatos->query($consulta);
 			if($resultado==true)
 			{
@@ -147,6 +148,7 @@
 			{
 				return false;
 			}
+			
 		}
 
 		public function ShowById()

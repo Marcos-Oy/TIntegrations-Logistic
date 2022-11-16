@@ -14,6 +14,7 @@ class regionesModel{
         foreach ($resultado as $row) {
             $region = $row[0];
         }
+        $this->basededatos->close();
         return $region;
     }
 

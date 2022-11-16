@@ -3,16 +3,21 @@ $('#regiones').on('change', (function () {
     $.ajax(
         {
             type: 'POST',
-            url: 'combos/listar_comunas.php',
+            url: 'app/controllers/NuevaOrden.Controller.php',
             data: { 'id': id }
+
+            
         }
     )
         .done(function (listas_r) {
             $('#comunas').html(listas_r)
         }
         )
-        .fail(function () {
-            alert('Error al cargar comunas')
+        .fail(function (xhr, textStatus, error) {
+            console.log(xhr.statusText);
+      console.log(textStatus);
+      console.log(error);
+            alert('Error al cargar comunas' + xhr.responseText)
         }
         )
 }

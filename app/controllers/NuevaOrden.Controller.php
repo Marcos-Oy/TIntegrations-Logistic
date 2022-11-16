@@ -1,5 +1,23 @@
 <?php
+
+
+            
+
+
     class NuevaOrdenController{
+
+        
+
+        public function mostrarComunas()
+        {
+            include 'models/comunasModel.php';
+            $lc = new comunasModel();
+            $idregion = $_POST['id'];
+            $lc->setRegid($idregion);
+            $consulta = $lc->showByReg();
+
+        }
+
         public function calcularFlete()
     {
         $reg = $_POST['regiones'];
@@ -64,4 +82,5 @@
         $tipodocumentos = new tipoDocumentoModel();
         $tipodocumento = $tipodocumentos->show();
     }
+
 }

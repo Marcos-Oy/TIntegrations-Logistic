@@ -182,7 +182,7 @@
                                         <div class="col-md-4">
                                             <label>RUT</label>
                                             <input type="text" class="form-control" placeholder="12345678-9"
-                                                name="rmttrut" id="rmttrut" required>
+                                                name="rmttrut" oninput="checkRut(this)" id="rmttrut" required>
                                         </div>
                                         <div class="col-md-4">
                                             <label>Nombre</label>
@@ -276,6 +276,6 @@
     <?php
         include 'resources/views/layouts/footer.php';
     ?>
-    <script type="text/javascript" src="assets/js/validarRUT.js"></script>
-    <script type="text/javascript" src="assets/js/order_new.js"></script>
+    <script type="text/javascript" src="resources/assets/js/validarRUT.js"></script>
+    <script type="text/javascript" src="resources/assets/js/order_new.js"></script>
 </body>
