@@ -51,7 +51,7 @@ function MenuActive() {
       protocolo +
         "://" +
         servidor +
-        "/TIntegrations-Logistic/resources/views/users/edit.php" ||
+        "/TIntegrations-Logistic/?control=Users&action=Edit" ||
     URLactual ==
       protocolo +
         "://" +
