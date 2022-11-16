@@ -21,35 +21,7 @@
         <div class="content-wrapper">
             <br>
             <div class="h1 text-center text-info">Recepcion de Ordenes</div>
-            <form method="post">
-                <div class="container text-center ">
-                    <div class="input-group mb-3">
-                        <input type="text" class="form-control" placeholder="Indique el Texto " aria-label="Username"
-                            aria-describedby="basic-addon1">
-                        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-                        <button type="button" class="btn btn-info">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                                class="bi bi-search" viewBox="0 0 16 16">
-                                <path
-                                    d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z">
-                                </path>
-                            </svg>
-                            <font _mstmutation="1">BUSCAR</font>
-                        </button>
-                        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-                        <button type="button" class="btn btn-warning">LIMPIAR</button>
-                    </div>
-                </div>
-            </form>
-            <form method="post">
-                <div class="container text-center ">
-                    <div class="input-group mb-2 ">
-                        <input type="text" class="form-control" placeholder="Indique el Texto " aria-label="Username"
-                            aria-describedby="basic-addon1">&nbsp; &nbsp;
-                        <button type="button" class="btn btn-success">RECIBIR ENTREGA</button>
-                    </div>
-                </div>
-            </form>
+            
             <form method="POST" action="recibirorden.php">
                 <div class="container">
                     <div class="input-group mb-3">
