@@ -19,8 +19,11 @@
     <div class="wrapper">
 
         <div class="content-wrapper">
-            <label value="<?php echo $session_id?>"></label>
+            <label >SESION ID<?php echo $session_id ?>;</label> 
+            
+            <label >hello</label>
 
+            <label >SESION USUARIO<?php echo $_SESSION['usuario']?>;</label> 
         </div>
 
     </div>

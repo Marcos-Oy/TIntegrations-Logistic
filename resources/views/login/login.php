@@ -28,10 +28,10 @@
             <div class="card-body">
                 <p class="login-box-msg">Iniciar sesión</p>
 
-                <form action="?control=Login&action=iniciotest" method="post">
+                <form action="?control=Login&action=iniciotest" method="POST">
                 
                     <div class="input-group mb-3">
-                        <input type="text" class="form-control" name="username"placeholder="Usuario">
+                    <input id="usuario" type="text" name="usuario" class="form-control" placeholder="USUARIO">
                         <div class="input-group-append">
                             <div class="input-group-text">
                                 <span class="fas fa-envelope"></span>
