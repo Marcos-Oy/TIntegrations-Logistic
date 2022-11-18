@@ -19,6 +19,7 @@
     <div class="wrapper">
 
         <div class="content-wrapper">
+            <label value="<?php echo $session_id?>"></label>
 
         </div>
 
