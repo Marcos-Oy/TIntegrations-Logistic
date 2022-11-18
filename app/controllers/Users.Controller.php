@@ -128,5 +128,24 @@
 			}
 				
 		}
+
+		public function PasswordReset(){
+            
+            include("models/usuariosModel.php");
+            $apt= new usuariosModel();
+			$apt->setusername($_POST['username']);
+            $id = $apt->RestablecerPassword();
+            if($id==true)
+			{
+				echo "<script>alert('Ingreso Exitoso');
+				window.location= '?control=Users&action=Portal'</script>";
+			}
+			else
+			{
+				echo "<script>alert('No Exitoso');
+				window.location= '?control=Users&action=Portal'</script>";
+			}
+				
+		}
     }
 ?>

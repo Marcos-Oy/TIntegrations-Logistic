@@ -173,6 +173,22 @@
 			
 		}
 
+		public function RestablecerPassword()
+		{
+			$consulta="call usuarios_reset('".$this->username."')";
+			$resultado=$this->basededatos->query($consulta);
+			echo $resultado;
+			if($resultado==true)
+			{
+			return true;
+			}
+			else
+			{
+				return false;
+			}
+			
+		}
+
     }
 
 ?>

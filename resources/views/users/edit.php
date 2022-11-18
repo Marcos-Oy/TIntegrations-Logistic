@@ -159,8 +159,11 @@
                                 </div>
                                 <!-- /.card-header -->
                                 <div class="card-body">
-                                    <form>
-                                        <button type="button" class="btn btn-warning col-sm-12">⚠ Restablecer ⚠</button>
+                                    <form method="POST" action="?control=Users&action=PasswordReset">
+                                        <?php while($rows = $resultado->fetch_assoc()) { ?>
+                                        <input type="hidden" value="<?php echo $rows['username'];?>" name="username">
+                                        <?php } ?>
+                                        <button type="submit" class="btn btn-warning col-sm-12">⚠ Restablecer ⚠</button>
                                     </form>
                                 </div>
                             </div>
