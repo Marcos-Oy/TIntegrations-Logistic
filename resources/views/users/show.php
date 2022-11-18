@@ -1,4 +1,3 @@
-<?php echo $rows[1]; ?>
 <!DOCTYPE html>
 <html lang="es">
 
@@ -57,7 +56,7 @@
                                             <?php foreach($rows as $row): ?>
                                             <tr>
                                                 <td><?= $row['username'] ?></td>
-                                                <td><?= $row[1] ?></td>
+                                                <td><?= $row['nombre']." ".$row['paterno']." ".$row['materno'] ?></td>
                                                 <td><?= $row['email'] ?></td>
                                                 <td><?= $row['fono1'] ?></td>
                                                 <td><?= $row['fono2'] ?></td>
@@ -65,20 +64,26 @@
                                                 <td><?= $row['desc_cargo'] ?></td>
                                                 <td><?= $row['fecha_nac'] ?></td>
                                                 <td>
-                                                    <form method='POST' action='?control=Users&action=Edit'>
-
-                                                        <button type='submit' name='username'
-                                                            value=<?=$row['username']?>>editar
-                                                        </button>
-
-                                                    </form>
-
-                                                    <form method='POST' action='?control=Users&action=Eliminarusuario'>
-                                                        <button type='submit' name='username'
-                                                            value=<?=$row['username']?>>bye
-                                                        </button>
-                                                    </form>
-
+                                                    <div class="row">
+                                                        <div class="form-group">
+                                                            <form method='POST' action='?control=Users&action=Edit'>
+                                                                <button class="btn btn-warning" type='submit'
+                                                                    name='username' value=<?=$row['username']?>><i
+                                                                        class="fas fa-pen" aria-hidden="true"></i>
+                                                                </button>
+                                                            </form>
+                                                        </div>
+                                                        &nbsp;&nbsp;
+                                                        <div class="form-group">
+                                                            <form method='POST'
+                                                                action='?control=Users&action=Eliminarusuario'>
+                                                                <button class="btn btn-danger" type='submit'
+                                                                    name='username' value=<?=$row['username']?>><i
+                                                                        class="fa fa-trash" aria-hidden="true"></i>
+                                                                </button>
+                                                            </form>
+                                                        </div>
+                                                    </div>
                                                     <!-- Modal -->
                                                     <div class="modal fade" id="id<?=$row['username']?>" tabindex="-1"
                                                         aria-labelledby="exampleModalLabel" aria-hidden="true">
