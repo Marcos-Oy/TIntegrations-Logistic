@@ -19,12 +19,6 @@
     <div class="wrapper">
 
         <div class="content-wrapper">
-            <label >SESION ID<?php echo $session_id ?>;</label> 
-            
-            <label >hello</label>
-
-
-            <label >SESION USUARIO<?php echo $_SESSION['usuario']?>;</label> 
             <div class="text-center">
                 <img src="resources/assets/img/image(2).png">
             </div>
