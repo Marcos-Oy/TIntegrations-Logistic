@@ -5,7 +5,7 @@
 	if (isset($_GET['control'])&&isset($_GET['action'])) {
 		$control=$_GET['control'];
 		$action=$_GET['action'];
-		session_start();		
+				
 	} 
 	else 
 	{
@@ -13,6 +13,7 @@
 		$action='login';
 	}	
 	//carga la vista layout.php
+	session_start();
 	require_once('Ejecutor.php');
 ?>
 
