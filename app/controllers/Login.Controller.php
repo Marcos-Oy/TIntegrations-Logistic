@@ -7,8 +7,56 @@ class LoginController{
 
     public function Dash()
     {
-        include "resources/views/dashboard/dashboard.php";
-        
+        include "resources/views/dashboard/dashboard.php";        
+    }
+
+    public function LoginUser(){
+        include("models/usuariosModel.php");
+            //$obj = new UsersController();
+            $usuario = $_POST['usuario'] ?? '';
+            $password = $_POST['password'] ?? '';
+            $apt= new usuariosModel();
+            $apt->setusername($usuario);
+            $apt->setpass($password);
+			$resultado=$apt->LoginUsuario();
+            if(mysqli_num_rows($resultado) > 0)
+            {
+                while($rows = $resultado->fetch_assoc()) {
+                    
+                    // If you want to display all results from the query at once:
+                    //print_r($rows);
+                
+                    // If you want to display the results one by one
+                    //echo $rows['username'];
+                    //echo $rows['nombre']; // etc..
+                    //echo "<script>console.log('Debug Objects: " . $rows['nombre'] . "' );</script>";
+                    $_SESSION['username'] = $rows['username'];
+                    $_SESSION['pass'] = $rows['pass'];
+                    $_SESSION['idbodega'] = $rows['idbodega'];
+                    $_SESSION['bodega'] = $rows['bodega'];
+                    $_SESSION['usuario'] = $rows['nombre'] . ' ' .$rows['paterno'];
+                    //echo "<script>$('#alert').remove();</script>";
+                    require_once( "resources/views/dashboard/dashboard.php");
+                
+                }
+               
+            }
+            else {
+                include "resources/views/login/login.php";
+                //echo "<script>window.alert('No existe el usuario');</script>";
+                //die('<div class="alert alert-danger" id="alert" role="alert">Usuario y/o calve incorrecta.</div>');
+                print_r('<p id="alert">Usuario y/o clave incorrecta.</p>');
+            }        
+    }
+
+    public function LogOut(){
+        unset($_SESSION["username"]); 
+        unset($_SESSION["pass"]);
+        unset($_SESSION["idbodega"]); 
+        unset($_SESSION["bodega"]); 
+        unset($_SESSION["usuario"]);
+        session_destroy();
+        include "resources/views/login/login.php";
     }
 }
 ?>
