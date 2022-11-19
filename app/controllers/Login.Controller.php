@@ -10,8 +10,11 @@ class LoginController{
         include "resources/views/dashboard/dashboard.php";        
     }
 
-    public function LoginUser(){
-        include("models/usuariosModel.php");
+    public function LoginUser()
+    {
+        if ((isset($_POST['usuario'])) && ($_POST['usuario'] != ''))
+		{
+            include("models/usuariosModel.php");
             //$obj = new UsersController();
             $usuario = $_POST['usuario'] ?? '';
             $password = $_POST['password'] ?? '';
@@ -36,17 +39,27 @@ class LoginController{
                     $_SESSION['bodega'] = $rows['bodega'];
                     $_SESSION['usuario'] = $rows['nombre'] . ' ' .$rows['paterno'];
                     //echo "<script>$('#alert').remove();</script>";
-                    require_once( "resources/views/dashboard/dashboard.php");
-                
+                    echo "<script>window.location= '?control=DashBoard&action=Dash'</script>";
                 }
                
             }
             else {
-                include "resources/views/login/login.php";
+                echo "<script>
+							alert('EL USUARIO NO EXISTE EN EL SISTEMA');
+							window.location= '?control=Login&action=login'
+						</script>";
+                //echo "<script>window.alert(Usuario y/o clave incorrecta); window.location= '?control=Login&action=login'</script>";
+                //include "resources/views/login/login.php";
                 //echo "<script>window.alert('No existe el usuario');</script>";
                 //die('<div class="alert alert-danger" id="alert" role="alert">Usuario y/o calve incorrecta.</div>');
-                print_r('<p id="alert">Usuario y/o clave incorrecta.</p>');
-            }        
+                //print_r('<p id="alert">Usuario y/o clave incorrecta.</p>');
+            } 
+        }
+        else
+        {
+            echo "<script>window.location= '?control=Login&action=login'</script>";
+        } 
+            
     }
 
     public function LogOut(){
