@@ -9,14 +9,30 @@
     <!-- Sidebar -->
     <div class="sidebar">
         <!-- Sidebar user panel (optional) -->
-        <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+        <!-- <div class="user-panel mt-3 pb-3 mb-3 d-flex">
             <div class="image">
                 <img src="public/dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
             </div>
             <div class="info">
                 <a href="#" class="d-block"><?php echo $_SESSION['usuario']?></a>
             </div>
-        </div>
+        </div> -->
+        <div class="nav-item dropdown user-menu">
+            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                <img src="public/dist/img/user2-160x160.jpg" class="user-image img-circle elevation-2" width="30px" alt="User Image">
+                <span class="d-none d-md-inline"><?php echo $_SESSION['usuario']; ?></span>
+            </a>
+            <ul class="dropdown-menu dropdown-menu-lg dropdown-menu-right" style="left: inherit; right: 30px; min-width:200px;">
+                <li class="user-header bg-primary" style="display: flex; flex-direction: column; align-items: center;">
+                    <img src="public/dist/img/user2-160x160.jpg" class="img-circle elevation-2" width="100px" alt="User Image">
+                    <p><?php echo $_SESSION['usuario']; ?></p>
+                    <p><small><?php echo 'Bodega: '. $_SESSION['bodega']; ?></small></p>
+                </li>
+                <li class="user-footer">
+                    <a href="?control=Login&action=LoginUser" class="btn btn-default btn-flat float-right">Cerrar Sesion</a>
+                </li>
+            </ul>
+</div>
 
         <!-- SidebarSearch Form -->
         <div class="form-inline">

@@ -11,8 +11,10 @@
 	{
 		$control='Login';
 		$action='login';
+		
 	}	
 	//carga la vista layout.php
+	
 	require_once('Ejecutor.php');
 ?>
 

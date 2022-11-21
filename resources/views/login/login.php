@@ -28,10 +28,10 @@
             <div class="card-body">
                 <p class="login-box-msg">Iniciar sesión</p>
 
-                <form action="?control=Login&action=iniciotest" method="POST">
+                <form action="?control=Login&action=LoginUser" method="post">
                 
                     <div class="input-group mb-3">
-                    <input id="usuario" type="text" name="usuario" class="form-control" placeholder="USUARIO">
+                        <input type="text" class="form-control" placeholder="Usuario">
                         <div class="input-group-append">
                             <div class="input-group-text">
                                 <span class="fas fa-envelope"></span>
@@ -39,7 +39,7 @@
                         </div>
                     </div>
                     <div class="input-group mb-3">
-                        <input type="password" class="form-control" placeholder="Password">
+                        <input id="password" type="password" name="password" class="form-control" placeholder="Password">
                         <div class="input-group-append">
                             <div class="input-group-text">
                                 <span class="fas fa-lock"></span>
@@ -75,6 +75,7 @@
     <script src="public/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
     <!-- AdminLTE App -->
     <script src="public/dist/js/adminlte.min.js"></script>
+    
 </body>
 
 </html>
