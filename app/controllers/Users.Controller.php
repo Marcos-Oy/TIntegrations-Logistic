@@ -137,7 +137,7 @@
             $id = $apt->RestablecerPassword();
             if($id==true)
 			{
-				echo "<script>alert('Ingreso Exitoso');
+				echo "<script>alert('Contraseña Reseteada!');
 				window.location= '?control=Users&action=Portal'</script>";
 			}
 			else
