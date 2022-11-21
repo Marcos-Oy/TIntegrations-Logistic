@@ -6,7 +6,7 @@
         private $nombre;
         private $paterno; 
 		private $materno;
-		
+		private $pass;
 		private $email, $tel1, $tel2, $ofi, $cargo, $fechanac;
 
         public function __construct()
@@ -29,9 +29,13 @@
 		{
 			$this->username=$username;
 		}
-		public function getusername()
+		public function getpass()
 		{
-			return $this->username;
+			return $this->pass;
+		}
+		public function setpass($pass)
+		{
+			$this->pass=$pass;
 		}
 		public function setnombre($nombre)
 		{
@@ -172,7 +176,7 @@
 			}
 			
 		}
-
+		
 		public function RestablecerPassword()
 		{
 			$consulta="call usuarios_reset('".$this->username."')";
@@ -186,7 +190,12 @@
 			{
 				return false;
 			}
+		}
 			
+		public function LoginUsuario(){
+			$consulta="call usuarios_login('".$this->username."','".md5($this->pass)."')";
+			$resultado=$this->basededatos->query($consulta);
+            return $resultado;
 		}
 
     }
