@@ -171,3 +171,16 @@
     <!-- /.sidebar -->
 
 </aside>
+
+<script> 
+function valida_session(){      
+    var user = "<?=$_SESSION['username'] ?? null;?>";
+    if(user == ''){
+        window.location= '?control=Login&action=login'
+    }
+}
+
+const heartbeat = setInterval(() => {
+    valida_session();
+}, 2000);
+  </script>

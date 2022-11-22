@@ -13,6 +13,8 @@ function MenuActive() {
    * con los operadores lógicos.
    */
 
+
+
   var URLactual = window.location; //Extraemos la url actual
   var URLanalizada = /^(\w+):\/\/([^\/]+)([^]+)$/.exec(URLactual); //La analizamos para poder extraer sus partes
   var [Url, protocolo, servidor, path] = URLanalizada; // El análisis de la url la integramos en un array
