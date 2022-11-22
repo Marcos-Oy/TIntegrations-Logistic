@@ -3,7 +3,7 @@ $('#regiones').on('change', (function () {
     $.ajax(
         {
             type: 'POST',
-            url: 'app/controllers/NuevaOrden.Controller.php',
+            url: '?control=NuevaOrden&action=cambioRegion',
             data: { 'id': id }
 
             

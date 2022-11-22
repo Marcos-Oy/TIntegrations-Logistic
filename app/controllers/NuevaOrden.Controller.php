@@ -1,20 +1,34 @@
 <?php
 
-    class NuevaOrdenController{
+class NuevaOrdenController
+{
 
-        
 
-        public function mostrarComunas()
-        {
-            include 'models/comunasModel.php';
-            $lc = new comunasModel();
-            $idregion = $_POST['id'];
-            $lc->setRegid($idregion);
-            $consulta = $lc->showByReg();
 
+    public function mostrarComunas()
+    {
+        include 'models/comunasModel.php';
+        $lc = new comunasModel();
+        $idregion = $_POST['id'];
+        $lc->setRegid($idregion);
+        $consulta = $lc->showByReg();
+    }
+
+    public function cambioRegion()
+    {
+        $reg = $_POST['id'];
+        include 'models/comunasModel.php';
+        $comuna = new comunasModel();
+        $comuna->setRegid($reg);
+        $comunas = $comuna->showByReg();
+        if (isset($comunas) && !empty($comunas)) {
+            $listaComunas = $comunas;
+            require_once("resources/views/NuevaOrden/show.php");
         }
+    }
 
-        public function calcularFlete()
+
+    public function calcularFlete()
     {
         $reg = $_POST['regiones'];
         $com = $_POST['comunas'];
@@ -24,6 +38,7 @@
         if (isset($_POST['cantidad']) && !empty($_POST['cantidad']) && $_POST['cantidad'] > 0) {
             $cantidad = $_POST['cantidad'];
             $peso = str_replace(',', '.', $_POST['peso']);
+            $dimensiones = $alto * $ancho * $largo / 1000000;
             $pesosize = $alto * $ancho * $largo * 2.5 / 10000;
             if ($peso <= $pesosize) {
                 $pesofinal = $pesosize;
@@ -50,26 +65,34 @@
         $tarifa->setPeso($pesofinal);
         $tarifa->setSobres($qsobres);
         $valorf = $tarifa->calcularTarifa();
-        //echo $valorf;
-        if (isset($valorf) && !empty($valorf)) {
-            $valorflete = $valorf;
-        }
 
         include 'models/regionesModel.php';
         $region = new regionesModel();
         $region->setRegid($reg);
         $regfin = $region->showById();
         if (isset($regfin) && !empty($regfin)) {
-            $descregion = $regfin[0];
+            foreach ($regfin as $row) {
+                $descregion = $row['nombre'];
+                $idregion = $row['idregion'];
+            }
         }
+        $regionesM = new regionesModel();
+        $listaRegiones = $regionesM->show();
+
 
         include 'models/comunasModel.php';
         $comuna = new comunasModel();
         $comuna->setComid($com);
         $comfin = $comuna->showByID();
         if (isset($comfin) && !empty($comfin)) {
-            $desccomuna = $comfin;
+            foreach ($comfin as $row) {
+                $desccomuna = $row['nombre'];
+                $idcomuna = $row['idcomuna'];
+            }
         }
+
+        $comunas = new comunasModel();
+        $listaComunas = $comunas->show();
 
         include 'models/tipo_pagosModel.php';
         $tipopagos = new tipoPagosModel();
@@ -79,13 +102,11 @@
         $tipodocumentos = new tipoDocumentoModel();
         $tipodocumento = $tipodocumentos->show();
 
-        
-        if($valorflete):
-           // echo  $valorflete;
+
+        if ($valorf) :
+
             require_once("resources/views/NuevaOrden/show.php");
-                
+
         endif;
-
     }
-
 }
