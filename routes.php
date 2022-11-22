@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 	//función que llama al controlador y su respectiva acción, que son pasados como parámetros
 	function call($control, $action){
 		//importa el controlador desde la carpeta Controllers
@@ -21,8 +21,8 @@
 
 	//array con los controladores y sus respectivas acciones
 	$controllers= array(
-						'Users'=>['Portal','Crear','Edit','Editarusuario','Eliminarusuario','Crearusuario'],
-                        'Login'=>['login','Dash'],
+						'Users'=>['Portal','Crear','Edit','Editarusuario','Eliminarusuario','Crearusuario', 'PasswordReset'],
+                        'Login'=>['login','Dash','LoginUser'],
 						'DashBoard'=>['Dash'],
 						'MisDatos'=>['MisDatos'],
 						'NuevaOrden'=>['calcularFlete'],
