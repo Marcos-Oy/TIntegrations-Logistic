@@ -12,7 +12,7 @@ class regionesModel{
         $query = "call regiones_obtener($this->regid)";
         $resultado = $this->basededatos->query($query);
         foreach ($resultado as $row) {
-            $region = $row[0];
+            $region = $row['idregion'];
         }
         $this->basededatos->close();
         return $region;

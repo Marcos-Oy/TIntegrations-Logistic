@@ -9,11 +9,12 @@ class tipoPagosModel
     }
     public function show()
     {
-        $query = "call listarTipoPagos;";
+        $query = "call tipo_pago_obetener(null);";
         $resultado = $this->basededatos->query($query);
         while ($fila = $resultado->fetch_assoc()) {
             $this->tipopagos[] = $fila;
         }
         return $this->tipopagos;
+    
     }
 }

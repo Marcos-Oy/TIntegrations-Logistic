@@ -1,9 +1,5 @@
 <?php
 
-
-            
-
-
     class NuevaOrdenController{
 
         
@@ -54,8 +50,9 @@
         $tarifa->setPeso($pesofinal);
         $tarifa->setSobres($qsobres);
         $valorf = $tarifa->calcularTarifa();
+        //echo $valorf;
         if (isset($valorf) && !empty($valorf)) {
-            $valorflete = $valorf[0];
+            $valorflete = $valorf;
         }
 
         include 'models/regionesModel.php';
@@ -81,6 +78,14 @@
         include 'models/tipo_documentoModel.php';
         $tipodocumentos = new tipoDocumentoModel();
         $tipodocumento = $tipodocumentos->show();
+
+        
+        if($valorflete):
+           // echo  $valorflete;
+            require_once("resources/views/NuevaOrden/show.php");
+                
+        endif;
+
     }
 
 }
