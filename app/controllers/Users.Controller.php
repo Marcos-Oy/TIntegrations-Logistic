@@ -5,6 +5,10 @@
         //***************************** */ LLAMADA A LAS VISTAS*********************************/
         public function Portal()
 		{
+			include("Helper.php");
+			$hel = new Helper();
+			$hel->iniciar();
+
             include("models/usuariosModel.php");
             $obj = new UsersController();
             $apt= new usuariosModel();

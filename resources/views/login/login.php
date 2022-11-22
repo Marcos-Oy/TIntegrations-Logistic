@@ -24,6 +24,7 @@
         <div class="card card-outline card-primary">
             <div class="card-header text-center">
                 <b class="h1">LOGIN</b>
+                <?php echo session_id(); ?>
             </div>
             <div class="card-body">
                 <p class="login-box-msg">Iniciar sesión</p>
