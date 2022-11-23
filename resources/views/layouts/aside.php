@@ -43,7 +43,7 @@
                 <li class="user-header bg-primary" style="display: flex; flex-direction: column; align-items: center;">
                     <img src="public/dist/img/user2-160x160.jpg" class="img-circle elevation-2" width="100px" alt="User Image">
                     <p><?php echo $_SESSION['usuario']; ?></p>
-                    <p><small><?php echo 'Bodega: '. $_SESSION['bodega']; ?></small></p>
+                    <p><small><?php echo 'Oficina: '. $_SESSION['oficina']; ?></small></p>
                 </li>
                 <li class="user-footer">
                     <a href="?control=Login&action=LoginUser" class="btn btn-default btn-flat float-right">Cerrar Sesion</a>

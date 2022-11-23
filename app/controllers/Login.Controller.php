@@ -37,10 +37,11 @@ class LoginController{
                     //echo $rows['nombre']; // etc..
                     //echo "<script>console.log('Debug Objects: " . $rows['nombre'] . "' );</script>";
                     $_SESSION['username'] = $rows['username'];
-                    $_SESSION['pass'] = $rows['pass'];
+                    $_SESSION['idoficina'] = $rows['idoficina'];
+                    $_SESSION['oficina'] = $rows['oficina'];
                     $_SESSION['idbodega'] = $rows['idbodega'];
                     $_SESSION['bodega'] = $rows['bodega'];
-                    $_SESSION['usuario'] = $rows['nombre'] . ' ' .$rows['paterno'];
+                    $_SESSION['usuario'] = ucfirst($rows['nombre']) . ' ' .ucfirst($rows['paterno']);
                     //echo "<script>$('#alert').remove();</script>";
                     echo "<script>window.location= '?control=DashBoard&action=Dash'</script>";
                 }
