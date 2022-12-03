@@ -35,10 +35,15 @@ class comunasModel
     {
         $query = "call comunas_obtener(null,null);";
         $resultado = $this->basededatos->query($query);
-        while ($fila = $resultado->fetch_assoc()) {
-            $this->Comunas[] = $fila;
+        if (mysqli_num_rows($resultado) > 0) {
+            while ($fila = $resultado->fetch_assoc()) {
+                $this->Comunas[] = $fila;
+            }
+            return $this->Comunas;
+        } else {
+            $e = "";
+            return $e;
         }
-        return $this->Comunas;
     }
 
     /**
@@ -63,7 +68,7 @@ class comunasModel
 
     /**
      * Get the value of regid
-     */ 
+     */
     public function getRegid()
     {
         return $this->regid;
@@ -73,7 +78,7 @@ class comunasModel
      * Set the value of regid
      *
      * @return  self
-     */ 
+     */
     public function setRegid($regid)
     {
         $this->regid = $regid;
@@ -81,4 +86,3 @@ class comunasModel
         return $this;
     }
 }
-?>

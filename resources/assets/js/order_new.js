@@ -3,7 +3,7 @@ $('#regiones').on('change', (function () {
     $.ajax(
         {
             type: 'POST',
-            url: '?control=NuevaOrden&action=cambioRegion',
+            url: 'combos/listar_comunas.php',
             data: { 'id': id }
 
             
