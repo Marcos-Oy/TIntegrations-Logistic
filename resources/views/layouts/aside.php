@@ -15,12 +15,7 @@
                 <img src="public/dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
             </div>
             <div class="info">
-                <a href="#" class="d-block"></a>
-            </div>
-            <div class="info pull-right">
-            <a id="dashboard" style="cursor: pointer;" class="nav-link" href="?control=DashBoard&action=Dash">    
-                <i class="nav-icon fas fa-tachometer-alt"></i>
-            </a>    
+                <a href="#" class="d-block"><?php echo $_SESSION['usuario']?></a>
             </div>
         </div> -->
         <div class="nav-item dropdown user-menu">

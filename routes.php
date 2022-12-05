@@ -26,7 +26,7 @@ session_start();
 						'DashBoard'=>['Dash'],
 						'NuevaOrden'=>['calcularFlete', 'datosODT'],
 						'MisDatos'=>['MisDatos','EditarMisDatos'],
-						'Recibir'=>['Principal'],
+						'Recibir'=>['Principal','Recibir'],
 						'Ordenes'=>['NuevaOrden','RevisarOrden','NominarOrden','AsignarOrden','AsignarConCodigo',
 						'RecibirOrden','EntregarOrden','DevolverOrden','RecibirOdtExterna', 'calcularFlete']
 						);
