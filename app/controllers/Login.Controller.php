@@ -22,6 +22,10 @@ class LoginController{
             $apt->setusername($usuario);
             $apt->setpass($password);
 			$resultado=$apt->LoginUsuario();
+            echo "<script>
+							alert('MARDITO');
+							
+						</script>";
             if(mysqli_num_rows($resultado) > 0)
             {
                 while($rows = $resultado->fetch_assoc()) {

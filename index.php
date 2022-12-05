@@ -5,7 +5,7 @@
 	if (isset($_GET['control'])&&isset($_GET['action'])) {
 		$control=$_GET['control'];
 		$action=$_GET['action'];
-		session_start();	
+		//session_start();	
 	} 
 	else 
 	{
