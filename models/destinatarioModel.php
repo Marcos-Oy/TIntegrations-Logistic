@@ -3,6 +3,12 @@ class destinatariosModel
 {
     private $rutdtno, $nombre, $fono1, $fono2;
 
+    public function __construct()
+    {
+        require_once "config/db.php";
+        $this->basededatos = Conexion::conectar();
+    }
+
 
     public function showByRut()
     {
@@ -14,7 +20,7 @@ class destinatariosModel
             }
             return $this->destinatario;
         } else {
-            $e = "";
+            $e = "Error";
             return $e;
         }
     }

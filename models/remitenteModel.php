@@ -2,9 +2,16 @@
  class remitentesModel{
     private $rut;
 
+    public function __construct()
+    {
+        require_once "config/db.php";
+        $this->basededatos = Conexion::conectar();
+    }
+
     public function ShowById()
 		{
 			$consulta="call remitentes_obtener('".$this->rut."')";
+            echo $consulta;
 			$resultado=$this->basededatos->query($consulta);
             return $resultado;
 		}

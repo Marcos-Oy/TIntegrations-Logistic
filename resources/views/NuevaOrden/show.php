@@ -397,17 +397,17 @@
                                 <div class="inner">
                                     <h4>Destinatario</h4>
                                     <ul>
-                                        <li>Nombre: </li>
-                                        <li>Teléfono 1: </li>
-                                        <li>Teléfono 2: </li>
+                                        <li>Nombre: <?php echo $nomdestinatario; ?></li>
+                                        <li>Teléfono 1: <?php echo $fo1destinatario; ?></li>
+                                        <li>Teléfono 2: <?php echo $fo2destinatario; ?></li>
                                     </ul>
                                 </div>
                                 <div class="inner">
                                     <h4>Remitente</h4>
                                     <ul>
-                                        <li>Nombre: </li>
-                                        <li>Teléfono 1: </li>
-                                        <li>Teléfono 2: </li>
+                                        <li>Nombre: <?php echo $nomremitente; ?></li>
+                                        <li>Teléfono 1: <?php echo $fo1remitente; ?></li>
+                                        <li>Teléfono 2: <?php echo $fo2remitente; ?></li>
                                     </ul>
                                 </div>
                                 <div class="inner">
