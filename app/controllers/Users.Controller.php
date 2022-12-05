@@ -30,7 +30,6 @@
 		public function Edit()
 		{
 			include("models/usuariosModel.php");
-            $obj = new UsersController();
             $apt= new usuariosModel();
 			
 			include("models/oficinasModel.php");

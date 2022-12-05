@@ -38,13 +38,20 @@
                                     </div>
                                 </div>
                                 <div class="card-body">
-                                    <form>
+                                    <form method="POST" action="?control=MisDatos&action=EditarMisDatos">
                                         <div class="row">
+                                            <?php while($rows = $resultado->fetch_assoc()) { ?>
+                                            <!-- COLUMNA 1 -->
+                                            <input type="hidden" value="<?php echo $rows['username'];?>"
+                                                name="username">
+
+                                            <input type="hidden" value="<?php echo $rows['activo'];?>" name="activo">
+
                                             <div class="col-sm-12">
                                                 <div class="form-group">
                                                     <label>Nombre</label>
-                                                    <input id="nombre" type="text" class="form-control"
-                                                        value="Carlos Gaete">
+                                                    <input name="nombre" id="nombre" type="text" class="form-control"
+                                                        value="<?php echo $rows['nombre'];?>">
                                                 </div>
                                                 <div class="form-group">
                                                     <label>Teléfono</label>
@@ -52,8 +59,8 @@
                                                         <div class="input-group-prepend">
                                                             <span class="input-group-text"><i class="fas">+56</i></span>
                                                         </div>
-                                                        <input id="tel1" type="number" class="form-control"
-                                                            value="963403223">
+                                                        <input name="tel1" id="tel1" type="number" class="form-control"
+                                                            value="<?php echo $rows['tel1'];?>">
                                                     </div>
                                                 </div>
                                                 <div class="form-group">
@@ -62,8 +69,8 @@
                                                         <div class="input-group-prepend">
                                                             <span class="input-group-text"><i class="fas">+56</i></span>
                                                         </div>
-                                                        <input id="tel2" type="number" class="form-control"
-                                                            value="963403223">
+                                                        <input name="tel2" id="tel2" type="number" class="form-control"
+                                                            value="<?php echo $rows['tel2'];?>">
                                                     </div>
                                                 </div>
                                                 <div class="form-group">
@@ -73,21 +80,25 @@
                                                             <span class="input-group-text"><i
                                                                     class="fas fa-envelope"></i></span>
                                                         </div>
-                                                        <input id="mail" type="email" class="form-control"
-                                                            value="carlos.gaete@tpqt.cl">
+                                                        <input name="email" id="mail" type="email" class="form-control"
+                                                            value="<?php echo $rows['email'];?>">
                                                     </div>
                                                 </div>
                                                 <div class="form-group">
-                                                    <label>Oficina</label>
-                                                    <select id="ofi" class="form-control">
-                                                        <option>Bustamante</option>
-                                                        <option>Oficina 2</option>
-                                                        <option>option 3</option>
-                                                        <option>option 4</option>
-                                                        <option>option 5</option>
+                                                    <label>Seleccionar Oficina</label>
+                                                    <select id="ofi" class="form-control" name="ofi">
+
+                                                        <?php foreach($rowsOficinas as $rowOficina): ?>
+                                                        <option value="<?= $rowOficina['id'] ?>"
+                                                            <?php if($rowOficina['desc_office']==$rows['desc_office']){echo " selected ";} ?>>
+                                                            <?= $rowOficina['desc_office'] ?>
+                                                        </option>
+                                                        <?php endforeach; ?>
+
                                                     </select>
                                                 </div>
-                                                <button id="btn1" type="button" class="btn btn-warning">Guardar</button>
+                                                <button name="btn1" id="btn1" type="button"
+                                                    class="btn btn-warning">Guardar</button>
                                             </div>
                                         </div>
                                     </form>
@@ -119,7 +130,9 @@
                                                     <input type="password" class="form-control"
                                                         placeholder="Confirme contraseña...">
                                                 </div>
-                                                <button id="btn2" type="button" class="btn btn-warning">Guardar</button>
+                                                <?php } ?>
+                                                <button name="btn2" id="btn2" type="button"
+                                                    class="btn btn-warning">Guardar</button>
                                             </div>
                                         </div>
                                     </form>
