@@ -2,6 +2,16 @@
     class MisDatosController{
         public function MisDatos()
 		{
+			include("models/usuariosModel.php");
+            $apt= new usuariosModel();
+
+			include("models/oficinasModel.php");
+            $ofi = new oficinasModel();
+            $rowsOficinas = $ofi->show();
+
+			$apt->setusername($_SESSION['username']);
+			$resultado=$apt->ShowById();
+
             require_once("resources/views/MisDatos/show.php");
 		}
 
@@ -16,8 +26,8 @@
 			$apt->setemail($_POST['email']);
 			$apt->settel1($_POST['tel1']);
 			$apt->settel2($_POST['tel2']);
-			$apt->setofi($_POST['ofi']);
-			$apt->setcargo($_POST['cargo']);
+			// $apt->setofi($_POST['ofi']);
+			// $apt->setcargo($_POST['cargo']);
 			$apt->setfechanac($_POST['fechanac']);
 			$apt->setusername($_POST['username']);
 			$apt->setestduser_id($_POST['activo']);
