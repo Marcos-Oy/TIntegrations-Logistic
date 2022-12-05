@@ -397,25 +397,37 @@
                                 <div class="inner">
                                     <h4>Destinatario</h4>
                                     <ul>
-                                        <li>Nombre: <?php echo $nomdestinatario; ?></li>
-                                        <li>Teléfono 1: <?php echo $fo1destinatario; ?></li>
-                                        <li>Teléfono 2: <?php echo $fo2destinatario; ?></li>
+                                        <li>
+                                            <div class="form-group"><label for="nombredestinatario">Nombre: </label><input required class="form-control" type="text" value="<?php echo $nomdestinatario; ?>" name="nombredestinatario" id="nombredestinatario"></div>
+                                        </li>
+                                        <li>
+                                            <div class="form-group"><label for="tel1destinatario">Teléfono 1: </label><input required class="form-control" type="text" value="<?php echo $fo1destinatario; ?>" name="tel1destinatario" id="tel1destinatario"></div>
+                                        </li>
+                                        <li>
+                                            <div class="form-group"><label for="tel2destinatario">Teléfono 2: </label><input class="form-control" type="text" value="<?php echo $fo2destinatario; ?>" name="tel2destinatario" id="tel2destinatario"></div>
+                                        </li>
                                     </ul>
                                 </div>
                                 <div class="inner">
                                     <h4>Remitente</h4>
                                     <ul>
-                                        <li>Nombre: <?php echo $nomremitente; ?></li>
-                                        <li>Teléfono 1: <?php echo $fo1remitente; ?></li>
-                                        <li>Teléfono 2: <?php echo $fo2remitente; ?></li>
+                                        <li>
+                                            <div class="form-group"><label for="nombreremitente">Nombre: </label><input required class="form-control" type="text" value="<?php echo $nomremitente; ?>" name="nombreremitente" id="nombreremitente"></div>
+                                        </li>
+                                        <li>
+                                            <div class="form-group"><label for="tel1remitente">Teléfono 1: </label><input required class="form-control" type="text" value="<?php echo $fo1remitente; ?>" name="tel1remitente" id="tel1remitente"></div>
+                                        </li>
+                                        <li>
+                                            <div class="form-group"><label for="tel2remitente">Teléfono 2: </label><input class="form-control" type="text" value="<?php echo $fo2remitente; ?>" name="tel2remitente" id="tel2remitente"></div>
+                                        </li>
                                     </ul>
                                 </div>
                                 <div class="inner">
                                     <h4>Información adicional</h4>
                                     <ul>
                                         <li>Oficina: <?php echo $_SESSION['bodega']; ?></li>
-                                        <li>Documento: <?php echo $descdocumento. " ". $docnum ?></li>
-                                        <li>Valor declarado: $<?php echo number_format($_POST['valordec'],0,',','.') ?></li>
+                                        <li>Documento: <?php echo $descdocumento . " " . $docnum ?></li>
+                                        <li>Valor declarado: $<?php echo number_format($_POST['valordec'], 0, ',', '.') ?></li>
                                         <li>Forma de pago: <?php echo $desctipopago ?></li>
                                     </ul>
                                 </div>
