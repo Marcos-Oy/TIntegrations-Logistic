@@ -13,7 +13,6 @@
 			case 'MisDatos':$control= new MisDatosController();break;
 			case 'NuevaOrden':$control= new NuevaOrdenController();break;
 			case 'Recibir':$control= new RecibirController();break;
-
 		}
 		//llama a la acción del controlador
 		$control->{$action }();
