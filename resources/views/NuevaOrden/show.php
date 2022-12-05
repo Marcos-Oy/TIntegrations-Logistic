@@ -395,20 +395,6 @@
                                     </ul>
                                 </div>
                                 <div class="inner">
-                                    <h4>Destinatario</h4>
-                                    <ul>
-                                        <li>
-                                            <div class="form-group"><label for="nombredestinatario">Nombre: </label><input required class="form-control" type="text" value="<?php echo $nomdestinatario; ?>" name="nombredestinatario" id="nombredestinatario"></div>
-                                        </li>
-                                        <li>
-                                            <div class="form-group"><label for="tel1destinatario">Teléfono 1: </label><input required class="form-control" type="text" value="<?php echo $fo1destinatario; ?>" name="tel1destinatario" id="tel1destinatario"></div>
-                                        </li>
-                                        <li>
-                                            <div class="form-group"><label for="tel2destinatario">Teléfono 2: </label><input class="form-control" type="text" value="<?php echo $fo2destinatario; ?>" name="tel2destinatario" id="tel2destinatario"></div>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="inner">
                                     <h4>Remitente</h4>
                                     <ul>
                                         <li>
@@ -422,6 +408,21 @@
                                         </li>
                                     </ul>
                                 </div>
+                                <div class="inner">
+                                    <h4>Destinatario</h4>
+                                    <ul>
+                                        <li>
+                                            <div class="form-group"><label for="nombredestinatario">Nombre: </label><input required class="form-control" type="text" value="<?php echo $nomdestinatario; ?>" name="nombredestinatario" id="nombredestinatario"></div>
+                                        </li>
+                                        <li>
+                                            <div class="form-group"><label for="tel1destinatario">Teléfono 1: </label><input required class="form-control" type="text" value="<?php echo $fo1destinatario; ?>" name="tel1destinatario" id="tel1destinatario"></div>
+                                        </li>
+                                        <li>
+                                            <div class="form-group"><label for="tel2destinatario">Teléfono 2: </label><input class="form-control" type="text" value="<?php echo $fo2destinatario; ?>" name="tel2destinatario" id="tel2destinatario"></div>
+                                        </li>
+                                    </ul>
+                                </div>
+
                                 <div class="inner">
                                     <h4>Información adicional</h4>
                                     <ul>
