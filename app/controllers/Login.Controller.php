@@ -1,7 +1,9 @@
 <?php
 
 class LoginController{
-    public function login(){
+    public function login(){  
+        session_unset();
+        session_destroy();
         include "resources/views/login/login.php";
     }
     public function iniciotest(){        
@@ -9,6 +11,7 @@ class LoginController{
 
     public function LoginUser()
     {
+        
         if ((isset($_POST['usuario'])) && ($_POST['usuario'] != ''))
 		{
             include("models/usuariosModel.php");
@@ -31,10 +34,11 @@ class LoginController{
                     //echo $rows['nombre']; // etc..
                     //echo "<script>console.log('Debug Objects: " . $rows['nombre'] . "' );</script>";
                     $_SESSION['username'] = $rows['username'];
-                    $_SESSION['pass'] = $rows['pass'];
+                    $_SESSION['idoficina'] = $rows['idoficina'];
+                    $_SESSION['oficina'] = $rows['oficina'];
                     $_SESSION['idbodega'] = $rows['idbodega'];
                     $_SESSION['bodega'] = $rows['bodega'];
-                    $_SESSION['usuario'] = $rows['nombre'] . ' ' .$rows['paterno'];
+                    $_SESSION['usuario'] = ucfirst($rows['nombre']) . ' ' .ucfirst($rows['paterno']);
                     //echo "<script>$('#alert').remove();</script>";
                     echo "<script>window.location= '?control=DashBoard&action=Dash'</script>";
                 }
@@ -42,7 +46,7 @@ class LoginController{
             }
             else {
                 echo "<script>
-							alert('EL USUARIO NO EXISTE EN EL SISTEMA');
+							alert('usuario y/o contraseña incorrecta.');
 							window.location= '?control=Login&action=login'
 						</script>";
                 //echo "<script>window.alert(Usuario y/o clave incorrecta); window.location= '?control=Login&action=login'</script>";
@@ -62,13 +66,9 @@ class LoginController{
     }
 
     public function LogOut(){
-        unset($_SESSION["username"]); 
-        unset($_SESSION["pass"]);
-        unset($_SESSION["idbodega"]); 
-        unset($_SESSION["bodega"]); 
-        unset($_SESSION["usuario"]);
+        session_unset();
         session_destroy();
-        include "resources/views/login/login.php";
+        echo "<script> window.location= '?control=Login&action=login' </script>";
     }
 }
 ?>

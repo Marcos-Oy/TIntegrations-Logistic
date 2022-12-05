@@ -6,6 +6,7 @@
 		private $base;
 
 		public static function conectar(){
+					
 			$servidor="makrohard.sytes.net";
 			$usuario="tpqt2023";
 			$clave="pinturillo";
