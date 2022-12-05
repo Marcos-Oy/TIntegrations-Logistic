@@ -11,7 +11,7 @@
     public function ShowById()
 		{
 			$consulta="call remitentes_obtener('".$this->rut."')";
-            echo $consulta;
+           // echo $consulta;
 			$resultado=$this->basededatos->query($consulta);
             return $resultado;
 		}
