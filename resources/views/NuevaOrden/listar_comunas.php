@@ -3,9 +3,9 @@ function getConn()
 {
     $mysqli = mysqli_connect(
         'makrohard.sytes.net',
-        'tpqtpint',
+        'tpqt2023',
         'pinturillo',
-        'tpqt2023'
+        'tpqtpint'
     );
     if ($mysqli->connect_errno) {
         echo "Fallo en la conexión de comunas con DB: ".mysqli_connect_error();
@@ -22,7 +22,7 @@ function getListaCom()
     $lista = "<option value =''>Seleccionar comuna</option>";
     if (mysqli_num_rows($result) >= 1) {
         while ($row = $result->fetch_array(MYSQLI_ASSOC)) {
-            $lista .= "<option value = '$row[id]'>$row[desc_comuna]</option>";
+            $lista .= "<option value = '$row[idcomuna]'>$row[nombrecomuna]</option>";
         }
         $mysqli->close();
     } else {
