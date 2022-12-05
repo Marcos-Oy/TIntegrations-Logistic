@@ -32,7 +32,7 @@
                 <form action="?control=Login&action=LoginUser" method="post">
                 
                     <div class="input-group mb-3">
-                    <input id="usuario" type="text" name="usuario" class="form-control" placeholder="Usuario">
+                        <input type="text" class="form-control" placeholder="Usuario">
                         <div class="input-group-append">
                             <div class="input-group-text">
                                 <span class="fas fa-envelope"></span>

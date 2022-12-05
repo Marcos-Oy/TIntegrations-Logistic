@@ -6,10 +6,7 @@ class LoginController{
         session_destroy();
         include "resources/views/login/login.php";
     }
-
-    public function Dash()
-    {
-        include "resources/views/dashboard/dashboard.php";        
+    public function iniciotest(){        
     }
 
     public function LoginUser()
@@ -63,6 +60,8 @@ class LoginController{
             echo "<script>window.location= '?control=Login&action=login'</script>";
         } 
             
+        $_SESSION['usuario'] = $_POST['usuario'];
+       require_once( "resources/views/dashboard/dashboard.php");
     }
 
     public function LogOut(){
