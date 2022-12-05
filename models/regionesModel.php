@@ -11,11 +11,11 @@ class regionesModel{
     public function showById(){
         $query = "call regiones_obtener($this->regid)";
         $resultado = $this->basededatos->query($query);
-        foreach ($resultado as $row) {
-            $region = $row[0];
+        while ($fila = $resultado->fetch_assoc()) {
+            $this->region[] = $fila;
         }
         $this->basededatos->close();
-        return $region;
+        return $this->region;
     }
 
     public function show(){

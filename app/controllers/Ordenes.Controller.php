@@ -10,6 +10,10 @@
         $regionesM = new regionesModel();
         $listaRegiones = $regionesM->show();
 
+        include 'models/comunasModel.php';
+		$comunas = new comunasModel();
+		$listaComunas = $comunas->show();
+
         require_once("resources/views/NuevaOrden/show.php");
     }
     public function RevisarOrden()
