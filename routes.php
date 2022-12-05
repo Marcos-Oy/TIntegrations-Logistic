@@ -1,5 +1,4 @@
 <?php
-session_start();
 	//función que llama al controlador y su respectiva acción, que son pasados como parámetros
 	function call($control, $action){
 		//importa el controlador desde la carpeta Controllers

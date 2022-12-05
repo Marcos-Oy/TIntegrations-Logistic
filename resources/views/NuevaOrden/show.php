@@ -339,9 +339,9 @@
                                                         </div>
                                                         <div class='form-group'>
                                                             <label>Valor declarado</label>
-                                                            <input <?php if (isset($valordec) && !empty($valordec)) {
+                                                            <input required <?php if (isset($valordec) && !empty($valordec)) {
                                                                         echo "value='" . $valordec . "'";
-                                                                    } ?> type="text" class='form-control' name='valordec' id='valordec'>
+                                                                    } ?> type="number" min="0" class='form-control' name='valordec' id='valordec'>
                                                         </div>
                                                     </div>
                                                 </div>
