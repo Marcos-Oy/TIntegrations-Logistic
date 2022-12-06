@@ -13,13 +13,22 @@ class tarifaModel
 
     public function calcularTarifa()
     {
-        $query = "select calcularFlete($this->peso,$this->sobres,$this->comuna)";
+        $query = "select calcularFlete($this->peso,$this->sobres,$this->comuna) valorflete";
+        //echo $query;
         $resultado = $this->basededatos->query($query);
-        foreach ($resultado as $row) {
-            $calculo = $row[0];
+        while ($calculo=$resultado->fetch_assoc())
+        {
+            $valorflete=$calculo['valorflete'];
         }
-        return $calculo;
+
+        return $valorflete;
+
+       
     }
+      
+
+
+    
 
     /**
      * Get the value of comuna
