@@ -37,6 +37,7 @@ class LoginController{
                     //echo $rows['nombre']; // etc..
                     //echo "<script>console.log('Debug Objects: " . $rows['nombre'] . "' );</script>";
                     $_SESSION['username'] = $rows['username'];
+                    $_SESSION['password'] = $_POST['password'];
                     $_SESSION['idoficina'] = $rows['idoficina'];
                     $_SESSION['oficina'] = $rows['oficina'];
                     $_SESSION['idbodega'] = $rows['idbodega'];

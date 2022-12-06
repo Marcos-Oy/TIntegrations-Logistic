@@ -165,7 +165,6 @@
 										   '".$this->tel1."','".$this->tel2."', '".$this->fechanac."', ".$this->estduser_id.", ".$this->ofi.", 
 										   '".$this->username."', ".$this->cargo.")";
 			$resultado=$this->basededatos->query($consulta);
-			echo $resultado;
 			if($resultado==true)
 			{
 			return true;
@@ -181,7 +180,6 @@
 		{
 			$consulta="call usuarios_reset('".$this->username."')";
 			$resultado=$this->basededatos->query($consulta);
-			echo $resultado;
 			if($resultado==true)
 			{
 			return true;
@@ -198,10 +196,24 @@
 										   '".$this->tel1."','".$this->tel2."', ".$this->estduser_id.", ".$this->ofi.", 
 										   '".$this->username."')";
 			$resultado=$this->basededatos->query($consulta);
-			echo $resultado;
 			if($resultado==true)
 			{
 			return true;
+			}
+			else
+			{
+				return false;
+			}
+			
+		}
+
+		public function EditarPassword()
+		{
+			$consulta="update usuarios set pass='".md5($this->pass)."' where username='".$this->username."';";
+			$resultado=$this->basededatos->query($consulta);
+			if($resultado==true)
+			{
+				return true;
 			}
 			else
 			{

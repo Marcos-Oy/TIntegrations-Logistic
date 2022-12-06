@@ -46,13 +46,26 @@
 		public function EditarPass(){
 			include("models/usuariosModel.php");
             $apt= new usuariosModel();
-			$pass = $apt->setpass($_SESSION['password']);
-			$resultado=$apt->ShowById();
 
-			if($pass == $_POST['actual']){
+			if($_SESSION['password'] == $_POST['actual']){
 				if($_POST['nueva'] == $_POST['confirmar']){
+
 					$apt->setusername($_SESSION['username']);
 					$apt->setpass($_POST['confirmar']);
+					$id = $apt->EditarPassword();
+					
+            		if($id==true)
+					{
+						session_unset();
+        				session_destroy();
+        				echo "<script>alert('Contraseña cambiada. Para continuar debe volver a iniciar sesión'); 
+						window.location= '?control=Login&action=login' </script>";
+					}
+					else
+					{
+						echo "<script>alert('Ingreso no Exitoso');
+						window.location= '?control=MisDatos&action=MisDatos'</script>";
+					}
 				}
 				else
 				{

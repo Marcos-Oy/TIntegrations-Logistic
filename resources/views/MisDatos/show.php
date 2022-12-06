@@ -121,27 +121,27 @@
                                     <h2 class="card-title">Cambiar contraseña</h2>
                                 </div>
                                 <div class="card-body">
-                                    <form>
+                                    <form method="POST" action="?control=MisDatos&action=EditarPass">
                                         <div class="row">
                                             <div class="col-sm-12">
                                                 <!-- text input -->
                                                 <div class="form-group">
                                                     <label>Contraseña Actual</label>
-                                                    <input type="password" class="form-control"
-                                                        placeholder="Ingrese contraseña...">
+                                                    <input name="actual" id="actual" type="password"
+                                                        class="form-control" placeholder="Ingrese contraseña...">
                                                 </div>
                                                 <div class="form-group">
                                                     <label>Nueva contraseña</label>
-                                                    <input type="password" class="form-control"
+                                                    <input name="nueva" id="nueva" type="password" class="form-control"
                                                         placeholder="Ingrese contraseña...">
                                                 </div>
                                                 <div class="form-group">
                                                     <label>Confirmar Contraseña</label>
-                                                    <input type="password" class="form-control"
-                                                        placeholder="Confirme contraseña...">
+                                                    <input name="confirmar" id="confirmar" type="password"
+                                                        class="form-control" placeholder="Ingrese contraseña...">
                                                 </div>
                                                 <?php } ?>
-                                                <button name="btn2" id="btn2" type="button"
+                                                <button name="btn2" id="btn2" type="submit"
                                                     class="btn btn-warning">Guardar</button>
                                             </div>
                                         </div>
