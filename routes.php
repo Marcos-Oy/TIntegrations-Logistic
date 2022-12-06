@@ -24,7 +24,7 @@ session_start();
 						'Users'=>['Portal','Crear','Edit','Editarusuario','Eliminarusuario','Crearusuario'],
                         'Login'=>['login','Dash','LoginUser'],
 						'DashBoard'=>['Dash'],
-						'MisDatos'=>['MisDatos'],
+						'MisDatos'=>['MisDatos','EditarMisDatos'],
 						'NuevaOrden'=>['calcularFlete'],
 						'Recibir'=>['Principal'],
 						'Ordenes'=>['NuevaOrden','RevisarOrden','NominarOrden','AsignarOrden','AsignarConCodigo',
