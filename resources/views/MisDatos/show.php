@@ -24,7 +24,7 @@
             <section class="content">
                 <div class="container-fluid">
                     <div class="row">
-                        <div class="col-sm-4">
+                        <div class="col-sm-6">
                             <div class="card card-dark">
                                 <div class="card-header">
                                     <h2 class="card-title">Mis Datos</h2>
@@ -115,7 +115,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-sm-4">
+                        <div class="col-sm-6">
                             <div class="card card-dark">
                                 <div class="card-header">
                                     <h2 class="card-title">Cambiar contraseña</h2>

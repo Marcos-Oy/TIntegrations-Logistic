@@ -23,6 +23,7 @@ function CardDisabled() {
   document.getElementById("tel2").disabled = true;
   document.getElementById("mail").disabled = true;
   document.getElementById("ofi").disabled = true;
+
   document.getElementById("btn1").hidden = true;
 
   nombre = document.getElementById("nombre").value;
@@ -53,6 +54,7 @@ function SwitchCheckBox() {
     document.getElementById("mail").disabled = true;
     document.getElementById("ofi").disabled = true;
     document.getElementById("btn1").hidden = true;
+
     document.getElementById("nombre").value = nombre;
     document.getElementById("paterno").value = paterno;
     document.getElementById("materno").value = materno;

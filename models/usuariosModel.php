@@ -177,6 +177,39 @@
 			
 		}
 
+		public function RestablecerPassword()
+		{
+			$consulta="call usuarios_reset('".$this->username."')";
+			$resultado=$this->basededatos->query($consulta);
+			echo $resultado;
+			if($resultado==true)
+			{
+			return true;
+			}
+			else
+			{
+				return false;
+			}
+		}
+
+		public function EditarMisDatos()
+		{
+			$consulta="call mis_datos_modificar('".$this->nombre."', '".$this->paterno."', '".$this->materno."', '".$this->email."',
+										   '".$this->tel1."','".$this->tel2."', ".$this->estduser_id.", ".$this->ofi.", 
+										   '".$this->username."')";
+			$resultado=$this->basededatos->query($consulta);
+			echo $resultado;
+			if($resultado==true)
+			{
+			return true;
+			}
+			else
+			{
+				return false;
+			}
+			
+		}
+
 		public function LoginUsuario(){
 			$consulta="call usuarios_login('".$this->username."','".md5($this->pass)."')";
 			$resultado=$this->basededatos->query($consulta);
