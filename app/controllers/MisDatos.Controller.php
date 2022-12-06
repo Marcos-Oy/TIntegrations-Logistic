@@ -28,7 +28,6 @@
 			$apt->setofi($_POST['ofi']);
 			//$apt->setfechanac($_POST['fechanac']);
 			$apt->setusername($_POST['username']);
-			$apt->setestduser_id($_POST['activo']);
             $id = $apt->EditarMisDatos();
             if($id==true)
 			{
