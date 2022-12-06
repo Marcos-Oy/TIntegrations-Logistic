@@ -118,7 +118,13 @@
                         <li class="nav-item">
                             <a id="recibir" style="cursor: pointer;" class="nav-link" href="?control=Recibir&action=Principal">
                                 <i class="far fa-circle nav-icon"></i>
-                                <p>Recibir</p>
+                                <p>Recibir Entrega</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a id="recibir" style="cursor: pointer;" class="nav-link" href="?control=Recibir&action=Secundario">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Recibir Devolucion</p>
                             </a>
                         </li>
                         <li class="nav-item">

@@ -9,6 +9,13 @@
             $resultado = $obj->Datos_Solicitud();
             require_once("resources/views/recibir/show.php");
 		}
+        public function Secundario()
+		{
+            include("models/OrdenesModel.php");
+            $obj = new OrdenesModel();
+            $resultado = $obj->Datos_Solicitud();
+            require_once("resources/views/RecibirDevolucion/show.php");
+		}
 		
         public function Crear()
 		{
