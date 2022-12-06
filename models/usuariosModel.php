@@ -123,7 +123,7 @@
 
         public function EliminarUsuario()
 		{
-			$consulta="UPDATE usuarios SET estduser_id = 0 WHERE username = '".$this->username. "'";
+			$consulta="UPDATE usuarios SET activo = 0 WHERE username = '".$this->username. "'";
             $resultado=$this->basededatos->query($consulta);
 			if($resultado==true)
 			{

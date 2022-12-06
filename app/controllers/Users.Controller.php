@@ -54,7 +54,7 @@
             $obj = new UsersController();
             $apt= new usuariosModel();
            
-			if ((isset($_POST['username'])) && ($_POST['username'] != ''))
+			if ((isset($_POST['username'])) && !empty($_POST['username']))
 			{
 				$apt->setusername($_POST['username']);
 				$id=$apt->EliminarUsuario();
