@@ -14,6 +14,7 @@ var tel1;
 var tel2;
 var mail;
 var ofi;
+var fechanac;
 
 function CardDisabled() {
   document.getElementById("nombre").disabled = true;
@@ -23,6 +24,7 @@ function CardDisabled() {
   document.getElementById("tel2").disabled = true;
   document.getElementById("mail").disabled = true;
   document.getElementById("ofi").disabled = true;
+  document.getElementById("fechanac").disabled = true;
 
   document.getElementById("btn1").hidden = true;
 
@@ -33,6 +35,7 @@ function CardDisabled() {
   tel2 = document.getElementById("tel2").value;
   mail = document.getElementById("mail").value;
   ofi = document.getElementById("ofi").value;
+  fechanac = document.getElementById("fechanac").value;
 }
 
 function SwitchCheckBox() {
@@ -44,6 +47,8 @@ function SwitchCheckBox() {
     document.getElementById("tel2").disabled = false;
     document.getElementById("mail").disabled = false;
     document.getElementById("ofi").disabled = false;
+    document.getElementById("fechanac").disabled = false;
+
     document.getElementById("btn1").hidden = false;
   } else {
     document.getElementById("nombre").disabled = true;
@@ -53,6 +58,8 @@ function SwitchCheckBox() {
     document.getElementById("tel2").disabled = true;
     document.getElementById("mail").disabled = true;
     document.getElementById("ofi").disabled = true;
+    document.getElementById("fechanac").disabled = true;
+
     document.getElementById("btn1").hidden = true;
 
     document.getElementById("nombre").value = nombre;
@@ -62,5 +69,6 @@ function SwitchCheckBox() {
     document.getElementById("tel2").value = tel2;
     document.getElementById("mail").value = mail;
     document.getElementById("ofi").value = ofi;
+    document.getElementById("fechanac").value = fechanac;
   }
 }

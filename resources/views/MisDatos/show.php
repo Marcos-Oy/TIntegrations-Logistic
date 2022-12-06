@@ -95,6 +95,13 @@
                                                     </div>
                                                 </div>
                                                 <div class="form-group">
+                                                    <label>Fecha de nacimiento</label>
+                                                    <input type="date" class="form-control"
+                                                        value="<?php echo $rows['fecha_nac'];?>" id="fechanac"
+                                                        name="fechanac">
+                                                </div>
+
+                                                <div class="form-group">
                                                     <label>Seleccionar Oficina</label>
                                                     <select id="ofi" class="form-control" name="ofi">
 
@@ -107,6 +114,7 @@
 
                                                     </select>
                                                 </div>
+
                                                 <button name="btn1" id="btn1" type="submit"
                                                     class="btn btn-warning">Guardar</button>
                                             </div>

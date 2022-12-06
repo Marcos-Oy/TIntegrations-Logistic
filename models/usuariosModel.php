@@ -194,7 +194,7 @@
 		{
 			$consulta="call mis_datos_modificar('".$this->nombre."', '".$this->paterno."', '".$this->materno."', '".$this->email."',
 										   '".$this->tel1."','".$this->tel2."', ".$this->ofi.", 
-										   '".$this->username."')";
+										   '".$this->username."','".$this->fechanac."')";
 			$resultado=$this->basededatos->query($consulta);
 			if($resultado==true)
 			{

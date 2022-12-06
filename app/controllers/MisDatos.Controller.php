@@ -26,7 +26,7 @@
 			$apt->settel1($_POST['tel1']);
 			$apt->settel2($_POST['tel2']);
 			$apt->setofi($_POST['ofi']);
-			//$apt->setfechanac($_POST['fechanac']);
+			$apt->setfechanac($_POST['fechanac']);
 			$apt->setusername($_POST['username']);
             $id = $apt->EditarMisDatos();
             if($id==true)
