@@ -113,7 +113,7 @@
         //metodo que devuelve todo la tabla usuario
 		public function get_Solicitud()
 		{
-			$consulta="call usuarios_obtener(null,1,null)";
+			$consulta="call usuarios_obtener(null,null,null)";
 			$resultado=$this->basededatos->query($consulta);
 			while($fila=$resultado->fetch_assoc()){
 				$this->Solicitud[]=$fila;
@@ -134,6 +134,21 @@
 				return false;
 			}
 		}
+
+		public function ActivarUsuario()
+		{
+			$consulta="UPDATE usuarios SET activo = 1 WHERE username = '".$this->username. "'";
+            $resultado=$this->basededatos->query($consulta);
+			if($resultado==true)
+			{
+			return true;
+			}
+			else
+			{
+				return false;
+			}
+		}
+
 		public function InsertarUsuario()
 		{
 			$consulta="call usuarios_crear('".$this->nombre."', '".$this->paterno."', '".$this->materno."', '".$this->email."',

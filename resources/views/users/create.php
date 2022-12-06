@@ -28,7 +28,7 @@
                                 <div class="card-header">
                                     <h2>
                                         Crear usuario
-                                        <a href="../users/show.php" class="justify-content-md-end">
+                                        <a href="?control=Users&action=Portal" class="justify-content-md-end">
                                             <button type="button" class="btn btn-secondary">
                                                 Volver
                                             </button>
@@ -113,7 +113,8 @@
                                                         <option selected>Seleccionar oficinas</option>
 
                                                         <?php foreach($rowsOficinas as $rowOficina): ?>
-                                                        <option value="<?= $rowOficina['id'] ?>"><?= $rowOficina['desc_office'] ?>
+                                                        <option value="<?= $rowOficina['id'] ?>">
+                                                            <?= $rowOficina['desc_office'] ?>
                                                         </option>
                                                         <?php endforeach; ?>
 
@@ -127,7 +128,8 @@
                                                         <option selected>Seleccionar Cargos</option>
 
                                                         <?php foreach($rowsCargos as $rowCargo): ?>
-                                                        <option value="<?= $rowCargo['idcargo'] ?>"><?= $rowCargo['nombre'] ?></option>
+                                                        <option value="<?= $rowCargo['idcargo'] ?>">
+                                                            <?= $rowCargo['nombre'] ?></option>
                                                         <?php endforeach; ?>
                                                     </select>
                                                 </div>

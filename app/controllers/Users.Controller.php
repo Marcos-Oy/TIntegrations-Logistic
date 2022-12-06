@@ -60,7 +60,7 @@
 				$id=$apt->EliminarUsuario();
 				if($id==true)
 				{
-					echo "<script>alert('Ingreso Exitoso');
+					echo "<script>alert('USUARIO DESACTIVADO');
 				    window.location= '?control=Users&action=Portal'</script>";
 				}
 				else
@@ -70,6 +70,30 @@
 				}
 			}	
 		}
+
+		public function Activarusuario(){
+            
+            include("models/usuariosModel.php");
+            $obj = new UsersController();
+            $apt= new usuariosModel();
+           
+			if ((isset($_POST['username'])) && !empty($_POST['username']))
+			{
+				$apt->setusername($_POST['username']);
+				$id=$apt->ActivarUsuario();
+				if($id==true)
+				{
+					echo "<script>alert('USUARIO ACTIVADO');
+				    window.location= '?control=Users&action=Portal'</script>";
+				}
+				else
+				{
+					echo "<script>alert('No Exitoso');
+				    window.location= '?control=Users&action=Portal'</script>";
+				}
+			}	
+		}
+
         public function Crearusuario(){
             
             include("models/usuariosModel.php");

@@ -73,16 +73,31 @@
                                                                 </button>
                                                             </form>
                                                         </div>
+
+                                                        <?php if($row['activo'] == 1): ?>
                                                         &nbsp;&nbsp;
                                                         <div class="form-group">
                                                             <form method='POST'
                                                                 action='?control=Users&action=Eliminarusuario'>
-                                                                <button class="btn btn-danger" type='submit'
+                                                                <button class="btn btn-primary" type='submit'
                                                                     name='username' value=<?=$row['username']?>><i
-                                                                        class="fa fa-trash" aria-hidden="true"></i>
+                                                                        class="fa fa-power-off" aria-hidden="true"></i>
                                                                 </button>
                                                             </form>
                                                         </div>
+                                                        <?php endif; ?>
+                                                        <?php if($row['activo'] == 0): ?>
+                                                        &nbsp;&nbsp;
+                                                        <div class="form-group">
+                                                            <form method='POST'
+                                                                action='?control=Users&action=Activarusuario'>
+                                                                <button class="btn btn-secondary" type='submit'
+                                                                    name='username' value=<?=$row['username']?>><i
+                                                                        class="fa fa-power-off" aria-hidden="true"></i>
+                                                                </button>
+                                                            </form>
+                                                        </div>
+                                                        <?php endif; ?>
                                                     </div>
                                                     <!-- Modal -->
                                                     <div class="modal fade" id="id<?=$row['username']?>" tabindex="-1"
