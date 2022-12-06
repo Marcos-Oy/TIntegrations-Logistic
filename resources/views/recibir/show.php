@@ -22,10 +22,10 @@
             <br>
             <div class="h1 text-center text-info">Recepcion de Ordenes</div>
             
-            <form method="POST" action="recibirorden.php">
+            <form method="POST" action="?control=Recibir&action=Recibir">
                 <div class="container">
                     <div class="input-group mb-3">
-                        <button type="button" class="btn btn-info col" name="entrega" value="Recibir Entrega">
+                        <button type="submit" class="btn btn-info col" name="entrega" value="Recibir Entrega">
                             RECIBIR ENTREGA
                         </button>
                     </div>
@@ -55,7 +55,7 @@
                             <tr>
                                 <td>
                                     <div class="form-check center">
-                                        <input type="checkbox" class="form-check-input" id="exampleCheck1"
+                                        <input type="checkbox" class="form-check-input" id="exampleCheck1" name="ordenes[]"
                                         value="<?= $row['ODT'] ?>">
                                     </div>
                                 </td>
