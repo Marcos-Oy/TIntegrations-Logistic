@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Recibir Devolución</title>
+    <title>Devolver Orden</title>
     <?php
         include ('resources/views/layouts/dependencies.php');
         include ('resources/views/recibir/dependencies.php');
@@ -20,13 +20,13 @@
         ?>
         <div class="content-wrapper">
             <br>
-            <div class="h1 text-center text-info">Recepcion de devoluciones</div>
+            <div class="h1 text-center text-info">Devolucion de Ordenes</div>
             
-            <form method="POST" action="recibirorden.php">
+            <form method="POST" action="?control=Recibir&action=Devolver">
                 <div class="container">
                     <div class="input-group mb-3">
-                        <button type="button" class="btn btn-success col " name="devolucion" value="Recibir Devolución">
-                            RECIBIR DEVOLUCION
+                        <button type="submit" class="btn btn-info col" name="entrega" value="Recibir Entrega">
+                            RECIBIR ENTREGA
                         </button>
                     </div>
                 </div>
@@ -55,7 +55,7 @@
                             <tr>
                                 <td>
                                     <div class="form-check center">
-                                        <input type="checkbox" class="form-check-input" id="exampleCheck1"
+                                        <input type="checkbox" class="form-check-input" id="exampleCheck1" name="ordenes[]"
                                         value="<?= $row['ODT'] ?>">
                                     </div>
                                 </td>

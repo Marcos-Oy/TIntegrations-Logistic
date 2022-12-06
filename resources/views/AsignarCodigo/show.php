@@ -19,7 +19,6 @@
         ?>
         <div class="content-wrapper">
             <div class="h1 text-center text-primary">Asignacion de Codigos</div>
-
             <?php if (isset($_SESSION['msgLogin'])) { ?>
             <div class="alert alert-<?php echo $_SESSION['message_type']; ?> alert-dismissible fade show" role="alert">
                 <?php echo $_SESSION['msgLogin']; ?>
@@ -28,7 +27,6 @@
             <?php            
                 unset($_SESSION['msgLogin']); } ?>
             <?php
-
             # La lista de nombres; por defecto vacía
             $orden = [];
             # Si hay nombres enviados por el formulario; entonces
@@ -42,15 +40,11 @@
             # En caso de que haya sido el de guardar, no agregamos más campos
             if (isset($_POST["asignar"])) {
             # Quieren guardar; no quieren agregar campos
-            //echo "OK se guarda lo siguiente:<br>";
-            
             $orden = array_filter($orden);
-            //print_r($orden)."<br>";
             ?>
-            <a href="show.php" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Volver</a>
             <?php     exit;}  ?>
 
-            <form method="POST" action="show.php">
+            <form method="POST" action="?control=AsignarConCodigo&action=Carga_Asig">
                 <!--Comienza el ciclo que dibuja los campos dinámicos-->
                 <?php foreach ($orden as $nombre) { ?>
                 <div class="container text-center ">
@@ -80,7 +74,12 @@
                     <div class="row">
                         <div class="col">
                             <select id="cargo" class="form-control" name="repartidor" required>
-                                <option selected>Seleccione repartidor</option>
+                                    <option selected>Seleccione repartidor</option>
+                                    <?php foreach($rows as $row): ?>
+                                    <option value="<?= $row['username'] ?>">
+                                       <?php echo $row['nombre']." ".$row['paterno']." ".$row['materno'] ?>
+                                    </option>
+                                    <?php endforeach; ?>
                             </select>
                         </div>
                         <div class="col">

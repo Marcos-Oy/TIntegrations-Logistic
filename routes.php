@@ -13,6 +13,7 @@ session_start();
 			case 'MisDatos':$control= new MisDatosController();break;
 			case 'NuevaOrden':$control= new NuevaOrdenController();break;
 			case 'Recibir':$control= new RecibirController();break;
+			case 'AsignarConCodigo':$control= new AsignarConCodigoController();break;
 
 		}
 		//llama a la acción del controlador
@@ -26,9 +27,10 @@ session_start();
 						'DashBoard'=>['Dash'],
 						'MisDatos'=>['MisDatos'],
 						'NuevaOrden'=>['calcularFlete'],
-						'Recibir'=>['Principal','Secundario','Recibir'],
+						'Recibir'=>['Principal','Secundario','Recibir','Devolver'],
 						'Ordenes'=>['NuevaOrden','RevisarOrden','NominarOrden','AsignarOrden','AsignarConCodigo',
-						'RecibirOrden','EntregarOrden','DevolverOrden','RecibirOdtExterna', 'calcularFlete']
+						'RecibirOrden','EntregarOrden','DevolverOrden','RecibirOdtExterna', 'calcularFlete'],
+						'AsignarConCodigo'=>['Carga_Asig'],
 						);
 	//verifica que el controlador enviado desde index.php esté dentro del arreglo controllers
 	if (array_key_exists($control, $controllers)) {

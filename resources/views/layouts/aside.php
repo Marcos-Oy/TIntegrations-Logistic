@@ -134,7 +134,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a id="codigo" style="cursor: pointer;" class="nav-link" href="?control=Ordenes&action=AsignarConCodigo">
+                            <a id="codigo" style="cursor: pointer;" class="nav-link" href="?control=AsignarConCodigo&action=Carga_Asig">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Asignar con código</p>
                             </a>

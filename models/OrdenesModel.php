@@ -65,6 +65,12 @@
 			$resultado=$this->basededatos->query($consulta);
 			return $resultado;
 		}
+        public function Datos_Devolver()
+		{
+			$consulta="call Cargar_Devolver()";
+			$resultado=$this->basededatos->query($consulta);
+			return $resultado;
+		}
 		/********************************* */
         public function Recibir_Orden()
 		{
@@ -79,6 +85,7 @@
 				return false;
 			}
 		}
+        
         
 
 

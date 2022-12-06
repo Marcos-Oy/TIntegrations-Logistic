@@ -183,6 +183,16 @@
             return $resultado;
 		}
 
+		public function Carga_Asignar()
+		{
+			$consulta="call usuarios_obtener(null,null,6)";
+			$resultado=$this->basededatos->query($consulta);
+			while($fila=$resultado->fetch_assoc()){
+				$this->Solicitud[]=$fila;
+			}
+			return $this->Solicitud;
+		}
+
     }
 
 ?>
