@@ -28,7 +28,7 @@ session_start();
 						'NuevaOrden'=>['calcularFlete', 'datosODT'],
 						'Recibir'=>['Principal'],
 						'Ordenes'=>['NuevaOrden','RevisarOrden','NominarOrden','AsignarOrden','AsignarConCodigo',
-						'RecibirOrden','EntregarOrden','DevolverOrden','RecibirOdtExterna', 'calcularFlete']
+						'RecibirOrden','EntregarOrden','DevolverOrden','RecibirOdtExterna', 'CrearOrden']
 						);
 	//verifica que el controlador enviado desde index.php esté dentro del arreglo controllers
 	if (array_key_exists($control, $controllers)) {

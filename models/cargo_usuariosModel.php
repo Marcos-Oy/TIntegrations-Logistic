@@ -17,6 +17,7 @@
            while($fila=$resultado->fetch_assoc()){
                $this->Solicitud[]=$fila;
            }
+           $this->basededatos->close();
            return $this->Solicitud;
        }
 

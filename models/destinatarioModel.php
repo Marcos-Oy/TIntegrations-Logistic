@@ -20,7 +20,7 @@ class destinatariosModel
             }
             return $this->destinatario;
         } else {
-            $e = "Error";
+            $e = "";
             return $e;
         }
     }
@@ -28,24 +28,24 @@ class destinatariosModel
     public function updateDtno()
     {
         if (isset($this->nombre) && !empty($this->nombre)) {
-            $nombre = "'" . $this->nombre - "'";
+            $nombre = "'" . $this->nombre . "'";
         } else {
             $nombre = null;
         }
 
         if (isset($this->fono1) && !empty($this->fono1)) {
-            $tel1 = "'" . $this->fono1 - "'";
+            $tel1 = "'" . $this->fono1 . "'";
         } else {
             $tel1 = null;
         }
 
         if (isset($this->fono2) && !empty($this->fono2)) {
-            $tel2 = "'" . $this->fono2 - "'";
+            $tel2 = "'" . $this->fono2 . "'";
         } else {
             $tel2 = null;
         }
 
-        $query = "call destinatarios_actualizar('$this->rutdtno', $nombre, $tel1, $tel2 )";
+        $query = "call destinatarios_actualizar('$this->rutdtno', '$nombre', '$tel1', '$tel2' )";
         $resultado = $this->basededatos->query($query);
         if ($resultado == true) {
             return true;
@@ -56,7 +56,7 @@ class destinatariosModel
 
     public function crearDtno()
     {
-        $query = "call destinatarios_crear('$this->rutdtno', $this->nombre, $this->fono1, $this->fono2 )";
+        $query = "call destinatarios_crear('$this->rutdtno', '$this->nombre', '$this->fono1', '$this->fono2' )";
         $resultado = $this->basededatos->query($query);
         if ($resultado == true) {
             return true;

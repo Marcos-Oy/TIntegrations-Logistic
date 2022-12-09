@@ -8,7 +8,7 @@ function getConn()
         'tpqtpint'
     );
     if ($mysqli->connect_errno) {
-        echo "Fallo en la conexión de comunas con DB: ".mysqli_connect_error();
+        echo "Fallo en la conexión de comunas con DB: " . mysqli_connect_error();
     }
     $mysqli->set_charset('utf8');
     return $mysqli;
@@ -22,7 +22,7 @@ function getListaCom()
     $lista = "<option value =''>Seleccionar comuna</option>";
     if (mysqli_num_rows($result) >= 1) {
         while ($row = $result->fetch_array(MYSQLI_ASSOC)) {
-            $lista .= "<option value = '$row[idcomuna]'>$row[nombrecomuna]</option>";
+            $lista .= "<option value = '$row[idcomuna]'>" . ucwords(strtolower($row['nombrecomuna'])) . "</option>";
         }
         $mysqli->close();
     } else {

@@ -100,10 +100,10 @@
                                 </div>
                                 <div class="card-body">
                                     <div class="row">
-                                        <div class="col-md-12">
+                                        <div class="col-md-6">
                                             <div class="form-group">
                                                 <label>Región</label>
-                                                <select id="regiones" class="form-control select2bs4" name="regiones">
+                                                <select required id="regiones" class="form-control select2bs4" name="regiones">
                                                     <option></option>
                                                     <?php
                                                     if ($listaRegiones) :
@@ -117,9 +117,11 @@
                                                     ?>
                                                 </select>
                                             </div>
+                                        </div>
+                                        <div class="col-md-6">
                                             <div class="form-group">
                                                 <label>Comuna</label>
-                                                <select id="comunas" class="form-control select2bs4" name="comunas">
+                                                <select required id="comunas" class="form-control select2bs4" name="comunas">
                                                     <?php
                                                     if (isset($listaComunas)) :
                                                         foreach ($listaComunas as $comuna) : ?>
@@ -304,6 +306,12 @@
                                                                         echo "value='" . $docnum . "'";
                                                                     } ?> type="text" class='form-control' name='docnum' id='docnum'>
                                                         </div>
+                                                        <div class='form-group'>
+                                                            <label>Valor declarado</label>
+                                                            <input required <?php if (isset($valordec) && !empty($valordec)) {
+                                                                                echo "value='" . $valordec . "'";
+                                                                            } ?> type="number" min="0" class='form-control' name='valordec' id='valordec'>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
@@ -337,12 +345,6 @@
                                                                 ?>
                                                             </div>
                                                         </div>
-                                                        <div class='form-group'>
-                                                            <label>Valor declarado</label>
-                                                            <input required <?php if (isset($valordec) && !empty($valordec)) {
-                                                                        echo "value='" . $valordec . "'";
-                                                                    } ?> type="number" min="0" class='form-control' name='valordec' id='valordec'>
-                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
@@ -369,110 +371,188 @@
                     <?php
                     if (isset($_POST['enviar'])) { ?>
                         <div class="col-md-6">
-                            <div class="small-box bg-info">
-                                <div class="inner">
-                                    <h3>$ <input type="number" value="<?php echo $valorf; ?>" name="valorflete"></h3>
-                                </div>
-                                <div class="icon">
-                                    <i class="fas fa-shopping-cart"></i>
-                                </div>
-                                <div class="inner">
-                                    <h4>Datos de carga</h4>
-                                    <ul>
-                                        <li>Bultos: <?php echo $cantidad; ?></li>
-                                        <li>Sobres: <?php echo $qsobres; ?></li>
-                                        <li>Peso: <?php echo $peso; ?></li>
-                                        <li>Dimenciones: <?php echo $dimensiones; ?> M<sup>3</sup></li>
-                                    </ul>
-                                </div>
-                                <div class="inner">
-                                    <h4>Datos de destino</h4>
-                                    <ul>
-                                        <li>Región: <?php echo $descregion; ?></li>
-                                        <li>Comuna: <?php echo $desccomuna; ?></li>
-                                        <li>Dirección: <?php echo $dirdtno . " " . $nmrodtno . " - " . $numeraldtno; ?></li>
-                                        <li>Referencias: <?php echo $refdtno; ?></li>
-                                    </ul>
-                                </div>
-                                <div class="inner">
-                                    <h4>Remitente</h4>
-                                    <ul>
-                                        <li>
-                                            <div class="form-group"><label for="nombreremitente">Nombre: </label><input required class="form-control" type="text" value="<?php echo $nomremitente; ?>" name="nombreremitente" id="nombreremitente"></div>
-                                        </li>
-                                        <li>
-                                            <div class="form-group"><label for="tel1remitente">Teléfono 1: </label><input required class="form-control" type="text" value="<?php echo $fo1remitente; ?>" name="tel1remitente" id="tel1remitente"></div>
-                                        </li>
-                                        <li>
-                                            <div class="form-group"><label for="tel2remitente">Teléfono 2: </label><input class="form-control" type="text" value="<?php echo $fo2remitente; ?>" name="tel2remitente" id="tel2remitente"></div>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="inner">
-                                    <h4>Destinatario</h4>
-                                    <ul>
-                                        <li>
-                                            <div class="form-group"><label for="nombredestinatario">Nombre: </label><input required class="form-control" type="text" value="<?php echo $nomdestinatario; ?>" name="nombredestinatario" id="nombredestinatario"></div>
-                                        </li>
-                                        <li>
-                                            <div class="form-group"><label for="tel1destinatario">Teléfono 1: </label><input required class="form-control" type="text" value="<?php echo $fo1destinatario; ?>" name="tel1destinatario" id="tel1destinatario"></div>
-                                        </li>
-                                        <li>
-                                            <div class="form-group"><label for="tel2destinatario">Teléfono 2: </label><input class="form-control" type="text" value="<?php echo $fo2destinatario; ?>" name="tel2destinatario" id="tel2destinatario"></div>
-                                        </li>
-                                    </ul>
-                                </div>
+                            <form action="?control=NuevaOrden&action=crearodt" method="POST">
+                                <div class="small-box bg-info">
+                                    <div class="inner">
+                                        <h3>$ <input required min="0" type="number" value="<?php echo $valorf; ?>" name="valorflete"></h3>
+                                    </div>
+                                    <div class="icon">
+                                        <i class="fas fa-shopping-cart"></i>
+                                    </div>
+                                    <div class="inner">
+                                        <h4>Datos de carga</h4>
+                                        <ul>
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <li>Bultos: <?php echo $cantidad; ?></li>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <li>Sobres: <?php echo $qsobres; ?></li>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <li>Peso: <?php echo $peso; ?></li>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <li>Dimensiones: <?php echo $dimensiones; ?> M<sup>3</sup></li>
+                                                </div>
+                                            </div>
+                                        </ul>
+                                    </div>
+                                    <div class="inner">
+                                        <h4>Datos de destino</h4>
+                                        <ul>
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <li>Región: <?php echo $descregion; ?></li>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <li>Comuna: <?php echo $desccomuna; ?></li>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <li>Dirección: <?php echo $dirdtno . " " . $nmrodtno . " - " . $numeraldtno; ?></li>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <li>Referencias: <?php echo $refdtno; ?></li>
+                                                </div>
+                                            </div>
+                                        </ul>
+                                    </div>
+                                    <div class="inner">
+                                        <h4>Remitente</h4>
+                                        <ul>
+                                            <li>
+                                                <div class="form-group">
+                                                    <label for="nombreremitente">Nombre: </label>
+                                                    <input required class="form-control" type="text" value="<?php if (isset($nomremitente) && !empty($nomremitente)) {
+                                                                                                                echo $nomremitente;
+                                                                                                            } ?>" name="nombreremitente" id="nombreremitente">
+                                                </div>
+                                            </li>
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <li>
+                                                        <div class="form-group">
+                                                            <label for="tel1remitente">Teléfono 1: </label>
+                                                            <input required class="form-control" type="text" value="<?php if (isset($fo1remitente) && !empty($fo1remitente)) {
+                                                                                                                        echo $fo1remitente;
+                                                                                                                    } ?>" name="tel1remitente" id="tel1remitente">
+                                                        </div>
+                                                    </li>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <li>
+                                                        <div class="form-group">
+                                                            <label for="tel2remitente">Teléfono 2: </label>
+                                                            <input class="form-control" type="text" value="<?php if (isset($fo2remitente) && !empty($fo2remitente)) {
+                                                                                                                echo $fo2remitente;
+                                                                                                            } ?>" name="tel2remitente" id="tel2remitente">
+                                                        </div>
+                                                    </li>
+                                                </div>
+                                            </div>
+                                        </ul>
+                                    </div>
+                                    <div class="inner">
+                                        <h4>Destinatario</h4>
+                                        <ul>
+                                            <li>
+                                                <div class="form-group">
+                                                    <label for="nombredestinatario">Nombre: </label>
+                                                    <input required class="form-control" type="text" value="<?php if (isset($nomdestinatario) && !empty($nomdestinatario)) {
+                                                                                                                echo $nomdestinatario;
+                                                                                                            } ?>" name="nombredestinatario" id="nombredestinatario">
+                                                </div>
+                                            </li>
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <li>
+                                                        <div class="form-group">
+                                                            <label for="tel1destinatario">Teléfono 1: </label>
+                                                            <input required class="form-control" type="text" value="<?php if (isset($fo1destinatario) && !empty($fo1destinatario)) {
+                                                                                                                        echo $fo1destinatario;
+                                                                                                                    } ?>" name="tel1destinatario" id="tel1destinatario">
+                                                        </div>
+                                                    </li>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <li>
+                                                        <div class="form-group">
+                                                            <label for="tel2destinatario">Teléfono 2: </label>
+                                                            <input class="form-control" type="text" value="<?php if (isset($fo2destinatario) && !empty($fo2destinatario)) {
+                                                                                                                echo $fo2destinatario;
+                                                                                                            } ?>" name="tel2destinatario" id="tel2destinatario">
+                                                        </div>
+                                                    </li>
+                                                </div>
+                                            </div>
+                                        </ul>
+                                    </div>
 
-                                <div class="inner">
-                                    <h4>Información adicional</h4>
-                                    <ul>
-                                        <li>Oficina: <?php echo $_SESSION['bodega']; ?></li>
-                                        <li>Documento: <?php echo $descdocumento . " " . $docnum ?></li>
-                                        <li>Valor declarado: $<?php echo number_format($_POST['valordec'], 0, ',', '.') ?></li>
-                                        <li>Forma de pago: <?php echo $desctipopago ?></li>
-                                    </ul>
-                                </div>
-                                <a href="#" class="small-box-footer">
-                                    Crear orden <i class="fas fa-arrow-circle-right"></i>
-                                </a>
-                            </div>
+                                    <div class="inner">
+                                        <h4>Información adicional</h4>
+                                        <ul>
+                                            <li>Oficina: <?php echo $_SESSION['oficina']; ?></li>
+                                            <li>Documento: <?php echo $descdocumento . " " . $docnum ?></li>
+                                            <li>Valor declarado: $<?php echo number_format($_POST['valordec'], 0, ',', '.') ?></li>
+                                            <li>Forma de pago: <?php echo $desctipopago ?></li>
+                                        </ul>
+                                    </div>
+                                    <div class="small-box-footer">
+                                        <button type="submit" class="btn bg-olive form-control" value="Crear orden" name="crearodt">Crear orden <i class="fas fa-arrow-circle-right"></i></button>
+                                    </div>
+                                    <input type="hidden" name="comuna" value="<?php echo $com; ?>">
+                                    <input type="hidden" name="tipodo" value="<?php echo $tipod; ?>">
+                                    <input type="hidden" name="tipopa" value="<?php echo $tipopag; ?>">
+                                    <input type="hidden" name="docnum" value="<?php echo $docnum; ?>">
+                                    <input type="hidden" name="valord" value="<?php echo $valordec; ?>">
+                                    <input type="hidden" name="rutrmt" value="<?php echo $rutrmtt; ?>">
+                                    <input type="hidden" name="rutdtn" value="<?php echo $rutdtno; ?>">
+                                    <input type="hidden" name="dirdtn" value="<?php echo $dirdtno . " " . $nmrodtno . " - " . $numeraldtno; ?>">
+                                    <input type="hidden" name="dimens" value="<?php echo $dimensiones; ?>">
+                                    <input type="hidden" name="bultos" value="<?php echo $cantidad; ?>">
+                                    <input type="hidden" name="sobres" value="<?php echo $qsobres; ?>">
+
+                            </form>
                         </div>
-                    <?php
-                    } elseif (isset($_POST['calcular'])) {
-                    ?>
-                        <div class="col-md-6">
-                            <div class="small-box bg-info">
-                                <div class="inner">
-                                    <h3>$ <?php echo number_format($valorf, 0, ",", "."); ?></h3>
-                                </div>
-                                <div class="icon">
-                                    <i class="fas fa-shopping-cart"></i>
-                                </div>
-                                <div class="inner">
-                                    <h4>Datos de destino</h4>
-                                    <ul>
-                                        <li>Región: <?php echo $descregion; ?></li>
-                                        <li>Comuna: <?php echo $desccomuna; ?></li>
-                                    </ul>
-                                </div>
-                                <div class="inner">
-                                    <h4>Datos de carga</h4>
-                                    <ul>
-                                        <li>Bultos: <?php echo $cantidad; ?></li>
-                                        <li>Sobres: <?php echo $qsobres; ?></li>
-                                        <li>Peso: <?php echo $peso; ?> Kg.</li>
-                                        <li>Dimenciones: <?php echo $dimensiones; ?> M<sup>3</sup></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    <?php
-                    }
-                    ?>
                 </div>
-
+            <?php
+                    } elseif (isset($_POST['calcular'])) {
+            ?>
+                <div class="col-md-6">
+                    <div class="small-box bg-info">
+                        <div class="inner">
+                            <h3>$ <?php echo number_format($valorf, 0, ",", "."); ?></h3>
+                        </div>
+                        <div class="icon">
+                            <i class="fas fa-shopping-cart"></i>
+                        </div>
+                        <div class="inner">
+                            <h4>Datos de destino</h4>
+                            <ul>
+                                <li>Región: <?php echo $descregion; ?></li>
+                                <li>Comuna: <?php echo $desccomuna; ?></li>
+                            </ul>
+                        </div>
+                        <div class="inner">
+                            <h4>Datos de carga</h4>
+                            <ul>
+                                <li>Bultos: <?php echo $cantidad; ?></li>
+                                <li>Sobres: <?php echo $qsobres; ?></li>
+                                <li>Peso: <?php echo $peso; ?> Kg.</li>
+                                <li>Dimenciones: <?php echo $dimensiones; ?> M<sup>3</sup></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            <?php
+                    }
+            ?>
             </div>
+
         </div>
+    </div>
     </div>
     <?php
     include 'resources/views/layouts/footer.php';
