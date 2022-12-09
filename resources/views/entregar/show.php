@@ -46,8 +46,8 @@
                                         <label for="exampleInputFile">Imagen de entrega</label>
                                         <div class="input-group">
                                             <div class="custom-file">
-                                                <input type="file" class="custom-file-input" id="exampleInputFile">
-                                                <label class="custom-file-label" name="imagen" for="exampleInputFile">Subir
+                                                <input type="file" class="custom-file-input" id="exampleInputFile" name="archivo"  id="archivo">
+                                                <label class="custom-file-label"  for="exampleInputFile">Subir
                                                     imagen</label>
                                             </div>
                                         </div>

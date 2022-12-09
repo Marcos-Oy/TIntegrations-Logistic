@@ -118,13 +118,13 @@
 		{
 			$consulta="SELECT COUNT(1) q FROM entregas WHERE ordenes_idorden= $this->ODT";
 			$resultado=$this->basededatos->query($consulta);
-            echo $resultado;
 			return $resultado;
 		}
 		/********************************* */
         public function Entrego()
 		{
-			$consulta="call Orden_Recibir(".$this->ODT.", '".$this->fecha."', '".$this->username."',".$this->bodega.")";
+			$consulta="call Entregar_Orden(".$this->ODT.", '".$this->fecha."', '".$this->username."',".$this->bodega.",
+             '".$this->rut."','".$this->nombre."','".$this->observaciones."',".$this->imagen.")";
 			$resultado=$this->basededatos->query($consulta);
 			if($resultado==true)
 			{
