@@ -5,8 +5,8 @@ class NuevaOrdenController
 
     public function crearodt()
     {
-date_default_timezone_set('America/Santiago');
-$fecha = date('Y-m-d H:i:s');
+    date_default_timezone_set('America/Santiago');
+    $fecha = date('Y-m-d H:i:s');
 
         include 'models/OrdenesModel.php';
         $odts = new OrdenesModel();
@@ -29,7 +29,7 @@ $fecha = date('Y-m-d H:i:s');
                     $documentos = new orden_documentosModel();
                     $documentos->setIddocumento($_POST['docnum']);
                     $documentos->setIdorden($idorden);
-                    $documento = $documentos->
+                    $documento = "";
                 }
 
                 include 'models/documentosModel.php';
