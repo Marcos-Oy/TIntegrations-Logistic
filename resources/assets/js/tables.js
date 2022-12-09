@@ -5,7 +5,7 @@ $(function () {
   $("#NominarTable")
     .DataTable({
       responsive: true,
-      searching: false,
+      searching: true,
       lengthChange: true,
       autoWidth: false,
       ordering: true,
