@@ -15,6 +15,8 @@ session_start();
 			case 'Recibir':$control= new RecibirController();break;
 			case 'AsignarConCodigo':$control= new AsignarConCodigoController();break;
 
+			case 'Entregar':$control= new EntregarController();break;
+
 		}
 		//llama a la acción del controlador
 		$control->{$action }();
@@ -31,6 +33,8 @@ session_start();
 						'Ordenes'=>['NuevaOrden','RevisarOrden','NominarOrden','AsignarOrden','AsignarConCodigo',
 						'RecibirOrden','EntregarOrden','DevolverOrden','RecibirOdtExterna', 'calcularFlete'],
 						'AsignarConCodigo'=>['Carga_Asig'],
+
+						'Entregar'=>['CargoD'],
 						);
 	//verifica que el controlador enviado desde index.php esté dentro del arreglo controllers
 	if (array_key_exists($control, $controllers)) {

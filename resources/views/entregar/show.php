@@ -20,23 +20,23 @@
 
         <div class="content-wrapper center">
             <br>
-            <div class="container-fluid center">
-                <div class="row center">
-                    <div class="col-md-6 center">
-                        <div class="card card-info center">
-                            <div class="card-header center">
-                                <h3 class="card-title center">Entregar orden</h3>
+            <div class="container-fluid ">
+                <div class="row ">
+                    <div class="col-md-6 ">
+                        <div class="card card-info ">
+                            <div class="card-header ">
+                                <h3 class="card-title ">Entregar orden</h3>
                             </div>
-                            <form>
-                                <div class="card-body center">
-                                    <div class="form-group center">
+                            <form enctype="multipart/form-data" action="finalizarorden.php" method="POST">
+                                <div class="card-body ">
+                                    <div class="form-group ">
                                         <label for="exampleSelectBorderWidth2">Seleccionr ODT</label>
                                         <select class="custom-select form-control-border border-width-2"
                                             id="exampleSelectBorderWidth2">
                                             <option selected>Seleccionar Opcion </option>
                                             <?php foreach($rows as $row): ?>
-                                            <option value="<?= $row['username'] ?>">
-                                                <?php echo $row['nombre']." ".$row['paterno']." ".$row['materno'] ?>
+                                            <option value="<?= $row['ODT'] ?>">
+                                                <?php echo $row['ODT']?>
                                             </option>
                                             <?php endforeach; ?>
                                         </select>

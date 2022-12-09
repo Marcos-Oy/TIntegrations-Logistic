@@ -158,7 +158,7 @@ const heartbeat = setInterval(() => {
                         </li>
                         <li class="nav-item">
                             <a id="entregar" style="cursor: pointer;" class="nav-link"
-                                href="?control=Ordenes&action=EntregarOrden">
+                                href="?control=Entregar&action=CargoD">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Entregar</p>
                             </a>
