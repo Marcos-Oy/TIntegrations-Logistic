@@ -27,12 +27,12 @@
                             <div class="card-header ">
                                 <h3 class="card-title ">Entregar orden</h3>
                             </div>
-                            <form enctype="multipart/form-data" action="finalizarorden.php" method="POST">
+                            <form enctype="multipart/form-data" action="?control=Entregar&action=Entrega" method="POST">
                                 <div class="card-body ">
                                     <div class="form-group ">
                                         <label for="exampleSelectBorderWidth2">Seleccionr ODT</label>
                                         <select class="custom-select form-control-border border-width-2"
-                                            id="exampleSelectBorderWidth2">
+                                            id="exampleSelectBorderWidth2" name="ODT">
                                             <option selected>Seleccionar Opcion </option>
                                             <?php foreach($rows as $row): ?>
                                             <option value="<?= $row['ODT'] ?>">
@@ -47,23 +47,29 @@
                                         <div class="input-group">
                                             <div class="custom-file">
                                                 <input type="file" class="custom-file-input" id="exampleInputFile">
-                                                <label class="custom-file-label" for="exampleInputFile">Subir
+                                                <label class="custom-file-label" name="imagen" for="exampleInputFile">Subir
                                                     imagen</label>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <label>Rut receptor</label>
-                                        <input type="text" class="form-control" placeholder="12.345.678-9">
+                                        <input type="text" oninput="checkRut(this)" class="form-control" name="rut"
+                                            placeholder="12.345.678-9">
                                     </div>
                                     <div class="form-group">
                                         <label>Nombre receptor</label>
-                                        <input type="text" class="form-control" placeholder="Nombre y apellido ...">
+                                        <input type="text" class="form-control" name="nombre" placeholder="Nombre y apellido ...">
                                     </div>
                                     <div class="form-group">
                                         <label>Observaciones</label>
-                                        <textarea class="form-control" rows="3"
+                                        <textarea class="form-control" rows="3" name="obse"
                                             placeholder="Observaciones ..."></textarea>
+                                    </div>
+                                    <div class="col">
+                                        <div class="input-group mb-2">
+                                            <button type="submit" name="entrega" class="btn btn-success">Entregar</button>
+                                        </div>
                                     </div>
                                 </div>
                             </form>
@@ -76,5 +82,5 @@
     <?php
         include 'resources/views/layouts/footer.php';
     ?>
-
+    <script type="text/javascript" src="resources/assets/js/validarRUT.js"></script>
 </body>

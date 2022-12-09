@@ -34,7 +34,7 @@ session_start();
 						'RecibirOrden','EntregarOrden','DevolverOrden','RecibirOdtExterna', 'calcularFlete'],
 						'AsignarConCodigo'=>['Carga_Asig'],
 
-						'Entregar'=>['CargoD'],
+						'Entregar'=>['CargoD','Entrega'],
 						);
 	//verifica que el controlador enviado desde index.php esté dentro del arreglo controllers
 	if (array_key_exists($control, $controllers)) {

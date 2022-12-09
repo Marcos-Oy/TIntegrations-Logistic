@@ -71,12 +71,7 @@
 			$resultado=$this->basededatos->query($consulta);
 			return $resultado;
 		}
-        public function Datos_Entregar()
-		{
-			$consulta="call Carga_Entregar()";
-			$resultado=$this->basededatos->query($consulta);
-			return $resultado;
-		}
+        
 		/********************************* */
         public function Recibir_Orden()
 		{
