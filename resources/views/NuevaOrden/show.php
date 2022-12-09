@@ -497,6 +497,7 @@
                                             <li>Documento: <?php echo $descdocumento . " " . $docnum ?></li>
                                             <li>Valor declarado: $<?php echo number_format($_POST['valordec'], 0, ',', '.') ?></li>
                                             <li>Forma de pago: <?php echo $desctipopago ?></li>
+                                            <li>Observaciones: <input class="form-control" type="text" value="Frágil" name="obs">
                                         </ul>
                                     </div>
                                     <div class="small-box-footer">
@@ -509,6 +510,9 @@
                                     <input type="hidden" name="valord" value="<?php echo $valordec; ?>">
                                     <input type="hidden" name="rutrmt" value="<?php echo $rutrmtt; ?>">
                                     <input type="hidden" name="rutdtn" value="<?php echo $rutdtno; ?>">
+                                    <input type="hidden" name="peso" value="<?php echo $peso; ?>">
+                                    <input type="hidden" name="origen" value="1">
+                                    <input type="hidden" name="refere" value="<?php echo $refdtno; ?>">
                                     <input type="hidden" name="dirdtn" value="<?php echo $dirdtno . " " . $nmrodtno . " - " . $numeraldtno; ?>">
                                     <input type="hidden" name="dimens" value="<?php echo $dimensiones; ?>">
                                     <input type="hidden" name="bultos" value="<?php echo $cantidad; ?>">

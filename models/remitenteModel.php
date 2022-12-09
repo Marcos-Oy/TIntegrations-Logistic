@@ -14,8 +14,8 @@ class remitentesModel
 
     public function ShowById()
     {
-        $consulta = "call remitentes_obtener('" . $this->rut . "')";
-        // echo $consulta;
+        $consulta = "call remitentes_obtener('$this->rut')";
+        echo $consulta . "<br>";
         $resultado = $this->basededatos->query($consulta);
         if (mysqli_num_rows($resultado) > 0) {
             while ($fila = $resultado->fetch_assoc()) {
@@ -23,7 +23,7 @@ class remitentesModel
             }
             return $this->remitente;
         } else {
-            
+
             return false;
         }
     }
@@ -48,7 +48,7 @@ class remitentesModel
             $fono2 = null;
         }
 
-        $query = "call destinatarios_actualizar('$this->rutdtno', '$nombre', '$fono1', '$fono2' )";
+        $query = "call destinatarios_actualizar('$this->rut', '$nombre', '$fono1', '$fono2' )";
         $resultado = $this->basededatos->query($query);
         if ($resultado == true) {
             return true;
@@ -59,7 +59,8 @@ class remitentesModel
 
     public function crearRemitente()
     {
-        $consulta = "call call remitentes_crear('$this->rut', '$this->nombre', '$this->tel1', '$this->tel2')";
+        $consulta = "call remitentes_crear('$this->rut', '$this->nombre', '$this->tel1', '$this->tel2')";
+        echo $consulta . "<br>";
         $resultado = $this->basededatos->query($consulta);
         if ($resultado == true) {
             return true;

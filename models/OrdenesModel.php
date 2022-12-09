@@ -21,7 +21,7 @@ class OrdenesModel
 
         /*************Variables*****************/
 
-        private $username, $idoficina;
+        private $username, $idoficina, $idbodega;
         private $tipopago;
         private $rutrmtt;
         private $rutdtno;
@@ -29,6 +29,7 @@ class OrdenesModel
         private $peso, $dimensiones, $qbultos, $qsobres, $valorflete;
         private $origen;
         private $observaciones;
+        private $fecha;
 
         /************Método para crear orden**********/
 
@@ -36,6 +37,7 @@ class OrdenesModel
         {
                 $consulta = "call Orden_crear('$this->username', 
                                                $this->idoficina, 
+                                               $this->idbodega,
                                                $this->tipopago, 
                                                '$this->rutrmtt', 
                                                '$this->rutdtno', 
@@ -48,8 +50,10 @@ class OrdenesModel
                                                $this->origen, 
                                                '$this->direccion',
                                                '$this->referencia', 
-                                               '$this->observaciones')";
+                                               '$this->observaciones',
+                                               '$this->fecha')";
                 $resultado = $this->basededatos->query($consulta);
+                echo $consulta."<br>";
                 return $resultado;
         }
 
@@ -356,6 +360,46 @@ class OrdenesModel
         public function setUsername($username)
         {
                 $this->username = $username;
+
+                return $this;
+        }
+
+        /**
+         * Get the value of fecha
+         */ 
+        public function getFecha()
+        {
+                return $this->fecha;
+        }
+
+        /**
+         * Set the value of fecha
+         *
+         * @return  self
+         */ 
+        public function setFecha($fecha)
+        {
+                $this->fecha = $fecha;
+
+                return $this;
+        }
+
+        /**
+         * Get the value of idbodega
+         */ 
+        public function getIdbodega()
+        {
+                return $this->idbodega;
+        }
+
+        /**
+         * Set the value of idbodega
+         *
+         * @return  self
+         */ 
+        public function setIdbodega($idbodega)
+        {
+                $this->idbodega = $idbodega;
 
                 return $this;
         }

@@ -1,188 +1,176 @@
 <?php
-    class usuariosModel{
-        private $PDO;
-        private $estduser_id;
-        private $username;
-        private $nombre;
-        private $paterno; 
-		private $materno;
-		private $pass;
-		private $email, $tel1, $tel2, $ofi, $cargo, $fechanac;
+class usuariosModel
+{
+	private $PDO;
+	private $estduser_id;
+	private $username;
+	private $nombre;
+	private $paterno;
+	private $materno;
+	private $pass;
+	private $email, $tel1, $tel2, $ofi, $cargo, $fechanac;
 
-        public function __construct()
-        {
-            require_once "config/db.php";
-           // $con = new Conexion();
-            //$this->PDO = $con->conexion();
-            $this->basededatos=Conexion::conectar();
-        }
-        // metodos get y set
-		public function setestduser_id($estduser_id)
-		{
-			$this->estduser_id=$estduser_id;
-		}
-		public function getestduser_id()
-		{
-			return $this->estduser_id;
-		}
-        public function setusername($username)
-		{
-			$this->username=$username;
-		}
-		public function getpass()
-		{
-			return $this->pass;
-		}
-		public function setpass($pass)
-		{
-			$this->pass=$pass;
-		}
-		public function setnombre($nombre)
-		{
-			$this->nombre=$nombre;
-		}
-		public function getnombre()
-		{
-			return $this->nombre;
-		}
-		public function setpaterno($paterno)
-		{
-			$this->paterno=$paterno;
-		}
-		public function getpaterno()
-		{
-			return $this->paterno;
-		}
-		public function setmaterno($materno)
-		{
-			$this->materno=$materno;
-		}
-		public function getmaterno()
-		{
-			return $this->materno;
-		}
-		public function setemail($email)
-		{
-			$this->email=$email;
-		}
-		public function getemail()
-		{
-			return $this->email;
-		}
-		public function settel1($tel1)
-		{
-			$this->tel1=$tel1;
-		}
-		public function gettel1()
-		{
-			return $this->tel1;
-		}
-		public function settel2($tel2)
-		{
-			$this->tel2=$tel2;
-		}
-		public function gettel2()
-		{
-			return $this->tel2;
-		}
-		public function setofi($ofi)
-		{
-			$this->ofi=$ofi;
-		}
-		public function getofi()
-		{
-			return $this->ofi;
-		}
-		public function setcargo($cargo)
-		{
-			$this->cargo=$cargo;
-		}
-		public function getcargo()
-		{
-			return $this->cargo;
-		}
-		public function setfechanac($fechanac)
-		{
-			$this->fechanac=$fechanac;
-		}
-		public function getfechanac()
-		{
-			return $this->fechanac;
-		}
+	public function __construct()
+	{
+		require_once "config/db.php";
+		// $con = new Conexion();
+		//$this->PDO = $con->conexion();
+		$this->basededatos = Conexion::conectar();
+	}
+	// metodos get y set
+	public function setestduser_id($estduser_id)
+	{
+		$this->estduser_id = $estduser_id;
+	}
+	public function getestduser_id()
+	{
+		return $this->estduser_id;
+	}
+	public function setusername($username)
+	{
+		$this->username = $username;
+	}
+	public function getpass()
+	{
+		return $this->pass;
+	}
+	public function setpass($pass)
+	{
+		$this->pass = $pass;
+	}
+	public function setnombre($nombre)
+	{
+		$this->nombre = $nombre;
+	}
+	public function getnombre()
+	{
+		return $this->nombre;
+	}
+	public function setpaterno($paterno)
+	{
+		$this->paterno = $paterno;
+	}
+	public function getpaterno()
+	{
+		return $this->paterno;
+	}
+	public function setmaterno($materno)
+	{
+		$this->materno = $materno;
+	}
+	public function getmaterno()
+	{
+		return $this->materno;
+	}
+	public function setemail($email)
+	{
+		$this->email = $email;
+	}
+	public function getemail()
+	{
+		return $this->email;
+	}
+	public function settel1($tel1)
+	{
+		$this->tel1 = $tel1;
+	}
+	public function gettel1()
+	{
+		return $this->tel1;
+	}
+	public function settel2($tel2)
+	{
+		$this->tel2 = $tel2;
+	}
+	public function gettel2()
+	{
+		return $this->tel2;
+	}
+	public function setofi($ofi)
+	{
+		$this->ofi = $ofi;
+	}
+	public function getofi()
+	{
+		return $this->ofi;
+	}
+	public function setcargo($cargo)
+	{
+		$this->cargo = $cargo;
+	}
+	public function getcargo()
+	{
+		return $this->cargo;
+	}
+	public function setfechanac($fechanac)
+	{
+		$this->fechanac = $fechanac;
+	}
+	public function getfechanac()
+	{
+		return $this->fechanac;
+	}
 
-        //metodo que devuelve todo la tabla usuario
-		public function get_Solicitud()
-		{
-			$consulta="call usuarios_obtener(null,1,null)";
-			$resultado=$this->basededatos->query($consulta);
-			while($fila=$resultado->fetch_assoc()){
-				$this->Solicitud[]=$fila;
-			}
-			return $this->Solicitud;
+	//metodo que devuelve todo la tabla usuario
+	public function get_Solicitud()
+	{
+		$consulta = "call usuarios_obtener(null,1,null)";
+		$resultado = $this->basededatos->query($consulta);
+		while ($fila = $resultado->fetch_assoc()) {
+			$this->Solicitud[] = $fila;
 		}
+		return $this->Solicitud;
+	}
 
-        public function EliminarUsuario()
-		{
-			$consulta="UPDATE usuarios SET estduser_id = 0 WHERE username = '".$this->username. "'";
-            $resultado=$this->basededatos->query($consulta);
-			if($resultado==true)
-			{
+	public function EliminarUsuario()
+	{
+		$consulta = "UPDATE usuarios SET estduser_id = 0 WHERE username = '" . $this->username . "'";
+		$resultado = $this->basededatos->query($consulta);
+		if ($resultado == true) {
 			return true;
-			}
-			else
-			{
-				return false;
-			}
+		} else {
+			return false;
 		}
-		public function InsertarUsuario()
-		{
-			$consulta="call usuarios_crear('".$this->nombre."', '".$this->paterno."', '".$this->materno."', '".$this->email."',
-										   '".$this->tel1."','".$this->tel2."', ".$this->ofi.", ".$this->cargo.", 
-										   '".$this->fechanac."', @_user_name)";
-			$resultado=$this->basededatos->query($consulta);
-			if($resultado==true)
-			{
+	}
+	public function InsertarUsuario()
+	{
+		$consulta = "call usuarios_crear('" . $this->nombre . "', '" . $this->paterno . "', '" . $this->materno . "', '" . $this->email . "',
+										   '" . $this->tel1 . "','" . $this->tel2 . "', " . $this->ofi . ", " . $this->cargo . ", 
+										   '" . $this->fechanac . "', @_user_name)";
+		$resultado = $this->basededatos->query($consulta);
+		if ($resultado == true) {
 			return true;
-			}
-			else
-			{
-				return false;
-			}
-			
+		} else {
+			return false;
 		}
+	}
 
-		public function ShowById()
-		{
-			$consulta="call usuarios_obtener('".$this->username."',null,null)";
-			$resultado=$this->basededatos->query($consulta);
-            return $resultado;
-		}
+	public function ShowById()
+	{
+		$consulta = "call usuarios_obtener('" . $this->username . "',null,null)";
+		$resultado = $this->basededatos->query($consulta);
+		return $resultado;
+	}
 
 
-		public function EditarUsuario()
-		{
-			$consulta="call usuarios_modificar('".$this->nombre."', '".$this->paterno."', '".$this->materno."', '".$this->email."',
-										   '".$this->tel1."','".$this->tel2."', '".$this->fechanac."', ".$this->estduser_id.", ".$this->ofi.", 
-										   '".$this->username."', ".$this->cargo.")";
-			$resultado=$this->basededatos->query($consulta);
-			echo $resultado;
-			if($resultado==true)
-			{
+	public function EditarUsuario()
+	{
+		$consulta = "call usuarios_modificar('" . $this->nombre . "', '" . $this->paterno . "', '" . $this->materno . "', '" . $this->email . "',
+										   '" . $this->tel1 . "','" . $this->tel2 . "', '" . $this->fechanac . "', " . $this->estduser_id . ", " . $this->ofi . ", 
+										   '" . $this->username . "', " . $this->cargo . ")";
+		$resultado = $this->basededatos->query($consulta);
+		echo $resultado;
+		if ($resultado == true) {
 			return true;
-			}
-			else
-			{
-				return false;
-			}
-			
+		} else {
+			return false;
 		}
+	}
 
-		public function LoginUsuario(){
-			$consulta="call usuarios_login('".$this->username."','".md5($this->pass)."')";
-			$resultado=$this->basededatos->query($consulta);
-            return $resultado;
-		}
-
-    }
-
-?>
+	public function LoginUsuario()
+	{
+		$consulta = "call usuarios_login('" . $this->username . "','" . md5($this->pass) . "')";
+		$resultado = $this->basededatos->query($consulta);
+		return $resultado;
+	}
+}

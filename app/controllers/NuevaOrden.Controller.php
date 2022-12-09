@@ -5,18 +5,70 @@ class NuevaOrdenController
 
     public function crearodt()
     {
-    date_default_timezone_set('America/Santiago');
-    $fecha = date('Y-m-d H:i:s');
+        date_default_timezone_set('America/Santiago');
+        $fecha = date('Y-m-d H:i:s');
+
+        include 'models/remitenteModel.php';
+        $remitentes = new remitentesModel();
+        $remitentes->setRut($_POST['rutrmt']);
+        $remitente = $remitentes->ShowById();
+        if ($remitente == false) {
+            echo "crear remitente<br>";
+            $remitentes->setNombre(ucwords(strtolower($_POST['nombreremitente'])));
+            $remitentes->setTel1($_POST['tel1remitente']);
+            $remitentes->setTel2($_POST['tel2remitente']);
+            $remitentecr = $remitentes->crearRemitente();
+            if($remitentecr==true){
+                echo "creado<br>";
+            }else{
+                echo "No creado<br>";
+            }
+        } else {
+
+            echo "actualizar remitente<br>";
+            $remitentes->setNombre(ucwords(strtolower($_POST['nombreremitente'])));
+            $remitentes->setTel1($_POST['tel1remitente']);
+            $remitentes->setTel2($_POST['tel2remitente']);
+            $remitenteup = $remitentes->UpdateById();
+        }
+
+        include 'models/destinatarioModel.php';
+        $destinatarios = new destinatariosModel();
+        $destinatarios->setRutdtno($_POST['rutdtn']);
+        $destinatario = $destinatarios->showByRut();
+        if ($destinatario == false) {
+
+            $destinatarios->setNombre(ucwords(strtolower($_POST['nombredestinatario'])));
+            $destinatarios->setFono1($_POST['tel1destinatario']);
+            $destinatarios->setFono2($_POST['tel2destinatario']);
+            $destinatario = $destinatarios->crearDtno();
+        } else {
+
+            $destinatarios->setNombre(ucwords(strtolower($_POST['nombredestinatario'])));
+            $destinatarios->setFono1($_POST['tel1destinatario']);
+            $destinatarios->setFono2($_POST['tel2destinatario']);
+            $destinatario = $destinatarios->updateDtno();
+        }
 
         include 'models/OrdenesModel.php';
         $odts = new OrdenesModel();
-        $odts->setValorflete($_POST['valorflete']);
-        $odts->setComuna($_POST['comuna']);
+        $odts->setUsername($_SESSION['username']);
+        $odts->setIdoficina($_SESSION['idoficina']);
+        $odts->setIdbodega($_SESSION['idbodega']);
         $odts->setTipopago($_POST['tipopa']);
-        $odts->setDireccion($_POST['dirdtn']);
+        $odts->setRutrmtt($_POST['rutrmt']);
+        $odts->setRutdtno($_POST['rutdtn']);
+        $odts->setComuna($_POST['comuna']);
+        $odts->setPeso($_POST['peso']);
         $odts->setDimensiones($_POST['dimens']);
         $odts->setQbultos($_POST['bultos']);
         $odts->setQsobres($_POST['sobres']);
+        $odts->setValorflete($_POST['valorflete']);
+        $odts->setOrigen($_POST['origen']);
+        $odts->setDireccion($_POST['dirdtn']);
+        $odts->setReferencia($_POST['refere']);
+        $odts->setObservaciones($_POST['obs']);
+        $odts->setFecha($fecha);
         $odt = $odts->Crear_Orden();
         if (isset($odt) && !empty($odt)) {
 
@@ -25,33 +77,28 @@ class NuevaOrdenController
                 $numero = $row['numero'];
 
                 if (isset($_POST['docnum']) && !empty($_POST['docnum'])) {
+
+                    include 'models/documentosModel.php';
+                    $documentos = new documentosModel();
+                    $documentos->setIdentificador($_POST['docnum']);
+                    $documentos->setValor_declarado($_POST['valord']);
+                    $documentos->setIdtipo_documento($_POST['tipodo']);
+                    $documento = $documentos->crearDocumento();
+                    foreach ($documento as $doc) {
+                        $iddocumento = $doc['iddocumento'];
+                    }
+
                     include 'models/orden_documentosModel.php';
-                    $documentos = new orden_documentosModel();
-                    $documentos->setIddocumento($_POST['docnum']);
-                    $documentos->setIdorden($idorden);
-                    $documento = "";
+                    $odtdocs = new orden_documentosModel();
+                    $odtdocs->setIddocumento($iddocumento);
+                    $odtdocs->setIdorden($idorden);
+                    $odtdoc = $odtdocs->crear_odtdocumento();
                 }
-
-                include 'models/documentosModel.php';
-                $documentos = new documentosModel();
-                $documentos->setIdentificador($_POST['docnum']);
-                $documentos->setValor_declarado($_POST['valord']);
-                $documentos->setIdtipo_documento($_POST['tipodo']);
-
-                include 'models/remitenteModel.php';
-                $remitentes = new remitentesModel();
-                $remitentes->setRut($_POST['rutrmt']);
-                $remitentes->setNombre(ucwords(strtolower($_POST['nombreremitente'])));
-                $remitentes->setTel1($_POST['tel1remitente']);
-                $remitentes->setTel2($_POST['tel2remitente']);
-
-                include 'models/destinatarioModel.php';
-                $destinatarios = new destinatariosModel();
-                $destinatarios->setRutdtno($_POST['rutdtn']);
-                $destinatarios->setNombre(ucwords(strtolower($_POST['nombredestinatario'])));
-                $destinatarios->setFono1($_POST['tel1destinatario']);
-                $destinatarios->setFono2($_POST['tel2destinatario']);
             }
+            require_once("resources/views/asignar/show.php");
+        } else {
+            echo "no entró al IF";
+            #require_once("resources/views/NuevaOrden/show.php");
         }
     }
 

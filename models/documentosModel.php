@@ -8,7 +8,7 @@ class documentosModel
     }
 
     public function crearDocumento(){
-        $consulta = "call remitentes_obtener('" . $this->rut . "')";
+        $consulta = "call documentos_crear('$this->idtipo_documento', '$this->valor_declarado', '$this->identificador')";
         // echo $consulta;
         $resultado = $this->basededatos->query($consulta);
         if (mysqli_num_rows($resultado) > 0) {
