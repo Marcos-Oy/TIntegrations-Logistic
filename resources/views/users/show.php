@@ -43,8 +43,8 @@
                                                 <th>Usuario</th>
                                                 <th>Nombre</th>
                                                 <th>E-Mail</th>
-                                                <th>Teléfono</th>
-                                                <th>Teléfono 2</th>
+                                                <th>Fono1</th>
+                                                <th>Fono2</th>
                                                 <th>Oficina</th>
                                                 <th>Cargo</th>
                                                 <th>Fecha de nac</th>
@@ -79,51 +79,106 @@
                                                         <div class="form-group">
                                                             <form method='POST'
                                                                 action='?control=Users&action=Eliminarusuario'>
-                                                                <button class="btn btn-primary" type='submit'
-                                                                    name='username' value=<?=$row['username']?>><i
-                                                                        class="fa fa-power-off" aria-hidden="true"></i>
+
+                                                                <!-- Button trigger modal -->
+                                                                <button type="button" class="btn btn-primary"
+                                                                    data-toggle="modal"
+                                                                    data-target="#modal-sm-des<?=$row['username']?>">
+                                                                    <i class="fa fa-power-off" aria-hidden="true"></i>
                                                                 </button>
+
+                                                                <div class="modal fade"
+                                                                    id="modal-sm-des<?=$row['username']?>">
+                                                                    <div class="modal-dialog modal-sm">
+                                                                        <div class="modal-content">
+                                                                            <div class="modal-header">
+                                                                                <h4 class="modal-title">Desactivar
+                                                                                    usuario
+                                                                                </h4>
+                                                                                <button type="button" class="close"
+                                                                                    data-dismiss="modal"
+                                                                                    aria-label="Close">
+                                                                                    <span
+                                                                                        aria-hidden="true">&times;</span>
+                                                                                </button>
+                                                                            </div>
+                                                                            <div class="modal-body">
+                                                                                <p>¿Desea desactivar el usuario de
+                                                                                    <?= $row['nombre']." ".$row['paterno']." ".$row['materno'] ?>?
+                                                                                </p>
+                                                                            </div>
+                                                                            <div
+                                                                                class="modal-footer justify-content-between">
+                                                                                <button type="button"
+                                                                                    class="btn btn-default"
+                                                                                    data-dismiss="modal">Cancelar</button>
+                                                                                <button class="btn btn-danger"
+                                                                                    type='submit' name='username'
+                                                                                    value=<?=$row['username']?>>
+                                                                                    Aceptar
+                                                                                </button>
+                                                                            </div>
+                                                                        </div>
+                                                                        <!-- /.modal-content -->
+                                                                    </div>
+                                                                    <!-- /.modal-dialog -->
+                                                                </div>
                                                             </form>
                                                         </div>
                                                         <?php endif; ?>
+
                                                         <?php if($row['activo'] == 0): ?>
                                                         &nbsp;&nbsp;
                                                         <div class="form-group">
                                                             <form method='POST'
                                                                 action='?control=Users&action=Activarusuario'>
-                                                                <button class="btn btn-secondary" type='submit'
-                                                                    name='username' value=<?=$row['username']?>><i
-                                                                        class="fa fa-power-off" aria-hidden="true"></i>
+                                                                <!-- Button trigger modal -->
+                                                                <button type="button" class="btn btn-secondary"
+                                                                    data-toggle="modal"
+                                                                    data-target="#modal-sm-act<?=$row['username']?>">
+                                                                    <i class="fa fa-power-off" aria-hidden="true"></i>
                                                                 </button>
+
+                                                                <div class="modal fade"
+                                                                    id="modal-sm-act<?=$row['username']?>">
+                                                                    <div class="modal-dialog modal-sm">
+                                                                        <div class="modal-content">
+                                                                            <div class="modal-header">
+                                                                                <h4 class="modal-title">Activar usuario
+                                                                                </h4>
+                                                                                <button type="button" class="close"
+                                                                                    data-dismiss="modal"
+                                                                                    aria-label="Close">
+                                                                                    <span
+                                                                                        aria-hidden="true">&times;</span>
+                                                                                </button>
+                                                                            </div>
+                                                                            <div class="modal-body">
+                                                                                <p>¿Desea activar el usuario de
+                                                                                    <?= $row['nombre']." ".$row['paterno']." ".$row['materno'] ?>?
+                                                                                </p>
+                                                                            </div>
+                                                                            <div
+                                                                                class="modal-footer justify-content-between">
+                                                                                <button type="button"
+                                                                                    class="btn btn-default"
+                                                                                    data-dismiss="modal">Cancelar</button>
+                                                                                <button class="btn btn-success"
+                                                                                    type='submit' name='username'
+                                                                                    value=<?=$row['username']?>>
+                                                                                    Aceptar
+                                                                                </button>
+                                                                            </div>
+                                                                        </div>
+                                                                        <!-- /.modal-content -->
+                                                                    </div>
+                                                                    <!-- /.modal-dialog -->
+                                                                </div>
                                                             </form>
                                                         </div>
                                                         <?php endif; ?>
                                                     </div>
-                                                    <!-- Modal -->
-                                                    <div class="modal fade" id="id<?=$row['username']?>" tabindex="-1"
-                                                        aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                                        <div class="modal-dialog">
-                                                            <div class="modal-content">
-                                                                <div class="modal-header">
-                                                                    <h5 class="modal-title" id="exampleModalLabel">
-                                                                        ¿Desea eliminar el registro?</h5>
-                                                                    <button type="button" class="btn-close"
-                                                                        data-bs-dismiss="modal"
-                                                                        aria-label="Close"></button>
-                                                                </div>
-                                                                <div class="modal-body">
-                                                                    Una vez eliminado no se podra recuperar el registro
-                                                                </div>
-                                                                <div class="modal-footer">
-                                                                    <button type="button" class="btn btn-success"
-                                                                        data-bs-dismiss="modal">Cerrar</button>
-                                                                    <a href="delete.php?id=<?= $row['username']?>"
-                                                                        class="btn btn-danger">Eliminar</a>
-                                                                    <!-- <button type="button" >Eliminar</button> -->
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
+
                                                 </td>
                                             </tr>
                                             <?php endforeach; ?>
@@ -138,8 +193,8 @@
                                                 <th>Usuario</th>
                                                 <th>Nombre</th>
                                                 <th>E-Mail</th>
-                                                <th>Teléfono</th>
-                                                <th>Teléfono 2</th>
+                                                <th>Fono1</th>
+                                                <th>Fono2</th>
                                                 <th>Oficina</th>
                                                 <th>Cargo</th>
                                                 <th>Fecha de nac</th>
