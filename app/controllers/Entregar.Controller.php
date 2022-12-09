@@ -25,6 +25,7 @@
                 }
                 $image = $_POST['ODT'].$contador;
                 $obj->setUsername($_SESSION['username']);
+                $ba=$_SESSION['username'];
                 $obj->setODT($_POST['ODT']);
                 $obj->setRut($_POST['rut']);
                 $obj->setNombre($_POST['nombre']);
@@ -58,7 +59,7 @@
                 
                             if (move_uploaded_file($fileTmpPath, $dest_path)) {
                                 $message ='File is successfully uploaded.';
-                                echo "<script>alert('Entrega Exitosa');
+                                echo "<script>alert('Entrega Exitosa $ba');
                                 window.location= '?control=Entregar&action=CargoD'</script>";
                             } else {
                                 $message = 'There was some error moving the file to upload directory. Please make sure the upload directory is writable by web server.';

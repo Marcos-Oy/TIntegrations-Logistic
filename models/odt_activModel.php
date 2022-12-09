@@ -125,6 +125,7 @@
 		{
 			$consulta="call Entregar_Orden(".$this->ODT.", '".$this->fecha."', '".$this->username."',".$this->bodega.",
              '".$this->rut."','".$this->nombre."','".$this->observaciones."',".$this->imagen.")";
+             $consulta;
 			$resultado=$this->basededatos->query($consulta);
 			if($resultado==true)
 			{
