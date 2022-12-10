@@ -8,48 +8,6 @@ class NuevaOrdenController
         date_default_timezone_set('America/Santiago');
         $fecha = date('Y-m-d H:i:s');
 
-        include 'models/remitenteModel.php';
-        $remitentes = new remitentesModel();
-        $remitentes->setRut($_POST['rutrmt']);
-        $remitente = $remitentes->ShowById();
-        if ($remitente == false) {
-            echo "crear remitente<br>";
-            $remitentes->setNombre(ucwords(strtolower($_POST['nombreremitente'])));
-            $remitentes->setTel1($_POST['tel1remitente']);
-            $remitentes->setTel2($_POST['tel2remitente']);
-            $remitentecr = $remitentes->crearRemitente();
-            if($remitentecr==true){
-                echo "creado<br>";
-            }else{
-                echo "No creado<br>";
-            }
-        } else {
-
-            echo "actualizar remitente<br>";
-            $remitentes->setNombre(ucwords(strtolower($_POST['nombreremitente'])));
-            $remitentes->setTel1($_POST['tel1remitente']);
-            $remitentes->setTel2($_POST['tel2remitente']);
-            $remitenteup = $remitentes->UpdateById();
-        }
-
-        include 'models/destinatarioModel.php';
-        $destinatarios = new destinatariosModel();
-        $destinatarios->setRutdtno($_POST['rutdtn']);
-        $destinatario = $destinatarios->showByRut();
-        if ($destinatario == false) {
-
-            $destinatarios->setNombre(ucwords(strtolower($_POST['nombredestinatario'])));
-            $destinatarios->setFono1($_POST['tel1destinatario']);
-            $destinatarios->setFono2($_POST['tel2destinatario']);
-            $destinatario = $destinatarios->crearDtno();
-        } else {
-
-            $destinatarios->setNombre(ucwords(strtolower($_POST['nombredestinatario'])));
-            $destinatarios->setFono1($_POST['tel1destinatario']);
-            $destinatarios->setFono2($_POST['tel2destinatario']);
-            $destinatario = $destinatarios->updateDtno();
-        }
-
         include 'models/OrdenesModel.php';
         $odts = new OrdenesModel();
         $odts->setUsername($_SESSION['username']);
@@ -57,7 +15,13 @@ class NuevaOrdenController
         $odts->setIdbodega($_SESSION['idbodega']);
         $odts->setTipopago($_POST['tipopa']);
         $odts->setRutrmtt($_POST['rutrmt']);
+        $odts->setNombrermtt(ucwords(strtolower($_POST['nombreremitente'])));
+        $odts->setTel1rmtt($_POST['tel1remitente']);
+        $odts->setTel2rmtt($_POST['tel2remitente']);
         $odts->setRutdtno($_POST['rutdtn']);
+        $odts->setNombredtno(ucwords(strtolower($_POST['nombredestinatario'])));
+        $odts->setTel1dtno($_POST['tel1destinatario']);
+        $odts->setTel2dtno($_POST['tel2destinatario']);
         $odts->setComuna($_POST['comuna']);
         $odts->setPeso($_POST['peso']);
         $odts->setDimensiones($_POST['dimens']);

@@ -13,7 +13,7 @@ class destinatariosModel
     public function showByRut()
     {
         $query = "call destinatarios_obtener('$this->rutdtno');";
-        echo $query."<br>";
+        #echo $query."<br>";
         $resultado = $this->basededatos->query($query);
         if (mysqli_num_rows($resultado) > 0) {
             while ($fila = $resultado->fetch_assoc()) {

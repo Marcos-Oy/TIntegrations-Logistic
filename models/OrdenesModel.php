@@ -23,8 +23,8 @@ class OrdenesModel
 
         private $username, $idoficina, $idbodega;
         private $tipopago;
-        private $rutrmtt;
-        private $rutdtno;
+        private $rutrmtt, $nombrermtt, $tel1rmtt, $tel2rmtt;
+        private $rutdtno, $nombredtno, $tel1dtno, $tel2dtno;
         private $comuna, $direccion, $referencia;
         private $peso, $dimensiones, $qbultos, $qsobres, $valorflete;
         private $origen;
@@ -40,7 +40,13 @@ class OrdenesModel
                                                $this->idbodega,
                                                $this->tipopago, 
                                                '$this->rutrmtt', 
+                                               '$this->nombrermtt',
+                                               '$this->tel1rmtt',
+                                               '$this->tel2rmtt',
                                                '$this->rutdtno', 
+                                               '$this->nombredtno',
+                                               '$this->tel1dtno',
+                                               '$this->tel2dtno',
                                                $this->comuna, 
                                                '$this->peso', 
                                                $this->dimensiones, 
@@ -53,7 +59,7 @@ class OrdenesModel
                                                '$this->observaciones',
                                                '$this->fecha')";
                 $resultado = $this->basededatos->query($consulta);
-                echo $consulta."<br>";
+                #echo $consulta."<br>";
                 return $resultado;
         }
 
@@ -400,6 +406,126 @@ class OrdenesModel
         public function setIdbodega($idbodega)
         {
                 $this->idbodega = $idbodega;
+
+                return $this;
+        }
+
+        /**
+         * Get the value of nombrermtt
+         */ 
+        public function getNombrermtt()
+        {
+                return $this->nombrermtt;
+        }
+
+        /**
+         * Set the value of nombrermtt
+         *
+         * @return  self
+         */ 
+        public function setNombrermtt($nombrermtt)
+        {
+                $this->nombrermtt = $nombrermtt;
+
+                return $this;
+        }
+
+        /**
+         * Get the value of tel2rmtt
+         */ 
+        public function getTel2rmtt()
+        {
+                return $this->tel2rmtt;
+        }
+
+        /**
+         * Set the value of tel2rmtt
+         *
+         * @return  self
+         */ 
+        public function setTel2rmtt($tel2rmtt)
+        {
+                $this->tel2rmtt = $tel2rmtt;
+
+                return $this;
+        }
+
+        /**
+         * Get the value of nombredtno
+         */ 
+        public function getNombredtno()
+        {
+                return $this->nombredtno;
+        }
+
+        /**
+         * Set the value of nombredtno
+         *
+         * @return  self
+         */ 
+        public function setNombredtno($nombredtno)
+        {
+                $this->nombredtno = $nombredtno;
+
+                return $this;
+        }
+
+        /**
+         * Get the value of tel1dtno
+         */ 
+        public function getTel1dtno()
+        {
+                return $this->tel1dtno;
+        }
+
+        /**
+         * Set the value of tel1dtno
+         *
+         * @return  self
+         */ 
+        public function setTel1dtno($tel1dtno)
+        {
+                $this->tel1dtno = $tel1dtno;
+
+                return $this;
+        }
+
+        /**
+         * Get the value of tel2dtno
+         */ 
+        public function getTel2dtno()
+        {
+                return $this->tel2dtno;
+        }
+
+        /**
+         * Set the value of tel2dtno
+         *
+         * @return  self
+         */ 
+        public function setTel2dtno($tel2dtno)
+        {
+                $this->tel2dtno = $tel2dtno;
+
+                return $this;
+        }
+
+        /**
+         * Get the value of tel1rmtt
+         */ 
+        public function getTel1rmtt()
+        {
+                return $this->tel1rmtt;
+        }
+
+        /**
+         * Set the value of tel1rmtt
+         *
+         * @return  self
+         */ 
+        public function setTel1rmtt($tel1rmtt)
+        {
+                $this->tel1rmtt = $tel1rmtt;
 
                 return $this;
         }

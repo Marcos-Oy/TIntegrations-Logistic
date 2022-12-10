@@ -15,7 +15,7 @@ class remitentesModel
     public function ShowById()
     {
         $consulta = "call remitentes_obtener('$this->rut')";
-        echo $consulta . "<br>";
+        #echo $consulta . "<br>";
         $resultado = $this->basededatos->query($consulta);
         if (mysqli_num_rows($resultado) > 0) {
             while ($fila = $resultado->fetch_assoc()) {
@@ -60,8 +60,9 @@ class remitentesModel
     public function crearRemitente()
     {
         $consulta = "call remitentes_crear('$this->rut', '$this->nombre', '$this->tel1', '$this->tel2')";
-        echo $consulta . "<br>";
+        #echo $consulta . "<br>";
         $resultado = $this->basededatos->query($consulta);
+        echo $resultado. "<br>";
         if ($resultado == true) {
             return true;
         } else {
