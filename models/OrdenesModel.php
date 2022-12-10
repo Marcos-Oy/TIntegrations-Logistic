@@ -88,6 +88,7 @@
 			$resultado=$this->basededatos->query($consulta);
 			return $resultado;
 		}
+        
 		/********************************* */
         public function Recibir_Orden()
 		{
@@ -133,6 +134,20 @@
 			else
 			{
 				return false;
+			}
+		}
+        public function AsignarCon_Codigo()
+		{
+			$consulta="call Con_Codigo(".$this->ODT.", '".$this->fecha."', '".$this->username."',".$this->bodega.",'".$this->repartidor."',".$this->idactividad.")";
+            $resultado=$this->basededatos->query($consulta);
+            echo $resultado;
+			if($resultado== 0)
+			{
+			return false;
+			}
+			else
+			{
+				return true;
 			}
 		}
         

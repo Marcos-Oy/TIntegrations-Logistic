@@ -20,23 +20,23 @@
 
         <div class="content-wrapper center">
             <br>
-            <div class="container-fluid center">
-                <div class="row center">
-                    <div class="col-md-6 center">
-                        <div class="card card-info center">
-                            <div class="card-header center">
-                                <h3 class="card-title center">Entregar orden</h3>
+            <div class="container-fluid ">
+                <div class="row ">
+                    <div class="col-md-6 ">
+                        <div class="card card-info ">
+                            <div class="card-header ">
+                                <h3 class="card-title ">Entregar orden</h3>
                             </div>
-                            <form>
-                                <div class="card-body center">
-                                    <div class="form-group center">
+                            <form enctype="multipart/form-data" action="?control=Entregar&action=Entrega" method="POST">
+                                <div class="card-body ">
+                                    <div class="form-group ">
                                         <label for="exampleSelectBorderWidth2">Seleccionr ODT</label>
                                         <select class="custom-select form-control-border border-width-2"
-                                            id="exampleSelectBorderWidth2">
+                                            id="exampleSelectBorderWidth2" name="ODT">
                                             <option selected>Seleccionar Opcion </option>
                                             <?php foreach($rows as $row): ?>
-                                            <option value="<?= $row['username'] ?>">
-                                                <?php echo $row['nombre']." ".$row['paterno']." ".$row['materno'] ?>
+                                            <option value="<?= $row['ODT'] ?>">
+                                                <?php echo $row['ODT']?>
                                             </option>
                                             <?php endforeach; ?>
                                         </select>
@@ -46,24 +46,30 @@
                                         <label for="exampleInputFile">Imagen de entrega</label>
                                         <div class="input-group">
                                             <div class="custom-file">
-                                                <input type="file" class="custom-file-input" id="exampleInputFile">
-                                                <label class="custom-file-label" for="exampleInputFile">Subir
+                                                <input type="file" class="custom-file-input" id="exampleInputFile" name="archivo"  id="archivo">
+                                                <label class="custom-file-label"  for="exampleInputFile">Subir
                                                     imagen</label>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <label>Rut receptor</label>
-                                        <input type="text" class="form-control" placeholder="12.345.678-9">
+                                        <input type="text" oninput="checkRut(this)" class="form-control" name="rut"
+                                            placeholder="12.345.678-9">
                                     </div>
                                     <div class="form-group">
                                         <label>Nombre receptor</label>
-                                        <input type="text" class="form-control" placeholder="Nombre y apellido ...">
+                                        <input type="text" class="form-control" name="nombre" placeholder="Nombre y apellido ...">
                                     </div>
                                     <div class="form-group">
                                         <label>Observaciones</label>
-                                        <textarea class="form-control" rows="3"
+                                        <textarea class="form-control" rows="3" name="obse"
                                             placeholder="Observaciones ..."></textarea>
+                                    </div>
+                                    <div class="col">
+                                        <div class="input-group mb-2">
+                                            <button type="submit" name="entrega" class="btn btn-success">Entregar</button>
+                                        </div>
                                     </div>
                                 </div>
                             </form>
@@ -76,5 +82,5 @@
     <?php
         include 'resources/views/layouts/footer.php';
     ?>
-
+    <script type="text/javascript" src="resources/assets/js/validarRUT.js"></script>
 </body>
