@@ -49,7 +49,7 @@
                                             <div class="col-sm-3">
                                                 <div class="form-group">
                                                     <label>Seleccionar Oficina</label>
-                                                    <select class="form-control">
+                                                    <select id="idoficina" name="idoficina" class="form-control">
                                                         <option>option 1</option>
                                                         <option>option 2</option>
                                                         <option>option 3</option>
@@ -63,7 +63,7 @@
                                             <div class="col-sm-3">
                                                 <div class="form-group">
                                                     <label>Seleccionar Estado de la Orden</label>
-                                                    <select class="form-control">
+                                                    <select id="estorden" name="estorden" class="form-control">
                                                         <option>option 1</option>
                                                         <option>option 2</option>
                                                         <option>option 3</option>
@@ -75,7 +75,7 @@
                                             <div class="col-sm-3">
                                                 <div class="form-group">
                                                     <label>Seleccionar Región</label>
-                                                    <select class="form-control">
+                                                    <select id="region" name="region" class="form-control">
                                                         <option>option 1</option>
                                                         <option>option 2</option>
                                                         <option>option 3</option>
@@ -86,8 +86,8 @@
                                             </div>
                                             <div class="col-sm-3">
                                                 <div class="form-group">
-                                                    <label>Seleccionar</label>
-                                                    <select class="form-control">
+                                                    <label>Seleccionar Comuna</label>
+                                                    <select id="comuna" name="comuna" class="form-control">
                                                         <option>option 1</option>
                                                         <option>option 2</option>
                                                         <option>option 3</option>
@@ -122,13 +122,15 @@
                                             <div class="col-sm-6">
                                                 <div class="form-group">
                                                     <label>Desde</label>
-                                                    <input type="date" class="form-control">
+                                                    <input id="fechacreaciondesde" name="fechacreaciondesde" type="date"
+                                                        class="form-control">
                                                 </div>
                                             </div>
                                             <div class="col-sm-6">
                                                 <div class="form-group">
                                                     <label>Hasta</label>
-                                                    <input type="date" class="form-control">
+                                                    <input id="fechacreacionhasta" name="fechacreacionhasta" type="date"
+                                                        class="form-control">
                                                 </div>
                                             </div>
                                         </div>
@@ -149,13 +151,15 @@
                                             <div class="col-sm-6">
                                                 <div class="form-group">
                                                     <label>Desde</label>
-                                                    <input type="date" class="form-control">
+                                                    <input id="fechaactividaddesde" name="fechaactividaddesde"
+                                                        type="date" class="form-control">
                                                 </div>
                                             </div>
                                             <div class="col-sm-6">
                                                 <div class="form-group">
                                                     <label>Hasta</label>
-                                                    <input type="date" class="form-control">
+                                                    <input id="fechaactividadhasta" name="fechaactividadhasta"
+                                                        type="date" class="form-control">
                                                 </div>
                                             </div>
                                         </div>
@@ -176,7 +180,7 @@
                                             <div class="col-sm-12">
                                                 <div class="form-group">
                                                     <label>Seleccionar</label>
-                                                    <select class="form-control">
+                                                    <select id="repartidor" name="repartidor" class="form-control">
                                                         <option>option 1</option>
                                                         <option>option 2</option>
                                                         <option>option 3</option>

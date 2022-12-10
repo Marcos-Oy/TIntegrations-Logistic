@@ -13,8 +13,6 @@ function MenuActive() {
    * con los operadores lógicos.
    */
 
-
-
   var URLactual = window.location; //Extraemos la url actual
   var URLanalizada = /^(\w+):\/\/([^\/]+)([^]+)$/.exec(URLactual); //La analizamos para poder extraer sus partes
   var [Url, protocolo, servidor, path] = URLanalizada; // El análisis de la url la integramos en un array
@@ -70,7 +68,7 @@ function MenuActive() {
     protocolo +
       "://" +
       servidor +
-      "/TIntegrations-Logistic/?control=Ordenes&action=NominarOrden"
+      "/TIntegrations-Logistic/?control=Nominar&action=Nominate"
   ) {
     document.getElementById("MenuAdministrar").className = "nav-item menu-open"; //Se despliega el menú
     document.getElementById("administrar").className = "nav-link active"; //Activamos el menú

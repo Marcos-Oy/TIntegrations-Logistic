@@ -13,6 +13,7 @@ session_start();
 			case 'MisDatos':$control= new MisDatosController();break;
 			case 'NuevaOrden':$control= new NuevaOrdenController();break;
 			case 'Recibir':$control= new RecibirController();break;
+			case 'Nominar':$control= new NominarController();break;
 
 		}
 		//llama a la acción del controlador
@@ -28,7 +29,8 @@ session_start();
 						'NuevaOrden'=>['calcularFlete'],
 						'Recibir'=>['Principal'],
 						'Ordenes'=>['NuevaOrden','RevisarOrden','NominarOrden','AsignarOrden','AsignarConCodigo',
-						'RecibirOrden','EntregarOrden','DevolverOrden','RecibirOdtExterna', 'calcularFlete']
+						'RecibirOrden','EntregarOrden','DevolverOrden','RecibirOdtExterna', 'calcularFlete'],
+						'Nominar'=>['Nominate']
 						);
 	//verifica que el controlador enviado desde index.php esté dentro del arreglo controllers
 	if (array_key_exists($control, $controllers)) {
