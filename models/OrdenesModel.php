@@ -4,8 +4,10 @@
         private $search ="";
         private $ODT;
         private $username;
+        private $repartidor;
         private $fecha;
         private $bodega;
+        private $idactividad;
 
         /************METODOS GET AND SET*************/
         public function getODT()
@@ -25,6 +27,16 @@
         public function setUsername($username): self
         {
             $this->username = $username;
+            return $this;
+        }
+        public function getRepartidor()
+        {
+            return $this->repartidor;
+        }
+
+        public function setRepartidor($repartidor): self
+        {
+            $this->repartidor = $repartidor;
             return $this;
         }
         
@@ -48,6 +60,17 @@
             $this->bodega = $bodega;
 
             return $this;
+        }
+        public function getIdactividad()
+        {
+                return $this->idactividad;
+        }
+
+        public function setIdactividad($idactividad)
+        {
+                $this->idactividad = $idactividad;
+
+                return $this;
         }
     
 
@@ -85,6 +108,39 @@
 				return false;
 			}
 		}
+		/********************************* */
+        public function Asignar_Orden_Obtener()
+		{
+			$consulta="call asignar_orden_obtener()";			
+			$resultado=$this->basededatos->query($consulta);
+			return $resultado;
+		}
+        public function Asignar_Orden()
+		{
+			$consulta="call orden_asignar(".$this->ODT.", '".$this->fecha."', '".$this->username."',".$this->bodega.",'".$this->repartidor."',".$this->idactividad.")";
+            $resultado=$this->basededatos->query($consulta);
+			if($resultado==true)
+			{
+			return true;
+			}
+			else
+			{
+				return false;
+			}
+		}
+        public function Devolver_Orden()
+		{
+			$consulta="call orden_devolver_oficina(".$this->ODT.", '".$this->fecha."', '".$this->username."',".$this->bodega.",'".$this->repartidor."',".$this->idactividad.")";
+            $resultado=$this->basededatos->query($consulta);
+			if($resultado==true)
+			{
+			return true;
+			}
+			else
+			{
+				return false;
+			}
+		}
         
         
 
@@ -92,6 +148,8 @@
        
 
        
+
+        
     }   
 
 ?>

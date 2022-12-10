@@ -116,7 +116,7 @@ const heartbeat = setInterval(() => {
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
                             <a id="asignar" style="cursor: pointer;" class="nav-link"
-                                href="?control=Ordenes&action=AsignarOrden">
+                                href="?control=Asignar&action=Carga">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Asignar</p>
                             </a>
