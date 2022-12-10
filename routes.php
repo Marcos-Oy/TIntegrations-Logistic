@@ -33,8 +33,10 @@ session_start();
 						'Recibir'=>['Principal','Secundario','Recibir','Devolver'],
 						'Ordenes'=>['NuevaOrden','RevisarOrden','NominarOrden','AsignarOrden','AsignarConCodigo',
 						'RecibirOrden','EntregarOrden','DevolverOrden','RecibirOdtExterna', 'calcularFlete'],
-						'AsignarConCodigo'=>['Carga_Asig'],
+						'AsignarConCodigo'=>['Carga_Asig','Asignar_Codigo'],
 						'Asignar'=>['Carga','Secundario','Asignar','Devolver'],
+						'Entregar'=>['CargoD','Entrega'],
+
 						);
 	//verifica que el controlador enviado desde index.php esté dentro del arreglo controllers
 	if (array_key_exists($control, $controllers)) {
