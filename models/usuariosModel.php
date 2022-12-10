@@ -114,7 +114,7 @@ class usuariosModel
 	//metodo que devuelve todo la tabla usuario
 	public function get_Solicitud()
 	{
-		$consulta = "call usuarios_obtener(null,1,null)";
+		$consulta = "call usuarios_obtener(null,null,null)";
 		$resultado = $this->basededatos->query($consulta);
 		while ($fila = $resultado->fetch_assoc()) {
 			$this->Solicitud[] = $fila;
@@ -162,153 +162,106 @@ class usuariosModel
 
 	public function ShowById()
 	{
-		$consulta = "call usuarios_obtener('" . $this->username . "',null,null)";
-		$resultado = $this->basededatos->query($consulta);
-		return $resultado;
+		$consulta="call usuarios_obtener('".$this->username."',null,null)";
+		$resultado=$this->basededatos->query($consulta);
+	    return $resultado;
 	}
-
 
 	public function EditarUsuario()
 	{
-		$consulta = "call usuarios_modificar('" . $this->nombre . "', '" . $this->paterno . "', '" . $this->materno . "', '" . $this->email . "',
-										   '" . $this->tel1 . "','" . $this->tel2 . "', '" . $this->fechanac . "', " . $this->estduser_id . ", " . $this->ofi . ", 
-										   '" . $this->username . "', " . $this->cargo . ")";
-		$resultado = $this->basededatos->query($consulta);
-		echo $resultado;
-		if ($resultado == true) {
+		$consulta="call usuarios_modificar('".$this->nombre."', '".$this->paterno."', '".$this->materno."', '".$this->email."',
+									   '".$this->tel1."','".$this->tel2."', '".$this->fechanac."', ".$this->estduser_id.", ".$this->ofi.", 
+									   '".$this->username."', ".$this->cargo.")";
+		$resultado=$this->basededatos->query($consulta);
+		if($resultado==true)
+		{
+		return true;
+		}
+		else
+		{
+			return false;
+		}
+			
+	}
+
+	
+	public function LoginUsuario(){
+		$consulta="call usuarios_login('".$this->username."','".md5($this->pass)."')";
+		$resultado=$this->basededatos->query($consulta);
+        return $resultado;
+	}
+
+	public function Carga_Asignar()
+	{
+		$consulta="call usuarios_obtener(null,null,null)";
+		$resultado=$this->basededatos->query($consulta);
+		while($fila=$resultado->fetch_assoc()){
+			$this->Solicitud[]=$fila;
+		}
+		return $this->Solicitud;
+	}
+
+	public function ActivarUsuario()
+	{
+		$consulta="UPDATE usuarios SET activo = 1 WHERE username = '".$this->username. "'";
+        $resultado=$this->basededatos->query($consulta);
+		if($resultado==true)
+		{
 			return true;
-		} else {
+		}
+		else
+		{
 			return false;
 		}
 	}
 
-	
-		public function LoginUsuario(){
-			$consulta="call usuarios_login('".$this->username."','".md5($this->pass)."')";
-			$resultado=$this->basededatos->query($consulta);
-            return $resultado;
-		}
-
-		public function Carga_Asignar()
+	public function RestablecerPassword()
+	{
+		$consulta="call usuarios_reset('".$this->username."')";
+		$resultado=$this->basededatos->query($consulta);
+		if($resultado==true)
 		{
-			$consulta="call usuarios_obtener(null,null,null)";
-			$resultado=$this->basededatos->query($consulta);
-			while($fila=$resultado->fetch_assoc()){
-				$this->Solicitud[]=$fila;
-			}
-			return $this->Solicitud;
-		}
-
-
-
-		public function ActivarUsuario()
-		{
-			$consulta="UPDATE usuarios SET activo = 1 WHERE username = '".$this->username. "'";
-            $resultado=$this->basededatos->query($consulta);
-			if($resultado==true)
-			{
 			return true;
-			}
-			else
-			{
-				return false;
-			}
 		}
-
-		public function InsertarUsuario()
+		else
 		{
-			$consulta="call usuarios_crear('".$this->nombre."', '".$this->paterno."', '".$this->materno."', '".$this->email."',
-										   '".$this->tel1."','".$this->tel2."', ".$this->ofi.", ".$this->cargo.", 
-										   '".$this->fechanac."', @_user_name)";
-			$resultado=$this->basededatos->query($consulta);
-			if($resultado==true)
-			{
+			return false;
+		}
+	}
+
+	public function EditarMisDatos()
+	{
+		$consulta="call mis_datos_modificar('".$this->nombre."', '".$this->paterno."', '".$this->materno."', '".$this->email."',
+									   '".$this->tel1."','".$this->tel2."', ".$this->ofi.", 
+									   '".$this->username."','".$this->fechanac."')";
+		$resultado=$this->basededatos->query($consulta);
+		if($resultado==true)
+		{
 			return true;
-			}
-			else
-			{
-				return false;
-			}
+		}
+		else
+		{
+			return false;
+		}	
+	}
+
+	public function EditarPassword()
+	{
+		$consulta="update usuarios set pass='".md5($this->pass)."' where username='".$this->username."';";
+		$resultado=$this->basededatos->query($consulta);
+		if($resultado==true)
+		{
+			return true;
+		}
+		else
+		{
+			return false;
+		}
 			
-		}
-
-		public function ShowById()
-		{
-			$consulta="call usuarios_obtener('".$this->username."',null,null)";
-			$resultado=$this->basededatos->query($consulta);
-            return $resultado;
-		}
+	}
 
 
-		public function EditarUsuario()
-		{
-			$consulta="call usuarios_modificar('".$this->nombre."', '".$this->paterno."', '".$this->materno."', '".$this->email."',
-										   '".$this->tel1."','".$this->tel2."', '".$this->fechanac."', ".$this->estduser_id.", ".$this->ofi.", 
-										   '".$this->username."', ".$this->cargo.")";
-			$resultado=$this->basededatos->query($consulta);
-			if($resultado==true)
-			{
-			return true;
-			}
-			else
-			{
-				return false;
-			}
-			
-		}
 
-		public function RestablecerPassword()
-		{
-			$consulta="call usuarios_reset('".$this->username."')";
-			$resultado=$this->basededatos->query($consulta);
-			if($resultado==true)
-			{
-			return true;
-			}
-			else
-			{
-				return false;
-			}
-		}
-
-		public function EditarMisDatos()
-		{
-			$consulta="call mis_datos_modificar('".$this->nombre."', '".$this->paterno."', '".$this->materno."', '".$this->email."',
-										   '".$this->tel1."','".$this->tel2."', ".$this->ofi.", 
-										   '".$this->username."','".$this->fechanac."')";
-			$resultado=$this->basededatos->query($consulta);
-			if($resultado==true)
-			{
-			return true;
-			}
-			else
-			{
-				return false;
-			}
-			
-		}
-
-		public function EditarPassword()
-		{
-			$consulta="update usuarios set pass='".md5($this->pass)."' where username='".$this->username."';";
-			$resultado=$this->basededatos->query($consulta);
-			if($resultado==true)
-			{
-				return true;
-			}
-			else
-			{
-				return false;
-			}
-			
-		}
-
-		public function LoginUsuario(){
-			$consulta="call usuarios_login('".$this->username."','".md5($this->pass)."')";
-			$resultado=$this->basededatos->query($consulta);
-            return $resultado;
-		}
-
-    }
+}
 
 ?>

@@ -50,11 +50,12 @@
                                                 <div class="form-group">
                                                     <label>Seleccionar Oficina</label>
                                                     <select id="idoficina" name="idoficina" class="form-control">
-                                                        <option>option 1</option>
-                                                        <option>option 2</option>
-                                                        <option>option 3</option>
-                                                        <option>option 4</option>
-                                                        <option>option 5</option>
+                                                        <option value="" selected>-- Seleccione una oficina --</option>
+                                                        <?php foreach($rowsOficinas as $rowOficina): ?>
+                                                        <option value="<?= $rowOficina['idoficina'] ?>">
+                                                            <?= $rowOficina['desc_office'] ?>
+                                                        </option>
+                                                        <?php endforeach; ?>
                                                     </select>
                                                 </div>
                                             </div>
@@ -64,6 +65,9 @@
                                                 <div class="form-group">
                                                     <label>Seleccionar Estado de la Orden</label>
                                                     <select id="estorden" name="estorden" class="form-control">
+                                                        <option value="" selected>-- Seleccione un estado de orden --
+                                                        </option>
+
                                                         <option>option 1</option>
                                                         <option>option 2</option>
                                                         <option>option 3</option>
@@ -76,11 +80,12 @@
                                                 <div class="form-group">
                                                     <label>Seleccionar Región</label>
                                                     <select id="region" name="region" class="form-control">
-                                                        <option>option 1</option>
-                                                        <option>option 2</option>
-                                                        <option>option 3</option>
-                                                        <option>option 4</option>
-                                                        <option>option 5</option>
+                                                        <option value="" selected>-- Seleccione una región --</option>
+                                                        <?php foreach($rowsRegiones as $rowRegion): ?>
+                                                        <option value="<?= $rowRegion['idregion'] ?>">
+                                                            <?= $rowRegion['nombre'] ?>
+                                                        </option>
+                                                        <?php endforeach; ?>
                                                     </select>
                                                 </div>
                                             </div>
@@ -88,6 +93,7 @@
                                                 <div class="form-group">
                                                     <label>Seleccionar Comuna</label>
                                                     <select id="comuna" name="comuna" class="form-control">
+                                                        <option value="" selected>-- Seleccione una comuna --</option>
                                                         <option>option 1</option>
                                                         <option>option 2</option>
                                                         <option>option 3</option>
@@ -181,11 +187,13 @@
                                                 <div class="form-group">
                                                     <label>Seleccionar</label>
                                                     <select id="repartidor" name="repartidor" class="form-control">
-                                                        <option>option 1</option>
-                                                        <option>option 2</option>
-                                                        <option>option 3</option>
-                                                        <option>option 4</option>
-                                                        <option>option 5</option>
+                                                        <option value="" selected>-- Seleccione un repartior --</option>
+                                                        <?php foreach($rowsUsers as $rowUser): ?>
+                                                        <?php if($rowUser['desc_cargo']== 'Repartidor'){ ?>
+                                                        <option value="<?= $rowUser['username'] ?>">
+                                                            <?= $rowUser['nombre']." ".$rowUser['paterno']." ".$rowUser['materno'];}?>
+                                                        </option>
+                                                        <?php endforeach; ?>
                                                     </select>
                                                 </div>
                                             </div>
