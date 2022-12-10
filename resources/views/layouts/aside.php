@@ -116,16 +116,23 @@ const heartbeat = setInterval(() => {
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
                             <a id="asignar" style="cursor: pointer;" class="nav-link"
-                                href="?control=Ordenes&action=AsignarOrden">
+                                href="?control=Asignar&action=Carga">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Asignar</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a id="recibir" style="cursor: pointer;" class="nav-link"
-                                href="?control=Recibir&action=Principal">
+                            <a id="recibir" style="cursor: pointer;" class="nav-link" <a id="recibirEntrega"
+                                style="cursor: pointer;" class="nav-link" href="?control=Recibir&action=Principal">
                                 <i class="far fa-circle nav-icon"></i>
-                                <p>Recibir</p>
+                                <p>Recibir Entrega</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a id="recibirDevolucion" style="cursor: pointer;" class="nav-link"
+                                href="?control=Recibir&action=Secundario">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Recibir Devolucion</p>
                             </a>
                         </li>
                         <li class="nav-item">
@@ -137,7 +144,7 @@ const heartbeat = setInterval(() => {
                         </li>
                         <li class="nav-item">
                             <a id="codigo" style="cursor: pointer;" class="nav-link"
-                                href="?control=Ordenes&action=AsignarConCodigo">
+                                href="?control=AsignarConCodigo&action=Carga_Asig">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Asignar con código</p>
                             </a>

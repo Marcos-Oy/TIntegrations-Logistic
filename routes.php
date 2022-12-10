@@ -14,6 +14,8 @@ session_start();
 			case 'NuevaOrden':$control= new NuevaOrdenController();break;
 			case 'Recibir':$control= new RecibirController();break;
 			case 'Nominar':$control= new NominarController();break;
+			case 'AsignarConCodigo':$control= new AsignarConCodigoController();break;
+			case 'Asignar':$control= new AsignarController();break;
 
 		}
 		//llama a la acción del controlador
@@ -26,11 +28,12 @@ session_start();
                         'Login'=>['login','Dash','LoginUser'],
 						'DashBoard'=>['Dash'],
 						'MisDatos'=>['MisDatos','EditarMisDatos','EditarPass'],
-						'NuevaOrden'=>['calcularFlete'],
-						'Recibir'=>['Principal'],
-						'Ordenes'=>['NuevaOrden','RevisarOrden','NominarOrden','AsignarOrden','AsignarConCodigo',
-						'RecibirOrden','EntregarOrden','DevolverOrden','RecibirOdtExterna', 'calcularFlete'],
-						'Nominar'=>['Nominate']
+						'Ordenes'=>['NuevaOrden','RevisarOrden','NominarOrden','AsignarOrden','AsignarConCodigo'],
+						'Nominar'=>['Nominate'],
+						'NuevaOrden'=>['calcularFlete', 'datosODT', 'crearodt'],
+						'Recibir'=>['Principal','Secundario','Recibir','Devolver','RecibirOrden','EntregarOrden','DevolverOrden','RecibirOdtExterna', 'CrearOrden', 'calcularFlete'],
+						'AsignarConCodigo'=>['Carga_Asig'],
+						'Asignar'=>['Carga','Secundario','Asignar','Devolver'],
 						);
 	//verifica que el controlador enviado desde index.php esté dentro del arreglo controllers
 	if (array_key_exists($control, $controllers)) {

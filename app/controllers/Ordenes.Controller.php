@@ -1,8 +1,11 @@
 <?php
 
-    class OrdenesController{
-        public function __construct(){}
-        
+class OrdenesController
+{
+    public function __construct()
+    {
+    }
+
     /**************************LLAMADA A LAS VISTAS*************************************** */
     public function NuevaOrden()
     {
@@ -47,7 +50,12 @@
 
     /**********************************METODOS CRUD Y OTROS*****************************************************/
 
-    
-}
+        
+    public function CrearOrden()
+    {
+        include 'models/OrdenesModel.php' ;
+        $nuevaorden = new OrdenesModel();
 
-?>
+    }
+
+}
