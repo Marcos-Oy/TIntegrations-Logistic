@@ -13,8 +13,6 @@ function MenuActive() {
    * con los operadores lógicos.
    */
 
-
-
   var URLactual = window.location; //Extraemos la url actual
   var URLanalizada = /^(\w+):\/\/([^\/]+)([^]+)$/.exec(URLactual); //La analizamos para poder extraer sus partes
   var [Url, protocolo, servidor, path] = URLanalizada; // El análisis de la url la integramos en un array
@@ -94,6 +92,30 @@ function MenuActive() {
     protocolo +
       "://" +
       servidor +
+      "/TIntegrations-Logistic/?control=Recibir&action=Principal"
+  ) {
+    document.getElementById("MenuOrdenes").className = "nav-item menu-open"; //Se despliega el menú
+    document.getElementById("ordenes").className = "nav-link active"; //Activamos el menú
+    document.getElementById("recibirEntrega").className = "nav-link active"; //Activamos la opción
+  }
+
+  if (
+    URLactual ==
+    protocolo +
+      "://" +
+      servidor +
+      "/TIntegrations-Logistic/?control=Recibir&action=Secundario"
+  ) {
+    document.getElementById("MenuOrdenes").className = "nav-item menu-open"; //Se despliega el menú
+    document.getElementById("ordenes").className = "nav-link active"; //Activamos el menú
+    document.getElementById("recibirDevolucion").className = "nav-link active"; //Activamos la opción
+  }
+
+  if (
+    URLactual ==
+    protocolo +
+      "://" +
+      servidor +
       "/TIntegrations-Logistic/?control=Ordenes&action=RecibirOrden"
   ) {
     document.getElementById("MenuOrdenes").className = "nav-item menu-open"; //Se despliega el menú
@@ -118,7 +140,7 @@ function MenuActive() {
     protocolo +
       "://" +
       servidor +
-      "/TIntegrations-Logistic/?control=Ordenes&action=AsignarConCodigo"
+      "/TIntegrations-Logistic/?control=AsignarConCodigo&action=Carga_Asig"
   ) {
     document.getElementById("MenuOrdenes").className = "nav-item menu-open"; //Se despliega el menú
     document.getElementById("ordenes").className = "nav-link active"; //Activamos el menú

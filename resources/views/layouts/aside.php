@@ -1,20 +1,20 @@
-<script> 
-    function valida_session(){      
-        var user = "<?=$_SESSION['username'] ?? null;?>";
-        if(user == ''){
-            window.location= '?control=Login&action=login'
-        }
+<script>
+function valida_session() {
+    var user = "<?=$_SESSION['username'] ?? null;?>";
+    if (user == '') {
+        window.location = '?control=Login&action=login'
     }
+}
 
-    const heartbeat = setInterval(() => {
-        valida_session();
-    }, 800);
-  </script>
+const heartbeat = setInterval(() => {
+    valida_session();
+}, 800);
+</script>
 <aside class="main-sidebar sidebar-light-primary elevation-1">
     <!-- Brand Logo -->
     <a href="#" class="brand-link">
-        <img src="public/dist/img/AdminLTELogo.png" alt="AdminLTE Logo"
-            class="brand-image img-circle elevation-3" style="opacity: .8">
+        <img src="public/dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
+            style="opacity: .8">
         <span class="brand-text font-weight-light">Tu Paquete</span>
     </a>
 
@@ -36,20 +36,24 @@
         </div> -->
         <div class="nav-item dropdown user-menu">
             <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                <img src="public/dist/img/user2-160x160.jpg" class="user-image img-circle elevation-2" width="30px" alt="User Image">
+                <img src="public/dist/img/user2-160x160.jpg" class="user-image img-circle elevation-2" width="30px"
+                    alt="User Image">
                 <span class="d-none d-md-inline"><?php echo $_SESSION['usuario']; ?></span>
             </a>
-            <ul class="dropdown-menu dropdown-menu-lg dropdown-menu-right" style="left: inherit; right: 30px; min-width:200px;">
+            <ul class="dropdown-menu dropdown-menu-lg dropdown-menu-right"
+                style="left: inherit; right: 30px; min-width:200px;">
                 <li class="user-header bg-primary" style="display: flex; flex-direction: column; align-items: center;">
-                    <img src="public/dist/img/user2-160x160.jpg" class="img-circle elevation-2" width="100px" alt="User Image">
+                    <img src="public/dist/img/user2-160x160.jpg" class="img-circle elevation-2" width="100px"
+                        alt="User Image">
                     <p><?php echo $_SESSION['usuario']; ?></p>
                     <p><small><?php echo 'Oficina: '. $_SESSION['oficina']; ?></small></p>
                 </li>
                 <li class="user-footer">
-                    <a href="?control=Login&action=LoginUser" class="btn btn-default btn-flat float-right">Cerrar Sesion</a>
+                    <a href="?control=Login&action=LoginUser" class="btn btn-default btn-flat float-right">Cerrar
+                        Sesion</a>
                 </li>
             </ul>
-</div>
+        </div>
 
         <!-- SidebarSearch Form -->
         <div class="form-inline">
@@ -93,7 +97,8 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a id="Nominar" style="cursor: pointer;" class="nav-link" href="?control=Ordenes&action=NominarOrden">
+                            <a id="Nominar" style="cursor: pointer;" class="nav-link"
+                                href="?control=Ordenes&action=NominarOrden">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Nominar</p>
                             </a>
@@ -110,37 +115,50 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a id="asignar" style="cursor: pointer;" class="nav-link" href="?control=Ordenes&action=AsignarOrden">
+                            <a id="asignar" style="cursor: pointer;" class="nav-link"
+                                href="?control=Asignar&action=Carga">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Asignar</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a id="recibir" style="cursor: pointer;" class="nav-link" href="?control=Recibir&action=Principal">
+                            <a id="recibirEntrega" style="cursor: pointer;" class="nav-link"
+                                href="?control=Recibir&action=Principal">
                                 <i class="far fa-circle nav-icon"></i>
-                                <p>Recibir</p>
+                                <p>Recibir Entrega</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a id="ODT" style="cursor: pointer;" class="nav-link" href="?control=Ordenes&action=RecibirOdtExterna">
+                            <a id="recibirDevolucion" style="cursor: pointer;" class="nav-link"
+                                href="?control=Recibir&action=Secundario">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Recibir Devolucion</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a id="ODT" style="cursor: pointer;" class="nav-link"
+                                href="?control=Ordenes&action=RecibirOdtExterna">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Cargar ODT Externa</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a id="codigo" style="cursor: pointer;" class="nav-link" href="?control=Ordenes&action=AsignarConCodigo">
+                            <a id="codigo" style="cursor: pointer;" class="nav-link"
+                                href="?control=AsignarConCodigo&action=Carga_Asig">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Asignar con código</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a id="devolver" style="cursor: pointer;" class="nav-link" href="?control=Ordenes&action=DevolverOrden">
+                            <a id="devolver" style="cursor: pointer;" class="nav-link"
+                                href="?control=Ordenes&action=DevolverOrden">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Devolver</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a id="entregar" style="cursor: pointer;" class="nav-link" href="?control=Ordenes&action=EntregarOrden">
+                            <a id="entregar" style="cursor: pointer;" class="nav-link"
+                                href="?control=Ordenes&action=EntregarOrden">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Entregar</p>
                             </a>
@@ -149,7 +167,8 @@
 
                 </li>
                 <li class="nav-item">
-                    <a id="NuevaOrden" style="cursor: pointer;" class="nav-link" href="?control=Ordenes&action=NuevaOrden">
+                    <a id="NuevaOrden" style="cursor: pointer;" class="nav-link"
+                        href="?control=Ordenes&action=NuevaOrden">
                         <i class="far fa-circle nav-icon"></i>
                         <p>
                             Nueva orden
@@ -167,7 +186,8 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a id="RevisarOrden" style="cursor: pointer;" class="nav-link" href="?control=Ordenes&action=RevisarOrden">
+                    <a id="RevisarOrden" style="cursor: pointer;" class="nav-link"
+                        href="?control=Ordenes&action=RevisarOrden">
                         <i class=" far fa-circle nav-icon"></i>
                         <p>
                             Revisar orden

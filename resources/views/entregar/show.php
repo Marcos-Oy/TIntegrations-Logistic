@@ -18,27 +18,28 @@
             include 'resources/views/layouts/aside.php';
         ?>
 
-        <div class="content-wrapper">
-        <div class="container-fluid">
-                <div class="row">
-                    <!-- left column -->
-                    <div class="col-md-6">
-                        <!-- general form elements -->
-                        <div class="card card-info">
-                            <div class="card-header">
-                                <h3 class="card-title">Entregar orden</h3>
+        <div class="content-wrapper center">
+            <br>
+            <div class="container-fluid center">
+                <div class="row center">
+                    <div class="col-md-6 center">
+                        <div class="card card-info center">
+                            <div class="card-header center">
+                                <h3 class="card-title center">Entregar orden</h3>
                             </div>
-                            <!-- /.card-header -->
-                            <!-- form start -->
                             <form>
-                                <div class="card-body">
-                                    <div class="form-group">
+                                <div class="card-body center">
+                                    <div class="form-group center">
                                         <label for="exampleSelectBorderWidth2">Seleccionr ODT</label>
                                         <select class="custom-select form-control-border border-width-2"
                                             id="exampleSelectBorderWidth2">
-                                            <option>ODT 1</option>
-                                            <option>ODT 2</option>
-                                            <option>ODT 3</option>
+                                            <option selected>Seleccionar Opcion </option>
+                                            <?php foreach($rows as $row): ?>
+                                            <option value="<?= $row['username'] ?>">
+                                                <?php echo $row['nombre']." ".$row['paterno']." ".$row['materno'] ?>
+                                            </option>
+                                            <?php endforeach; ?>
+                                        </select>
                                         </select>
                                     </div>
                                     <div class="form-group">

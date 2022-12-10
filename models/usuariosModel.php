@@ -167,10 +167,23 @@ class usuariosModel
 		}
 	}
 
-	public function LoginUsuario()
-	{
-		$consulta = "call usuarios_login('" . $this->username . "','" . md5($this->pass) . "')";
-		$resultado = $this->basededatos->query($consulta);
-		return $resultado;
-	}
-}
+	
+		public function LoginUsuario(){
+			$consulta="call usuarios_login('".$this->username."','".md5($this->pass)."')";
+			$resultado=$this->basededatos->query($consulta);
+            return $resultado;
+		}
+
+		public function Carga_Asignar()
+		{
+			$consulta="call usuarios_obtener(null,null,6)";
+			$resultado=$this->basededatos->query($consulta);
+			while($fila=$resultado->fetch_assoc()){
+				$this->Solicitud[]=$fila;
+			}
+			return $this->Solicitud;
+		}
+
+    }
+
+?>
