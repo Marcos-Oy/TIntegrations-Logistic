@@ -37,7 +37,7 @@
                         <div class="col-3">
                             <div class="input-group mb-1">
                                 <div class="form-floating mb-2">
-                                    <input class="form-control" value="<?php echo $nombre ?>" type="number"
+                                    <input class="form-control" value="<?php echo $nombre ?>" type="text"
                                         name="orden[]">
                                     <label for="orden[]">Orden</label>
                                 </div>
@@ -50,7 +50,7 @@
                     <div class="col-3">
                         <div class="input-group mb-1">
                             <div class="form-floating mb-2">
-                                <input autocomplete="off" class="form-control" autofocus type="number" name="orden[]">
+                                <input autocomplete="off" class="form-control" autofocus type="text" name="orden[]">
                                 <label for="orden[]">Orden</label>
                             </div>
                         </div>
@@ -85,11 +85,11 @@
                             </div>
                         </div>
                     </div>
-                    <button name="agregar" hidden type="submit">Agregar campo</button>
+                    <button name="agregar" hidden type="button">Agregar campo</button>
                     <br>
                     <div class="col">
                         <div class="input-group mb-2">
-                            <button type="button" class="btn btn-success">ASIGNAR</button>
+                            <button type="submit" class="btn btn-success">ASIGNAR</button>
                         </div>
                     </div>
                 </div>
