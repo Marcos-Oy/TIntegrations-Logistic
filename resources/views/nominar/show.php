@@ -77,7 +77,7 @@
                                             <div class="col-sm-3">
                                                 <div class="form-group">
                                                     <label>Seleccionar Región</label>
-                                                    <select id="region" name="region" class="form-control">
+                                                    <select id="regiones" name="regiones" class="form-control">
                                                         <option value="" selected>-- Seleccione una región --</option>
                                                         <?php foreach($rowsRegiones as $rowRegion): ?>
                                                         <option value="<?= $rowRegion['idregion'] ?>">
@@ -90,13 +90,9 @@
                                             <div class="col-sm-3">
                                                 <div class="form-group">
                                                     <label>Seleccionar Comuna</label>
-                                                    <select id="comuna" name="comuna" class="form-control">
+                                                    <select id="comunas" name="comunas" class="form-control">
                                                         <option value="" selected>-- Seleccione una comuna --</option>
-                                                        <option>option 1</option>
-                                                        <option>option 2</option>
-                                                        <option>option 3</option>
-                                                        <option>option 4</option>
-                                                        <option>option 5</option>
+
                                                     </select>
                                                 </div>
                                             </div>
@@ -244,7 +240,8 @@
                                             <?php endforeach; ?>
                                             <?php else: ?>
                                             <tr>
-                                                <td colspan="3" class="text-center">No hay registros actualmente
+                                                <td colspan="3" class="text-center">Use los filtros para mostrar los
+                                                    registros.
                                                 </td>
                                             </tr>
                                             <?php endif; ?>
@@ -284,4 +281,5 @@
     <?php
         include 'resources/views/layouts/footer.php';
     ?>
+    <script type="text/javascript" src="resources/assets/js/order_new.js"></script>
 </body>

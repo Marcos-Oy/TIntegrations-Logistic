@@ -44,7 +44,7 @@
             $apt= new nominarModel();
 			$apt->setidoficina($_POST['idoficina']);
 			$apt->setestorden($_POST['estorden']);
-			$apt->setcomuna($_POST['comuna']);
+			$apt->setcomuna($_POST['comunas']);
 			$apt->setfechacreaciondesde($_POST['fechacreaciondesde']);
 			$apt->setfechacreacionhasta($_POST['fechacreacionhasta']);
 			$apt->setfechaactividaddesde($_POST['fechaactividaddesde']);
