@@ -82,7 +82,7 @@
                                 <tr>
                                     <td>
                                         <div class="form-check center">
-                                            <input type="checkbox" class="form-check-input" id="exampleCheck1" name="ordenes[]"
+                                            <input required type="checkbox" class="form-check-input" id="exampleCheck1" name="ordenes[]"
                                             value="<?= $row['idorden'] ?>">
                                         </div>
                                     </td>

@@ -59,7 +59,7 @@ class NuevaOrdenController
                     $odtdoc = $odtdocs->crear_odtdocumento();
                 }
             }
-            require_once("resources/views/asignar/show.php");
+            echo "<script>window.location= '?control=Asignar&action=Carga'</script>";
         } else {
             echo "no entró al IF";
             #require_once("resources/views/NuevaOrden/show.php");
