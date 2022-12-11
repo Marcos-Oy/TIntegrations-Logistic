@@ -83,60 +83,73 @@
                 return $resultado;
         }
         public function Datos_Devolver()
-		{
-			$consulta="call Cargar_Devolver()";
-			$resultado=$this->basededatos->query($consulta);
-			return $resultado;
-		}
+	{
+		$consulta="call Cargar_Devolver()";
+		$resultado=$this->basededatos->query($consulta);
+		return $resultado;
+	}
         
-		/********************************* */
+	/********************************* */
         public function Recibir_Orden()
-		{
-			$consulta="call Orden_Recibir('".$this->ODT."', '".$this->fecha."', '".$this->username."',".$this->bodega.")";
+	{
+		$consulta="call Orden_Recibir('".$this->ODT."', '".$this->fecha."', '".$this->username."',".$this->bodega.")";
 			
-                        $resultado=$this->basededatos->query($consulta);
-			if($resultado==true)
-			{
-			return true;
-			}
-			else
-			{
-				return false;
-			}
+                 $resultado=$this->basededatos->query($consulta);
+		if($resultado==true)
+		{
+		return true;
 		}
-		/********************************* */
+		else
+		{
+			return false;
+		}
+	}
+	/********************************* */
         public function Asignar_Orden_Obtener()
-		{
-			$consulta="call asignar_orden_obtener()";			
-			$resultado=$this->basededatos->query($consulta);
-			return $resultado;
-		}
+	{
+		$consulta="call asignar_orden_obtener()";			
+		$resultado=$this->basededatos->query($consulta);
+		return $resultado;
+	}
         public function Asignar_Orden()
+	{
+		$consulta="call orden_asignar(".$this->ODT.", '".$this->fecha."', '".$this->username."',".$this->bodega.",'".$this->repartidor."',".$this->idactividad.")";
+                $resultado=$this->basededatos->query($consulta);
+		if($resultado==true)
 		{
-			$consulta="call orden_asignar(".$this->ODT.", '".$this->fecha."', '".$this->username."',".$this->bodega.",'".$this->repartidor."',".$this->idactividad.")";
-            $resultado=$this->basededatos->query($consulta);
-			if($resultado==true)
-			{
-			return true;
-			}
-			else
-			{
-				return false;
-			}
+		        return true;
 		}
+		else
+		{
+		        return false;
+		}
+	}
         public function Devolver_Orden()
+	{
+		$consulta="call orden_devolver_oficina(".$this->ODT.", '".$this->fecha."', '".$this->username."',".$this->bodega.",'".$this->repartidor."',".$this->idactividad.")";
+                $resultado=$this->basededatos->query($consulta);
+		if($resultado==true)
 		{
-			$consulta="call orden_devolver_oficina(".$this->ODT.", '".$this->fecha."', '".$this->username."',".$this->bodega.",'".$this->repartidor."',".$this->idactividad.")";
-            $resultado=$this->basededatos->query($consulta);
-			if($resultado==true)
-			{
-			return true;
-			}
-			else
-			{
-				return false;
-			}
+		return true;
 		}
+		else
+		{
+			return false;
+		}
+	}
+        public function AsignarCon_Codigo()
+        {
+                $consulta="call Con_Codigo(".$this->ODT.", '".$this->fecha."', '".$this->username."',".$this->bodega.",'".$this->repartidor."',".$this->idactividad.")";
+                $resultado=$this->basededatos->query($consulta);
+                if($resultado== 0)
+                {
+                        return false;
+                }
+                else
+                {
+                        return true;
+                }
+        }
         
         
 

@@ -20,16 +20,14 @@
         <div class="content-wrapper">
             <div class="h1 text-center text-primary">Asignacion de Codigos</div>
             <?php  $orden = [];
-            if (isset($_POST["orden"]) && !empty($_POST["orden"]) && $_POST["orden"]>0) 
+            if (isset($_POST["orden"]) && !empty($_POST["orden"]) && $_POST["orden"]>0 &&($_POST["orden"])!="") 
             {
                 $orden = $_POST["orden"];
-            }
-            if (isset($_POST["asignar"])) 
-            {
+            
                 $orden = array_filter($orden);
+            }
             ?>
-            <?php exit;}  ?>
-            <form method="POST" action="?control=AsignarConCodigo&action=Carga_Asig">
+            <form method="POST" <?php if(isset($_POST['entrega'])) { ?> action="?control=AsignarConCodigo&action=Asignar_Codigo" <?php } ?> >
                 <!--Comienza el ciclo que dibuja los campos dinámicos-->
                 <?php foreach ($orden as $nombre) { ?>
                 <div class="container text-center ">
@@ -37,7 +35,7 @@
                         <div class="col-3">
                             <div class="input-group mb-1">
                                 <div class="form-floating mb-2">
-                                    <input class="form-control" value="<?php echo $nombre ?>" type="text"
+                                    <input required class="form-control" value="<?php echo $nombre ?>" type="text"
                                         name="orden[]">
                                     <label for="orden[]">Orden</label>
                                 </div>
@@ -50,7 +48,7 @@
                     <div class="col-3">
                         <div class="input-group mb-1">
                             <div class="form-floating mb-2">
-                                <input autocomplete="off" class="form-control" autofocus type="text" name="orden[]">
+                                <input autocomplete="off" ifclass="form-control" autofocus type="text" name="orden[]">
                                 <label for="orden[]">Orden</label>
                             </div>
                         </div>
@@ -60,7 +58,7 @@
                             <select id="cargo" class="form-control" name="repartidor" required>
                                 <option selected>Seleccione repartidor</option>
                                 <?php foreach($rows as $row): ?>
-                                <option value="<?= $row['username'] ?>">
+                                <option required value="<?= $row['username'] ?>">
                                     <?php echo $row['nombre']." ".$row['paterno']." ".$row['materno'] ?>
                                 </option>
                                 <?php endforeach; ?>
@@ -68,8 +66,7 @@
                         </div>
                         <div class="col">
                             <div class="form-check">
-                                <input class="form-check-input" type="radio" value="En tránsito" name="accion"
-                                    id="accion1">
+                            <input class="form-check-input" type="radio" name="estado" value="2">
                                 <label class="form-check-label" for="accion1">
                                     En tránsito
                                 </label>
@@ -77,19 +74,18 @@
                         </div>
                         <div class="col">
                             <div class="form-check">
-                                <input class="form-check-input" type="radio" value="En reparto" name="accion"
-                                    id="accion2">
-                                <label class="form-check-label" for="accion2">
+                            <input class="form-check-input" type="radio" name="estado" value="3">
+                                    <label class="form-check-label" for="accion1">
                                     En reparto
                                 </label>
                             </div>
                         </div>
                     </div>
-                    <button name="agregar" hidden type="button">Agregar campo</button>
+                    <button name="agregar" type="" hidden >Agregar campo</button>
                     <br>
                     <div class="col">
                         <div class="input-group mb-2">
-                            <button type="submit" class="btn btn-success">ASIGNAR</button>
+                        <button type="submit" name="entrega" class="btn btn-success">ASIGNAR</button>
                         </div>
                     </div>
                 </div>
@@ -99,4 +95,4 @@
     <?php
         include 'resources/views/layouts/footer.php';
     ?>
-</body>
+</body
