@@ -20,13 +20,16 @@
         <div class="content-wrapper">
             <div class="h1 text-center text-primary">Asignacion de Codigos</div>
             <?php  $orden = [];
-            if (isset($_POST["orden"]) && !empty($_POST["orden"]) && $_POST["orden"]>0 &&($_POST["orden"])!="") 
+            if (isset($_POST["orden"]) && !empty($_POST["orden"]) && $_POST["orden"]>0) 
             {
                 $orden = $_POST["orden"];
-                $orden = array_filter($orden);
             }
+            if (isset($_POST["asignar"])) 
+            {
+                $orden = array_filter($orden);
             ?>
-            <form method="POST" <?php if(isset($_POST['entrega'])) { ?> action="?control=AsignarConCodigo&action=Asignar_Codigo" <?php } ?> >
+            <?php exit;}  ?>
+            <form method="POST" action="?control=AsignarConCodigo&action=Carga_Asig">
                 <!--Comienza el ciclo que dibuja los campos dinámicos-->
                 <?php foreach ($orden as $nombre) { ?>
                 <div class="container text-center ">
@@ -54,18 +57,19 @@
                     </div>
                     <div class="row">
                         <div class="col">
-                            <select id="cargo" class="form-control" name="repartidor" >
-                            <option value="">Seleccione repartidor</option>
-                                        <?php foreach($rows as $row): ?>
-                                        <option value="<?= $row['username'] ?>">
-                                        <?php echo $row['nombre']." ".$row['paterno']." ".$row['materno'] ?>
-                                        </option>
-                                        <?php endforeach; ?>
-                                    </select>
+                            <select id="cargo" class="form-control" name="repartidor" required>
+                                <option selected>Seleccione repartidor</option>
+                                <?php foreach($rows as $row): ?>
+                                <option value="<?= $row['username'] ?>">
+                                    <?php echo $row['nombre']." ".$row['paterno']." ".$row['materno'] ?>
+                                </option>
+                                <?php endforeach; ?>
+                            </select>
                         </div>
                         <div class="col">
                             <div class="form-check">
-                            <input class="form-check-input" type="radio" name="estado" value="2" checked="">
+                                <input class="form-check-input" type="radio" value="En tránsito" name="accion"
+                                    id="accion1">
                                 <label class="form-check-label" for="accion1">
                                     En tránsito
                                 </label>
@@ -73,20 +77,19 @@
                         </div>
                         <div class="col">
                             <div class="form-check">
-                            <input class="form-check-input" type="radio" name="estado" value="3">
+                                <input class="form-check-input" type="radio" value="En reparto" name="accion"
+                                    id="accion2">
                                 <label class="form-check-label" for="accion2">
                                     En reparto
                                 </label>
                             </div>
                         </div>
                     </div>
-                    <div>
-                        <button name="agregar" type="" hidden >Agregar campo</button>
-                    </div>
+                    <button name="agregar" hidden type="submit">Agregar campo</button>
                     <br>
                     <div class="col">
                         <div class="input-group mb-2">
-                            <button type="submit" name="entrega" class="btn btn-success">ASIGNAR</button>
+                            <button type="button" class="btn btn-success">ASIGNAR</button>
                         </div>
                     </div>
                 </div>
