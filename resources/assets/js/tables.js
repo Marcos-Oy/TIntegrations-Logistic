@@ -11,6 +11,23 @@ $(function () {
       ordering: true,
       info: false,
       paging: true,
+      buttons: [
+        {
+          extend: "copy",
+          text: "copiar",
+        },
+        "csv",
+        "excel",
+        "pdf",
+        {
+          extend: "print",
+          text: "imprimir",
+        },
+        {
+          extend: "colvis",
+          text: "columnas visibles",
+        },
+      ],
     })
     .buttons()
     .container()
