@@ -20,39 +20,37 @@
             include 'resources/views/layouts/aside.php';
         ?>
         <div class="content-wrapper">
-
-            <section class="content">
-                <div class="container-fluid">
-                    <div class="row">
-                        <div class="col-sm-12">
-                            <div class="card card-primary">
-                                <div class="card-header">
-                                    <h2>
-                                        Nominar órdenes
-                                        <a href="#" class="justify-content-md-end">
-                                            <button type="button" class="btn btn-secondary">
-                                                Filtrar
-                                            </button>
-                                        </a>
-                                        <a href="#" class="justify-content-md-end">
-                                            <button type="button" class="btn btn-success">
-                                                Excel
-                                            </button>
-                                        </a>
-                                    </h2>
-                                </div>
-                                <!-- /.card-header -->
-                                <div class="card-body">
-                                    <form>
+            <form method="POST" action="?control=Nominar&action=Filtrar_Nominar">
+                <section class="content">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <div class="card card-primary">
+                                    <div class="card-header">
+                                        <h2>
+                                            Nominar órdenes
+                                            <a href="#" class="justify-content-md-end">
+                                                <button type="submit" class="btn btn-secondary">
+                                                    Filtrar
+                                                </button>
+                                            </a>
+                                            <a href="#" class="justify-content-md-end">
+                                                <button type="button" class="btn btn-success">
+                                                    Excel
+                                                </button>
+                                            </a>
+                                        </h2>
+                                    </div>
+                                    <!-- /.card-header -->
+                                    <div class="card-body">
                                         <div class="row">
-
                                             <div class="col-sm-3">
                                                 <div class="form-group">
                                                     <label>Seleccionar Oficina</label>
                                                     <select id="idoficina" name="idoficina" class="form-control">
                                                         <option value="" selected>-- Seleccione una oficina --</option>
                                                         <?php foreach($rowsOficinas as $rowOficina): ?>
-                                                        <option value="<?= $rowOficina['idoficina'] ?>">
+                                                        <option value="<?= $rowOficina['id'] ?>">
                                                             <?= $rowOficina['desc_office'] ?>
                                                         </option>
                                                         <?php endforeach; ?>
@@ -103,27 +101,24 @@
                                                 </div>
                                             </div>
                                         </div>
-                                    </form>
+                                    </div>
                                 </div>
+                                <!-- /.card-body -->
                             </div>
-                            <!-- /.card-body -->
                         </div>
                     </div>
-                </div>
-            </section>
+                </section>
 
-            <section class="content">
-                <div class="container-fluid">
-                    <div class="row">
-
-                        <div class="col-sm-4">
-                            <div class="card card-dark">
-                                <div class="card-header">
-                                    <h2 class="card-title">Fecha creación de orden</h2>
-                                </div>
-                                <!-- /.card-header -->
-                                <div class="card-body">
-                                    <form>
+                <section class="content">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <div class="card card-dark">
+                                    <div class="card-header">
+                                        <h2 class="card-title">Fecha creación de orden</h2>
+                                    </div>
+                                    <!-- /.card-header -->
+                                    <div class="card-body">
                                         <div class="row">
                                             <div class="col-sm-6">
                                                 <div class="form-group">
@@ -140,19 +135,17 @@
                                                 </div>
                                             </div>
                                         </div>
-                                    </form>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
 
-                        <div class="col-sm-4">
-                            <div class="card card-dark">
-                                <div class="card-header">
-                                    <h2 class="card-title">Fecha creación de actividad</h2>
-                                </div>
-                                <!-- /.card-header -->
-                                <div class="card-body">
-                                    <form>
+                            <div class="col-sm-4">
+                                <div class="card card-dark">
+                                    <div class="card-header">
+                                        <h2 class="card-title">Fecha creación de actividad</h2>
+                                    </div>
+                                    <!-- /.card-header -->
+                                    <div class="card-body">
                                         <div class="row">
                                             <div class="col-sm-6">
                                                 <div class="form-group">
@@ -169,19 +162,17 @@
                                                 </div>
                                             </div>
                                         </div>
-                                    </form>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
 
-                        <div class="col-sm-4">
-                            <div class="card card-dark">
-                                <div class="card-header">
-                                    <h2 class="card-title">Repartidor</h2>
-                                </div>
-                                <!-- /.card-header -->
-                                <div class="card-body">
-                                    <form>
+                            <div class="col-sm-4">
+                                <div class="card card-dark">
+                                    <div class="card-header">
+                                        <h2 class="card-title">Repartidor</h2>
+                                    </div>
+                                    <!-- /.card-header -->
+                                    <div class="card-body">
                                         <div class="row">
                                             <div class="col-sm-12">
                                                 <div class="form-group">
@@ -198,16 +189,13 @@
                                                 </div>
                                             </div>
                                         </div>
-                                    </form>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-
                     </div>
-                </div>
-
-            </section>
-
+                </section>
+            </form>
             <!-- Main content -->
             <section class="content">
                 <div class="container-fluid">
@@ -237,34 +225,29 @@
                                             </tr>
                                         </thead>
                                         <tbody>
+                                            <?php if($rows): ?>
+                                            <?php foreach($rows as $row): ?>
                                             <tr>
-                                                <td>ODT</td>
-                                                <td>FECHA</td>
-                                                <td>OFICINA</td>
-                                                <td>REGIÓN</td>
-                                                <td>COMUNA</td>
-                                                <td>ESTADO ORDEN</td>
-                                                <td>ACTIVIDAD</td>
-                                                <td>USUARIO CREADOR</td>
-                                                <td>UBICACIÓN</td>
-                                                <td>REPARTIDOR</td>
-                                                <td>VALOR FLETE</td>
-                                                <td>TIPO PAGO</td>
+                                                <td><?= $row['numero'] ?></td>
+                                                <td><?= $row['fecha'] ?></td>
+                                                <td><?= $row['oficina'] ?></td>
+                                                <td><?= $row['region'] ?></td>
+                                                <td><?= $row['comuna'] ?></td>
+                                                <td><?= $row['estado_orden'] ?></td>
+                                                <td><?= $row['actividad'] ?></td>
+                                                <td><?= $row['creador'] ?></td>
+                                                <td><?= $row['bodega'] ?></td>
+                                                <td><?= $row['repartidor'] ?></td>
+                                                <td><?= $row['valor_flete'] ?></td>
+                                                <td><?= $row['tipopago'] ?></td>
                                             </tr>
+                                            <?php endforeach; ?>
+                                            <?php else: ?>
                                             <tr>
-                                                <td>ODT</td>
-                                                <td>FECHA</td>
-                                                <td>OFICINA</td>
-                                                <td>REGIÓN</td>
-                                                <td>COMUNA</td>
-                                                <td>ESTADO ORDEN</td>
-                                                <td>ACTIVIDAD</td>
-                                                <td>USUARIO CREADOR</td>
-                                                <td>UBICACIÓN</td>
-                                                <td>REPARTIDOR</td>
-                                                <td>VALOR FLETE</td>
-                                                <td>TIPO PAGO</td>
+                                                <td colspan="3" class="text-center">No hay registros actualmente
+                                                </td>
                                             </tr>
+                                            <?php endif; ?>
                                         </tbody>
                                         <tfoot>
                                             <tr>
@@ -295,6 +278,7 @@
                 <!-- /.container-fluid -->
             </section>
             <!-- /.content -->
+
         </div>
     </div>
     <?php

@@ -91,12 +91,67 @@
 		}
 
         public function filtrar_nomninar(){
-            $consulta="call carga_nominar('".$this->idoficina."','".$this->estorden."','".$this->comuna."',
-            '".$this->fechacreaciondesde."','".$this->fechacreacionhasta."','".$this->fechaactividaddesde."','".$this->fechaactividadhasta.",
-            '".$this->repartidor."'')";
-            echo $consulta;
-			// $resultado=$this->basededatos->query($consulta);
-            // return $resultado;
+            if(isset($this->idoficina) && !empty($this->idoficina)){
+                $ofi = "$this->idoficina";
+
+            }else{
+                $ofi = null;
+            }
+
+            if(isset($this->estorden) && !empty($this->estorden)){
+                $est = "$this->estorden";
+
+            }else{
+                $est = null;
+            }
+
+            if(isset($this->comuna) && !empty($this->comuna)){
+                $com = $this->comuna;
+
+            }else{
+                $com = null;
+            }
+
+            if(isset($this->fechacreaciondesde) && !empty($this->fechacreaciondesde)){
+                $datcreades = "'$this->fechacreaciondesde'";
+
+            }else{
+                $datcreades = null;
+            }
+
+            if(isset($this->fechacreacionhasta) && !empty($this->fechacreacionhasta)){
+                $datcreahas = "'$this->fechacreacionhasta'";
+
+            }else{
+                $datcreahas = null;
+            }
+
+            if(isset($this->fechaactividaddesde) && !empty($this->fechaactividaddesde)){
+                $datactdes = "'$this->fechaactividaddesde'";
+
+            }else{
+                $datactdes = null;
+            }
+
+            if(isset($this->fechaactividadhasta) && !empty($this->fechaactividadhasta)){
+                $datacthas = "'$this->fechaactividadhasta'";
+
+            }else{
+                $datacthas = null;
+            }
+
+            if(isset($this->repartidor) && !empty($this->repartidor)){
+                $rep = "'$this->repartidor'";
+
+            }else{
+                $rep = null;
+            }
+            
+            $consulta="call carga_nominar(".$ofi.",".$est.",".$com.",
+            ".$datcreades.",".$datcreahas.",".$datactdes.",".$datacthas.",
+            ".$rep.")";
+			$resultado=$this->basededatos->query($consulta);
+            return $resultado;
         }
     }
 ?>
