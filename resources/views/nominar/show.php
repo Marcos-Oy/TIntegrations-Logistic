@@ -34,11 +34,11 @@
                                                     Filtrar
                                                 </button>
                                             </a>
-                                            <a href="#" class="justify-content-md-end">
+                                            <!-- <a href="#" class="justify-content-md-end">
                                                 <button type="button" class="btn btn-success">
                                                     Excel
                                                 </button>
-                                            </a>
+                                            </a> -->
                                         </h2>
                                     </div>
                                     <!-- /.card-header -->
@@ -63,14 +63,14 @@
                                                 <div class="form-group">
                                                     <label>Seleccionar Estado de la Orden</label>
                                                     <select id="estorden" name="estorden" class="form-control">
-                                                        <option value="" selected>-- Seleccione un estado de orden --
+                                                        <option value="null" selected>-- Seleccione un estado de orden
+                                                            --
                                                         </option>
 
-                                                        <option>option 1</option>
-                                                        <option>option 2</option>
-                                                        <option>option 3</option>
-                                                        <option>option 4</option>
-                                                        <option>option 5</option>
+                                                        <option value="1">Pendiente</option>
+
+                                                        <option value="2">Finalizado</option>
+
                                                     </select>
                                                 </div>
                                             </div>
