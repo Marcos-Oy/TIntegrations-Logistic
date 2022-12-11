@@ -91,9 +91,51 @@
 		}
 
         public function filtrar_nomninar(){
-            $consulta="call carga_nominar('".$this->idoficina."','".$this->estorden."','".$this->comuna."',
-            '".$this->fechacreaciondesde."','".$this->fechacreacionhasta."','".$this->fechaactividaddesde."','".$this->fechaactividadhasta.",
-            '".$this->repartidor."'')";
+			$consulta ="call carga_nominar("; 
+			if(isset($this->idoficina)&&!empty($this->idoficina)){
+				$consulta .= "$this->idoficina, ";
+			}else{
+				$consulta .="null, ";
+			}
+			if(isset($this->idoficina)&&!empty($this->idoficina)){
+				$consulta .= "$this->idoficina, ";
+			}else{
+				$consulta .="null, ";
+			}
+			if(isset($this->comuna)&&!empty($this->comuna)){
+				$consulta .= "$this->comuna, ";
+			}else{
+				$consulta .="null, ";
+			}
+			if(isset($this->fechacreaciondesde)&&!empty($this->fechacreaciondesde)){
+				$consulta .= "'$this->fechacreaciondesde', ";
+			}else{
+				$consulta .="null, ";
+			}
+			if(isset($this->fechacreacionhasta)&&!empty($this->fechacreacionhasta)){
+				$consulta .= "'$this->fechacreacionhasta', ";
+			}else{
+				$consulta .="null, ";
+			}
+			if(isset($this->fechaactividaddesde)&&!empty($this->fechaactividaddesde)){
+				$consulta .= "'$this->fechaactividaddesde', ";
+			}else{
+				$consulta .="null, ";
+			}
+			if(isset($this->fechaactividadhasta)&&!empty($this->fechaactividadhasta)){
+				$consulta .= "'$this->fechaactividadhasta', ";
+			}else{
+				$consulta .="null, ";
+			}
+			if(isset($this->repartidor)&&!empty($this->repartidor)){
+				$consulta .= "'$this->repartidor')";
+			}else{
+				$consulta .="null)";
+			}
+
+            #$consulta="call carga_nominar('".$this->idoficina."','".$this->estorden."','".$this->comuna."',
+            #'".$this->fechacreaciondesde."','".$this->fechacreacionhasta."','".$this->fechaactividaddesde."','".$this->fechaactividadhasta.",
+            #'".$this->repartidor."'')";
             echo $consulta;
 			// $resultado=$this->basededatos->query($consulta);
             // return $resultado;
