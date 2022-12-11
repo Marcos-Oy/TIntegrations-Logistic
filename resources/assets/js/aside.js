@@ -65,10 +65,15 @@ function MenuActive() {
 
   if (
     URLactual ==
-    protocolo +
-      "://" +
-      servidor +
-      "/TIntegrations-Logistic/?control=Nominar&action=Nominate"
+      protocolo +
+        "://" +
+        servidor +
+        "/TIntegrations-Logistic/?control=Nominar&action=Nominate" ||
+    URLactual ==
+      protocolo +
+        "://" +
+        servidor +
+        "/TIntegrations-Logistic/?control=Nominar&action=Filtrar_Nominar"
   ) {
     document.getElementById("MenuAdministrar").className = "nav-item menu-open"; //Se despliega el menú
     document.getElementById("administrar").className = "nav-link active"; //Activamos el menú
@@ -80,7 +85,7 @@ function MenuActive() {
     protocolo +
       "://" +
       servidor +
-      "/TIntegrations-Logistic/?control=Ordenes&action=AsignarOrden"
+      "/TIntegrations-Logistic/?control=Asignar&action=Carga"
   ) {
     document.getElementById("MenuOrdenes").className = "nav-item menu-open"; //Se despliega el menú
     document.getElementById("ordenes").className = "nav-link active"; //Activamos el menú
@@ -96,7 +101,7 @@ function MenuActive() {
   ) {
     document.getElementById("MenuOrdenes").className = "nav-item menu-open"; //Se despliega el menú
     document.getElementById("ordenes").className = "nav-link active"; //Activamos el menú
-    document.getElementById("recibirEntrega").className = "nav-link active"; //Activamos la opción
+    document.getElementById("recibirEntregas").className = "nav-link active"; //Activamos la opción
   }
 
   if (
@@ -164,7 +169,7 @@ function MenuActive() {
     protocolo +
       "://" +
       servidor +
-      "/TIntegrations-Logistic/?control=Ordenes&action=EntregarOrden"
+      "/TIntegrations-Logistic/?control=Entregar&action=CargoD"
   ) {
     document.getElementById("MenuOrdenes").className = "nav-item menu-open"; //Se despliega el menú
     document.getElementById("ordenes").className = "nav-link active"; //Activamos el menú

@@ -136,7 +136,6 @@
             #$consulta="call carga_nominar('".$this->idoficina."','".$this->estorden."','".$this->comuna."',
             #'".$this->fechacreaciondesde."','".$this->fechacreacionhasta."','".$this->fechaactividaddesde."','".$this->fechaactividadhasta.",
             #'".$this->repartidor."'')";
-            echo $consulta;
 			$resultado=$this->basededatos->query($consulta);
             return $resultado;
         }

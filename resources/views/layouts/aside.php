@@ -75,9 +75,9 @@ const heartbeat = setInterval(() => {
                with font-awesome or any other icon font library -->
                 <li class="nav-item">
                     <a id="dashboard" style="cursor: pointer;" class="nav-link" href="?control=DashBoard&action=Dash">
-                        <i class="nav-icon fas fa-tachometer-alt"></i>
+                        <i class="nav-icon fas fa-home"></i>
                         <p>
-                            Dashboard
+                            Home
                         </p>
                     </a>
                 </li>
@@ -122,8 +122,8 @@ const heartbeat = setInterval(() => {
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a id="recibir" style="cursor: pointer;" class="nav-link" <a id="recibirEntrega"
-                                style="cursor: pointer;" class="nav-link" href="?control=Recibir&action=Principal">
+                            <a style="cursor: pointer;" class="nav-link" id="recibirEntregas" style="cursor: pointer;"
+                                class="nav-link" href="?control=Recibir&action=Principal">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Recibir Entrega</p>
                             </a>
