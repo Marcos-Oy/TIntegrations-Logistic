@@ -37,7 +37,7 @@ session_start();
 						'AsignarConCodigo'=>['Carga_Asig'],
 						'Ordenes'=>['NuevaOrden','RevisarOrden','NominarOrden','AsignarOrden','AsignarConCodigo',
 						'RecibirOrden','EntregarOrden','DevolverOrden','RecibirOdtExterna', 'calcularFlete'],
-						'AsignarConCodigo'=>['Carga_Asig'],
+						'AsignarConCodigo'=>['Carga_Asig','Asignar_Codigo'],
 						'Asignar'=>['Carga','Secundario','Asignar','Devolver'],
 						'Entregar'=>['CargoD','Entrega'],
 						);
