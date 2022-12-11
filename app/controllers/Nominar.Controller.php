@@ -4,6 +4,7 @@
         //***************************** */ LLAMADA A LAS VISTAS*********************************/
         public function Nominate()
 		{
+            //$rows = "";
             include("models/regionesModel.php");
             $apt= new regionesModel();
             $rowsRegiones = $apt->show();
@@ -37,8 +38,9 @@
 			$apt->setfechaactividaddesde($_POST['fechaactividaddesde']);
 			$apt->setfechaactividadhasta($_POST['fechaactividadhasta']);
 			$apt->setrepartidor($_POST['repartidor']);
-            $id = $apt->filtrar_nomninar();
-            if(isset($id) && !empty($id))
+            $rows = $apt->filtrar_nomninar();
+            
+            if(isset($rows) && !empty($rows))
 			{
 				echo "<script>alert('Ingreso correcto');
 				window.location= '?control=Nominar&action=Nominate'</script>";

@@ -29,7 +29,7 @@ session_start();
 						'DashBoard'=>['Dash'],
 						'MisDatos'=>['MisDatos','EditarMisDatos','EditarPass'],
 						'Ordenes'=>['NuevaOrden','RevisarOrden','NominarOrden','AsignarOrden','AsignarConCodigo'],
-						'Nominar'=>['Nominate','regiones_obtener'],
+						'Nominar'=>['Nominate','Filtrar_Nominar'],
 						'NuevaOrden'=>['calcularFlete', 'datosODT', 'crearodt'],
 						'Recibir'=>['Principal','Secundario','Recibir','Devolver','RecibirOrden','EntregarOrden','DevolverOrden','RecibirOdtExterna', 'CrearOrden', 'calcularFlete'],
 						'AsignarConCodigo'=>['Carga_Asig'],
