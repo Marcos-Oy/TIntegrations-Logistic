@@ -122,30 +122,20 @@ class usuariosModel
 		return $this->Solicitud;
 	}
 
+
 	public function EliminarUsuario()
 	{
-		$consulta = "UPDATE usuarios SET estduser_id = 0 WHERE username = '" . $this->username . "'";
-		$resultado = $this->basededatos->query($consulta);
-		if ($resultado == true) {
+		$consulta="UPDATE usuarios SET activo = 0 WHERE username = '".$this->username. "'";
+        $resultado=$this->basededatos->query($consulta);
+		if($resultado==true)
+		{
 			return true;
-		} else {
+		}
+		else
+		{
 			return false;
 		}
 	}
-
-	    //     public function EliminarUsuario()
-		// {
-		// 	$consulta="UPDATE usuarios SET activo = 0 WHERE username = '".$this->username. "'";
-        //     $resultado=$this->basededatos->query($consulta);
-		// 	if($resultado==true)
-		// 	{
-		// 	return true;
-		// 	}
-		// 	else
-		// 	{
-		// 		return false;
-		// 	}
-		// }
 		
 	public function InsertarUsuario()
 	{
