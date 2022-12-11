@@ -35,6 +35,7 @@
                         $obj->setFecha($fecha);
                         $obj->setBodega( $_SESSION['idbodega']);
                         $resultado = $obj->Recibir_Orden();
+                        echo $resultado;
                         if($resultado==true)
                         {
                             $count= $count+1;

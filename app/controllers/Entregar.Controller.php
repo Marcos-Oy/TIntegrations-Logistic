@@ -61,6 +61,8 @@
                                 $message ='File is successfully uploaded.';
                                 echo "<script>alert('Entrega Exitosa $ba');
                                 window.location= '?control=Entregar&action=CargoD'</script>";
+
+                               
                             } else {
                                 $message = 'There was some error moving the file to upload directory. Please make sure the upload directory is writable by web server.';
                                 $_SESSION['message_type']="warning";
