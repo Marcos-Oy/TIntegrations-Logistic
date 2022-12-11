@@ -92,8 +92,9 @@
 		/********************************* */
         public function Recibir_Orden()
 		{
-			$consulta="call Orden_Recibir(".$this->ODT.", '".$this->fecha."', '".$this->username."',".$this->bodega.")";
-			$resultado=$this->basededatos->query($consulta);
+			$consulta="call Orden_Recibir('".$this->ODT."', '".$this->fecha."', '".$this->username."',".$this->bodega.")";
+			
+                        $resultado=$this->basededatos->query($consulta);
 			if($resultado==true)
 			{
 			return true;

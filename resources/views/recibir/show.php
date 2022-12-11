@@ -55,7 +55,7 @@
                             <tr>
                                 <td>
                                     <div class="form-check center">
-                                        <input type="checkbox" class="form-check-input" id="exampleCheck1" name="ordenes[]"
+                                        <input require type="checkbox" class="form-check-input" id="exampleCheck1" name="ordenes[]"
                                         value="<?= $row['ODT'] ?>">
                                     </div>
                                 </td>
