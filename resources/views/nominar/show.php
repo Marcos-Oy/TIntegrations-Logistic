@@ -192,6 +192,9 @@
                     </div>
                 </section>
             </form>
+
+            <?php if($rows): ?>
+
             <!-- Main content -->
             <section class="content">
                 <div class="container-fluid">
@@ -221,7 +224,6 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <?php if($rows): ?>
                                             <?php foreach($rows as $row): ?>
                                             <tr>
                                                 <td><?= $row['numero'] ?></td>
@@ -238,13 +240,6 @@
                                                 <td><?= $row['tipopago'] ?></td>
                                             </tr>
                                             <?php endforeach; ?>
-                                            <?php else: ?>
-                                            <tr>
-                                                <td colspan="3" class="text-center">Use los filtros para mostrar los
-                                                    registros.
-                                                </td>
-                                            </tr>
-                                            <?php endif; ?>
                                         </tbody>
                                         <tfoot>
                                             <tr>
@@ -276,6 +271,7 @@
             </section>
             <!-- /.content -->
 
+            <?php endif; ?>
         </div>
     </div>
     <?php
