@@ -31,22 +31,21 @@
                                 <div class="card-body ">
                                     <div class="form-group ">
                                         <label for="exampleSelectBorderWidth2">Seleccionr ODT</label>
-                                        <select class="custom-select form-control-border border-width-2"
+                                        <select  required class="custom-select form-control-border border-width-2"
                                             id="exampleSelectBorderWidth2" name="ODT">
                                             <option selected>Seleccionar Opcion </option>
                                             <?php foreach($rows as $row): ?>
-                                            <option value="<?= $row['ODT'] ?>">
+                                            <option value="<?= $row['idorden'] ?>">
                                                 <?php echo $row['ODT']?>
                                             </option>
                                             <?php endforeach; ?>
-                                        </select>
                                         </select>
                                     </div>
                                     <div class="form-group">
                                         <label for="exampleInputFile">Imagen de entrega</label>
                                         <div class="input-group">
                                             <div class="custom-file">
-                                                <input type="file" class="custom-file-input" id="exampleInputFile" name="archivo"  id="archivo">
+                                                <input required type="file" class="custom-file-input" id="exampleInputFile" name="archivo"  id="archivo">
                                                 <label class="custom-file-label"  for="exampleInputFile">Subir
                                                     imagen</label>
                                             </div>
@@ -54,16 +53,16 @@
                                     </div>
                                     <div class="form-group">
                                         <label>Rut receptor</label>
-                                        <input type="text" oninput="checkRut(this)" class="form-control" name="rut"
+                                        <input  required type="text" oninput="checkRut(this)" class="form-control" name="rut"
                                             placeholder="12.345.678-9">
                                     </div>
                                     <div class="form-group">
                                         <label>Nombre receptor</label>
-                                        <input type="text" class="form-control" name="nombre" placeholder="Nombre y apellido ...">
+                                        <input required type="text" class="form-control" name="nombre" placeholder="Nombre y apellido ...">
                                     </div>
                                     <div class="form-group">
                                         <label>Observaciones</label>
-                                        <textarea class="form-control" rows="3" name="obse"
+                                        <textarea  required class="form-control" rows="3" name="obse"
                                             placeholder="Observaciones ..."></textarea>
                                     </div>
                                     <div class="col">
