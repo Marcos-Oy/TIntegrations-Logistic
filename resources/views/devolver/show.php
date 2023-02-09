@@ -21,7 +21,7 @@
             <div class="container-fluid">
                 <div class="row">
                     <!-- left column -->
-                    <div class="col-md-6">
+                    <div class="col-md-12">
                         <!-- general form elements -->
                         <div class="card card-info">
                             <div class="card-header">
@@ -49,14 +49,6 @@
                                                     imagen</label>
                                             </div>
                                         </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label>Rut receptor</label>
-                                        <input type="text" class="form-control" placeholder="12.345.678-9">
-                                    </div>
-                                    <div class="form-group">
-                                        <label>Nombre receptor</label>
-                                        <input type="text" class="form-control" placeholder="Nombre y apellido ...">
                                     </div>
                                     <div class="form-group">
                                         <label>Observaciones</label>

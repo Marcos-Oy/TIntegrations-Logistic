@@ -7,9 +7,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Recibir</title>
     <?php
-        include ('resources/views/layouts/dependencies.php');
-        include ('resources/views/recibir/dependencies.php');
+    include('resources/views/layouts/dependencies.php');
+    include('resources/views/recibir/dependencies.php');
     ?>
+    <script type="text/javascript">
+        function comprobarChecks(event) {
+            var checkbox = document.getElementsByName('ordenes[]');
+            var contador = 0;
+            for (var i = 0; i < checkbox.length; i++) {
+                if (checkbox[i].checked)
+                    contador++
+            }
+            if (contador == 0) {
+                console.log("Obligatorio un check!");
+                event.preventDefault();
+            }
+        }
+    </script>
 </head>
 
 <body class="hold-transition sidebar-mini layout-fixed">
@@ -21,8 +35,8 @@
         <div class="content-wrapper">
             <br>
             <div class="h1 text-center text-info">Recepcion de Ordenes</div>
-            
-            <form method="POST" action="?control=Recibir&action=Recibir">
+
+            <form method="POST" onsubmit="comprobarChecks(event);" action="?control=Recibir&action=Recibir">
                 <div class="container">
                     <div class="input-group mb-3">
                         <button type="submit" class="btn btn-info col" name="entrega" value="Recibir Entrega">
@@ -50,33 +64,32 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <?php if($resultado): ?>
-                            <?php foreach($resultado as $row): ?>
-                            <tr>
-                                <td>
-                                    <div class="form-check center">
-                                        <input required type="checkbox" class="form-check-input" id="exampleCheck1" name="ordenes[]"
-                                        value="<?= $row['ODT'] ?>">
-                                    </div>
-                                </td>
-                                <td><?= $row['ODT'] ?></td>
-                                <td><?= $row['fecha'] ?></td>
-                                <td><?= $row['regi'] ?></td>
-                                <td><?= $row['comun'] ?></td>
-                                <td><?= $row['bultos'] ?></td>
-                                <td><?= $row['dimensiones'] ?></td>
-                                <td><?= $row['peso'] ?></td>
-                                <td><?= $row['sobres'] ?></td>
-                                <td><?= $row['nombre'] ?></td>
-                                <td><?= $row['valor_declarado'] ?></td>
-                                <td><?= $row['valor_flete'] ?></td>
+                            <?php if ($resultado) : ?>
+                                <?php foreach ($resultado as $row) : ?>
+                                    <tr>
+                                        <td>
+                                            <div class="form-check center">
+                                                <input type="checkbox" class="form-check-input" id="ordenes" name="ordenes[]" value="<?= $row['ODT'] ?>">
+                                            </div>
+                                        </td>
+                                        <td><?= $row['ODT'] ?></td>
+                                        <td><?= $row['fecha'] ?></td>
+                                        <td><?= $row['regi'] ?></td>
+                                        <td><?= $row['comun'] ?></td>
+                                        <td><?= $row['bultos'] ?></td>
+                                        <td><?= $row['dimensiones'] ?></td>
+                                        <td><?= $row['peso'] ?></td>
+                                        <td><?= $row['sobres'] ?></td>
+                                        <td><?= $row['nombre'] ?></td>
+                                        <td><?= $row['valor_declarado'] ?></td>
+                                        <td><?= $row['valor_flete'] ?></td>
 
-                            </tr>
-                            <?php endforeach; ?>
-                            <?php else: ?>
-                            <tr>
-                                <td colspan="3" class="text-center">No hay registros actualmente</td>
-                            </tr>
+                                    </tr>
+                                <?php endforeach; ?>
+                            <?php else : ?>
+                                <tr>
+                                    <td colspan="3" class="text-center">No hay registros actualmente</td>
+                                </tr>
                             <?php endif; ?>
                         </tbody>
                     </table>
@@ -93,6 +106,6 @@
         <!-- /.control-sidebar -->
     </div>
     <?php
-        include 'resources/views/layouts/footer.php';
+    include 'resources/views/layouts/footer.php';
     ?>
 </body>

@@ -27,6 +27,7 @@ function CardDisabled() {
   document.getElementById("fechanac").disabled = true;
 
   document.getElementById("btn1").hidden = true;
+  document.getElementById("btn3").hidden = true;
 
   nombre = document.getElementById("nombre").value;
   paterno = document.getElementById("paterno").value;
@@ -50,6 +51,7 @@ function SwitchCheckBox() {
     document.getElementById("fechanac").disabled = false;
 
     document.getElementById("btn1").hidden = false;
+    document.getElementById("btn3").hidden = false;
   } else {
     document.getElementById("nombre").disabled = true;
     document.getElementById("paterno").disabled = true;
@@ -61,6 +63,7 @@ function SwitchCheckBox() {
     document.getElementById("fechanac").disabled = true;
 
     document.getElementById("btn1").hidden = true;
+    document.getElementById("btn3").hidden = true;
 
     document.getElementById("nombre").value = nombre;
     document.getElementById("paterno").value = paterno;

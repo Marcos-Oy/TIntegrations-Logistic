@@ -20,7 +20,6 @@
         private $origen;
         private $observaciones;
         private $fecha;
-        private $search ="";
         private $ODT;
         private $repartidor;
         private $bodega;
@@ -78,7 +77,7 @@
         /****METODO CRGA INICIAL PAGINA RECIBIRORDEN*****/
         public function Datos_Solicitud()
         {
-                $consulta = "call Cargar_Recibir()";
+                $consulta = "call Cargar_Recibir($this->bodega)";
                 $resultado = $this->basededatos->query($consulta);
                 return $resultado;
         }
@@ -107,7 +106,7 @@
 	/********************************* */
         public function Asignar_Orden_Obtener()
 	{
-		$consulta="call asignar_orden_obtener()";			
+		$consulta="call asignar_orden_obtener($this->bodega)";			
 		$resultado=$this->basededatos->query($consulta);
 		return $resultado;
 	}

@@ -29,7 +29,7 @@ session_start();
 						'Users'=>['Portal','Crear','Edit','Editarusuario','Eliminarusuario','Activarusuario','Crearusuario','PasswordReset'],
                         'Login'=>['login','Dash','LoginUser'],
 						'DashBoard'=>['Dash'],
-						'MisDatos'=>['MisDatos','EditarMisDatos','EditarPass'],
+						'MisDatos'=>['MisDatos','EditarMisDatos','EditarPass', 'cambioOficina'],
 						'Ordenes'=>['NuevaOrden','RevisarOrden','NominarOrden','AsignarOrden','AsignarConCodigo'],
 						'Nominar'=>['Nominate','Filtrar_Nominar'],
 						'NuevaOrden'=>['calcularFlete', 'datosODT', 'crearodt'],

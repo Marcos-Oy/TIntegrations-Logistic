@@ -44,6 +44,7 @@
             $apt= new nominarModel();
 			$apt->setidoficina($_POST['idoficina']);
 			$apt->setestorden($_POST['estorden']);
+            $apt->setRegion($_POST['regiones']);
 			$apt->setcomuna($_POST['comunas']);
 			$apt->setfechacreaciondesde($_POST['fechacreaciondesde']);
 			$apt->setfechacreacionhasta($_POST['fechacreacionhasta']);
@@ -60,6 +61,7 @@
 			{
 				// echo "<script>alert('No Exitoso');
 				// window.location= '?control=Nominar&action=Nominate'</script>";
+                
 			}
         }
     }

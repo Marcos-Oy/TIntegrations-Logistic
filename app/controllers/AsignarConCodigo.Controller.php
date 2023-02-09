@@ -24,13 +24,15 @@
                         $obj->setUsername($_SESSION['username']);
                         $obj->setODT($selected);
                         $obj->setFecha($fecha);
-                        $obj->setBodega( $_SESSION['idbodega']);
+                        $obj->setBodega($_SESSION['idbodega']);
                         $obj->setRepartidor($_POST['repartidor']);
                         $obj->setIdactividad($_POST['estado']);
                         $resultado = $obj->AsignarCon_Codigo();
                         if($resultado==true)
                         {
                             $count= $count+1;
+                        }else{
+                            echo "<script>alert('Error al asignar orden: ". $selected ."')</script>";
                         }
                     }
                     if($count>0)
@@ -56,5 +58,3 @@
 
 
     }
-
-?>

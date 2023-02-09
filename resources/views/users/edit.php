@@ -25,7 +25,7 @@
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-sm-9">
-                            <div class="card card-primary">
+                            <div class="card card-info">
                                 <div class="card-header">
                                     <h2>
                                         Editar usuario
@@ -151,7 +151,7 @@
 
                         </div>
                         <div class="col-sm-3">
-                            <div class="card card-primary">
+                            <div class="card card-info">
                                 <div class="card-header">
                                     <h2>Contraseña
                                     </h2>

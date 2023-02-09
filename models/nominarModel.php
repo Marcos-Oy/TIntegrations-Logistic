@@ -9,6 +9,7 @@
         private $fechaactividaddesde;
         private $fechaactividadhasta;
         private $repartidor;
+		private $region;
 
         public function __construct()
         {
@@ -102,6 +103,11 @@
 			}else{
 				$consulta .="null, ";
 			}
+			if(isset($this->region)&&!empty($this->region)){
+				$consulta .= "$this->region, ";
+			}else{
+				$consulta .="null, ";
+			}
 			if(isset($this->comuna)&&!empty($this->comuna)){
 				$consulta .= "$this->comuna, ";
 			}else{
@@ -136,9 +142,30 @@
             #$consulta="call carga_nominar('".$this->idoficina."','".$this->estorden."','".$this->comuna."',
             #'".$this->fechacreaciondesde."','".$this->fechacreacionhasta."','".$this->fechaactividaddesde."','".$this->fechaactividadhasta.",
             #'".$this->repartidor."'')";
+			#echo $consulta;
 			$resultado=$this->basededatos->query($consulta);
             return $resultado;
         }
 
+
+		/**
+		 * Get the value of region
+		 */ 
+		public function getRegion()
+		{
+				return $this->region;
+		}
+
+		/**
+		 * Set the value of region
+		 *
+		 * @return  self
+		 */ 
+		public function setRegion($region)
+		{
+				$this->region = $region;
+
+				return $this;
+		}
     }
 ?>

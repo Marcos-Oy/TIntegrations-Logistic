@@ -10,6 +10,20 @@
         include ('resources/views/layouts/dependencies.php');
         include ('resources/views/recibir/dependencies.php');
     ?>
+    <script type="text/javascript">
+        function comprobarChecks(event) {
+            var checkbox = document.getElementsByName('ordenes[]');
+            var contador = 0;
+            for (var i = 0; i < checkbox.length; i++) {
+                if (checkbox[i].checked)
+                    contador++
+            }
+            if (contador == 0) {
+                console.log("Obligatorio un check!");
+                event.preventDefault();
+            }
+        }
+    </script>
 </head>
 
 <body class="hold-transition sidebar-mini layout-fixed">
@@ -22,7 +36,7 @@
             <br>
             <div class="h1 text-center text-info">Devolucion de Ordenes</div>
             
-            <form method="POST" action="?control=Recibir&action=Devolver">
+            <form method="POST" onsubmit="comprobarChecks(event);" action="?control=Recibir&action=Devolver">
                 <div class="container">
                     <div class="input-group mb-3">
                         <button type="submit" class="btn btn-info col" name="entrega" value="Recibir Entrega">
@@ -55,7 +69,7 @@
                             <tr>
                                 <td>
                                     <div class="form-check center">
-                                        <input required type="checkbox" class="form-check-input" id="exampleCheck1" name="ordenes[]"
+                                        <input type="checkbox" class="form-check-input" id="exampleCheck1" name="ordenes[]"
                                         value="<?= $row['ODT'] ?>">
                                     </div>
                                 </td>

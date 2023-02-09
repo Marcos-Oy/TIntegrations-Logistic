@@ -10,6 +10,7 @@
             
             include("models/OrdenesModel.php");
             $obj = new OrdenesModel();
+            $obj->setbodega($_SESSION['idbodega']);
             $resultado = $obj->Asignar_Orden_Obtener();
             require_once("resources/views/Asignar/show.php");
 		}
