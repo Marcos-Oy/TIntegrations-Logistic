@@ -33,7 +33,18 @@ class NuevaOrdenController
         $odts->setReferencia($_POST['refere']);
         $odts->setObservaciones($_POST['obs']);
         $odts->setFecha($fecha);
-        $odt = $odts->Crear_Orden();
+        $odts->setNombrealtno($_POST['nombrealterno']);
+        $odts->setTelaltno($_POST['tel1alterno']);
+        $odts->setTelaltno2($_POST['tel1alterno2']);
+        if (isset($_POST['nombrealterno']) && !empty($_POST['nombrealterno']) ) {
+            if (empty($_POST['tel1alterno']))
+            {
+                $odts->setTelaltno($_POST['tel1remitente']);
+            }
+            $odt = $odts->Crear_Ordenaltno();
+        } else {
+            $odt = $odts->Crear_Orden();
+        }
         if (isset($odt) && !empty($odt)) {
 
             foreach ($odt as $row) {
@@ -133,6 +144,10 @@ class NuevaOrdenController
         }
 
         include 'models/remitenteModel.php';
+
+        $listarut = new  remitentesModel();
+        $ruts = $listarut->showList();
+
         $remitentes = new remitentesModel();
         $remitentes->setRut($rutrmtt);
         $remitente = $remitentes->ShowById();
@@ -212,8 +227,11 @@ class NuevaOrdenController
         include 'models/regionesModel.php';
         $regiones = new regionesModel();
         $listaRegiones = $regiones->show();
-
-
+        /*
+        include 'models/remitenteModel.php';
+        $listarut = new  remitentesModel();
+        $ruts = $listarut->showList();
+*/
         include 'models/tarifaModel.php';
         $tarifa = new tarifaModel();
         $tarifa->setComuna($com);
@@ -233,6 +251,8 @@ class NuevaOrdenController
                 $idregion = $row['idregion'];
             }
         }
+
+
         $comunas = new comunasModel();
         $comunas->setRegid($reg);
         $listaComunas = $comunas->showByReg();

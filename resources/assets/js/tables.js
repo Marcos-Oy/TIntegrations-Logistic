@@ -57,18 +57,18 @@ $(function () {
       buttons: [
         {
           extend: "copy",
-          text: "copiar",
+          text: "Copiar",
         },
-        "csv",
-        "excel",
-        "pdf",
+        "CSV",
+        "Excel",
+        "PDF",
         {
           extend: "print",
-          text: "imprimir",
+          text: "Imprimir",
         },
         {
           extend: "colvis",
-          text: "columnas visibles",
+          text: "Columnas visibles",
         },
       ],
     })

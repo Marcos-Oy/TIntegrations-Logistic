@@ -33,11 +33,6 @@
                                                     Filtrar
                                                 </button>
                                             </a>
-                                            <!-- <a href="#" class="justify-content-md-end">
-                                                <button type="button" class="btn btn-success">
-                                                    Excel
-                                                </button>
-                                            </a> -->
                                         </h2>
                                     </div>
                                     <!-- /.card-header -->
@@ -126,103 +121,98 @@
                                                 </div>
                                             </div>
                                         </div>
+                                        <div class="row">
+                                            <div class="col-sm-4">
+                                                <div class="card card-dark">
+                                                    <div class="card-header">
+                                                        <h2 class="card-title">Fecha creación de orden</h2>
+                                                    </div>
+                                                    <!-- /.card-header -->
+                                                    <div class="card-body">
+                                                        <div class="row">
+                                                            <div class="col-sm-6">
+                                                                <div class="form-group">
+                                                                    <label>Desde</label>
+                                                                    <input <?php if (isset($_POST['fechacreaciondesde']) && !empty($_POST['fechacreaciondesde'])) {
+                                                                                echo "value ='" . $_POST['fechacreaciondesde'] . "'";
+                                                                            } ?> id="fechacreaciondesde" name="fechacreaciondesde" type="date" class="form-control">
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-sm-6">
+                                                                <div class="form-group">
+                                                                    <label>Hasta</label>
+                                                                    <input <?php if (isset($_POST['fechacreacionhasta']) && !empty($_POST['fechacreacionhasta'])) {
+                                                                                echo "value ='" . $_POST['fechacreacionhasta'] . "'";
+                                                                            } ?> id="fechacreacionhasta" name="fechacreacionhasta" type="date" class="form-control">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-sm-4">
+                                                <div class="card card-dark">
+                                                    <div class="card-header">
+                                                        <h2 class="card-title">Fecha creación de actividad</h2>
+                                                    </div>
+                                                    <!-- /.card-header -->
+                                                    <div class="card-body">
+                                                        <div class="row">
+                                                            <div class="col-sm-6">
+                                                                <div class="form-group">
+                                                                    <label>Desde</label>
+                                                                    <input <?php if (isset($_POST['fechaactividaddesde']) && !empty($_POST['fechaactividaddesde'])) {
+                                                                                echo "value ='" . $_POST['fechaactividaddesde'] . "'";
+                                                                            } ?> id="fechaactividaddesde" name="fechaactividaddesde" type="date" class="form-control">
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-sm-6">
+                                                                <div class="form-group">
+                                                                    <label>Hasta</label>
+                                                                    <input <?php if (isset($_POST['fechaactividadhasta']) && !empty($_POST['fechaactividadhasta'])) {
+                                                                                echo "value ='" . $_POST['fechaactividadhasta'] . "'";
+                                                                            } ?> id="fechaactividadhasta" name="fechaactividadhasta" type="date" class="form-control">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-sm-4">
+                                                <div class="card card-dark">
+                                                    <div class="card-header">
+                                                        <h2 class="card-title">Repartidor</h2>
+                                                    </div>
+                                                    <!-- /.card-header -->
+                                                    <div class="card-body">
+                                                        <div class="row">
+                                                            <div class="col-sm-12">
+                                                                <div class="form-group">
+                                                                    <label>Seleccionar</label>
+                                                                    <select id="repartidor" name="repartidor" class="form-control">
+                                                                        <option value="">-- Seleccione un repartior --</option>
+                                                                        <?php foreach ($rowsUsers as $rowUser) : ?>
+                                                                            <?php if ($rowUser['desc_cargo'] == 'Repartidor') { ?>
+                                                                                <option <?php if (isset($_POST['repartidor']) && !empty($_POST['repartidor']) && $rowUser['username'] == $_POST['repartidor']) {
+                                                                                            echo "selected";
+                                                                                        } ?> value="<?= $rowUser['username'] ?>">
+                                                                                <?= $rowUser['nombre'] . " " . $rowUser['paterno'] . " " . $rowUser['materno'];
+                                                                            } ?>
+                                                                                </option>
+                                                                            <?php endforeach; ?>
+                                                                    </select>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                                 <!-- /.card-body -->
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
-                <section class="content">
-                    <div class="container-fluid">
-                        <div class="row">
-                            <div class="col-sm-4">
-                                <div class="card card-dark">
-                                    <div class="card-header">
-                                        <h2 class="card-title">Fecha creación de orden</h2>
-                                    </div>
-                                    <!-- /.card-header -->
-                                    <div class="card-body">
-                                        <div class="row">
-                                            <div class="col-sm-6">
-                                                <div class="form-group">
-                                                    <label>Desde</label>
-                                                    <input <?php if (isset($_POST['fechacreaciondesde']) && !empty($_POST['fechacreaciondesde'])) {
-                                                                echo "value ='" . $_POST['fechacreaciondesde'] . "'";
-                                                            } ?> id="fechacreaciondesde" name="fechacreaciondesde" type="date" class="form-control">
-                                                </div>
-                                            </div>
-                                            <div class="col-sm-6">
-                                                <div class="form-group">
-                                                    <label>Hasta</label>
-                                                    <input <?php if (isset($_POST['fechacreacionhasta']) && !empty($_POST['fechacreacionhasta'])) {
-                                                                echo "value ='" . $_POST['fechacreacionhasta'] . "'";
-                                                            } ?> id="fechacreacionhasta" name="fechacreacionhasta" type="date" class="form-control">
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="col-sm-4">
-                                <div class="card card-dark">
-                                    <div class="card-header">
-                                        <h2 class="card-title">Fecha creación de actividad</h2>
-                                    </div>
-                                    <!-- /.card-header -->
-                                    <div class="card-body">
-                                        <div class="row">
-                                            <div class="col-sm-6">
-                                                <div class="form-group">
-                                                    <label>Desde</label>
-                                                    <input <?php if (isset($_POST['fechaactividaddesde']) && !empty($_POST['fechaactividaddesde'])) {
-                                                                echo "value ='" . $_POST['fechaactividaddesde'] . "'";
-                                                            } ?> id="fechaactividaddesde" name="fechaactividaddesde" type="date" class="form-control">
-                                                </div>
-                                            </div>
-                                            <div class="col-sm-6">
-                                                <div class="form-group">
-                                                    <label>Hasta</label>
-                                                    <input <?php if (isset($_POST['fechaactividadhasta']) && !empty($_POST['fechaactividadhasta'])) {
-                                                                echo "value ='" . $_POST['fechaactividadhasta'] . "'";
-                                                            } ?> id="fechaactividadhasta" name="fechaactividadhasta" type="date" class="form-control">
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="col-sm-4">
-                                <div class="card card-dark">
-                                    <div class="card-header">
-                                        <h2 class="card-title">Repartidor</h2>
-                                    </div>
-                                    <!-- /.card-header -->
-                                    <div class="card-body">
-                                        <div class="row">
-                                            <div class="col-sm-12">
-                                                <div class="form-group">
-                                                    <label>Seleccionar</label>
-                                                    <select id="repartidor" name="repartidor" class="form-control">
-                                                        <option value="">-- Seleccione un repartior --</option>
-                                                        <?php foreach ($rowsUsers as $rowUser) : ?>
-                                                            <?php if ($rowUser['desc_cargo'] == 'Repartidor') { ?>
-                                                                <option <?php if (isset($_POST['repartidor']) && !empty($_POST['repartidor']) && $rowUser['username'] == $_POST['repartidor']) {
-                                                                            echo "selected";
-                                                                        } ?> value="<?= $rowUser['username'] ?>">
-                                                                <?= $rowUser['nombre'] . " " . $rowUser['paterno'] . " " . $rowUser['materno'];
-                                                            } ?>
-                                                                </option>
-                                                            <?php endforeach; ?>
-                                                    </select>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
                             </div>
                         </div>
                     </div>

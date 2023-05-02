@@ -1,14 +1,14 @@
 <?php
 
-    class OrdenesModel
-    {
+class OrdenesModel
+{
 
         public function __construct()
         {
                 require_once "config/db.php";
                 $this->basededatos = Conexion::conectar();
         }
-        
+
         /*************Variables*****************/
 
         private $username, $idoficina, $idbodega;
@@ -24,39 +24,40 @@
         private $repartidor;
         private $bodega;
         private $idactividad;
+        private $nombrealtno, $telaltno, $telaltno2;
 
         /************METODOS GET AND SET*************/
         public function getODT()
         {
-            return $this->ODT;
+                return $this->ODT;
         }
         public function setODT($ODT): self
         {
-            $this->ODT = $ODT;
-            return $this;
+                $this->ODT = $ODT;
+                return $this;
         }
-        
+
         public function getRepartidor()
         {
-            return $this->repartidor;
+                return $this->repartidor;
         }
 
         public function setRepartidor($repartidor): self
         {
-            $this->repartidor = $repartidor;
-            return $this;
+                $this->repartidor = $repartidor;
+                return $this;
         }
-        
+
         public function getBodega()
         {
-            return $this->bodega;
+                return $this->bodega;
         }
 
         public function setBodega($bodega): self
         {
-            $this->bodega = $bodega;
+                $this->bodega = $bodega;
 
-            return $this;
+                return $this;
         }
         public function getIdactividad()
         {
@@ -69,138 +70,6 @@
 
                 return $this;
         }
-    
-
-        
-        // 
-
-        /****METODO CRGA INICIAL PAGINA RECIBIRORDEN*****/
-        public function Datos_Solicitud()
-        {
-                $consulta = "call Cargar_Recibir($this->bodega)";
-                $resultado = $this->basededatos->query($consulta);
-                return $resultado;
-        }
-        public function Datos_Devolver()
-	{
-		$consulta="call Cargar_Devolver()";
-		$resultado=$this->basededatos->query($consulta);
-		return $resultado;
-	}
-        
-	/********************************* */
-        public function Recibir_Orden()
-	{
-		$consulta="call Orden_Recibir('".$this->ODT."', '".$this->fecha."', '".$this->username."',".$this->bodega.")";
-			
-                 $resultado=$this->basededatos->query($consulta);
-		if($resultado==true)
-		{
-		return true;
-		}
-		else
-		{
-			return false;
-		}
-	}
-	/********************************* */
-        public function Asignar_Orden_Obtener()
-	{
-		$consulta="call asignar_orden_obtener($this->bodega)";			
-		$resultado=$this->basededatos->query($consulta);
-		return $resultado;
-	}
-        public function Asignar_Orden()
-	{
-		$consulta="call orden_asignar(".$this->ODT.", '".$this->fecha."', '".$this->username."',".$this->bodega.",'".$this->repartidor."',".$this->idactividad.")";
-                $resultado=$this->basededatos->query($consulta);
-		if($resultado==true)
-		{
-		        return true;
-		}
-		else
-		{
-		        return false;
-		}
-	}
-        public function Devolver_Orden()
-	{
-		$consulta="call orden_devolver_oficina(".$this->ODT.", '".$this->fecha."', '".$this->username."',".$this->bodega.",'".$this->repartidor."',".$this->idactividad.")";
-                $resultado=$this->basededatos->query($consulta);
-		if($resultado==true)
-		{
-		return true;
-		}
-		else
-		{
-			return false;
-		}
-	}
-        public function AsignarCon_Codigo()
-        {
-                $consulta="call Con_Codigo(".$this->ODT.", '".$this->fecha."', '".$this->username."',".$this->bodega.",'".$this->repartidor."',".$this->idactividad.")";
-                $resultado=$this->basededatos->query($consulta);
-                if($resultado== 0)
-                {
-                        return false;
-                }
-                else
-                {
-                        return true;
-                }
-        }
-        
-        
-
-
-       
-
-       
-
-        
-    
-
-        
-
-        /************Método para crear orden**********/
-
-        public function Crear_Orden()
-        {
-                $consulta = "call Orden_crear('$this->username', 
-                                               $this->idoficina, 
-                                               $this->idbodega,
-                                               $this->tipopago, 
-                                               '$this->rutrmtt', 
-                                               '$this->nombrermtt',
-                                               '$this->tel1rmtt',
-                                               '$this->tel2rmtt',
-                                               '$this->rutdtno', 
-                                               '$this->nombredtno',
-                                               '$this->tel1dtno',
-                                               '$this->tel2dtno',
-                                               $this->comuna, 
-                                               '$this->peso', 
-                                               $this->dimensiones, 
-                                               $this->qbultos, 
-                                               $this->qsobres,
-                                               $this->valorflete,
-                                               $this->origen, 
-                                               '$this->direccion',
-                                               '$this->referencia', 
-                                               '$this->observaciones',
-                                               '$this->fecha')";
-                $resultado = $this->basededatos->query($consulta);
-                #echo $consulta."<br>";
-                return $resultado;
-        }
-
-        /************************* */
-
-
-
-
-
-
         /**
          * Get the value of observaciones
          */
@@ -503,7 +372,7 @@
 
         /**
          * Get the value of fecha
-         */ 
+         */
         public function getFecha()
         {
                 return $this->fecha;
@@ -513,7 +382,7 @@
          * Set the value of fecha
          *
          * @return  self
-         */ 
+         */
         public function setFecha($fecha)
         {
                 $this->fecha = $fecha;
@@ -523,7 +392,7 @@
 
         /**
          * Get the value of idbodega
-         */ 
+         */
         public function getIdbodega()
         {
                 return $this->idbodega;
@@ -533,7 +402,7 @@
          * Set the value of idbodega
          *
          * @return  self
-         */ 
+         */
         public function setIdbodega($idbodega)
         {
                 $this->idbodega = $idbodega;
@@ -543,7 +412,7 @@
 
         /**
          * Get the value of nombrermtt
-         */ 
+         */
         public function getNombrermtt()
         {
                 return $this->nombrermtt;
@@ -553,7 +422,7 @@
          * Set the value of nombrermtt
          *
          * @return  self
-         */ 
+         */
         public function setNombrermtt($nombrermtt)
         {
                 $this->nombrermtt = $nombrermtt;
@@ -563,7 +432,7 @@
 
         /**
          * Get the value of tel2rmtt
-         */ 
+         */
         public function getTel2rmtt()
         {
                 return $this->tel2rmtt;
@@ -573,7 +442,7 @@
          * Set the value of tel2rmtt
          *
          * @return  self
-         */ 
+         */
         public function setTel2rmtt($tel2rmtt)
         {
                 $this->tel2rmtt = $tel2rmtt;
@@ -583,7 +452,7 @@
 
         /**
          * Get the value of nombredtno
-         */ 
+         */
         public function getNombredtno()
         {
                 return $this->nombredtno;
@@ -593,7 +462,7 @@
          * Set the value of nombredtno
          *
          * @return  self
-         */ 
+         */
         public function setNombredtno($nombredtno)
         {
                 $this->nombredtno = $nombredtno;
@@ -603,7 +472,7 @@
 
         /**
          * Get the value of tel1dtno
-         */ 
+         */
         public function getTel1dtno()
         {
                 return $this->tel1dtno;
@@ -613,7 +482,7 @@
          * Set the value of tel1dtno
          *
          * @return  self
-         */ 
+         */
         public function setTel1dtno($tel1dtno)
         {
                 $this->tel1dtno = $tel1dtno;
@@ -623,7 +492,7 @@
 
         /**
          * Get the value of tel2dtno
-         */ 
+         */
         public function getTel2dtno()
         {
                 return $this->tel2dtno;
@@ -633,7 +502,7 @@
          * Set the value of tel2dtno
          *
          * @return  self
-         */ 
+         */
         public function setTel2dtno($tel2dtno)
         {
                 $this->tel2dtno = $tel2dtno;
@@ -643,7 +512,7 @@
 
         /**
          * Get the value of tel1rmtt
-         */ 
+         */
         public function getTel1rmtt()
         {
                 return $this->tel1rmtt;
@@ -653,11 +522,226 @@
          * Set the value of tel1rmtt
          *
          * @return  self
-         */ 
+         */
         public function setTel1rmtt($tel1rmtt)
         {
                 $this->tel1rmtt = $tel1rmtt;
 
                 return $this;
         }
+        /**
+         * Get the value of nombrealtno
+         */ 
+        public function getNombrealtno()
+        {
+                return $this->nombrealtno;
+        }
+
+        /**
+         * Set the value of nombrealtno
+         *
+         * @return  self
+         */ 
+        public function setNombrealtno($nombrealtno)
+        {
+                $this->nombrealtno = $nombrealtno;
+
+                return $this;
+        }
+
+/**
+         * Get the value of telaltno
+         */ 
+        public function getTelaltno()
+        {
+                return $this->telaltno;
+        }
+
+        /**
+         * Set the value of telaltno
+         *
+         * @return  self
+         */ 
+        public function setTelaltno($telaltno)
+        {
+                $this->telaltno = $telaltno;
+
+                return $this;
+        }
+        
+
+        /**
+         * Get the value of telaltno2
+         */ 
+        public function getTelaltno2()
+        {
+                return $this->telaltno2;
+        }
+
+        /**
+         * Set the value of telaltno2
+         *
+         * @return  self
+         */ 
+        public function setTelaltno2($telaltno2)
+        {
+                $this->telaltno2 = $telaltno2;
+
+                return $this;
+        }
+
+        // 
+
+        /****METODO CRGA INICIAL PAGINA RECIBIRORDEN*****/
+        public function Datos_Solicitud()
+        {
+                $consulta = "call Cargar_Recibir($this->bodega)";
+                $resultado = $this->basededatos->query($consulta);
+                return $resultado;
+        }
+        public function Datos_Devolver()
+        {
+                $consulta = "call Cargar_Devolver()";
+                $resultado = $this->basededatos->query($consulta);
+                return $resultado;
+        }
+
+        /********************************* */
+        public function Recibir_Orden()
+        {
+                $consulta = "call Orden_Recibir('" . $this->ODT . "', '" . $this->fecha . "', '" . $this->username . "'," . $this->bodega . ")";
+
+                $resultado = $this->basededatos->query($consulta);
+                if ($resultado == true) {
+                        return true;
+                } else {
+                        return false;
+                }
+        }
+        /********************************* */
+        public function Asignar_Orden_Obtener()
+        {
+                $consulta = "call asignar_orden_obtener($this->bodega)";
+                $resultado = $this->basededatos->query($consulta);
+                return $resultado;
+        }
+        public function Asignar_Orden()
+        {
+                $consulta = "call orden_asignar(" . $this->ODT . ", '" . $this->fecha . "', '" . $this->username . "'," . $this->bodega . ",'" . $this->repartidor . "'," . $this->idactividad . ")";
+                $resultado = $this->basededatos->query($consulta);
+                if ($resultado == true) {
+                        return true;
+                } else {
+                        return false;
+                }
+        }
+        public function Devolver_Orden()
+        {
+                $consulta = "call orden_devolver_oficina(" . $this->ODT . ", '" . $this->fecha . "', '" . $this->username . "'," . $this->bodega . ",'" . $this->repartidor . "'," . $this->idactividad . ")";
+                $resultado = $this->basededatos->query($consulta);
+                if ($resultado == true) {
+                        return true;
+                } else {
+                        return false;
+                }
+        }
+        public function AsignarCon_Codigo()
+        {
+                $consulta = "call Con_Codigo(" . $this->ODT . ", '" . $this->fecha . "', '" . $this->username . "'," . $this->bodega . ",'" . $this->repartidor . "'," . $this->idactividad . ")";
+                $resultado = $this->basededatos->query($consulta);
+                if ($resultado == 0) {
+                        return false;
+                } else {
+                        return true;
+                }
+        }
+
+
+
+        /************Método para crear orden**********/
+
+        public function Crear_Orden()
+        {
+                $consulta = "call Orden_crear('$this->username', 
+                                               $this->idoficina, 
+                                               $this->idbodega,
+                                               $this->tipopago, 
+                                               '$this->rutrmtt', 
+                                               '$this->nombrermtt',
+                                               '$this->tel1rmtt',
+                                               '$this->tel2rmtt',
+                                               '$this->rutdtno', 
+                                               '$this->nombredtno',
+                                               '$this->tel1dtno',
+                                               '$this->tel2dtno',
+                                               $this->comuna, 
+                                               '$this->peso', 
+                                               $this->dimensiones, 
+                                               $this->qbultos, 
+                                               $this->qsobres,
+                                               $this->valorflete,
+                                               $this->origen, 
+                                               '$this->direccion',
+                                               '$this->referencia', 
+                                               '$this->observaciones',
+                                               '$this->fecha',
+                                               null,
+                                               null,
+                                               null)";
+                $resultado = $this->basededatos->query($consulta);
+                #echo $consulta."<br>";
+                
+                return $resultado;
+        }
+        public function Crear_Ordenaltno()
+        {
+                $consulta = "call Orden_crear('$this->username', 
+                                               $this->idoficina, 
+                                               $this->idbodega,
+                                               $this->tipopago, 
+                                               '$this->rutrmtt', 
+                                               '$this->nombrermtt',
+                                               '$this->tel1rmtt',
+                                               '$this->tel2rmtt',
+                                               '$this->rutdtno', 
+                                               '$this->nombredtno',
+                                               '$this->tel1dtno',
+                                               '$this->tel2dtno',
+                                               $this->comuna, 
+                                               '$this->peso', 
+                                               $this->dimensiones, 
+                                               $this->qbultos, 
+                                               $this->qsobres,
+                                               $this->valorflete,
+                                               $this->origen, 
+                                               '$this->direccion',
+                                               '$this->referencia', 
+                                               '$this->observaciones',
+                                               '$this->fecha',
+                                               '$this->nombrealtno,
+                                               '$this->telaltno',
+                                               '$this->telaltno2')";
+                $resultado = $this->basededatos->query($consulta);
+                #echo $consulta."<br>";
+                return $resultado;
+        }
+
+        /***********Método para obtener historial de la orden************** */
+
+        public function historia_Orden()
+        {
+                $consulta = "call RevisarOrden_actividades('$this->$ODT')";
+                $resultado = $this->basededatos->query($consulta);
+                return $resultado;
+        }
+        public function datos_Orden()
+        {
+                $consulta = "call RevisarOrden_Datos('$this->$ODT')";
+                $resultado = $this->basededatos->query($consulta);
+                return $resultado;
+        }
+
+        
+
+        
 }

@@ -28,6 +28,20 @@ class remitentesModel
         }
     }
 
+    public function showList()
+    {
+        $consulta = "select distinct rut from remitentes";
+        $resultado = $this->basededatos->query($consulta);
+        if (mysqli_num_rows($resultado) > 0) {
+            while ($fila = $resultado->fetch_assoc()) {
+                $this->ruts[] = $fila;
+            }
+            return $this->ruts;
+        } else {
+
+            return false;
+        }
+    }
     public function UpdateById()
     {
         if (isset($this->nombre) && !empty($this->nombre)) {

@@ -15,3 +15,4 @@ $("#regiones").on("change", function () {
       alert("Error al cargar comunas" + xhr.responseText);
     });
 });
+

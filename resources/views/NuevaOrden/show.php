@@ -255,7 +255,24 @@
                                                             <label for="rmttrut">Rut remitente</label>
                                                             <input <?php if (isset($rutrmtt)) {
                                                                         echo "value='" . $rutrmtt . "'";
-                                                                    } ?> required oninput="checkRut(this)" class="form-control" type="text" id="rmttrut" name="rmttrut">
+                                                                    } ?> required list="rmttrut" oninput="checkRut(this)" class="form-control" type="text" id="rmttrut" name="rmttrut">
+                                                            <?php
+                                                            if (isset($ruts)) {
+                                                            ?>
+
+                                                                <datalist id="rmttrut">
+                                                                    <?php
+                                                                    foreach ($ruts as $rutes) {
+                                                                        echo "<option value='" . $rutes['rut'] . "'>
+                                                                        ";
+                                                                    }
+
+                                                                    ?>
+                                                                </datalist>
+                                                            <?php
+                                                            }
+
+                                                            ?>
                                                         </div>
                                                     </div>
                                                     <div class="col-md-6">
@@ -488,6 +505,41 @@
                                                 </div>
                                             </div>
                                         </ul>
+
+
+                                        <div class="custom-control custom-switch custom-switch-off-danger custom-switch-on-success">
+                                            <input type="checkbox" class="custom-control-input" name="Hedit" id="Hedit" onclick="SwitchCheckBox()">
+                                            <label class="custom-control-label" for="Hedit">
+                                                <h4>¿Recibe otra persona?</h4>
+                                            </label>
+                                        </div>
+
+                                        <ul>
+                                            <li>
+                                                <div class="form-group">
+                                                    <label for="nombrealterno">Nombre: </label>
+                                                    <input required class="form-control" type="text" name="nombrealterno" id="nombrealterno">
+                                                </div>
+                                            </li>
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <li>
+                                                        <div class="form-group">
+                                                            <label for="tel1alterno">Teléfono 1: </label>
+                                                            <input required class="form-control" type="text" name="tel1alterno" id="tel1alterno">
+                                                        </div>
+                                                    </li>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <li>
+                                                        <div class="form-group">
+                                                            <label for="tel2alterno">Teléfono 2: </label>
+                                                            <input class="form-control" type="text" name="tel2alterno" id="tel2alterno">
+                                                        </div>
+                                                    </li>
+                                                </div>
+                                            </div>
+                                        </ul>
                                     </div>
 
                                     <div class="inner">
@@ -563,4 +615,5 @@
     ?>
     <script type="text/javascript" src="resources/assets/js/validarRUT.js"></script>
     <script type="text/javascript" src="resources/assets/js/order_new.js"></script>
+    <script type="text/javascript" src="resources/assets/js/alterno.js"></script>
 </body>
