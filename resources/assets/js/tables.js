@@ -9,7 +9,7 @@ $(function () {
       lengthChange: true,
       autoWidth: false,
       ordering: true,
-      info: false,
+      info: true,
       paging: true,
       buttons: [
         {

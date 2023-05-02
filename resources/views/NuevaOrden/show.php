@@ -555,6 +555,12 @@
                                     <div class="small-box-footer">
                                         <button type="submit" class="btn bg-olive form-control" value="Crear orden" name="crearodt">Crear orden <i class="fas fa-arrow-circle-right"></i></button>
                                     </div>
+                                    <?php 
+                                        $direccionfinal = $dirdtno . " " . $nmrodtno; 
+                                        if(isset($numeraldtno)&&!empty($numeraldtno)){
+                                            $direccionfinal .=" - " . $numeraldtno;
+                                        }
+                                    ?>
                                     <input type="hidden" name="comuna" value="<?php echo $com; ?>">
                                     <input type="hidden" name="tipodo" value="<?php echo $tipod; ?>">
                                     <input type="hidden" name="tipopa" value="<?php echo $tipopag; ?>">
@@ -565,7 +571,7 @@
                                     <input type="hidden" name="peso" value="<?php echo $peso; ?>">
                                     <input type="hidden" name="origen" value="1">
                                     <input type="hidden" name="refere" value="<?php echo $refdtno; ?>">
-                                    <input type="hidden" name="dirdtn" value="<?php echo $dirdtno . " " . $nmrodtno . " - " . $numeraldtno; ?>">
+                                    <input type="hidden" name="dirdtn" value="<?php echo $direccionfinal; ?>">
                                     <input type="hidden" name="dimens" value="<?php echo $dimensiones; ?>">
                                     <input type="hidden" name="bultos" value="<?php echo $cantidad; ?>">
                                     <input type="hidden" name="sobres" value="<?php echo $qsobres; ?>">

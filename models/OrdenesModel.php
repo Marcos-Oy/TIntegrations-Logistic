@@ -25,6 +25,7 @@ class OrdenesModel
         private $bodega;
         private $idactividad;
         private $nombrealtno, $telaltno, $telaltno2;
+        private $identificadorDoc, $valorDeclarado;
 
         /************METODOS GET AND SET*************/
         public function getODT()
@@ -531,7 +532,7 @@ class OrdenesModel
         }
         /**
          * Get the value of nombrealtno
-         */ 
+         */
         public function getNombrealtno()
         {
                 return $this->nombrealtno;
@@ -541,7 +542,7 @@ class OrdenesModel
          * Set the value of nombrealtno
          *
          * @return  self
-         */ 
+         */
         public function setNombrealtno($nombrealtno)
         {
                 $this->nombrealtno = $nombrealtno;
@@ -549,9 +550,9 @@ class OrdenesModel
                 return $this;
         }
 
-/**
+        /**
          * Get the value of telaltno
-         */ 
+         */
         public function getTelaltno()
         {
                 return $this->telaltno;
@@ -561,18 +562,18 @@ class OrdenesModel
          * Set the value of telaltno
          *
          * @return  self
-         */ 
+         */
         public function setTelaltno($telaltno)
         {
                 $this->telaltno = $telaltno;
 
                 return $this;
         }
-        
+
 
         /**
          * Get the value of telaltno2
-         */ 
+         */
         public function getTelaltno2()
         {
                 return $this->telaltno2;
@@ -582,7 +583,7 @@ class OrdenesModel
          * Set the value of telaltno2
          *
          * @return  self
-         */ 
+         */
         public function setTelaltno2($telaltno2)
         {
                 $this->telaltno2 = $telaltno2;
@@ -591,6 +592,46 @@ class OrdenesModel
         }
 
         // 
+
+        /**
+         * Get the value of identificadorDoc
+         */ 
+        public function getIdentificadorDoc()
+        {
+                return $this->identificadorDoc;
+        }
+
+        /**
+         * Set the value of identificadorDoc
+         *
+         * @return  self
+         */ 
+        public function setIdentificadorDoc($identificadorDoc)
+        {
+                $this->identificadorDoc = $identificadorDoc;
+
+                return $this;
+        }
+
+        /**
+         * Get the value of valorDeclarado
+         */ 
+        public function getValorDeclarado()
+        {
+                return $this->valorDeclarado;
+        }
+
+        /**
+         * Set the value of valorDeclarado
+         *
+         * @return  self
+         */ 
+        public function setValorDeclarado($valorDeclarado)
+        {
+                $this->valorDeclarado = $valorDeclarado;
+
+                return $this;
+        }
 
         /****METODO CRGA INICIAL PAGINA RECIBIRORDEN*****/
         public function Datos_Solicitud()
@@ -665,7 +706,7 @@ class OrdenesModel
                 $consulta = "call Orden_crear('$this->username', 
                                                $this->idoficina, 
                                                $this->idbodega,
-                                               $this->tipopago, 
+                                               $this->tipopago,
                                                '$this->rutrmtt', 
                                                '$this->nombrermtt',
                                                '$this->tel1rmtt',
@@ -690,7 +731,7 @@ class OrdenesModel
                                                null)";
                 $resultado = $this->basededatos->query($consulta);
                 #echo $consulta."<br>";
-                
+
                 return $resultado;
         }
         public function Crear_Ordenaltno()
@@ -698,7 +739,7 @@ class OrdenesModel
                 $consulta = "call Orden_crear('$this->username', 
                                                $this->idoficina, 
                                                $this->idbodega,
-                                               $this->tipopago, 
+                                               $this->tipopago,
                                                '$this->rutrmtt', 
                                                '$this->nombrermtt',
                                                '$this->tel1rmtt',
@@ -730,18 +771,14 @@ class OrdenesModel
 
         public function historia_Orden()
         {
-                $consulta = "call RevisarOrden_actividades('$this->$ODT')";
-                $resultado = $this->basededatos->query($consulta);
-                return $resultado;
+                $consulta = "call RevisarOrden_actividades('" . $this->ODT . "')";
+                $resultadohistoria = $this->basededatos->query($consulta);
+                return $resultadohistoria;
         }
         public function datos_Orden()
         {
-                $consulta = "call RevisarOrden_Datos('$this->$ODT')";
-                $resultado = $this->basededatos->query($consulta);
-                return $resultado;
+                $consulta = "call RevisarOrden_Datos('" . $this->ODT . "')";
+                $resultadodatos = $this->basededatos->query($consulta);
+                return $resultadodatos;
         }
-
-        
-
-        
 }

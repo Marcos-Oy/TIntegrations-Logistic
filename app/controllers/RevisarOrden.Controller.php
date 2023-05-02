@@ -13,8 +13,8 @@ class revisarordenController{
         $ordenDetail = new OrdenesModel();
         $ordenDetail->setODT($_POST['orden']);
         $detalles = $ordenDetail->historia_Orden();
-        if ($rowOrden){
-            require_once("resources\views\RevisarOrden\show.php");
+        if ($rowOrden&&$detalles){
+            require_once("resources/views/RevisarOrden/show.php");
         }
     }
 }

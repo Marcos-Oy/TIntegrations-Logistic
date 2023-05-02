@@ -108,7 +108,7 @@
        
         public function Datos_Entregar()
 		{
-			$consulta="call Carga_Entregar()";
+			$consulta="call Carga_Entregar('".$_SESSION['username']."')";
 			$resultado=$this->basededatos->query($consulta);
 			return $resultado;
 		}

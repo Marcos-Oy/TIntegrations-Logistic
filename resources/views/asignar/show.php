@@ -53,12 +53,12 @@
                                     </div>
                                     <div class="form-group col-lg-3">
                                         <div class="form-check">
-                                            <input class="form-check-input" type="radio" name="estado" value="2" checked="">
-                                            <label class="form-check-label">En transito</label>
+                                            <input class="form-check-input" type="radio" id="estado1" name="estado" value="2" checked="">
+                                            <label class="form-check-label" for="estado1">En transito</label>
                                         </div>
                                         <div class="form-check">
-                                            <input class="form-check-input" type="radio" name="estado" value="3">
-                                            <label class="form-check-label">En reparto</label>
+                                            <input class="form-check-input" type="radio" id="estado2" name="estado" value="3">
+                                            <label class="form-check-label" for="estado2">En reparto</label>
                                         </div>
                                     </div>
                                     <div class="form-group col-lg-3">
@@ -74,7 +74,7 @@
                     <div class="card card-green">
                         <h5 class="card-header text-center">Listado de órdenes en oficina: <?php echo $_SESSION['oficina']; ?></h5>
                         <div class="card-body">
-                            <table id="ordenTable" class="table table-bordered table-striped">
+                            <table id="NominarTable" class="table table-bordered table-striped">
                                 <thead>
                                     <tr>
                                         <th></th>
@@ -93,7 +93,32 @@
                                 </thead>
                                 <tbody>
                                     <?php if ($resultado) : ?>
-                                        <?php foreach ($resultado as $row) : ?>
+                                        <?php foreach ($resultado as $row) :
+                                            $link =  'id_orden=' . $row['ODT'];
+                                            $link .= '&valorflete=' . $row['Valor'];
+                                            $link .= '&desc_comuna=' . $row['Comuna'];
+                                            $link .= '&m3=' . $row['Dimensiones'];
+                                            $link .= '&qsobres=' . $row['Sobres'];
+                                            $link .= '&bulto=' . $row['Bultos'];
+                                            $link .= '&observacion=' . $row['observaciones'];
+                                            $link .= '&desc_region=' . $row['Region'];
+                                            $link .= '&desc_oficina=' . $row['Oficina'];
+                                            $link .= '&rut=' . $row['remitentes_rut'];
+                                            $link .= '&destinatario_rut=' . $row['destinatarios_rut'];
+                                            $link .= '&nombre=' . $row['rem_nombre'];
+                                            $link .= '&telefono=' . $row['rem_fono'];
+                                            $link .= '&desctipopago=' . $row['desctipopago'];
+                                            $link .= '&desctipodocumento=' . $row['desctipodocumento'];
+                                            $link .= '&id_documento=' . $row['identificador'];
+                                            $link .= '&valordeclarado=' . $row['valor_declarado'];
+                                            $link .= '&peso=' . $row['Peso'];
+                                            $link .= '&direccion=' . $row['direccion'];
+                                            $link .= '&nombredest=' . $row['des_nombre'];
+                                            $link .= '&teldest=' . $row['des_fono'];
+                                            $link .= '&referencia=' . $row['referencia'];
+                                            $link .= '&fecha=' . $row['fecha'];
+                                        ?>
+
                                             <tr>
                                                 <td>
                                                     <div class="form-check center">
@@ -110,9 +135,9 @@
                                                 <td><?= $row['Peso'] ?></td>
                                                 <td><?= $row['Sobres'] ?></td>
                                                 <td><?= $row['Valor'] ?></td>
-                                                <td><a class="btn btn-primary" id="btnImprimir" href="#" value="<?= $row['idorden'] ?>">
+                                                <td><a class="btn btn-primary" id="btnImprimir" href="http://localhost/tpqtimprime/ticket.php?<?= $link ?>" target="_blank" value="<?= $row['idorden'] ?>">
                                                         <i class="fas fa-print" aria-hidden="true"></i></a>
-                                                    <a class="btn btn-info" href="#" target="_blank" value="<?= $row['idorden'] ?>">
+                                                    <a class="btn btn-info" id="btnImprimir2" href="#" target="_blank" value="<?= $row['idorden'] ?>">
                                                         <i class="fas fa-print" aria-hidden="true"></i></a>
                                                     <a class="btn btn-warning" href="#" value="<?= $row['idorden'] ?>"><i class="fas fa-pen" aria-hidden="true"></i></a>
                                                     <a class="btn btn-danger" id="anular" value="<?= $row['idorden'] ?>" href="#"><i class="fas fa-trash-alt" aria-hidden="true"></i></a>
